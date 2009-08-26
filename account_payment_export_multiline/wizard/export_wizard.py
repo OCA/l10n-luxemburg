@@ -15,6 +15,7 @@ from osv import osv
 import time
 import mx.DateTime
 from mx.DateTime import RelativeDateTime, now, DateTime, localtime
+import tools
 
 #Définition de l'output
 c = csv.writer(open("monfichier.lup", "wb"))
@@ -443,94 +444,94 @@ def _create_pay(self,cr,uid,data,context):
     pay_trailer=record_trailer(v2).generate()
     #Trailer Record End
 
-#####################################################
-#         Séquence A  - début de fichier            #
-#####################################################
+    #####################################################
+    #         Séquence A  - début de fichier            #
+    #####################################################
 		
-#:20:	Identification débiteur
-c.writerow([":20:""Identité débiteur"])
-#:21R:	Libellé opération	
-c.writerow([":21R:"'order_ref'])
-#:50H:	Compte du donneur d'ordre
-#Variable 50HA
-c.writerow([":50H:"'acc_debit'])
-#:52A:	Code bic du donneur d'ordre		
-c.writerow([":52A:""Code bic du donneur d'ordre"])
-#:30:	Date d'exécution souhaitée
-c.writerow([":30:"'order_exe_date'])
+    #:20:	Identification débiteur
+    c.writerow([":20:""Identité débiteur"])
+    #:21R:	Libellé opération	
+    c.writerow([":21R:"'order_ref'])
+    #:50H:	Compte du donneur d'ordre
+    #Variable 50HA
+    c.writerow([":50H:"'acc_debit'])
+    #:52A:	Code bic du donneur d'ordre		
+    c.writerow([":52A:""Code bic du donneur d'ordre"])
+    #:30:	Date d'exécution souhaitée
+    c.writerow([":30:"'order_exe_date'])
 
 
-#####################################################
-#       Séquence B - Une séquence par paiement      #
-#####################################################
+    #####################################################
+    #       Séquence B - Une séquence par paiement      #
+    #####################################################
 		
-#:21:	Référence de l'opération		
-c.writerow([":21:""Référence de l'opération"])
-#:23E:	Instruction banque donneur d'ordre		
-c.writerow([":23E:""Instruction banque donneur d'ordre"])
-#:32B:	Devise sur 3 char et montant sur 12 numériques plus une virgule et deux décimales	
-c.writerow([":32B:"'cur_code''amount'])
-#:50HB:	Compte du donneur d'ordre / virement simple		
-#Variable 50HB
-c.writerow([":50H:"'acc_debit'])
-#:57A:	Code BIC banque du bénéficiaire
-c.writerow([":57A:""Code bic"])
-#:57D:	Nom de la banque du bénéficiare - Utilise si 59 <> code IBAN 	
-c.writerow([":57D:""Nom de la banque du bénéficiaire"])
-#:59:	Numéro de compte banque du bénéficiaire - Débute obligatoirement par un /	+	Nom et adresse du bénéficiaire Maximum 4 lignes de 35 charactères chacune 	
+    #:21:	Référence de l'opération		
+    c.writerow([":21:""Référence de l'opération"])
+    #:23E:	Instruction banque donneur d'ordre		
+    c.writerow([":23E:""Instruction banque donneur d'ordre"])
+    #:32B:	Devise sur 3 char et montant sur 12 numériques plus une virgule et deux décimales	
+    c.writerow([":32B:"'cur_code''amount'])
+    #:50HB:	Compte du donneur d'ordre / virement simple		
+    #Variable 50HB
+    c.writerow([":50H:"'acc_debit'])
+    #:57A:	Code BIC banque du bénéficiaire
+    c.writerow([":57A:""Code bic"])
+    #:57D:	Nom de la banque du bénéficiare - Utilise si 59 <> code IBAN 	
+    c.writerow([":57D:""Nom de la banque du bénéficiaire"])
+    #:59:	Numéro de compte banque du bénéficiaire - Débute obligatoirement par un /	+	Nom et adresse du bénéficiaire Maximum 4 lignes de 35 charactères chacune 	
 #Variable 59 et 591
-c.writerow([":59:/"'acc_number'])
-c.writerow(['benf_name'])
-c.writerow(['benf_address_continue'])
-c.writerow(['benf_address_place'])
-#:70:	Libellé de l'opération Maximum 4 lignes de 35 charactères chacune 	
-#Variable 70 et 701
-#on vérifie si com1 et plus long que la longueur autorisée - si Oui on crée la seconde ligne
-if pay['communication']:
-            if len(pay['communication'])>=36:
-                c.writerow([":70:"'comm_1'])
-                c.writerow(['comm_2'])
-            else:
-                c.writerow([":70:"'comm_1'])
-            if pay['communication2']:
-                if len(pay['communication2'])<>0:
-                    if pay['communication2']:
-                        if len(pay['communication2'])>=36:
-                            c.writerow(['comm_3'])
-                            c.writerow(['comm_4'])
-                        else:
-                            c.writerow(['comm_3'])
+    c.writerow([":59:/"'acc_number'])
+    c.writerow(['benf_name'])
+    c.writerow(['benf_address_continue'])
+    c.writerow(['benf_address_place'])
+    #:70:	Libellé de l'opération Maximum 4 lignes de 35 charactères chacune 	
+    #Variable 70 et 701
+    #on vérifie si com1 et plus long que la longueur autorisée - si Oui on crée la seconde ligne
+    if pay['communication']:
+        if len(pay['communication'])>=36:
+            c.writerow([":70:"'comm_1'])
+            c.writerow(['comm_2'])
+        else:
+            c.writerow([":70:"'comm_1'])
+        if pay['communication2']:
+            if len(pay['communication2'])<>0:
+                if pay['communication2']:
+                    if len(pay['communication2'])>=36:
+                        c.writerow(['comm_3'])
+                        c.writerow(['comm_4'])
+                    else:
+                        c.writerow(['comm_3'])
 
 
 
-#:77B:	Informations IBLC Obligatoire pour un versement > 8700 € (conversion de 350000 Luf)	
-c.writerow([":77B:""Information IBLC"])
-#:71A:	FRAIS - Obligatoire	
-c.writerow([":71A:"'charge_code'])
+    #:77B:	Informations IBLC Obligatoire pour un versement > 8700 € (conversion de 350000 Luf)	
+    c.writerow([":77B:""Information IBLC"])
+    #:71A:	FRAIS - Obligatoire	
+    c.writerow([":71A:"'charge_code'])
 
 
-#####################################################
-#           Séquence C  - Fin de fichier            #
-#####################################################
+    #####################################################
+    #           Séquence C  - Fin de fichier            #
+    #####################################################
 
-#:19A:	Nombre de paiement - Obligatoire	
-c.writerow([":19A:""Nombre de paiement"])
-#:19:	Montant total toutes devises confondues
-c.writerow([":19:""Montant total des opérations"])
+    #:19A:	Nombre de paiement - Obligatoire	
+    c.writerow([":19A:""Nombre de paiement"])
+    #:19:	Montant total toutes devises confondues
+    c.writerow([":19:""Montant total des opérations"])
 
-#####################################################
-#           Fin de création du fichier LUP          #
-#####################################################
+    #####################################################
+    #           Fin de création du fichier LUP          #
+    #####################################################
 
-try:
-    pay_order = pay_header + pay_order+ pay_trailer
-except Exception,e :
-    log= log +'\n'+ str(e) + 'CORRUPTED FILE !\n'
-    raise
-log.add("Successfully Exported\n--\nSummary:\n\nTotal amount paid : %.2f \nTotal Number of Payments : %d \n-- " %(total,seq))
+    try:
+        pay_order = pay_header + pay_order+ pay_trailer
+    except Exception,e :
+        log= log +'\n'+ str(e) + 'CORRUPTED FILE !\n'
+        raise
+    log.add("Successfully Exported\n--\nSummary:\n\nTotal amount paid : %.2f \nTotal Number of Payments : %d \n-- " %(total,seq))
 
-pool.get('payment.order').set_done(cr,uid,payment.id,context)
-return {'note':log(), 'reference': payment.id, 'pay': base64.encodestring(pay_order), 'state':'succeeded'}
+    pool.get('payment.order').set_done(cr,uid,payment.id,context)
+    return {'note':log(), 'reference': payment.id, 'pay': base64.encodestring(pay_order), 'state':'succeeded'}
 
 def float2str(lst):
     return str(lst).rjust(16).replace('.','')
