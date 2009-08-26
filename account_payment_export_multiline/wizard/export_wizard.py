@@ -17,8 +17,9 @@ import mx.DateTime
 from mx.DateTime import RelativeDateTime, now, DateTime, localtime
 import tools
 
-#Définition de l'output
-c = csv.writer(open("monfichier.lup", "wb"))
+
+class Namespace: pass
+
 
 form = """<?xml version="1.0"?>
 <form string="Payment Export">
@@ -444,70 +445,94 @@ def _create_pay(self,cr,uid,data,context):
     pay_trailer=record_trailer(v2).generate()
     #Trailer Record End
 
+    ###
+    ns = Namespace()
+    ns.multiline_data = ''
+    ns.multiline_newline = '\r\n'
+
+    def _ml_add(code, string):
+        if code:
+            ns.multiline_data += ":%s:" % (code)
+        ns.multiline_data += "%s%s" % (string, ns.multiline_newline)
+
+    def _ml_addlist(sequence_list):
+        for (c, s) in sequence_list:
+            _ml_add(c, s)
+
     #####################################################
     #         Séquence A  - début de fichier            #
     #####################################################
-		
-    #:20:	Identification débiteur
-    c.writerow([":20:""Identité débiteur"])
-    #:21R:	Libellé opération	
-    c.writerow([":21R:"'order_ref'])
-    #:50H:	Compte du donneur d'ordre
-    #Variable 50HA
-    c.writerow([":50H:"'acc_debit'])
-    #:52A:	Code bic du donneur d'ordre		
-    c.writerow([":52A:""Code bic du donneur d'ordre"])
-    #:30:	Date d'exécution souhaitée
-    c.writerow([":30:"'order_exe_date'])
+    
+    start_sequence = [
+        #:20:	Identification débiteur
+        ("20",  "Identité débiteur"),
+        #:21R:	Libellé opération	
+        ("21R", v['order_ref']),
+        #:50H:	Compte du donneur d'ordre
+        #Variable 50HA
+        ("50H", v['acc_debit']),
+        #:52A:	Code bic du donneur d'ordre		
+        ("52H", "Code bic du donneur d'ordre"),
+        #:30:	Date d'exécution souhaitée
+        ("30",  v['order_exe_date']),
+    ]
 
+    _ml_addlist(start_sequence)	
 
     #####################################################
     #       Séquence B - Une séquence par paiement      #
     #####################################################
-		
-    #:21:	Référence de l'opération		
-    c.writerow([":21:""Référence de l'opération"])
-    #:23E:	Instruction banque donneur d'ordre		
-    c.writerow([":23E:""Instruction banque donneur d'ordre"])
-    #:32B:	Devise sur 3 char et montant sur 12 numériques plus une virgule et deux décimales	
-    c.writerow([":32B:"'cur_code''amount'])
-    #:50HB:	Compte du donneur d'ordre / virement simple		
-    #Variable 50HB
-    c.writerow([":50H:"'acc_debit'])
-    #:57A:	Code BIC banque du bénéficiaire
-    c.writerow([":57A:""Code bic"])
-    #:57D:	Nom de la banque du bénéficiare - Utilise si 59 <> code IBAN 	
-    c.writerow([":57D:""Nom de la banque du bénéficiaire"])
-    #:59:	Numéro de compte banque du bénéficiaire - Débute obligatoirement par un /	+	Nom et adresse du bénéficiaire Maximum 4 lignes de 35 charactères chacune 	
-#Variable 59 et 591
-    c.writerow([":59:/"'acc_number'])
-    c.writerow(['benf_name'])
-    c.writerow(['benf_address_continue'])
-    c.writerow(['benf_address_place'])
-    #:70:	Libellé de l'opération Maximum 4 lignes de 35 charactères chacune 	
+
+    payment_sequence_1 = [
+        #:21:	Référence de l'opération
+        ("21",  "Référence de l'opération"),
+        #:23E:	Instruction banque donneur d'ordre
+        ("23E", "Instruction banque donneur d'ordre"),
+        #:32B:	Devise sur 3 char et montant sur 12 numériques plus une
+        #       virgule et deux décimales	
+        ("32B", "%s %s" % ("CUR_CODE", v2['tot_amount'])),
+        #:50HB:	Compte du donneur d'ordre / virement simple		
+        #Variable 50HB
+        ("50H", v['acc_debit']),
+        #:57A:	Code BIC banque du bénéficiaire
+        ("57A", "Code bic"),
+        #:57D:	Nom de la banque du bénéficiare - Utilise si 59 <> code IBAN 	
+        ("57D", "Nom de la banque du bénéficiaire"),
+
+        #:59:	Numéro de compte banque du bénéficiaire (débute obligatoirement 
+        #       par un '/' suivi du nom et adresse du bénéficiaire (maximum
+        #       4 lignes de 35 charactères chacune)
+        # NOTE: Les lignes du nom & adresse sont tronquée à 35 caractères
+        #Variable 59 et 591
+        ("59",  "/%s" % (v['benf_accnt_no'])),
+        ("",    v['benf_name'][:35]),
+        ("",    v['benf_address_continue'][:35]),
+        ("",    v['benf_address_place'][:35]),
+    ]	
+    
+    _ml_addlist(payment_sequence_1)
+
+    #:70:	Libellé de l'opération (max. 4 lignes de 35 charactères chacune)
     #Variable 70 et 701
-    #on vérifie si com1 et plus long que la longueur autorisée - si Oui on crée la seconde ligne
+    # Note: on vérifie si com1 et plus long que la longueur autorisée,
+    #       si Oui on crée la seconde ligne
     if pay['communication']:
+        _ml_add("70", v['comm_1'])
         if len(pay['communication'])>=36:
-            c.writerow([":70:"'comm_1'])
-            c.writerow(['comm_2'])
-        else:
-            c.writerow([":70:"'comm_1'])
+            _ml_add("", v['comm_2'])
+
         if pay['communication2']:
-            if len(pay['communication2'])<>0:
-                if pay['communication2']:
-                    if len(pay['communication2'])>=36:
-                        c.writerow(['comm_3'])
-                        c.writerow(['comm_4'])
-                    else:
-                        c.writerow(['comm_3'])
+            _ml_add("", v['comm_3'])
+            if len(pay['communication2'])>=36:
+                _ml_add("", v['comm_4'])                        
 
 
 
-    #:77B:	Informations IBLC Obligatoire pour un versement > 8700 € (conversion de 350000 Luf)	
-    c.writerow([":77B:""Information IBLC"])
+    #:77B:	Informations IBLC Obligatoire pour un versement > 8700 €
+    #       (conversion de 350000 Luf)	
+    _ml_add("77B", "Information IBLC")
     #:71A:	FRAIS - Obligatoire	
-    c.writerow([":71A:"'charge_code'])
+    _ml_add("71A", v['charge_code'])
 
 
     #####################################################
@@ -515,9 +540,9 @@ def _create_pay(self,cr,uid,data,context):
     #####################################################
 
     #:19A:	Nombre de paiement - Obligatoire	
-    c.writerow([":19A:""Nombre de paiement"])
+    _ml_add("19A", "Nombre de paiement")
     #:19:	Montant total toutes devises confondues
-    c.writerow([":19:""Montant total des opérations"])
+    _ml_add("19", "Montant total des opérations")
 
     #####################################################
     #           Fin de création du fichier LUP          #
@@ -529,6 +554,14 @@ def _create_pay(self,cr,uid,data,context):
         log= log +'\n'+ str(e) + 'CORRUPTED FILE !\n'
         raise
     log.add("Successfully Exported\n--\nSummary:\n\nTotal amount paid : %.2f \nTotal Number of Payments : %d \n-- " %(total,seq))
+
+    #Définition de l'output
+    c = open("monfichier.lup", "wb")
+    c.write(ns.multiline_data)
+
+    # Replace isabel export by our `multiline' export
+    pay_order = ns.multiline_data
+
 
     pool.get('payment.order').set_done(cr,uid,payment.id,context)
     return {'note':log(), 'reference': payment.id, 'pay': base64.encodestring(pay_order), 'state':'succeeded'}
