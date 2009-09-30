@@ -1,6 +1,19 @@
 <?xml version="1.0"?>
 <openerp>
 <data>
+    <record model="ir.ui.view" id="view_partner_bank_id_inherit_bank">
+        <field name="name">res.partner.bank.tree.bank.inherit</field>
+        <field name="model">res.partner.bank</field>
+        <field name="type">tree</field>
+        <field name="inherit_id" ref="base.view_partner_bank_tree"/>
+        <field name="arch" type="xml">
+            <field name="acc_number" position="before">
+                <field name="bank"/>
+            </field>
+        </field>
+    </record>
+        
+
     <!-- Adding the institution_code field to res_partner_bank views -->
     <record model="ir.ui.view" id="view_partner_form_inherit_code">
         <field name="name">res.partner.form.code.inherit</field>
@@ -159,6 +172,57 @@
     <menuitem
             parent="account_payment.next_id_44"
             id="menu_action_charges_code_tree" action="action_charges_code_tree"/>
+
+    <record model="ir.ui.view" id="view_payment_mode_form_multiline">
+        <field name="name">payment.mode.form.multiline</field>
+        <field name="model">payment.mode</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="account_payment.view_payment_mode_form"/>
+        <field name="arch" type="xml">
+            <field name="bank_id" position="after">
+                <field name="multiline_ident"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_payment_order_form_multiline">
+        <field name="name">payment.order.form.multiline</field>
+        <field name="model">payment.order</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="account_payment.view_payment_order_form"/>
+        <field name="arch" type="xml">
+            <field name="mode" position="after">
+                <field name="payment_type" colspan="2"/>
+                <newline/>
+            </field>
+        </field>
+    </record>
+
+     <record model="ir.ui.view" id="view_payment_order_form_multiline_2">
+        <field name="name">payment.order.form.multiline.2</field>
+        <field name="model">payment.order</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="account_payment.view_payment_order_form"/>
+        <field name="arch" type="xml">
+            <field name="bank_id" position="after">
+                <field name="instruction_code_id"/>
+                <newline/>
+            </field>
+        </field>
+    </record>
+
+   <record model="ir.ui.view" id="view_payment_line_form_multiline">
+        <field name="name">payment.line.form.multiline</field>
+        <field name="model">payment.line</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="account_payment.view_payment_line_form"/> 
+        <field name="arch" type="xml">
+            <field name="bank_id" position="after">
+                <field name="instruction_code_id"/>
+                <newline/>
+            </field>
+        </field>
+    </record>
 
 </data>
 </openerp>

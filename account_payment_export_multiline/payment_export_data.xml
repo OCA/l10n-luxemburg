@@ -165,5 +165,25 @@ bank branch</field>
   </record>
 
 
+  <record model="payment.instruction.code" id="instruct_code_INTC">
+    <field name="name">Intergroup payment</field>
+    <field name="code">INTC</field>
+  </record>
+
+  <record model="payment.instruction.code" id="instruct_code_CHQB">
+    <field name="name">Check payment</field>
+    <field name="code">CHQB</field>
+  </record>
+
+  <record model="payment.instruction.code" id="instruct_code_OTHER_ADEB">
+    <field name="name">Notice of debit</field>
+    <field name="code">OTHER/ADEB</field>
+  </record>
+
+  <record model="payment.instruction.code" id="instruct_code_OTHER_SALA">
+    <field name="name">Wage payment</field>
+    <field name="code">OTHER/SALA</field>
+  </record>
+
 </data>
 </openerp>

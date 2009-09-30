@@ -1,4 +1,4 @@
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 #####################################################
 #          Module Wizard paiement Multiline         #
 #                 AJM Technologies SA               #
@@ -16,6 +16,7 @@ import time
 import mx.DateTime
 from mx.DateTime import RelativeDateTime, now, DateTime, localtime
 import tools
+from tools import ustr
 
 
 class Namespace: pass
@@ -100,7 +101,9 @@ class record:
         go=True
         for field in self.fields :
             if field[0]=='section3':
-                if self.global_values['section3']=='0':
+                if 'section3' not in self.global_values:
+                    go=False
+                elif self.global_values['section3']=='0':
                     go=False
                 continue
             if field[0]=='section6':
@@ -145,7 +148,7 @@ class record_payline(record):
             ('seg_num2',1),('sequence',4),('sub_div1',2),('order_exe_date',6),
             ('order_ref',16),('cur_code',3),('padding',1),('code_pay',1),('amt_pay',15),('padding',1),
             ('cur_code_debit_1',3),('padding',6),
-            ('acc_debit',12),('padding',22),('indicate_date',1),('padding',34),('flag1',1),
+            ('acc_debit',20),('padding',22),('indicate_date',1),('padding',34),('flag1',1),
 
             ('section3',1),
 
@@ -192,382 +195,283 @@ class Log:
         return self.content
 
 def _create_pay(self,cr,uid,data,context):
-    v={}
-    v1={}
-    v2={}
-    log=''
     log=Log()
-    blank_space=' '
 
-    seq=0
-    total=0
-    pay_order=''
     pool = pooler.get_pool(cr.dbname)
-    currency_obj=pool.get('res.currency')
     payment=pool.get('payment.order').browse(cr, uid, data['id'],context)
 
-    #Header Record Start
-    v1['uid'] = str(uid)
-    v1['creation_date']= time.strftime('%d%m%y')#2-7
-    v1['app_code']='51'#23-24
-    v1['reg_number']=payment.reference#25-34
-#    v1['id_sender']=payment.user_id.address_id and payment.user_id.address_id.partner_id.vat or '' #add vat number of current user's partner 35-44
-    v1['id_order_customer']=payment.mode.bank_id.partner_id.vat or ''#vat number46-56
-    v1['ver_code']='3'#58
-    v1['bilateral']='' #59-70
-    v1['totalisation_code ']='0'
-    v1['file_status']=''#57
-    v1['ver_subcode']='1'#76
-
-    bank_obj=pool.get('res.partner.bank')
-    #look in the mode for insititute_code or protocol number
-    cr.execute("SELECT m.bank_id from payment_order o inner join payment_mode m on o.mode=m.id and o.id in (%s) group by bank_id;"% (data['id']))
-    bank_id=cr.fetchone()
-
-    if bank_id:
-        bank = bank_obj.browse(cr, uid, bank_id[0], context)
-        if not bank:
-            return {'note':'Please Provide Bank for the Ordering Customer.', 'reference': payment.id, 'pay': False, 'state':'failed' }
-        v1['institution_code']=bank.institution_code#20-22
-        if not v1['institution_code']:
-            return {'note':'Please provide Institution Code number for the ordering customer.', 'reference': payment.id, 'pay': False, 'state':'failed' }
-    pay_header =record_header(v1).generate()
-    #Header Record End
+#        if not bank:
+#            return {'note':'Please Provide Bank for the Ordering Customer.', 'reference': payment.id, 'pay': False, 'state':'failed' }
 
     pay_line_obj=pool.get('payment.line')
     pay_line_id = pay_line_obj.search(cr, uid, [('order_id','=',data['id'])])
 
-    if not payment.line_ids:
-         return {'note':'Wizard can not generate export file: there are no payment lines.', 'reference': payment.id, 'pay': False, 'state':'failed' }
+#    if not payment.line_ids:
+#         return {'note':'Wizard can not generate export file: there are no payment lines.', 'reference': payment.id, 'pay': False, 'state':'failed' }
 
-    pay_line =pay_line_obj.read(cr, uid, pay_line_id,['date','company_currency','currency','partner_id','amount','bank_id','move_line_id','name','info_owner','info_partner','communication','communication2'])
-
-    for pay in pay_line:
-
-        #sub1 Start
-        seq=seq+1
-        v['sequence'] = str(seq).rjust(4).replace(' ','0')#2-5
-        v['sub_div1']='01'#6-7
-
-        if pay['date']:
-            v['order_exe_date']=time.strftime('%d%m%y',time.strptime(pay['date'],"%Y-%m-%d"))
-        else:
-            v['order_exe_date']=''#8-13
-
-        v['order_ref']=pay['name']#14-29
-        if pay['amount']==0.0:
-            return {'note':'Payment amount in payment lines should not be zero.', 'reference': payment.id, 'pay': False, 'state':'failed' }
-        v['amt_pay']=float2str('%.2f'%pay['amount'])#35-49
-
-        default_cur=''
-        if pay['company_currency']:
-            default_cur=currency_obj.browse(cr,uid,pay['company_currency'][0]).code
-
-        v['cur_code']=default_cur#30-32
-
-        cur_code=''
-        if pay['currency']:
-            cur_code=currency_obj.browse(cr,uid,pay['currency'][0]).code
-        if default_cur != pay['currency'][1]:
-            v['code_pay']='D'#34
-            v['cur_code_debit_1']=cur_code# 51-53
-            v['cur_code_debit']=cur_code#sub 10 50-52
-        else:
-            v['code_pay']='C'
-            v['cur_code_debit_1']=default_cur
-            v['cur_code_debit']=default_cur
-
-        total=total+pay['amount']
-
-        v['acc_debit'] = bank.acc_number # 60-71
-        if bank.state == 'iban':
-            v['acc_debit'] = pool.get('res.partner.bank').get_bban_from_iban(cr, uid, [bank.id])[bank.id]
-
-        if not v['acc_debit']:
-            return {'note':'Please Provide Bank Account Number for the Ordering Customer.', 'reference': payment.id, 'pay': False, 'state':'failed' }
-        v['indicate_date']=''
-        #sub1 End
-        # subdivision3 if its a foreign payment taking place.
-        cust_country=benf_country=section3=False
-        order_cust_address_obj=payment.mode.bank_id.partner_id
-
-        if order_cust_address_obj.address:
-            for ads in order_cust_address_obj.address:
-                if ads.type=='default':
-                        cust_country=ads.country_id and ads.country_id.code or False
-                        if cust_country:
-                            order_country_name=ads.country_id.name
-                            order_state=ads.state_id and ads.state_id.name or ''
-                            if 'zip_id' in ads:
-                                obj_zip_city= ads.zip_id and pool.get('res.partner.zip').browse(cr,uid,ads.zip_id.id) or ''
-                                order_zip=obj_zip_city and obj_zip_city.name or ''
-                                order_city=obj_zip_city and obj_zip_city.city or  ''
-
-                            else:
-                                order_zip=ads.zip and ads.zip or ''
-                                order_city= ads.city and ads.city or  ''
-
-        v['benf_address']=v['benf_name']=v['benf_address_place']=''
-
-        if pay['partner_id']:
-            part_obj=pool.get('res.partner').browse(cr,uid,pay['partner_id'][0])
-            v['benf_name']=part_obj.name # 42-76 sub div 06
-            if part_obj.address:
-                for ads in part_obj.address:
-                    if ads.type=='default':
-                        adrs=ads.street or ''
-                        adrs +=(ads.street2 or '')
-                        v['benf_address']=adrs #sub div 06 77-111
-                        benf_country=ads.country_id and ads.country_id.code or False
-                        if benf_country:
-                            benf_country_name=ads.country_id.name
-                            v['benf_country_code']=ads.country_id.code#72-73 sub div 10
-                            benf_state=ads.state_id and ads.state_id.name or ''
-                            if 'zip_id' in ads:
-                                obj_zip_city= ads.zip_id and pool.get('res.partner.zip').browse(cr,uid,ads.zip_id.id) or ''
-                                benf_zip=obj_zip_city and obj_zip_city.name or ''
-                                benf_city=obj_zip_city and obj_zip_city.city or  ''
-                            else:
-                                benf_zip=ads.zip and ads.zip or ''
-                                benf_city= ads.city and ads.city or  ''
-                            ct_st_ctry=str(benf_city) + ' ' + str(benf_state) + ' ' + str(benf_country_name)
-                            v['benf_address_place']="*" + str(benf_country).rjust(3) + blank_space + str(benf_zip).rjust(6) + str(ct_st_ctry).rjust(24)#sub div 07 43-77
-
-                        else:
-                            return {'note':'Please Provide Country in Payment Line for \nPartner:'+str(pay['partner_id'][1])+' Ref:'+str(pay['name']), 'reference': payment.id, 'pay': False, 'state':'failed' }
-                    break
-
-        v['section3']='0'
-        if cust_country and benf_country:
-            if cust_country!=benf_country:
-                # Sub division3- Start
-                v['seg_num6']='1'
-                v['section3']='1'
-                v['sequence4']=str(seq).rjust(4).replace(' ','0')#2-5
-                v['sub_div3']='03'#6-7
-                v['order_cust_address']=''#8-42
-                ct_st_ctry=str(order_city) + ' ' + str(order_state) + ' ' + str(order_country_name)
-                v['order_cust_address']="*" + str(cust_country).rjust(3) + blank_space + str(order_zip).rjust(6) + str(ct_st_ctry).rjust(24)
-                v['order_cust_bic']=''#53-63
-                if payment.mode.bank_id.bank:
-                   v['order_cust_bic']=payment.mode.bank_id.bank.bic or ''
-                section3=True
-                # Sub division3- End
-
-
-
-        # if section 3 exists ,section5 comes into existance.
-        if section3:
-            if pay['bank_id']:
-                #sub division5 -start
-                v['sequence5']=str(seq).rjust(4).replace(' ','0')#2-5
-                v['sub_div5']='05'#6-7
-                v['seg_num7']='1'
-                bank_partner = bank_obj.read(cr, uid, pay['bank_id'][0])
-                v['benf_bank_name']=v['benf_bank_street']= v['benf_bank_address']=''
-                if bank_partner['bank']:
-                    bank_main=pool.get('res.bank').read(cr, uid, bank_partner['bank'][0])
-                    v['benf_bank_name']=bank_main['name']#8-42
-                    v['benf_bank_street']=(bank_main['street'] or '') + blank_space + (bank_main['street2'] or '') # 43-77
-                    v['benf_bank_address']=''#78-112
-                    ctry_code=''
-                    ct_st_ctry=str(bank_main['city'] or '') + ' ' + str(bank_main['state'][1]) + ' ' + str(bank_main['country'][1])
-                    if bank_main['country']:
-                        code_country=pool.get('res.country').read(cr,uid,bank_main['country'][0],['code'])#get bank address of counrty for pos 113-114 sub06
-                        ctry_code=v['bank_country_code']=code_country['code'] # 113-114 in sub div6
-                    v['benf_bank_address']="*" + str(ctry_code).rjust(3) + blank_space + str(bank_main['zip']).rjust(6) + str(ct_st_ctry).rjust(24)
-
-               #sub division5 -End
-
-        #sub6 start
-        v['sequence1']=str(seq).rjust(4).replace(' ','0')#2-5
-        v['sub_div6']='06'#6-7
-
-        if pay['bank_id']:
-            bank1 = bank_obj.read(cr, uid, pay['bank_id'][0])#searching pay line bank account number
-            v['benf_accnt_no']=bank1['acc_number'] # 8-41
-            if bank1['state']=='bank':
-                v['type_accnt']='2' # 112
-            elif bank1['state']=='pay_iban':
-                v['type_accnt']='1'
-            else:
-                v['type_accnt']=''
-        else:
-            return {'note':'Please Provide Bank Account in Payment Line for \nPartner:'+str(pay['partner_id'][1])+' Ref:'+str(pay['name']), 'reference': payment.id, 'pay': False, 'state':'failed' }
-
-        part_bank_obj=pool.get('res.bank')
-        v['bank_country_code']=''
-
-        if bank1['bank']:
-            bank2 = part_bank_obj.read(cr, uid, bank1['bank'][0])
-            if bank2['country']:
-                code_country=pool.get('res.country').read(cr,uid,bank2['country'][0],['code'])
-                v['bank_country_code']=code_country['code'] # 113-114
-
-        #sub6 End
-
-        #sub7 and sub8 -start
-        v['sequence3']=str(seq).rjust(4).replace(' ','0')#2-5 sub7
-        v['sub_div07']='07'#6-7 sub7
-        v['sequence6']=str(seq).rjust(4).replace(' ','0')#2-5 sub8
-        v['sub_div8']='08'#6-7 sub8
-        v['benf_address_continue']=''#8-42 sub7
-        v['comm_1']=v['comm_2']=v['comm_3']=v['comm_4']=''
-        if pay['communication']:
-            if len(pay['communication'])>=36:
-                v['comm_1']=pay['communication'][:35] # 88-122 sub7
-                v['comm_2']=pay['communication'][35:] # 8-42 sub8
-            else:
-                v['comm_1']=pay['communication']# 88-122 sub7
-        if pay['communication2']:
-            if len(pay['communication2'])>=36:
-                v['comm_3']=pay['communication2'][:35] # 43-77 sub8
-                v['comm_4']=pay['communication2'][35:] # 78-112 sub8
-            else:
-                v['comm_3']=pay['communication2'] # 43-77 sub8
-        #sub7 and sub 8 -End
-
-        #seg10 start
-        v['sequence2']=str(seq).rjust(4).replace(' ','0')#2-5
-        v['sub_div10']='10'#6-7
-        v['order_msg']=''#msg from order customer to order cutomer bank 8-42
-        v['method_pay']=''#43-45
-        if data['form']['payment_method']:
-            v['method_pay']=pool.get('payment.method').browse(cr, uid,data['form']['payment_method']).name
-        v['charge_code']=pool.get('charges.code').browse(cr, uid,data['form']['charges_code']).name #46-48
-        v['debit_cost']='000000000000'#field will only fill when ordering customer account debitted with charges if not field will contain blank or zero
-        #sub10 End
-        pay_order =pay_order+record_payline(v).generate()
-
-    #Trailer Record Start
-    v2['tot_record']=v2['tot_pay_order']=str(seq)
-    v2['tot_amount']=float2str('%.2f'%total)
-    pay_trailer=record_trailer(v2).generate()
-    #Trailer Record End
-
-    ###
+    ### AJM modified code ###
     ns = Namespace()
-    ns.multiline_data = ''
-    ns.multiline_newline = '\r\n'
+    ns.multiline_data = u''
+    ns.multiline_newline = u'\r\n'
+
+    def _ml_string(code, string):
+        s = u''
+        if code:
+            s += u":%s:" % (code)
+        s += u"%s" % (string)
+        return s
 
     def _ml_add(code, string):
-        if code:
-            ns.multiline_data += ":%s:" % (code)
-        ns.multiline_data += "%s%s" % (string, ns.multiline_newline)
+        ns.multiline_data += _ml_string(code, string)
+        ns.multiline_data += u"%s" % (ns.multiline_newline)
 
-    def _ml_addlist(sequence_list):
-        for (c, s) in sequence_list:
-            _ml_add(c, s)
+    def _ml_addlist(sequence_list, payment, payment_line=False, mode='multi'):
+        for (c, l, m, s) in sequence_list:
+            # Condition check, if False: line will not be added to datas
+            if isinstance(m, (unicode,str)):
+                if m and m != mode:
+                    continue
+            else:
+                if not m(payment, payment_line, mode):
+                    continue
+            # Execute function is it's one
+            if callable(s):
+                s = s(payment, payment_line)
+            # Convert to list
+            if not isinstance(s, list):
+                s = [ s ]
+            for s_idx, s_val in enumerate(s):
+                s_val.encode('utf-8')
+                # check length limit
+                if l:
+                    s_val = s_val[:l]
+                # add to datas
+                if s_idx == 0:
+                    _ml_add(c, s_val)
+                else:
+                    _ml_add('', s_val)
+
+    def _ml_formatamount(amount, digit=12):
+        # TODO: ... implement coma management
+        s = ('%.2f' % (amount)).strip().replace(' ','')
+        t = s.split('.')
+        if len(t[0]) > digit:
+            raise "AMOUT TOO BIG"
+        return '%s,%s' % (t[0][:12], t[1][:2])
+
+    #####################################################
+    #         Séquence 0  - initialisation              #
+    #####################################################
+
+    # payment
+    payment=pool.get('payment.order').browse(cr, uid, data['id'],context)
+
+    # payment lines
+    payment_line_obj=pool.get('payment.line')
+    pay_lines = payment_line_obj.read(cr, uid, pay_line_id,
+                ['date','company_currency','currency',
+                 'partner_id','amount','amount_currency',
+                 'bank_id','move_line_id',
+                 'name','info_owner','info_partner',
+                 'communication','communication2',
+                 'instruction_code_id']
+    )
+    # partner.bank
+    partner_bank_obj = pool.get('res.partner.bank')
+    # instruction.code
+    paym_inst_code = pool.get('payment.instruction.code')
+    # charges codes
+    charges_code_obj = pool.get('charges.code')
+
+    # payment type
+    # :multi = one debit per line
+    # :group = one debit for all lines
+    payment_type = payment.payment_type
+    if len(pay_lines) == 1 and payment_type == 'group':
+        # Only one line, so no need to group payments
+        payment_type = 'multi'
+
+    print("Payment Type: %s" % (payment_type))
+
+    #####################################################
+    #         Séquence 1  - functions                   #
+    #####################################################
+
+    def browse_one(pool, id):
+        if isinstance(id, tuple):
+            id = id[0]
+        return pool.browse(cr, uid, [id])[0]
+
+    def _get_order_date_value(payment_order):
+        date = ''
+        if payment_order.date_prefered == 'fixed':
+            date = payment_order.date_planned
+        else:
+            date = payment_order.date_created
+        if date:
+            return time.strftime('%y%m%d', time.strptime(date, '%Y-%m-%d'))
+        else:
+            return time.strftime('%y%m%d')
+
+    def _get_bank_bic(partner_bank_id):
+        # type = partner / beneficiary
+        bank_id = partner_bank_id.bank
+        if not bank_id:
+            raise "ERROR"
+        if not bank_id.bic:
+            raise "ERROR"
+        return bank_id.bic
+
+    def _get_bank_account(bank_id, with_owner_info=True):
+        data = ''
+        if bank_id.state == 'iban':
+            data += bank_id.iban.replace(' ','').upper()
+        else:
+            data += bank_id.acc_number[:34].upper()
+        if with_owner_info:
+            s_list = [
+                (bank_id.owner_name and bank_id.owner_name.strip() or bank_id.partner_id.name),
+                (bank_id.street and bank_id.street.strip() or ''),
+                (bank_id.country_id and bank_id.country_id.name or ''),
+                (bank_id.zip and bank_id.zip.strip() or ''),
+                (bank_id.city and bank_id.city or ''),
+                (bank_id.state_id and bank_id.state_id.name or ''),
+            ]
+            s_list = [ x for x in s_list if x ]
+            s = u' '.join(s_list)
+
+            t_list = []
+            while len(s) > 0:
+                t_list.append(s[:35])
+                s = s[35:]
+            if len(t_list) > 4:
+                t_list = t_list[:4]
+
+        return [ u"/" + data ] + t_list
+                        
+    def _get_account(pay):
+        return browse_one(partner_bank_obj, pay['bank_id'])
+
+    def _get_communication(pay):
+        s = (pay['communication'] or '')
+        s += (pay['communication2'] or '')
+        s_list = []
+        while len(s):
+            s_list.append(s[:35])
+            s = s[35:]
+        return s[:4]
 
     #####################################################
     #         Séquence A  - début de fichier            #
     #####################################################
-    
     start_sequence = [
-        #:20:	Identification débiteur
-        ("20",  "Identité débiteur"),
-        #:21R:	Libellé opération	
-        ("21R", v['order_ref']),
-        #:50H:	Compte du donneur d'ordre
-        #Variable 50HA
-        ("50H", v['acc_debit']),
-        #:52A:	Code bic du donneur d'ordre		
-        ("52H", "Code bic du donneur d'ordre"),
-        #:30:	Date d'exécution souhaitée
-        ("30",  v['order_exe_date']),
+        #:20: Identification débiteur
+        ("20",  16, '',
+                payment.mode.multiline_ident),
+        #:21R: Libellé opération si virement de type collectif
+        ("21R", 16, 'group',
+                payment.reference),
+        #:50H: Compte du donneur d'ordre
+        ("50H", 35, 'group',
+                lambda *a: _get_bank_account(payment.mode.bank_id)),
+        #:52A: Code bic du donneur d'ordre	
+        ("52A", 8,  '',
+                lambda *a: _get_bank_bic(payment.mode.bank_id)),
+        #:30: Date d'exécution souhaitée
+        ("30",  6, '',
+                lambda *a: _get_order_date_value(payment)),
     ]
-
-    _ml_addlist(start_sequence)	
+    _ml_addlist(start_sequence, payment, mode=payment_type)
 
     #####################################################
     #       Séquence B - Une séquence par paiement      #
     #####################################################
+    seq = 0
+    total = 0.0
+    for pay in pay_lines:
+        seq += 1
 
-    payment_sequence_1 = [
-        #:21:	Référence de l'opération
-        ("21",  "Référence de l'opération"),
-        #:23E:	Instruction banque donneur d'ordre
-        ("23E", "Instruction banque donneur d'ordre"),
-        #:32B:	Devise sur 3 char et montant sur 12 numériques plus une
-        #       virgule et deux décimales	
-        ("32B", "%s %s" % ("CUR_CODE", v2['tot_amount'])),
-        #:50HB:	Compte du donneur d'ordre / virement simple		
-        #Variable 50HB
-        ("50H", v['acc_debit']),
-        #:57A:	Code BIC banque du bénéficiaire
-        ("57A", "Code bic"),
-        #:57D:	Nom de la banque du bénéficiare - Utilise si 59 <> code IBAN 	
-        ("57D", "Nom de la banque du bénéficiaire"),
-
-        #:59:	Numéro de compte banque du bénéficiaire (débute obligatoirement 
-        #       par un '/' suivi du nom et adresse du bénéficiaire (maximum
-        #       4 lignes de 35 charactères chacune)
-        # NOTE: Les lignes du nom & adresse sont tronquée à 35 caractères
-        #Variable 59 et 591
-        ("59",  "/%s" % (v['benf_accnt_no'])),
-        ("",    v['benf_name'][:35]),
-        ("",    v['benf_address_continue'][:35]),
-        ("",    v['benf_address_place'][:35]),
-    ]	
-    
-    _ml_addlist(payment_sequence_1)
-
-    #:70:	Libellé de l'opération (max. 4 lignes de 35 charactères chacune)
-    #Variable 70 et 701
-    # Note: on vérifie si com1 et plus long que la longueur autorisée,
-    #       si Oui on crée la seconde ligne
-    if pay['communication']:
-        _ml_add("70", v['comm_1'])
-        if len(pay['communication'])>=36:
-            _ml_add("", v['comm_2'])
-
-        if pay['communication2']:
-            _ml_add("", v['comm_3'])
-            if len(pay['communication2'])>=36:
-                _ml_add("", v['comm_4'])                        
-
-
-
-    #:77B:	Informations IBLC Obligatoire pour un versement > 8700 €
-    #       (conversion de 350000 Luf)	
-    _ml_add("77B", "Information IBLC")
-    #:71A:	FRAIS - Obligatoire	
-    _ml_add("71A", v['charge_code'])
-
+        payment_sequence_B = [
+            #:21: Référence de l'opération (payment multiple)
+            ("21", 16,
+                    'multi',
+                    pay['name'] and (payment.reference+'-'+pay['name']) or payment.reference),
+            #:23E: Instruction banque donneur d'ordre
+            ("23E", 35,
+                    lambda *a: pay['instruction_code_id'] and True or False,
+                    lambda *a: browse_one(paym_inst_code, pay['instruction_code_id']).code),
+            #:32B: Devise et Montant en devis
+            ("32B", 15,
+                    '',
+                    "%s%s" % (pay['currency'][1], _ml_formatamount(pay['amount_currency']))),
+            #:50H: Compte du donneur d'ordre / virement simple
+            #      ou si veut un débit unique par opération.	
+            ("50H", 0,
+                    'multi',
+                    lambda paym, *a: _get_bank_account(paym.mode.bank_id)),
+            #:57A: Code BIC banque du bénéficiaire
+            ("57A", 15,
+                    lambda *a: _get_account(pay).state == 'iban',
+                    lambda *a: _get_bank_bic(_get_account(pay))),
+            #:57D: Nom de la banque du bénéficiare - si :59: <> code IBAN 	
+            ("57D", 0,
+                    lambda *a: _get_account(pay).state != 'iban',
+                "TODO: Nom de la banque du bénéficiaire"),
+            #:59: Numéro de compte banque du bénéficiaire 
+            ("59",  0,
+                    '',
+                    lambda *a: _get_bank_account(_get_account(pay))),
+            #:70: Libellé de l'opération
+            #     1ere ligne peut etre ref standard national: ***14x*** 
+            ("70",  0,
+                    '',
+                    lambda *a: _get_communication(pay)),
+            #:77B: Information IBLC
+            ("77B", 0,
+                    lambda *a: False, # TODO
+                    "TODO Information IFBL"),
+            #:71A: Mode facturation Frais
+            ("71A", 3,
+                    '',
+                    lambda *a: browse_one(charges_code_obj, data['form']['charges_code']).name),
+        ]
+        _ml_addlist(payment_sequence_B, payment, payment_line=pay, mode=payment_type)
+        total += pay['amount_currency']     
 
     #####################################################
     #           Séquence C  - Fin de fichier            #
     #####################################################
-
-    #:19A:	Nombre de paiement - Obligatoire	
-    _ml_add("19A", "Nombre de paiement")
-    #:19:	Montant total toutes devises confondues
-    _ml_add("19", "Montant total des opérations")
+    payment_sequence_C = [
+        #:19A: Nombre de paiement - Obligatoire	
+        ("19A", 5,
+                '',
+                unicode(seq)),
+        #:19: Montant total toutes devises confondues
+        ("19",  17,
+                '',
+                unicode(_ml_formatamount(total))),
+    ]
+    _ml_addlist(payment_sequence_C, payment, mode=payment_type)
 
     #####################################################
     #           Fin de création du fichier LUP          #
     #####################################################
-
     try:
-        pay_order = pay_header + pay_order+ pay_trailer
-    except Exception,e :
+        # Setup multiline data in place
+        pay_order = ns.multiline_data.encode('utf-8')
+        log.add("Successfully Exported\n--\nSummary:\n\nTotal amount paid : %.2f \nTotal Number of Payments : %d \n-- " %(total,seq))
+    except Exception, e:
+        print e
         log= log +'\n'+ str(e) + 'CORRUPTED FILE !\n'
-        raise
-    log.add("Successfully Exported\n--\nSummary:\n\nTotal amount paid : %.2f \nTotal Number of Payments : %d \n-- " %(total,seq))
-
-    #Définition de l'output
-    c = open("monfichier.lup", "wb")
-    c.write(ns.multiline_data)
-
-    # Replace isabel export by our `multiline' export
-    pay_order = ns.multiline_data
-
+        raise e
 
     pool.get('payment.order').set_done(cr,uid,payment.id,context)
-    return {'note':log(), 'reference': payment.id, 'pay': base64.encodestring(pay_order), 'state':'succeeded'}
-
-def float2str(lst):
-    return str(lst).rjust(16).replace('.','')
+    return {
+        'note':log(),
+        'reference': payment.id,
+        'pay': base64.encodestring(pay_order),
+        'state':'succeeded'
+    }
 
 def _log_create(self, cr, uid, data, context):
     pool = pooler.get_pool(cr.dbname)

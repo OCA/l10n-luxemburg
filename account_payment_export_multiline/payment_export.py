@@ -122,5 +122,52 @@ class charges_code(osv.osv):
     }
 
 charges_code()
+
+class payment_instruction_code(osv.osv):
+    _name = 'payment.instruction.code'
+
+    _columns = {
+        'name': fields.char('Name', size=64, required=True),
+        'code': fields.char('Code', size=34, required=True),
+    }
+payment_instruction_code()
+
+class payment_line_instruction_code(osv.osv):
+    _name = 'payment.line'
+    _inherit = 'payment.line'
+    
+    _columns = {
+        'instruction_code_id': fields.many2one('payment.instruction.code', 'Instruction Code'),
+    }
+payment_line_instruction_code()
+
+class payment_order_multiline(osv.osv):
+    _name = 'payment.order'
+    _inherit = 'payment.order'
+
+    _columns = {
+        'payment_type': fields.selection([('multi','Multiple'),('group','Grouped')], 'Payment Type', required=True, states={'done':[('readonly',True)]}),
+    }
+
+    _defaults = {
+        'payment_type': lambda *a: 'multi',
+    }
+payment_order_multiline()
+
+class payment_mode_multiline(osv.osv):
+    _name = 'payment.mode'
+    _inherit = 'payment.mode'
+
+    _columns = {
+        'multiline_ident': fields.char('Multiline Ident', size=16, help="Multiline identification matricule", required=True),
+    }
+
+    _default = {
+        'multiline_ident': lambda *a: '',
+    }
+payment_mode_multiline()
+
+
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 
