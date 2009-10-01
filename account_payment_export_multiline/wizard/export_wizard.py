@@ -1,9 +1,26 @@
 # -*- coding: utf-8 -*-
-#####################################################
-#          Module Wizard paiement Multiline         #
-#                 AJM Technologies SA               #
-#####################################################
-
+##############################################################################
+#
+#    OpenERP, Open Source Management Solution   
+#    Copyright (C) 2004-2008 Tiny SPRL (<http://tiny.be>). All Rights Reserved
+#    Copyright (C) 2009 AJM Technologies S.A.
+#                                   (<http://www.ajm.lu>). All Rights Reserved
+#    $Id$
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+##############################################################################
 
 #Chargement du module csv
 import csv
@@ -30,32 +47,42 @@ form = """<?xml version="1.0"?>
 
 fields = {
     'payment_method' : {
-        'string':'Payment Method',
-        'type':'many2one',
-        'relation':'payment.method',
+        'string': 'Payment Method',
+        'type': 'many2one',
+        'relation': 'payment.method',
     },
     'charges_code' : {
-        'string':'Charges Code',
-        'type':'many2one',
-        'relation':'charges.code',
-        'required':True,
+        'string': 'Charges Code',
+        'type': 'many2one',
+        'relation': 'charges.code',
+        'required': True,
     },
 }
 
 export_form = """<?xml version="1.0"?>
-<form string="Payment Export">
-   <field name="pay"/>
+<form string="Payment Export Multiline">
+   <field name="name" colspan="4"/>
+   <field name="pay" filename="name"/>
    <field name="note" colspan="4" nolabel="1"/>
    </form>"""
 
 export_fields = {
+    'name': {
+        'string': 'Name',
+        'type': 'char',
+        'size': '64',
+        'required': True
+    },
     'pay' : {
         'string':'Export File',
         'type':'binary',
         'required': False,
-        'readonly':True,
+        'readonly': True,
     },
-    'note' : {'string':'Log','type':'text'},
+    'note' : {
+        'string':'Log',
+        'type':'text'
+    },
 }
 
 def strip_accents(s):
@@ -77,22 +104,70 @@ class Log:
 def _create_pay(self,cr,uid,data,context):
     log=Log()
 
-    pool = pooler.get_pool(cr.dbname)
-    payment=pool.get('payment.order').browse(cr, uid, data['id'],context)
-
 #        if not bank:
 #            return {'note':'Please Provide Bank for the Ordering Customer.', 'reference': payment.id, 'pay': False, 'state':'failed' }
-
-    pay_line_obj=pool.get('payment.line')
-    pay_line_id = pay_line_obj.search(cr, uid, [('order_id','=',data['id'])])
 
 #    if not payment.line_ids:
 #         return {'note':'Wizard can not generate export file: there are no payment lines.', 'reference': payment.id, 'pay': False, 'state':'failed' }
 
-    ### AJM modified code ###
+    #####################################################
+    #         Séquence 0  - initialisation              #
+    #####################################################
     ns = Namespace()
     ns.multiline_data = u''
     ns.multiline_newline = u'\r\n'
+
+    pool = pooler.get_pool(cr.dbname)
+
+    # payment
+    payment=pool.get('payment.order').browse(cr, uid, data['id'],context)
+
+    # payment lines
+    payment_line_obj=pool.get('payment.line')
+    pay_line_ids = payment_line_obj.search(cr, uid, [('order_id','=',data['id'])])
+    pay_lines = payment_line_obj.read(cr, uid, pay_line_ids,
+                ['date','company_currency','currency',
+                 'partner_id','amount','amount_currency',
+                 'bank_id','move_line_id',
+                 'name','info_owner','info_partner',
+                 'communication','communication2',
+                 'instruction_code_id']
+    )
+    # partner.bank
+    partner_bank_obj = pool.get('res.partner.bank')
+    # instruction.code
+    paym_inst_code = pool.get('payment.instruction.code')
+    # charges codes
+    charges_code_obj = pool.get('charges.code')
+
+    # payment type
+    # :multi = one debit per line
+    # :group = one debit for all lines
+    payment_type = payment.payment_type
+    if len(pay_lines) == 1 and payment_type == 'group':
+        # Only one line, so no need to group payments
+        payment_type = 'multi'
+
+    #####################################################
+    #         Séquence 0  - utilities class / functions #
+    #####################################################
+
+    class MultilineDataException(Exception):
+        def __init__(self, error):
+            Exception.__init__(self, error)
+            self.note = error
+            self.reference = payment.id
+            self.pay = False
+            self.state = 'failed'
+
+        def get_return_dict(self):
+            return {
+                'name': 'ERREUR GENERATION FICHIER',
+                'note': self.note,
+                'reference': self.reference,
+                'pay': self.pay,
+                'state': self.state
+            }
 
     def _ml_string_split(string, limit):
         s_list = []
@@ -115,19 +190,35 @@ def _create_pay(self,cr,uid,data,context):
     def _ml_add(code, string):
         ns.multiline_data += _ml_string(code, string)
         ns.multiline_data += u"%s" % (ns.multiline_newline)
+    
+    def _ml_addlist_error_return(exception):
+        pass 
 
-    def _ml_addlist(sequence_list, payment, payment_line=False, mode='multi'):
-        for (c, l, m, s) in sequence_list:
+    def _ml_addlist(sequence_list, payment, payment_line=False,
+                    mode='multi',sequence=-1):
+        for (c, desc, l, m, s) in sequence_list:
             # Condition check, if False: line will not be added to datas
             if isinstance(m, (unicode,str)):
                 if m and m != mode:
                     continue
             else:
-                if not m(payment, payment_line, mode):
-                    continue
+                try:
+                    m_ret = m(payment, payment_line, mode)
+                    if not m_ret:
+                        continue
+                except MultilineDataException, e:
+                    e_line = sequence != -1 and ('Ligne %s:\n'%(sequence)) or ''
+                    e.note = '%s%s %s: %s' % (e_line,c,desc,e.note)
+                    raise e        
             # Execute function is it's one
             if callable(s):
-                s = s(payment, payment_line)
+                try:
+                    s = s(payment, payment_line)
+                except MultilineDataException, e:
+                    # Add infos from local context
+                    e_line = sequence != -1 and ('Ligne %s:\n'%(sequence)) or ''
+                    e.note = '%s%s %s: %s' % (e_line,c,desc,e.note)
+                    raise e
             # Convert to list
             if not isinstance(s, list):
                 s = [ s ]
@@ -149,38 +240,6 @@ def _create_pay(self,cr,uid,data,context):
         if len(t[0]) > digit:
             raise "AMOUT TOO BIG"
         return '%s,%s' % (t[0][:12], t[1][:2])
-
-    #####################################################
-    #         Séquence 0  - initialisation              #
-    #####################################################
-
-    # payment
-    payment=pool.get('payment.order').browse(cr, uid, data['id'],context)
-
-    # payment lines
-    payment_line_obj=pool.get('payment.line')
-    pay_lines = payment_line_obj.read(cr, uid, pay_line_id,
-                ['date','company_currency','currency',
-                 'partner_id','amount','amount_currency',
-                 'bank_id','move_line_id',
-                 'name','info_owner','info_partner',
-                 'communication','communication2',
-                 'instruction_code_id']
-    )
-    # partner.bank
-    partner_bank_obj = pool.get('res.partner.bank')
-    # instruction.code
-    paym_inst_code = pool.get('payment.instruction.code')
-    # charges codes
-    charges_code_obj = pool.get('charges.code')
-
-    # payment type
-    # :multi = one debit per line
-    # :group = one debit for all lines
-    payment_type = payment.payment_type
-    if len(pay_lines) == 1 and payment_type == 'group':
-        # Only one line, so no need to group payments
-        payment_type = 'multi'
 
     #####################################################
     #         Séquence 1  - functions                   #
@@ -206,13 +265,17 @@ def _create_pay(self,cr,uid,data,context):
         # type = partner / beneficiary
         bank_id = partner_bank_id.bank
         if not bank_id:
-            raise "ERROR"
+            raise MultilineDataException(
+                            "pas de banque associée au compte bancaire")
         if not bank_id.bic:
-            raise "ERROR"
+            raise MultilineDataException(
+                            "pas de code BIC spécifié sur la banque")
         return bank_id.bic
 
     def _get_bank_account(bank_id, with_owner_info=True):
         data = ''
+        if not bank_id:
+            raise MultilineDataException("pas de compte bancaire spécifié")
         if bank_id.state == 'iban':
             data += bank_id.iban.replace(' ','').upper()
         else:
@@ -236,6 +299,8 @@ def _create_pay(self,cr,uid,data,context):
         return [ u"/" + data ] + t_list
                         
     def _get_account(pay):
+        if not pay['bank_id']:
+            raise MultilineDataException("pas de compte bancaire spécifié")
         return browse_one(partner_bank_obj, pay['bank_id'])
 
     def _get_communication(pay):
@@ -248,23 +313,31 @@ def _create_pay(self,cr,uid,data,context):
     #         Séquence A  - début de fichier            #
     #####################################################
     start_sequence = [
-        #:20: Identification débiteur
-        ("20",  16, '',
+        ("20",  'Identification débiteur',
+                16,
+                '',
                 payment.mode.multiline_ident),
-        #:21R: Libellé opération si virement de type collectif
-        ("21R", 16, 'group',
+        ("21R", 'Libellé opération virement collectif/groupé',
+                16,
+                'group',
                 payment.reference),
-        #:50H: Compte du donneur d'ordre
-        ("50H", 35, 'group',
+        ("50H", 'Compte bancaire du donneur d\'ordre',
+                35,
+                'group',
                 lambda *a: _get_bank_account(payment.mode.bank_id)),
-        #:52A: Code bic du donneur d'ordre	
-        ("52A", 8,  '',
+        ("52A", 'Code bic de la banque du donneur d\'ordre',
+                8,
+                '',
                 lambda *a: _get_bank_bic(payment.mode.bank_id).upper()),
-        #:30: Date d'exécution souhaitée
-        ("30",  6, '',
+        ("30",  'Date d\'éxécution souhaitée',
+                6,
+                '',
                 lambda *a: _get_order_date_value(payment)),
     ]
-    _ml_addlist(start_sequence, payment, mode=payment_type)
+    try:
+        _ml_addlist(start_sequence, payment, mode=payment_type)
+    except MultilineDataException, e:
+        return e.get_return_dict()
 
     #####################################################
     #       Séquence B - Une séquence par paiement      #
@@ -275,66 +348,74 @@ def _create_pay(self,cr,uid,data,context):
         seq += 1
 
         payment_sequence_B = [
-            #:21: Référence de l'opération (payment multiple)
-            ("21", 16,
+            ("21", 'Référence de l\'opération',
+                    16,
                     'multi',
                     pay['name'] and (payment.reference+'-'+pay['name']) or payment.reference),
-            #:23E: Instruction banque donneur d'ordre
-            ("23E", 35,
+            ("23E", 'Instruction banque donneur d\'ordre',
+                    35,
                     lambda *a: pay['instruction_code_id'] and True or False,
-                    lambda *a: browse_one(paym_inst_code, pay['instruction_code_id']).code.upper()),
-            #:32B: Devise et Montant en devis
-            ("32B", 15,
+                    lambda *a: browse_one(paym_inst_code,
+                                    pay['instruction_code_id']).code.upper()),
+            ("32B", 'Devise et montant en devise',
+                    15,
                     '',
-                    "%s%s" % (pay['currency'][1].upper(), _ml_formatamount(pay['amount_currency']))),
-            #:50H: Compte du donneur d'ordre / virement simple
-            #      ou si veut un débit unique par opération.	
-            ("50H", 0,
+                    "%s%s" % (pay['currency'][1].upper(),
+                              _ml_formatamount(pay['amount_currency']))),
+            ("50H", 'Compte bancaire du donneur d\'ordre',
+                    0,
                     'multi',
                     lambda paym, *a: _get_bank_account(paym.mode.bank_id)),
-            #:57A: Code BIC banque du bénéficiaire
-            ("57A", 15,
+            ("57A", 'Code BIC banque bénéficiaire',
+                    15,
                     lambda *a: _get_account(pay).state == 'iban',
                     lambda *a: _get_bank_bic(_get_account(pay)).upper()),
-            #:57D: Nom de la banque du bénéficiare - si :59: <> code IBAN 	
-            ("57D", 0,
+            ("57D", 'Nom de la banque du bénéficiare (car pas de code BIC',
+                    0,
                     lambda *a: _get_account(pay).state != 'iban',
-                "TODO: Nom de la banque du bénéficiaire"),
-            #:59: Numéro de compte banque du bénéficiaire 
-            ("59",  0,
+                    "TODO: Nom de la banque du bénéficiaire"),
+            ("59", 'Numéro du compte bancaire du bénéficiaire',
+                    0,
                     '',
                     lambda *a: _get_bank_account(_get_account(pay))),
-            #:70: Libellé de l'opération
-            #     1ere ligne peut etre ref standard national: ***14x*** 
-            ("70",  0,
+            ("70", 'Libellé de l\'opération',
+                    # 1ere ligne peut etre ref standard national: ***14x*** 
+                    0,
                     '',
                     lambda *a: _get_communication(pay)),
-            #:77B: Information IBLC
-            ("77B", 0,
+            ("77B", 'Information IBLC pour montant > 8676,2733 EUR',
+                    0,
                     lambda *a: False, # TODO
                     "TODO Information IFBL"),
-            #:71A: Mode facturation Frais
-            ("71A", 3,
+            ("71A", 'Mode de facturation des frais bancaire',
+                    3,
                     '',
                     lambda *a: browse_one(charges_code_obj, data['form']['charges_code']).name),
         ]
-        _ml_addlist(payment_sequence_B, payment, payment_line=pay, mode=payment_type)
-        total += pay['amount_currency']     
+        try:
+            _ml_addlist(payment_sequence_B, payment, payment_line=pay,
+                        mode=payment_type, sequence=seq)
+            total += pay['amount_currency']
+        except MultilineDataException, e:
+            return e.get_return_dict()
 
     #####################################################
     #           Séquence C  - Fin de fichier            #
     #####################################################
     payment_sequence_C = [
-        #:19A: Nombre de paiement - Obligatoire	
-        ("19A", 5,
+        ("19A", 'Nombre de paiement(s)',
+                5,
                 '',
                 unicode(seq).upper()),
-        #:19: Montant total toutes devises confondues
-        ("19",  17,
+        ("19", 'Montant total toutes devises confondues',
+                17,
                 '',
                 unicode(_ml_formatamount(total)).upper()),
     ]
-    _ml_addlist(payment_sequence_C, payment, mode=payment_type)
+    try:
+        _ml_addlist(payment_sequence_C, payment, mode=payment_type)
+    except MultilineDataException, e:
+        return e.get_return_dict()
 
     #####################################################
     #           Fin de création du fichier LUP          #
@@ -353,6 +434,7 @@ def _create_pay(self,cr,uid,data,context):
     return {
         'note':log(),
         'reference': payment.id,
+        'name': payment.reference.replace('/','-')+str(payment.id)+'.lup',
         'pay': base64.encodestring(pay_order),
         'state':'succeeded'
     }

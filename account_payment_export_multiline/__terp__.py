@@ -22,14 +22,23 @@
 
 
 {
-    "name":"Payment Order Export",
+    "name":"Payment Order Export For Multiline",
     "version":"1.0",
-    "author":"Tiny",
+    "author":"Tiny+AJM",
     "category":"Generic Modules/Accounting",
-    "depends":["base_vat","base_iban","account_payment"],
+    "depends": [
+        "base_vat",
+        "base_iban",
+        "account_payment"
+    ],
     "demo_xml":[],
     "init_xml":[],
-    "update_xml" : ["security/ir.model.access.csv","payment_export_wizard.xml","payment_export_view.xml","payment_export_data.xml"],
+    "update_xml" : [
+        "security/ir.model.access.csv",
+        "payment_export_wizard.xml",
+        "payment_export_view.xml",
+        "payment_export_data.xml"
+    ],
     "active":False,
     "description": """
      This module allows to export payment orders.
