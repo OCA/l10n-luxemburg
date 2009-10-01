@@ -17,7 +17,7 @@ import mx.DateTime
 from mx.DateTime import RelativeDateTime, now, DateTime, localtime
 import tools
 from tools import ustr
-
+import unicodedata
 
 class Namespace: pass
 
@@ -74,6 +74,11 @@ def tr(s):
     except:
         res = s
     return res
+
+def strip_accents(s):
+    if isinstance(s, str):
+        s = unicode(s, 'utf-8')
+    return ''.join((c for c in unicodedata.normalize('NFD', s) if unicodedata.category(c) != 'Mn'))
 
 class record:
     def __init__(self,global_context_dict):
@@ -214,11 +219,22 @@ def _create_pay(self,cr,uid,data,context):
     ns.multiline_data = u''
     ns.multiline_newline = u'\r\n'
 
+    def _ml_string_split(string, limit):
+        s_list = []
+        while len(string):
+            # Remove unauthorized chars at line start
+            while string[0] in (':','-'):
+                string = string[1:] 
+            s_list.append(string[:limit])
+            string = string[limit:]
+        return s_list
+
     def _ml_string(code, string):
         s = u''
         if code:
             s += u":%s:" % (code)
         s += u"%s" % (string)
+        s.replace('\n', '')
         return s
 
     def _ml_add(code, string):
@@ -291,8 +307,6 @@ def _create_pay(self,cr,uid,data,context):
         # Only one line, so no need to group payments
         payment_type = 'multi'
 
-    print("Payment Type: %s" % (payment_type))
-
     #####################################################
     #         Séquence 1  - functions                   #
     #####################################################
@@ -340,10 +354,7 @@ def _create_pay(self,cr,uid,data,context):
             s_list = [ x for x in s_list if x ]
             s = u' '.join(s_list)
 
-            t_list = []
-            while len(s) > 0:
-                t_list.append(s[:35])
-                s = s[35:]
+            t_list = _ml_string_split(s, 35)
             if len(t_list) > 4:
                 t_list = t_list[:4]
 
@@ -353,13 +364,10 @@ def _create_pay(self,cr,uid,data,context):
         return browse_one(partner_bank_obj, pay['bank_id'])
 
     def _get_communication(pay):
-        s = (pay['communication'] or '')
-        s += (pay['communication2'] or '')
-        s_list = []
-        while len(s):
-            s_list.append(s[:35])
-            s = s[35:]
-        return s[:4]
+        s = (pay['communication'] or u'')
+        s += (pay['communication2'] or u'')
+        s_list = _ml_string_split(s, 35)
+        return s_list[:4]
 
     #####################################################
     #         Séquence A  - début de fichier            #
@@ -458,7 +466,8 @@ def _create_pay(self,cr,uid,data,context):
     #####################################################
     try:
         # Setup multiline data in place
-        pay_order = ns.multiline_data.encode('utf-8')
+        pay_order = strip_accents(ns.multiline_data)
+        pay_order = pay_order.encode('ascii')
         log.add("Successfully Exported\n--\nSummary:\n\nTotal amount paid : %.2f \nTotal Number of Payments : %d \n-- " %(total,seq))
     except Exception, e:
         print e
