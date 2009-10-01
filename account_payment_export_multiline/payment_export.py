@@ -138,6 +138,12 @@ class payment_line_instruction_code(osv.osv):
     
     _columns = {
         'instruction_code_id': fields.many2one('payment.instruction.code', 'Instruction Code'),
+        'code_iblc': fields.char('Code IBLC', size=3),
+        'code_iblc_isprivate': fields.boolean('Is Private'),
+    }
+
+    _defaults = {
+        'code_iblc_isprivate': lambda *a: False,
     }
 payment_line_instruction_code()
 

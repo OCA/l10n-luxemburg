@@ -205,6 +205,8 @@
         <field name="inherit_id" ref="account_payment.view_payment_order_form"/>
         <field name="arch" type="xml">
             <field name="bank_id" position="after">
+                <field name="code_iblc"/>
+                <field name="code_iblc_isprivate" string="IBLC is private"/>
                 <field name="instruction_code_id"/>
                 <newline/>
             </field>
@@ -219,7 +221,9 @@
         <field name="arch" type="xml">
             <field name="bank_id" position="after">
                 <field name="instruction_code_id"/>
-                <newline/>
+                <field name="code_iblc"/>
+                <field name="code_iblc_isprivate"/>
+                 <newline/>
             </field>
         </field>
     </record>
