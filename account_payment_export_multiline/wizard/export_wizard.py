@@ -57,136 +57,11 @@ export_fields = {
     },
     'note' : {'string':'Log','type':'text'},
 }
-trans=[(u'ￃﾩ','e'),
-       (u'ￃﾨ','e'),
-       (u'ￃﾠ','a'),
-       (u'ￃﾪ','e'),
-       (u'ￃﾮ','i'),
-       (u'ￃﾯ','i'),
-       (u'ￃﾢ','a'),
-       (u'ￃﾤ','a')]
-def tr(s):
-    s= s.decode('utf-8')
-    for k in trans:
-        s = s.replace(k[0],k[1])
-    try:
-        res= s.encode('ascii','replace')
-    except:
-        res = s
-    return res
 
 def strip_accents(s):
     if isinstance(s, str):
         s = unicode(s, 'utf-8')
     return ''.join((c for c in unicodedata.normalize('NFD', s) if unicodedata.category(c) != 'Mn'))
-
-class record:
-    def __init__(self,global_context_dict):
-
-        for i in global_context_dict:
-            global_context_dict[i]= global_context_dict[i] and tr(global_context_dict[i])
-        self.fields = []
-        self.global_values = global_context_dict
-        self.pre={'padding':'','seg_num1':'0','seg_num2':'1',
-                  'seg_num3':'1','seg_num4':'1','seg_num5':'1','seg_num8':'1','seg_num_t':'9',
-                   'flag':'0','flag1':'\n'
-                           }
-        self.init_local_context()
-
-    def init_local_context(self):
-        """
-        Must instanciate a fields list, field = (name,size)
-        and update a local_values dict.
-        """
-        raise "not implemented"
-
-    def generate(self):
-        res=''
-        value=0
-        go=True
-        for field in self.fields :
-            if field[0]=='section3':
-                if 'section3' not in self.global_values:
-                    go=False
-                elif self.global_values['section3']=='0':
-                    go=False
-                continue
-            if field[0]=='section6':
-                go=True
-            if go:
-                if self.pre.has_key(field[0]):
-                    value = self.pre[field[0]]
-                elif self.global_values.has_key(field[0]):
-                    value = self.global_values[field[0]]
-                else :
-                    continue
-                    #raise Exception(field[0]+' not found !')
-                try:
-                    res = res + c_ljust(value, field[1])
-                except :
-                    pass
-
-        return res
-
-class record_header(record):
-    def init_local_context(self):
-        self.fields=[
-            #Header record start
-            ('seg_num1',1),
-            ('creation_date',6),('padding',12),
-            ('institution_code',3),('app_code',2),('reg_number',10),('id_sender',11),('id_order_customer',11),('file_status',1),
-            ('ver_code',1),('bilateral',12),('totalisation_code',1),('padding',4),('ver_subcode',1),('padding',52),('flag1',1)
-            ]
-
-class record_trailer(record):
-    def init_local_context(self):
-        self.fields=[
-            #Trailer record start
-            ('seg_num_t',1),
-            ('tot_record',6),('tot_pay_order',6),
-            ('tot_amount',15),('padding',100),('flag1',1),
-            ]
-
-class record_payline(record):
-    def init_local_context(self):
-        self.fields=[
-            ('seg_num2',1),('sequence',4),('sub_div1',2),('order_exe_date',6),
-            ('order_ref',16),('cur_code',3),('padding',1),('code_pay',1),('amt_pay',15),('padding',1),
-            ('cur_code_debit_1',3),('padding',6),
-            ('acc_debit',20),('padding',22),('indicate_date',1),('padding',34),('flag1',1),
-
-            ('section3',1),
-
-            ('seg_num6',1),('sequence4',4),('sub_div3',2),('order_cust_address',35),('padding',10),
-            ('order_cust_bic',11),('padding',65),('flag1',1),
-
-            ('seg_num7',1),('sequence5',4),('sub_div5',2),('benf_bank_name',35),('benf_bank_street',35),
-            ('benf_bank_address',35),('padding',16),('flag1',1),
-
-            ('section6',1),
-
-            ('seg_num3',1),('sequence1',4),('sub_div6',2),('benf_accnt_no',34),('benf_name',35),('benf_address',35),
-            ('type_accnt',1),('bank_country_code',2),('padding',14),('flag1',1),
-
-            ('seg_num5',1),('sequence3',4),('sub_div07',2),('benf_address_continue',35),('benf_address_place',35),('padding',10),('comm_1',35),
-            ('padding',6),('flag1',1),
-
-            ('seg_num8',1),('sequence6',4),('sub_div8',2),('comm_2',35),('comm_3',35),
-            ('comm_4',35),('padding',16),('flag1',1),
-
-            ('seg_num4',1),('sequence2',4),('sub_div10',2),('order_msg',35),('method_pay',3),('charge_code',3),('padding',1),
-            ('cur_code_debit',3),('padding',6),('debit_cost',12),('padding',1),('benf_country_code',2),('padding',55),('flag1',1),
-            ]
-
-def c_ljust(s, size):
-    """
-    check before calling ljust
-    """
-    s= s or ''
-    if len(s) > size:
-        s= s[:size]
-    s = s.decode('utf-8').encode('latin1','replace').ljust(size)
-    return s
 
 class Log:
     def __init__(self):
@@ -384,7 +259,7 @@ def _create_pay(self,cr,uid,data,context):
                 lambda *a: _get_bank_account(payment.mode.bank_id)),
         #:52A: Code bic du donneur d'ordre	
         ("52A", 8,  '',
-                lambda *a: _get_bank_bic(payment.mode.bank_id)),
+                lambda *a: _get_bank_bic(payment.mode.bank_id).upper()),
         #:30: Date d'exécution souhaitée
         ("30",  6, '',
                 lambda *a: _get_order_date_value(payment)),
@@ -407,11 +282,11 @@ def _create_pay(self,cr,uid,data,context):
             #:23E: Instruction banque donneur d'ordre
             ("23E", 35,
                     lambda *a: pay['instruction_code_id'] and True or False,
-                    lambda *a: browse_one(paym_inst_code, pay['instruction_code_id']).code),
+                    lambda *a: browse_one(paym_inst_code, pay['instruction_code_id']).code.upper()),
             #:32B: Devise et Montant en devis
             ("32B", 15,
                     '',
-                    "%s%s" % (pay['currency'][1], _ml_formatamount(pay['amount_currency']))),
+                    "%s%s" % (pay['currency'][1].upper(), _ml_formatamount(pay['amount_currency']))),
             #:50H: Compte du donneur d'ordre / virement simple
             #      ou si veut un débit unique par opération.	
             ("50H", 0,
@@ -420,7 +295,7 @@ def _create_pay(self,cr,uid,data,context):
             #:57A: Code BIC banque du bénéficiaire
             ("57A", 15,
                     lambda *a: _get_account(pay).state == 'iban',
-                    lambda *a: _get_bank_bic(_get_account(pay))),
+                    lambda *a: _get_bank_bic(_get_account(pay)).upper()),
             #:57D: Nom de la banque du bénéficiare - si :59: <> code IBAN 	
             ("57D", 0,
                     lambda *a: _get_account(pay).state != 'iban',
@@ -453,11 +328,11 @@ def _create_pay(self,cr,uid,data,context):
         #:19A: Nombre de paiement - Obligatoire	
         ("19A", 5,
                 '',
-                unicode(seq)),
+                unicode(seq).upper()),
         #:19: Montant total toutes devises confondues
         ("19",  17,
                 '',
-                unicode(_ml_formatamount(total))),
+                unicode(_ml_formatamount(total)).upper()),
     ]
     _ml_addlist(payment_sequence_C, payment, mode=payment_type)
 
