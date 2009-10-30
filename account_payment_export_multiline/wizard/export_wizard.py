@@ -179,6 +179,21 @@ def _create_pay(self,cr,uid,data,context):
             string = string[limit:]
         return s_list
 
+    def _ml_string_split_preformatted(string_list, limit):
+        c_list = [
+            string_list[0][:limit], # Name
+            string_list[1][:limit], # Street
+        ]
+        if string_list[2] == 'Luxembourg':
+            c_list += [
+                (string_list[3].ljust(10) + string_list[4])[:limit],
+            ]
+        else:
+            c_list += [
+                (' '.join([ string_list[x] for x in (3, 4, 5, 2)]))[:limit],
+            ]
+        return c_list
+
     def _ml_string(code, string):
         s = u''
         if code:
@@ -272,7 +287,9 @@ def _create_pay(self,cr,uid,data,context):
                             "pas de code BIC spécifié sur la banque")
         return bank_id.bic
 
-    def _get_bank_account(bank_id, with_owner_info=True):
+    def _get_bank_account(bank_id, with_owner_info=True,
+                                    use_owner_code=False,
+                                    no_compress_line=False):
         data = ''
         if not bank_id:
             raise MultilineDataException("pas de compte bancaire spécifié")
@@ -281,18 +298,25 @@ def _create_pay(self,cr,uid,data,context):
         else:
             data += bank_id.acc_number[:34].upper()
         if with_owner_info:
+            t_list = []
             s_list = [
-                (bank_id.owner_name and bank_id.owner_name.strip() or bank_id.partner_id.name),
+                (bank_id.owner_name and bank_id.owner_name.strip() \
+                    or (use_owner_code and bank_id.partner_id.ref or
+                        bank_id.partner_id.name)),
                 (bank_id.street and bank_id.street.strip() or ''),
                 (bank_id.country_id and bank_id.country_id.name or ''),
                 (bank_id.zip and bank_id.zip.strip() or ''),
                 (bank_id.city and bank_id.city or ''),
                 (bank_id.state_id and bank_id.state_id.name or ''),
             ]
-            s_list = [ x for x in s_list if x ]
-            s = u' '.join(s_list)
+    
+            if no_compress_line:
+                t_list = _ml_string_split_preformatted(s_list, 35)
+            else:
+                s_list = [ x for x in s_list if x ]
+                s = u' '.join(s_list)
+                t_list = _ml_string_split(s, 35)
 
-            t_list = _ml_string_split(s, 35)
             if len(t_list) > 4:
                 t_list = t_list[:4]
 
@@ -324,7 +348,7 @@ def _create_pay(self,cr,uid,data,context):
         ("50H", 'Compte bancaire du donneur d\'ordre',
                 35,
                 'group',
-                lambda *a: _get_bank_account(payment.mode.bank_id)),
+                lambda *a: _get_bank_account(payment.mode.bank_id, use_owner_code=True, no_compress_line=True)),
         ("52A", 'Code bic de la banque du donneur d\'ordre',
                 8,
                 '',
@@ -365,7 +389,9 @@ def _create_pay(self,cr,uid,data,context):
             ("50H", 'Compte bancaire du donneur d\'ordre',
                     0,
                     'multi',
-                    lambda paym, *a: _get_bank_account(paym.mode.bank_id)),
+                    lambda paym, *a: _get_bank_account(paym.mode.bank_id,
+                                            use_owner_code=True,
+                                            no_compress_line=True)),
             ("57A", 'Code BIC banque bénéficiaire',
                     15,
                     lambda *a: _get_account(pay).state == 'iban',
