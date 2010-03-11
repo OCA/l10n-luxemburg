@@ -148,6 +148,10 @@ def _create_pay(self,cr,uid,data,context):
         # Only one line, so no need to group payments
         payment_type = 'multi'
 
+    payment_authz_mode = set()
+    for t in payment.mode.type.suitable_bank_types:
+        payment_authz_mode.add(t.code)
+
     #####################################################
     #         Séquence 0  - utilities class / functions #
     #####################################################
@@ -174,7 +178,7 @@ def _create_pay(self,cr,uid,data,context):
         while len(string):
             # Remove unauthorized chars at line start
             while string[0] in (':','-'):
-                string = string[1:] 
+                string = string[1:]
             s_list.append(string[:limit])
             string = string[limit:]
         return s_list
@@ -205,9 +209,9 @@ def _create_pay(self,cr,uid,data,context):
     def _ml_add(code, string):
         ns.multiline_data += _ml_string(code, string)
         ns.multiline_data += u"%s" % (ns.multiline_newline)
-    
+
     def _ml_addlist_error_return(exception):
-        pass 
+        pass
 
     def _ml_addlist(sequence_list, payment, payment_line=False,
                     mode='multi',sequence=-1):
@@ -222,17 +226,17 @@ def _create_pay(self,cr,uid,data,context):
                     if not m_ret:
                         continue
                 except MultilineDataException, e:
-                    e_line = sequence != -1 and ('Ligne %s:\n'%(sequence)) or ''
-                    e.note = '%s%s %s: %s' % (e_line,c,desc,e.note)
-                    raise e        
+                    e_line = sequence != -1 and ('Ligne %s, %s:\n'%(sequence, payment_line['partner_id'][1])) or ''
+                    e.note = '%s%s %s: %s' % (ustr(e_line),c,desc,ustr(e.note))
+                    raise e
             # Execute function is it's one
             if callable(s):
                 try:
                     s = s(payment, payment_line)
                 except MultilineDataException, e:
                     # Add infos from local context
-                    e_line = sequence != -1 and ('Ligne %s:\n'%(sequence)) or ''
-                    e.note = '%s%s %s: %s' % (e_line,c,desc,e.note)
+                    e_line = sequence != -1 and ('Ligne %s, %s:\n'%(sequence, payment_line['partner_id'][1])) or ''
+                    e.note = u'%s%s %s: %s' % (e_line,c,desc,e.note)
                     raise e
             # Convert to list
             if not isinstance(s, list):
@@ -281,10 +285,10 @@ def _create_pay(self,cr,uid,data,context):
         bank_id = partner_bank_id.bank
         if not bank_id:
             raise MultilineDataException(
-                            "pas de banque associée au compte bancaire")
+                            u"pas de banque associée au compte bancaire")
         if not bank_id.bic:
             raise MultilineDataException(
-                            "pas de code BIC spécifié sur la banque")
+                            u"pas de code BIC spécifié sur la banque")
         return bank_id.bic
 
     def _get_bank_account(bank_id, with_owner_info=True,
@@ -292,7 +296,7 @@ def _create_pay(self,cr,uid,data,context):
                                     no_compress_line=False):
         data = ''
         if not bank_id:
-            raise MultilineDataException("pas de compte bancaire spécifié")
+            raise MultilineDataException(u"pas de compte bancaire spécifié")
         if bank_id.state == 'iban':
             data += bank_id.iban.replace(' ','').upper()
         else:
@@ -309,7 +313,7 @@ def _create_pay(self,cr,uid,data,context):
                 (bank_id.city and bank_id.city or ''),
                 (bank_id.state_id and bank_id.state_id.name or ''),
             ]
-    
+
             if no_compress_line:
                 t_list = _ml_string_split_preformatted(s_list, 35)
             else:
@@ -321,10 +325,10 @@ def _create_pay(self,cr,uid,data,context):
                 t_list = t_list[:4]
 
         return [ u"/" + data ] + t_list
-                        
+
     def _get_account(pay):
         if not pay['bank_id']:
-            raise MultilineDataException("pas de compte bancaire spécifié")
+            raise MultilineDataException(u"pas de compte bancaire spécifié")
         return browse_one(partner_bank_obj, pay['bank_id'])
 
     def _get_communication(pay):
@@ -337,23 +341,23 @@ def _create_pay(self,cr,uid,data,context):
     #         Séquence A  - début de fichier            #
     #####################################################
     start_sequence = [
-        ("20",  'Identification débiteur',
+        ("20",  u'Identification débiteur',
                 16,
                 '',
                 payment.mode.multiline_ident),
-        ("21R", 'Libellé opération virement collectif/groupé',
+        ("21R", u'Libellé opération virement collectif/groupé',
                 16,
                 'group',
                 payment.reference),
-        ("50H", 'Compte bancaire du donneur d\'ordre',
+        ("50H", u'Compte bancaire du donneur d\'ordre',
                 35,
                 'group',
                 lambda *a: _get_bank_account(payment.mode.bank_id, use_owner_code=True, no_compress_line=True)),
-        ("52A", 'Code bic de la banque du donneur d\'ordre',
+        ("52A", u'Code bic de la banque du donneur d\'ordre',
                 8,
                 '',
                 lambda *a: _get_bank_bic(payment.mode.bank_id).upper()),
-        ("30",  'Date d\'éxécution souhaitée',
+        ("30",  u'Date d\'éxécution souhaitée',
                 6,
                 '',
                 lambda *a: _get_order_date_value(payment)),
@@ -371,49 +375,54 @@ def _create_pay(self,cr,uid,data,context):
     for pay in pay_lines:
         seq += 1
 
+        if _get_account(pay).state not in payment_authz_mode:
+            e = MultilineDataException("")
+            e.note = u"Ligne %s: %s: compte bancaire n'est pas de type IBAN, impossible d'exporter" % (seq, pay['partner_id'] and pay['partner_id'][1] or '???')
+            return e.get_return_dict()
+
         payment_sequence_B = [
-            ("21", 'Référence de l\'opération',
+            ("21", u'Référence de l\'opération',
                     16,
                     'multi',
                     pay['name'] and (payment.reference+'-'+pay['name']) or payment.reference),
-            ("23E", 'Instruction banque donneur d\'ordre',
+            ("23E", u'Instruction banque donneur d\'ordre',
                     35,
                     lambda *a: pay['instruction_code_id'] and True or False,
                     lambda *a: browse_one(paym_inst_code,
                                     pay['instruction_code_id']).code.upper()),
-            ("32B", 'Devise et montant en devise',
+            ("32B", u'Devise et montant en devise',
                     15,
                     '',
                     "%s%s" % (pay['currency'][1].upper(),
                               _ml_formatamount(pay['amount_currency']))),
-            ("50H", 'Compte bancaire du donneur d\'ordre',
+            ("50H", u'Compte bancaire du donneur d\'ordre',
                     0,
                     'multi',
                     lambda paym, *a: _get_bank_account(paym.mode.bank_id,
                                             use_owner_code=True,
                                             no_compress_line=True)),
-            ("57A", 'Code BIC banque bénéficiaire',
+            ("57A", u'Code BIC banque bénéficiaire',
                     15,
                     lambda *a: _get_account(pay).state == 'iban',
                     lambda *a: _get_bank_bic(_get_account(pay)).upper()),
-            ("57D", 'Nom de la banque du bénéficiare (car pas de code BIC',
+            ("57D", u'Nom de la banque du bénéficiare (car pas de code BIC',
                     0,
                     lambda *a: _get_account(pay).state != 'iban',
                     "TODO: Nom de la banque du bénéficiaire"),
-            ("59", 'Numéro du compte bancaire du bénéficiaire',
+            ("59", u'Numéro du compte bancaire du bénéficiaire',
                     0,
                     '',
                     lambda *a: _get_bank_account(_get_account(pay))),
-            ("70", 'Libellé de l\'opération',
+            ("70", u'Libellé de l\'opération',
                     # 1ere ligne peut etre ref standard national: ***14x*** 
                     0,
                     '',
                     lambda *a: _get_communication(pay)),
-            ("77B", 'Information IBLC pour montant > 8676,2733 EUR',
+            ("77B", u'Information IBLC pour montant > 8676,2733 EUR',
                     0,
                     lambda *a: False, # TODO
                     "TODO Information IFBL"),
-            ("71A", 'Mode de facturation des frais bancaire',
+            ("71A", u'Mode de facturation des frais bancaire',
                     3,
                     '',
                     lambda *a: browse_one(charges_code_obj, data['form']['charges_code']).name),
@@ -429,11 +438,11 @@ def _create_pay(self,cr,uid,data,context):
     #           Séquence C  - Fin de fichier            #
     #####################################################
     payment_sequence_C = [
-        ("19A", 'Nombre de paiement(s)',
+        ("19A", u'Nombre de paiement(s)',
                 5,
                 '',
                 unicode(seq).upper()),
-        ("19", 'Montant total toutes devises confondues',
+        ("19", u'Montant total toutes devises confondues',
                 17,
                 '',
                 unicode(_ml_formatamount(total)).upper()),
