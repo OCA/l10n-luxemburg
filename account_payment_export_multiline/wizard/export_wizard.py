@@ -88,7 +88,7 @@ export_fields = {
 def strip_accents(s):
     if isinstance(s, str):
         s = unicode(s, 'utf-8')
-    return ''.join((c for c in unicodedata.normalize('NFD', s) if unicodedata.category(c) != 'Mn'))
+    return ''.join((c for c in unicodedata.normalize('NFD', s) if unicodedata.category(c) not in ('Mn','So')))
 
 class Log:
     def __init__(self):
@@ -461,9 +461,12 @@ def _create_pay(self,cr,uid,data,context):
         pay_order = pay_order.encode('ascii')
         log.add("Successfully Exported\n--\nSummary:\n\nTotal amount paid : %.2f \nTotal Number of Payments : %d \n-- " %(total,seq))
     except Exception, e:
-        print e
-        log= log +'\n'+ str(e) + 'CORRUPTED FILE !\n'
-        raise e
+        log.add("Export Failed\n"+ tools.ustr(e) + 'CORRUPTED FILE !\n')
+        return {
+            'note': log(),
+            'reference': payment.id,
+            'state': 'failed',
+        }
 
     pool.get('payment.order').set_done(cr,uid,payment.id,context)
     return {
