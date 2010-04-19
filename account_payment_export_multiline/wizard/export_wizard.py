@@ -334,6 +334,8 @@ def _create_pay(self,cr,uid,data,context):
     def _get_communication(pay):
         s = (pay['communication'] or u'')
         s += (pay['communication2'] or u'')
+        # don't allow double point or accentuated char to crash multiline import
+        s = strip_accents(s).replace(':','') 
         s_list = _ml_string_split(s, 35)
         return s_list[:4]
 
