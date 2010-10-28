@@ -34,6 +34,7 @@ import mx.DateTime
 from mx.DateTime import RelativeDateTime, now, DateTime, localtime
 import tools
 from tools import ustr
+from tools.translate import _
 import unicodedata
 
 class Namespace: pass
@@ -465,6 +466,7 @@ def _create_pay(self,cr,uid,data,context):
     except Exception, e:
         log.add("Export Failed\n"+ tools.ustr(e) + 'CORRUPTED FILE !\n')
         return {
+            'name': _('ERROR'),
             'note': log(),
             'reference': payment.id,
             'state': 'failed',
