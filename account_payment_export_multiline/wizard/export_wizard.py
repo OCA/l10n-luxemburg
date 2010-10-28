@@ -89,7 +89,7 @@ export_fields = {
 def strip_accents(s):
     if isinstance(s, str):
         s = unicode(s, 'utf-8')
-    return ''.join((c for c in unicodedata.normalize('NFD', s) if unicodedata.category(c) not in ('Mn','So')))
+    return ''.join((c for c in unicodedata.normalize('NFKD', s) if unicodedata.category(c) not in ('Mn','So', 'Pf', 'Sc')))
 
 class Log:
     def __init__(self):
