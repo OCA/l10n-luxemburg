@@ -216,7 +216,7 @@ class account_bank_statement_mt940_import_wizard(osv.osv_memory):
                         if inv.move_id:
                             for move_line in inv.move_id.line_id:
                                 if move_line.reconcile_id:
-                                    line['log'].append(_('reject move line %d from invoice %s because it\'s already reconciled'))
+                                    line['log'].append(_('reject move line %d from invoice %s because it\'s already reconciled') % (move_line.id, inv.number))
                                 if not move_line.reconcile_id and move_line.account_id.reconcile == True:
                                     line_ids.append(move_line.id)
                     line['move_line_ids'] = [(6, 0, line_ids)]
