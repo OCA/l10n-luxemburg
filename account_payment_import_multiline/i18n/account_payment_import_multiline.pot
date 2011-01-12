@@ -1,0 +1,421 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* account_payment_import_multiline
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 5.0.15\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2011-01-12 23:15:08+0000\n"
+"PO-Revision-Date: 2011-01-12 23:15:08+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "======================="
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: selection:account.bank.statement.mt940e.import.wizard.line,type:0
+msgid "Customer"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: field:account.bank.statement,mt940e_filename:0
+msgid "MT940E Filename"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "============="
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: view:account.bank.statement.mt940e.import.wizard.line:0
+#: field:account.bank.statement.mt940e.import.wizard.line,log:0
+msgid "Log"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "Match Partner"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: field:account.bank.statement.mt940e.import.wizard.line,wizard_id:0
+msgid "Wizard"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: constraint:ir.model:0
+msgid "The Object name must start with x_ and not contain any special character !"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: model:ir.actions.act_window,name:account_payment_import_multiline.action_import_multiline_wizard
+msgid "Import Multiline File"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: field:account.bank.statement.mt940e.import.wizard,filename:0
+msgid "Filename"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: view:account.bank.statement.mt940e.import.wizard.line:0
+msgid "Note"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: view:account.bank.statement.mt940e.import.wizard.line:0
+msgid "Reconcile Lines"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "Match Invoice"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: model:ir.model,name:account_payment_import_multiline.model_account_bank_statement_mt940e_import_wizard_line
+msgid "account.bank.statement.mt940e.import.wizard.line"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "error: not exact corresponding payment found"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: constraint:ir.actions.act_window:0
+msgid "Invalid model name in the action definition."
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: selection:account.bank.statement.mt940e.import.wizard.line,type:0
+msgid "Supplier"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: view:account.bank.statement:0
+msgid "Other Informations"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "add matching move line"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: field:account.bank.statement.mt940e.import.wizard.line,type:0
+msgid "Type"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "match found with payment order %s, line %s"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "found partner bank account, set partner"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: field:account.bank.statement.mt940e.import.wizard,name:0
+#: field:account.bank.statement.mt940e.import.wizard.line,name:0
+msgid "Name"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "found postal code %s"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: view:account.bank.statement.mt940e.import.wizard:0
+msgid "This file is already imported"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "found partner bank account from extended beneficiary, set partner"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: field:account.bank.statement.mt940e.import.wizard.line,note:0
+msgid "Description"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "set partner from invoice match"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: field:account.bank.statement.mt940e.import.wizard,format:0
+msgid "Format"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: view:account.bank.statement.mt940e.import.wizard:0
+msgid "Import File"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: field:account.bank.statement.mt940e.import.wizard,journal_id:0
+msgid "Journal"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "match found with invoice: %s"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: model:ir.module.module,shortdesc:account_payment_import_multiline.module_meta_information
+msgid "account_payment_import_multiline"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "error: statement amount does not match payment order line"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: field:account.bank.statement.mt940e.import.wizard,date:0
+#: field:account.bank.statement.mt940e.import.wizard.line,date:0
+msgid "Date"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "no matching invoice found"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "found iban code, set type supplier"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: selection:account.bank.statement.mt940e.import.wizard,state:0
+msgid "Choose File"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: field:account.bank.statement.mt940e.import.wizard.line,move_line_ids:0
+msgid "Reconciles"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: field:account.bank.statement.mt940e.import.wizard,balance_end:0
+msgid "Balance End"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: field:account.bank.statement.mt940e.import.wizard.line,account_id:0
+msgid "Account"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: view:account.bank.statement.mt940e.import.wizard:0
+msgid "Choose Another File"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: view:account.bank.statement.mt940e.import.wizard:0
+msgid "Import Multiline Payments"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "Match Payment Reference"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "set partner from payment order"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: field:account.bank.statement.mt940e.import.wizard,line_ids:0
+#: view:account.bank.statement.mt940e.import.wizard.line:0
+msgid "Lines"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "reject move line %d from invoice %s because it\'s already reconciled"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: model:ir.config,description:account_payment_import_multiline.config_account_multiline_mt940e_charges_account
+msgid "default account for charges on bank statement"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: field:account.bank.statement.mt940e.import.wizard.line,amount:0
+msgid "Amount"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: field:account.bank.statement.mt940e.import.wizard,state:0
+msgid "State"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "partner previously found, update account and type from partner from"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "set type from payment order"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "error: not exact corresponding payment line found"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: selection:account.bank.statement.mt940e.import.wizard,state:0
+msgid "Check Imported Data"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: constraint:ir.ui.view:0
+msgid "Invalid XML for View Architecture!"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "found partner from beneficiary match"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: field:account.bank.statement.mt940e.import.wizard,balance_start:0
+msgid "Balance Start"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "set type from invoice match"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: view:account.bank.statement.mt940e.import.wizard:0
+#: selection:account.bank.statement.mt940e.import.wizard,state:0
+msgid "Create Statement"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: model:ir.model,name:account_payment_import_multiline.model_account_bank_statement_mt940e_import_wizard
+msgid "account.bank.statement.mt940e.import.wizard"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: field:account.bank.statement.mt940e.import.wizard,balance_end_computed:0
+msgid "Computed Balance End"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: model:ir.ui.menu,name:account_payment_import_multiline.menu_import_multiline_wizard
+msgid "Import Multiline Statement"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: code:addons/account_payment_import_multiline/import_multiline.py:0
+#, python-format
+msgid "statement line amount match invoices sum"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: selection:account.bank.statement.mt940e.import.wizard,state:0
+msgid "Import Failed"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: field:account.bank.statement.mt940e.import.wizard,period_id:0
+msgid "Period"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: selection:account.bank.statement.mt940e.import.wizard.line,type:0
+msgid "General"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: selection:account.bank.statement.mt940e.import.wizard,state:0
+msgid "Already Imported"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: field:account.bank.statement.mt940e.import.wizard,currency_id:0
+msgid "Currency"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: view:account.bank.statement.mt940e.import.wizard:0
+msgid "Retry"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: field:account.bank.statement.mt940e.import.wizard,file:0
+msgid "File"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: view:account.bank.statement.mt940e.import.wizard:0
+msgid "Cancel"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: field:account.bank.statement.mt940e.import.wizard.line,partner_id:0
+msgid "Partner"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: view:account.bank.statement.mt940e.import.wizard:0
+msgid "Import error !"
+msgstr ""
+
+#. module: account_payment_import_multiline
+#: model:ir.module.module,description:account_payment_import_multiline.module_meta_information
+msgid "\n"
+"        Allow importation of electronic bank statement (format MT940e)\n"
+"        exported from multiline\n"
+"\n"
+"        A wizard allow you to easily import thoses electronic bank statements.\n"
+"    "
+msgstr ""
+
