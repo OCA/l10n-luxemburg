@@ -26,6 +26,7 @@ import base64
 from StringIO import StringIO
 from osv import osv
 from osv import fields
+from tools.translate import _
 from mt940e_parser import mt940e_parser
 
 class account_bank_statement_mt940e_import_wizard_line(osv.osv_memory):
@@ -122,6 +123,7 @@ class account_bank_statement_mt940_import_wizard(osv.osv_memory):
             m = re.match(exp, data)
             if m:
                 group = m.groups(0)[0]
+                line['log'].append(_('found postal code %s') % (str(group)))
                 pos = data.find(group)
                 posr = pos+len(group)
                 values['_postcode'] = group
@@ -139,39 +141,46 @@ class account_bank_statement_mt940_import_wizard(osv.osv_memory):
     def match_partner(self, cr, uid, line, values, context=None):
         l = line
         v = values
+        line['log'].extend([_('Match Partner'),
+                            _('=============')])
         if v.get('communication'):
             if self.check_iban(cr, uid, v['communication']):
+                line['log'].append(_('found iban code, set type supplier'))
                 # iban found, we should be able to dermine partner
                 l['type'] = 'supplier'
                 accounts = self.pool.get('res.partner.bank').search(cr, uid, [('iban','ilike',v['communication'])], context=context)
                 if len(accounts) == 1:
                     a = self.pool.get('res.partner.bank').browse(cr, uid, accounts[0], context=context)
                     l['partner_id'] = a.partner_id.id
+                    line['log'].append(_('found partner bank account, set partner'))
                     return
                 elif len(accounts) > 1:
                     accounts2 = self.pool.get('res.partner.bank').search(cr, uid, [('id', 'in', accounts),('partner_id.name', 'ilike', self.extract_partner_name(cr, uid, v.get('beneficiary','')))], context=context)
                     if len(accounts2) == 1:
                         a = self.pool.get('res.partner.bank').browse(cr, uid, accounts2[0], context=context)
                         l['partner_id'] = a.partner_id.id
+                        line['log'].append(_('found partner bank account from extended beneficiary, set partner'))
                         return
         if v.get('_beneficiary'):
             b = v.get('_beneficiary')
             #rexp = 'REGEXP:*%s*' % (v.get('_beneficiary').replace(' ','*'))
             #partner_ids = self.pool.get('res.partner').search(cr, uid, [('name','ilike',rexp)])
             partner_ids = self.pool.get('res.partner').search(cr, uid, [('name','ilike',b)], context=context)
-            print("partner ids: %s" % (partner_ids))
             if len(partner_ids) == 1:
-                print("set new partner")
                 l['partner_id'] = partner_ids[0]
+                line['log'].append(_('found partner from beneficiary match'))
             #print("PARTNER IDS: %s" % (partner_ids))
             pass
         return
 
     def match_invoice(self, cr, uid, line, values, context=None):
         rexp = '20[0-9]{2}[/ .]{1}[0-9]{5}'
+        line['log'].extend([_('Match Invoice'),
+                            _('=============')])
         for k in ('reference', 'details', 'beneficiary'):
             matches = re.findall(rexp, values.get(k, ''))
             if matches:
+                line['log'].append(_('match found with invoice: %s') % (', '.join(matches)))
                 total = 0.0
                 partner_id = None
                 invoices = []
@@ -191,6 +200,7 @@ class account_bank_statement_mt940_import_wizard(osv.osv_memory):
                         invoices.append(invoice)
 
                 if total - 0.00001 < values['amount'] < total + 0.00001:
+                    line['log'].append(_('statement line amount match invoices sum'))
                     line['partner_id'] = partner_id
                     line['type'] = {
                         'in_invoice': 'supplier',
@@ -198,40 +208,55 @@ class account_bank_statement_mt940_import_wizard(osv.osv_memory):
                         'in_refund': 'supplier',
                         'out_refund': 'customer',
                     }[invoice.type]
+                    line['log'].append(_('set partner from invoice match'))
+                    line['log'].append(_('set type from invoice match'))
                     # TODO: mark invoice move lines to reconcile with this line
                     line_ids = []
                     for inv in invoices:
                         if inv.move_id:
                             for move_line in inv.move_id.line_id:
+                                if move_line.reconcile_id:
+                                    line['log'].append(_('reject move line %d from invoice %s because it\'s already reconciled'))
                                 if not move_line.reconcile_id and move_line.account_id.reconcile == True:
                                     line_ids.append(move_line.id)
                     line['move_line_ids'] = [(6, 0, line_ids)]
+            else:
+                line['log'].append(_('no matching invoice found'))
         return False
 
     def match_payment_reference(self, cr, uid, line, values, context=None):
         rexp = '.*(20[0-9]{2}[/ .]{1}[0-9]+-[0-9]+).*'
+        line['log'].extend([_('Match Payment Reference'),
+                            _('=======================')])
         for k in ('reference', 'details', 'beneficiary'):
             m = re.match(rexp, values.get(k, ''))
             if m:
                 match = m.groups()[0]
                 #print("MATCH PAYMENT REFERENCE: %s" % (match))
                 payorder_ref, payline_ref = match.strip().split('-')
+                line['log'].append(_('match found with payment order %s, line %s') % (payorder_ref, payline_ref))
                 payorder_ids = self.pool.get('payment.order').search(cr, uid, [('reference','=',payorder_ref)], context=context)
                 if len(payorder_ids) != 1:
+                    line['log'].append(_('error: not exact corresponding payment found'))
                     return False
                 payorder_id = payorder_ids[0]
 
                 payline_ids = self.pool.get('payment.line').search(cr, uid, [('name','=',payline_ref),('order_id','=',payorder_id)], context=context)
                 if len(payline_ids) != 1:
+                    line['log'].append(_('error: not exact corresponding payment line found'))
                     continue
                 payline = self.pool.get('payment.line').browse(cr, uid, payline_ids[0], context=context)
                 if not line['amount'] == payline.amount_currency * -1.0:
+                    line['log'].append(_('error: statement amount does not match payment order line'))
                     continue
                 line['partner_id'] = payline.partner_id.id
                 line['type'] = 'supplier'
+                line['log'].append(_('set partner from payment order'))
+                line['log'].append(_('set type from payment order'))
                 # TODO: also update reconcile line ids
                 if payline.move_line_id:
                     line['move_line_ids'] = [(6, 0, [payline.move_line_id.id])]
+                    line['log'].append(_('add matching move line'))
                 return True
         return False
 
@@ -294,6 +319,7 @@ Details: %s
             }
             afactor = v['amount'] >= 0 and 1 or -1
             l['amount'] = v['original_amount'] * afactor
+            l['log'] = []
 
             # try to dermine the partner
             self.match_invoice(cr, uid, l, v, context=context)
@@ -301,7 +327,9 @@ Details: %s
             self.match_postalcode(cr, uid, l, v, context=context)
             self.match_partner(cr, uid, l, v, context=context)
 
+
             if l.get('partner_id'):
+                l['log'].append(_('partner previously found, update account and type from partner from'))
                 partner = self.pool.get('res.partner').browse(cr, uid, l['partner_id'], context=context)
                 if not l.get('type','') not in ('supplier','customer'):
                     if l['amount'] < 0:
@@ -313,10 +341,12 @@ Details: %s
                 else:
                     l['account_id'] = partner.property_account_receivable.id
 
+            l['log'] = '\n'.join(l['log'])
             values['line_ids'].append((0, 0, l))
             if v['charges']:
                 # TODO: create a new line for the charges part
-                aids = self.pool.get('account.account').search(cr, uid, [('code','=','658100')], context=context)
+                acode = self.pool.get('ir.config').get(cr, uid, 'account.multiline.mt940e.charges.account')
+                aids = self.pool.get('account.account').search(cr, uid, [('code','=',acode)], context=context)
                 l = {
                     'name': 'FRAIS BANCAIRE',
                     'note': 'FRAIS BANCAIRE',
@@ -343,7 +373,6 @@ Details: %s
 
         st = self.read(cr, uid, wizard_id, ['name', 'date', 'journal_id', 'period_id', 'balance_start', 'balance_end'], context=context)[0]
         st['mt940e_filename'] = wizard.filename
-        print("ST: %s" % (st))
         st['balance_end_real'] = st.pop('balance_end',0.0)
 
         st['line_ids'] = []
@@ -355,18 +384,14 @@ Details: %s
             stline['sequence'] = seq
             mvline_ids = stline.pop('move_line_ids', [])
             if mvline_ids:
-                print("MV LINE IDS: %s" % (mvline_ids))
                 reconcile_data = {
                     'name': stline['date'],
                     'line_ids': [(6,0,mvline_ids)],
                 }
-                print("reconcile data: %s" % (reconcile_data))
                 reconcile_id = self.pool.get('account.bank.statement.reconcile').create(cr, uid, reconcile_data, context=context)
                 stline['reconcile_id'] = reconcile_id
             st['line_ids'].append((0, 0, stline))
 
-        import pprint
-        pprint.pprint(st)
         st_id = self.pool.get('account.bank.statement').create(cr, uid, st, context=context)
         if st_id:
             return {
@@ -401,7 +426,7 @@ class account_bank_statement_mt940e_import_wizard_line(osv.osv_memory):
         'amount': fields.float('Amount'),
         'type': fields.selection([('general','General'),('supplier','Supplier'),('customer','Customer')], 'Type'),
         'move_line_ids': fields.many2many('account.move.line', 'mt940e_wizard_line_move_line_rel', 'line_id', 'move_line_id', 'Reconciles'),
-        'reconcile_note': fields.text('Reconcile Note'),
+        'log': fields.text('Log'),
     }
 
     _defaults = {
