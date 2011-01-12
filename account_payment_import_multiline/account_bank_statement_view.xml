@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <record model="ir.ui.view" id="view_bank_statement_form_import_inherit">
+        <field name="name">account.bank.statement.form.import.inherit</field>
+        <field name="model">account.bank.statement</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="account.view_bank_statement_form"/>
+        <field name="arch" type="xml">
+            <data>
+                <notebook position="inside">
+                    <page string="Other Informations">
+                        <field name="mt940e_filename"/>
+                    </page>
+                </notebook>
+                <xpath expr="/form/notebook/page[@string='Entry encoding']/field[@name='line_ids']/tree/field[@name='partner_id']" position="attributes">
+                    <attribute name="attrs">{'required': [('type','!=','general')]}</attribute>
+                </xpath>
+                <xpath expr="/form/notebook/page[@string='Entry encoding']/field[@name='line_ids']/form/field[@name='partner_id']" position="attributes">
+                    <attribute name="attrs">{'required': [('type','!=','general')]}</attribute>
+                </xpath>
+            </data>
+        </field>
+    </record>
+
+</data>
+</openerp>

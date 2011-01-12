@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <record id="view_import_multiline_wizard_form" model="ir.ui.view">
+        <field name="name">import.multiline.wizard.form</field>
+        <field name="model">account.bank.statement.mt940e.import.wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Import Multiline Payments">
+                <group states="init" colspan="4" col="2" height="600">
+                    <field name="file" filename="filename"/>
+                    <field name="filename"/>
+                    <group colspan="2" col="2">
+                        <button type="special" special="cancel" string='Cancel'/>
+                        <button name="button_import_file" type="object" string='Import File'/>
+                    </group>
+                </group>
+                <group states="already_imported" height="600">
+                    <label string="This file is already imported"/>
+                    <group colspan="4" col="2">
+                        <button type="special" special="cancel" string="Cancel" icon="gtk-cancel"/>
+                        <button type="object" name="button_choose_another_file" string="Choose Another File" icon="gtk-go-back"/>
+                    </group>
+                </group>
+                <group states="import_failed" height="600">
+                    <label string="Import error !"/>
+                    <group colspan="4" col="2">
+                        <button type="special" special="cancel" string="Cancel" icon="gtk-cancel"/>
+                        <button type="object" name="button_choose_another_file" string="Retry" icon="gtk-go-back"/>
+                    </group>
+                </group>
+                <group states="check_import">
+                    <field name="name" attrs="{'required': [('state','=','check_import')]}"/>
+                    <field name="date" attrs="{'required': [('state','=','check_import')]}"/>
+                    <field name="journal_id" attrs="{'required': [('state','=','check_import')]}"/>
+                    <field name="currency_id"/>
+                    <field name="period_id" attrs="{'required': [('state','=','check_import')]}"/>
+                    <newline/>
+                    <field name="balance_start" attrs="{'required': [('state','=','check_import')]}"/>
+                    <field name="balance_end" attrs="{'required': [('state','=','check_import')]}"/>
+                    <field name="line_ids" colspan="4" nolabel="1" height="450"/>
+                    <group colspan="4" col="4">
+                        <field name="balance_end_computed"/>
+                        <button type="special" special="cancel" string="Cancel"/>
+                        <button name="button_create_real_statement" type="object" string="Create Statement" icon="gtk-execute"/>
+                    </group>
+                </group>
+                <field name="state" invisible="1"/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_import_multiline_wizard" model="ir.actions.act_window">
+        <field name="name">Import Multiline File</field>
+        <field name="res_model">account.bank.statement.mt940e.import.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_import_multiline_wizard"
+        name="Import Multiline Statement"
+        parent="account.menu_finance_entries"
+        action="action_import_multiline_wizard"
+        />
+
+    <record id="view_import_multiline_wizard_line_tree" model="ir.ui.view">
+        <field name="name">import.multiline.wizard.line.tree</field>
+        <field name="model">account.bank.statement.mt940e.import.wizard.line</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Lines" editable="bottom">
+                <field name="date"/>
+                <field name="name" required="1"/>
+                <field name="type" required="1"/>
+                <field name="note"/>
+                <field name="partner_id" attrs="{'required': [('type','!=','general')]}"/>
+                <field name="account_id" required="1"/>
+                <field name="amount"/>
+                <field name="move_line_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_import_multiline_wizard_line_form" model="ir.ui.view">
+        <field name="name">import.multiline.wizard.line.form</field>
+        <field name="model">account.bank.statement.mt940e.import.wizard.line</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Lines">
+                <field name="date"/>
+                <field name="name" required="1"/>
+                <field name="type" required="1"/>
+                <field name="note"/>
+                <field name="partner_id" attrs="{'required': [('type','!=','general')]}"/>
+                <field name="account_id" required="1"/>
+                <field name="amount"/>
+                <field name="move_line_ids"/>
+            </form>
+        </field>
+    </record>
+
+</data>
+</openerp>
