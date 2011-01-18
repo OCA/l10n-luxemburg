@@ -351,7 +351,7 @@ Details: %s
                     'name': 'FRAIS BANCAIRE',
                     'note': 'FRAIS BANCAIRE',
                     'type': 'general',
-                    'amount': v['charges'],
+                    'amount': v['charges'] * -1,
                     'date': str(v['date']),
                     'account_id': aids[0],
                 }
