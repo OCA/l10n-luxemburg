@@ -461,7 +461,7 @@ def _create_pay(self,cr,uid,data,context):
     try:
         # Setup multiline data in place
         pay_order = strip_accents(ns.multiline_data)
-        pay_order = pay_order.encode('ascii')
+        pay_order = pay_order.encode('ascii', 'ignore')
         log.add("Successfully Exported\n--\nSummary:\n\nTotal amount paid : %.2f \nTotal Number of Payments : %d \n-- " %(total,seq))
     except Exception, e:
         log.add("Export Failed\n"+ tools.ustr(e) + 'CORRUPTED FILE !\n')
