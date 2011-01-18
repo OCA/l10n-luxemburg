@@ -14,15 +14,6 @@
                         <field name="mt940e_filename"/>
                     </page>
                 </notebook>
-                <xpath expr="/form/notebook/page[@string='Entry encoding']/field[@name='line_ids']/tree/field[@name='partner_id']" position="attributes">
-                    <attribute name="attrs">{'required': [('type','!=','general')]}</attribute>
-                </xpath>
-                <xpath expr="/form/notebook/page[@string='Entry encoding']/field[@name='line_ids']/form/field[@name='partner_id']" position="attributes">
-                    <attribute name="attrs">{'required': [('type','!=','general')]}</attribute>
-                </xpath>
-                <xpath expr="/form/notebook/page[@string='Entry encoding']/field[@name='line_ids']" position="attributes">
-                    <attribute name="context">{'date': date}</attribute>
-                </xpath>
             </data>
         </field>
     </record>
