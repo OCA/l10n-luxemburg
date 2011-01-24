@@ -331,7 +331,7 @@ Details: %s
             if l.get('partner_id'):
                 l['log'].append(_('partner previously found, update account and type from partner from'))
                 partner = self.pool.get('res.partner').browse(cr, uid, l['partner_id'], context=context)
-                if not l.get('type','') not in ('supplier','customer'):
+                if l.get('type','') not in ('supplier','customer'):
                     if l['amount'] < 0:
                         l['type'] = 'supplier'
                     else:
