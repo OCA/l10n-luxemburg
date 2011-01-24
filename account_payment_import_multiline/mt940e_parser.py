@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 import os
 import sys
@@ -7,7 +8,7 @@ from datetime import date
 
 class mt940e_account_info():
     def __init__(self, data):
-        self.data = data
+        self.data = data.replace('\n','').replace('\r','')
         self.ndata = len(data)
         self.offset = self.data.find('?')
 
@@ -124,6 +125,9 @@ class mt940e_parser(object):
             '20': [27, 'details', 'Debit/Credit AccountBankInfo with leading Zero'],
             '21': [10, 'details', ''],
             '22': [27, 'details', ''],
+            '23': [27, 'details', ''],
+            '24': [27, 'details', ''],
+            '25': [27, 'details', ''],
             #'23': [27, 'client_info', ''],
             #'24': [27, 'beneficiary', ''],
             #'25': [27, 'beneficiary', ''],
@@ -132,9 +136,9 @@ class mt940e_parser(object):
             '28': [27, 'exchange_rate', ''],
             #'29': [27, 'exchange_rate', ''],
             #'30': [8, 'bank_code', ''],
-            '31': [24, 'communication', ''],
-            '32': [27, 'beneficiary', ''],
-            '33': [27, 'beneficiary', ''],
+            '31': [24, 'communication', ''], # numéro du compte bénénficiaire
+            '32': [27, 'beneficiary', ''], # nom donneur d'ordre
+            '33': [27, 'beneficiary', ''], # nom donneur d'ordre
             '38': [31, 'iban', ''],
         }
         cline = data[2:]
