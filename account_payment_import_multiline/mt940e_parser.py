@@ -64,6 +64,55 @@ class mt940e_parser(object):
         self.data[self._code_map[code]] = data
         return True
 
+    def statements_sort(self):
+        def st_cmp(x, y):
+            if x['date_start'] < y['date_start']:
+                return -1
+            if x['date_start'] > y['date_start']:
+                return 1
+            return 0
+        self.statement_list.sort(cmp=st_cmp)
+
+    def check_suite(self):
+        """check if statement provided is following each other"""
+        if not self.statement_list:
+            return True
+        s = None
+        cur = None
+        type = None
+        acct = None
+        for st in self.statement_list:
+            if s is None:
+                s = st['balance_end']
+                cur = st['currency']
+                type = st['type']
+                acct = st['account_nb']
+                print("S: %s, INIT ST: number: %s" % (s, st['name']))
+            elif cur != st['currency']:
+                raise Exception("currency differs")
+            elif type != st['type']:
+                raise Exception("type of statement differs")
+            elif acct != st['account_nb']:
+                raise Exception("account number differs")
+            elif not (s - 0.00001 < st['balance_start'] < s + 0.00001):
+                raise Exception("ending and starting balance are not following each others")
+            else:
+                s = st['balance_end']
+                print("S: %s, ST: number: %s, start: %s, end: %s" % (s, st['name'], st['balance_start'], st['balance_end']))
+                #raise Exception("Statement are not following each other")
+        # everything OK
+        return True
+
+    def p_statement_start(self, code, data):
+        print("Code: %s => %s" % (code, data))
+        if 'start_found' in self.data:
+            # that another bank statement, insert the current one
+            # ordered by date
+            self.statement_list.append(self.data)
+            # create a new empty statement
+            self.reset_data()
+        self.data['start_found'] = True
+
     def p_opening_balance(self, code, data):
         sign = self.t_get_sign(data[0])
         d = self.t_get_date(data[1:7])
@@ -216,7 +265,7 @@ class mt940e_parser(object):
         self.data['lines'][-1].update(cdata)
 
     _codes = {
-        '20': code_simple_store,
+        '20': p_statement_start,
         '25': code_simple_store,
         '28': code_simple_store,
         '60F': p_opening_balance,
@@ -226,7 +275,11 @@ class mt940e_parser(object):
     }
 
     def __init__(self):
+        self.statement_list = []
         self.elem = []
+        self.reset_data()
+
+    def reset_data(self):
         self.data = {
             'type': '',
             'account_nb': '',
@@ -243,7 +296,7 @@ class mt940e_parser(object):
     def parse(self, f):
 #        print("%s" % (self._tagsep))
         for l in f.readlines():
-            l = l.replace('\r\n','')
+            l = l.replace('\r','').replace('\n', '')
             if l and l[0] == self._tagsep:
                 self.elem.append(l)
 
@@ -256,6 +309,29 @@ class mt940e_parser(object):
 #            print("Code: %s, D: %s" % (code, d))
             if code in self._codes:
                 self._codes[code](self, code, d)
+        self.p_statement_start('20', None)
+        self.statements_sort()
+        try:
+            self.check_suite()
+        except Exception:
+            raise Exception("statements are not following each other, or doest no have the same account number, currency or type")
+        if len(self.statement_list) > 1:
+            # we need to group statement inside one
+            self.reset_data()
+            print("%s" % (self.statement_list[0].keys()))
+            self.data.update({
+                'name': '%s -> %s' % (self.statement_list[0]['name'], self.statement_list[-1]['name']),
+                'date_start': self.statement_list[0]['date_start'],
+                'date_end': self.statement_list[0]['date_end'],
+                'balance_start': self.statement_list[0]['balance_start'],
+                'balance_end': self.statement_list[-1]['balance_end'],
+                'account_nb': self.statement_list[0]['account_nb'],
+                'type': self.statement_list[0]['type'],
+                'currency': self.statement_list[0]['currency'],
+                'lines': [],
+            })
+            for st in self.statement_list:
+                self.data['lines'].extend(st['lines'])
 
 #        print("Summary:")
 #        print("========")
@@ -273,4 +349,6 @@ if __name__ == '__main__':
     p = mt940e_parser()
     f = open(sys.argv[1])
     p.parse(f)
-
+    #print("P.statements: %s" % (p.statement_list))
+    for st in p.statement_list:
+        print("%s - %s (%s) [ %s -> %s]" % (st['name'], st['date_start'], str(type(st['date_start'])),  st['balance_start'], st['balance_end']))
