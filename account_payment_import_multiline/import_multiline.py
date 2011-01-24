@@ -198,7 +198,13 @@ class account_bank_statement_mt940_import_wizard(osv.osv_memory):
                             # invoices belongs to different partner_id
                             line['log'].append(_('cancelling, invoice belongs to differents partners'))
                             return False
-                        total += invoice.amount_total
+                        mult = {
+                            'out_invoice': 1,
+                            'out_refund': -1,
+                            'in_invoice': -1,
+                            'in_refund': 1,
+                        }[invoice.type]
+                        total += invoice.amount_total * mult
                         invoices.append(invoice)
 
                 if total - 0.00001 < values['amount'] < total + 0.00001:
