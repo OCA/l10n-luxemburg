@@ -189,12 +189,14 @@ class account_bank_statement_mt940_import_wizard(osv.osv_memory):
                     match = match.replace(' ','/').replace('.','/')
 
                     invoice_ids = self.pool.get('account.invoice').search(cr, uid, [('number','=',match)], context=context)
+                    line['log'].append(_('searching invoice with number = %s, found: %d') % (match, len(invoice_ids)))
                     if len(invoice_ids) == 1:
                         invoice = self.pool.get('account.invoice').browse(cr, uid, invoice_ids[0], context=context)
                         if partner_id is None:
                             partner_id = invoice.partner_id.id
                         elif partner_id != invoice.partner_id.id:
                             # invoices belongs to different partner_id
+                            line['log'].append(_('cancelling, invoice belongs to differents partners'))
                             return False
                         total += invoice.amount_total
                         invoices.append(invoice)
@@ -220,6 +222,8 @@ class account_bank_statement_mt940_import_wizard(osv.osv_memory):
                                 if not move_line.reconcile_id and move_line.account_id.reconcile == True:
                                     line_ids.append(move_line.id)
                     line['move_line_ids'] = [(6, 0, line_ids)]
+                else:
+                    line['log'].append(_('statement amount (%s) doesn\'t match invoices sum (%s)') % (values['amount'], total))
             else:
                 line['log'].append(_('no matching invoice found'))
         return False
