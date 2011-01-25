@@ -174,7 +174,7 @@ class account_bank_statement_mt940_import_wizard(osv.osv_memory):
         return
 
     def match_invoice(self, cr, uid, line, values, context=None):
-        rexp = '20[0-9]{2}[/ .]{1}[0-9]{5}'
+        rexp = '20[0-9]{2}[/ .-]{1}[0-9]{5}'
         line['log'].extend([_('Match Invoice'),
                             _('=============')])
         for k in ('reference', 'details', 'beneficiary'):
@@ -187,7 +187,6 @@ class account_bank_statement_mt940_import_wizard(osv.osv_memory):
 
                 for match in matches:
                     match = match.replace(' ','/').replace('.','/')
-
                     invoice_ids = self.pool.get('account.invoice').search(cr, uid, [('number','=',match)], context=context)
                     line['log'].append(_('searching invoice with number = %s, found: %d') % (match, len(invoice_ids)))
                     if len(invoice_ids) == 1:
@@ -443,4 +442,14 @@ class account_bank_statement_mt940e_import_wizard_line(osv.osv_memory):
         'type': lambda *a: 'general',
     }
 
+    def onchange_partner_id(self, cr, uid, ids, partner_id, type, context=None):
+        ocv = { 'value': {}}
+        if not partner_id or not type:
+            return ocv
+        partner = self.pool.get('res.partner').browse(cr, uid, partner_id, context=context)
+        if type == 'supplier' and partner.property_account_payable.id:
+            ocv['value']['account_id'] = partner.property_account_payable.id
+        if type == 'customer' and partner.property_account_receivable.id:
+            ocv['value']['account_id'] = partner.property_account_receivable.id
+        return ocv
 account_bank_statement_mt940e_import_wizard_line()

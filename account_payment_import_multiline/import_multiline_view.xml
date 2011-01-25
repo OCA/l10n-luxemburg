@@ -75,7 +75,7 @@
                 <field name="name" required="1"/>
                 <field name="type" required="1"/>
                 <field name="note"/>
-                <field name="partner_id" attrs="{'required': [('type','!=','general')]}"/>
+                <field name="partner_id" attrs="{'required': [('type','!=','general')]}" on_change="onchange_partner_id(partner_id, type)"/>
                 <field name="account_id" required="1"/>
                 <field name="amount"/>
                 <field name="move_line_ids"/>
@@ -92,7 +92,7 @@
                 <field name="date"/>
                 <field name="name" required="1"/>
                 <field name="type" required="1"/>
-                <field name="partner_id" attrs="{'required': [('type','!=','general')]}"/>
+                <field name="partner_id" attrs="{'required': [('type','!=','general')]}" on_change="onchange_partner_id(partner_id, type)"/>
                 <field name="account_id" required="1"/>
                 <field name="amount"/>
                 <separator string="Note" colspan="4"/>
