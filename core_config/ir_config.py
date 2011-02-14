@@ -67,6 +67,8 @@ class ir_config(osv.osv):
             ref_model, ref_id = value.strip().split(',')[:2]
             ref_pool = self.pool.get(ref_model).browse(cr, uid, int(ref_id))
             return ref_pool
+        if value is None:
+            return None
         return type_option(value)
 
     @cache(skiparg=2)
