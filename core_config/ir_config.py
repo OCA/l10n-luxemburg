@@ -101,7 +101,8 @@ class ir_config(osv.osv):
         for default_value in default_values:
             self.write(cr, uid, [default_value['id']],
                        {'value': default_value['default_value']})
-
+        return False
+    
     def write(self, cr, uid, ids, vals, context=None):
         if 'value' in vals.keys():
             for option in self.read(cr, uid, ids, []):
