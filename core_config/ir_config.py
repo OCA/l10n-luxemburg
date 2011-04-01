@@ -21,7 +21,8 @@
 #
 ##############################################################################
 
-from osv import fields, osv
+from osv import osv
+from osv import fields
 from tools.translate import _
 from tools.misc import cache
 
@@ -40,9 +41,9 @@ class ir_config(osv.osv):
         ]
 
     _columns = {
-        'name': fields.char('Name', size=255, select=1, readonly=True),
-        'type': fields.selection(_get_type_selection, 'Type', select=1, required=True, readonly=True),
-        'value': fields.char('Value', size=64, select=1),
+        'name': fields.char('Name', size=255, readonly=True),
+        'type': fields.selection(_get_type_selection, 'Type', required=True, readonly=True),
+        'value': fields.char('Value', size=64),
         'default_value': fields.char('Default Value', size=64, readonly=True),
         'description': fields.text('Description', readonly=True, translate=True),
     }
@@ -97,15 +98,19 @@ class ir_config(osv.osv):
         return False
 
     def reset_default_values(self, cr, uid, ids, context=None):
-        default_values = self.read(cr, uid, ids, ['default_value'])
+        if context is None:
+            context = {}
+        default_values = self.read(cr, uid, ids, ['default_value'], context=context)
         for default_value in default_values:
             self.write(cr, uid, [default_value['id']],
-                       {'value': default_value['default_value']})
+                       {'value': default_value['default_value']}, context=context)
         return False
-    
+
     def write(self, cr, uid, ids, vals, context=None):
+        if context is None:
+            context = {}
         if 'value' in vals.keys():
-            for option in self.read(cr, uid, ids, []):
+            for option in self.read(cr, uid, ids, [], context=context):
                 optname_validate = 'validate_'+option['name'].replace('.','_')
                 opttype_validate = 'validate_type_'+option['type']
                 try:
@@ -133,17 +138,22 @@ class ir_config(osv.osv):
         """default validation methods for integer option
            @raise osv.except_osv in case of an error
         """
+        if context is None:
+            context = {}
         if 'default_value' in vals.keys():
             if not vals['default_value'].isdigit():
                 raise osv.except_osv(_('Error'), _('The dafault value must be a integer.'))
         if 'value' in vals.keys():
             if not vals['value'].isdigit():
                 raise osv.except_osv(_('Error'), _('The value must be a integer.'))
+        return True
 
     def validate_type_float(self, cr, uid, option, vals, context=None):
         """default validation methods for float option
            @raise osv.except_osv in case of an error
         """
+        if context is None:
+            context = {}
         if 'default_value' in vals.keys():
             try:
                 float(vals['default_value'])
@@ -154,18 +164,23 @@ class ir_config(osv.osv):
                 float(vals['value'])
             except ValueError:
                 raise osv.except_osv(_('Error'), _('The value must be a float.'))
+        return True
 
     def validate_type_boolean(self, cr, uid, option, vals, context=None):
         """default validation methods for boolean option
            @raise osv.except_osv in case of an error
         """
+        if context is None:
+            context = {}
         if 'default_value' in vals.keys():
             if not vals['default_value'] in ['0', '1', '']:
                 raise osv.except_osv(_('Error'), _('The dafault value must be a boolean.'))
         if 'value' in vals.keys():
             if not vals['value'] in ['0', '1', '']:
                 raise osv.except_osv(_('Error'), _('The value must be a boolean.'))
+        return True
 
 
 ir_config()
 
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

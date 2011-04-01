@@ -16,6 +16,19 @@
             </field>
         </record>
 
+        <record model="ir.ui.view" id="view_ir_config_search">
+            <field name="name">ir.config.search</field>
+            <field name="model">ir.config</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Database config option">
+                    <field name="name"/>
+                    <field name="type"/>
+                    <field name="value"/>
+                </search>
+            </field>
+        </record>
+
         <record model="ir.ui.view" id="view_ir_config_form">
             <field name="name">ir.config.form</field>
             <field name="model">ir.config</field>
@@ -43,6 +56,7 @@
             <field name="res_model">ir.config</field>
             <field name="view_type">form</field>
             <field name="view_id" ref="view_ir_config_form"/>
+            <field name="search_view_id" ref="view_ir_config_search"/>
         </record>
         <record model="ir.actions.act_window.view" id="action_ir_config_tree">
             <field name="sequence" eval="10"/>
