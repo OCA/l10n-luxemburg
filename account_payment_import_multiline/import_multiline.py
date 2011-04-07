@@ -133,8 +133,13 @@ class account_bank_statement_mt940_import_wizard(osv.osv_memory):
                     values['beneficiary'] = '%s %s %s' % (data[:pos], group, data[posr:])
                 elif not data[pos-1].isspace() and data[posr].isspace():
                     values['beneficiary'] = '%s %s%s' % (data[:pos], group, data[posr:])
-                elif data[pos-1].isspace() and not data[posr].isspace():
-                    values['beneficiary'] = '%s%s %s' % (data[:pos], group, data[posr:])
+                elif data[pos-1].isspace():
+                    if posr >= len(data):
+                        data_posr = ''
+                    else:
+                        data_posr = data[posr:]
+                    if len(data_posr) and not data_posr[0].isspace():
+                        values['beneficiary'] = '%s%s %s' % (data[:pos], group, data_posr)
                 return
         values['_beneficiary'] = data
 
