@@ -44,10 +44,12 @@ class mt940e_parser(object):
     def t_get_sign(self, raw):
 #        print(">>> parse sign: _%s_" % (raw))
         return {
-            'C': 1,
             'D': -1,
-            #RC: ??
-            #RD: ??
+            'RC': -1,
+            'CR': -1,
+            'C': 1,
+            'RD': 1,
+            'DR': 1,
         }[raw.strip()]
 
     def t_get_amount(self, raw):
