@@ -403,10 +403,12 @@ Details: %s
 
         wizard_stline_pool = self.pool.get('account.bank.statement.mt940e.import.wizard.line')
         lids = wizard_stline_pool.search(cr, uid, [('wizard_id','=',wizard_id)], context=context)
-        for seq, stline in enumerate(wizard_stline_pool.read(cr, uid, lids, ['date','name','note','partner_id','account_id','amount','type','move_line_ids'], context=context)):
+        for seq, stline in enumerate(wizard_stline_pool.read(cr, uid, lids, ['date','name','note','log', 'partner_id','account_id','amount','type','move_line_ids'], context=context)):
 
             stline['sequence'] = seq
             mvline_ids = stline.pop('move_line_ids', [])
+            log_txt = stline.pop('log', '')
+            stline['note'] += u'\n%s' % (log_txt)
             if mvline_ids:
                 reconcile_data = {
                     'name': stline['date'],
