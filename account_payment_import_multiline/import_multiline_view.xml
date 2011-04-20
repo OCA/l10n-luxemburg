@@ -25,6 +25,7 @@
                 </group>
                 <group states="import_failed" height="600">
                     <label string="Import error !"/>
+                    <field name="error_msg" nolabel="1" colspan="4" readonly="1"/>
                     <group colspan="4" col="2">
                         <button type="special" special="cancel" string="Cancel" icon="gtk-cancel"/>
                         <button type="object" name="button_choose_another_file" string="Retry" icon="gtk-go-back"/>
@@ -78,7 +79,7 @@
                 <field name="partner_id" attrs="{'required': [('type','!=','general')]}" on_change="onchange_partner_id(partner_id, type)"/>
                 <field name="account_id" required="1"/>
                 <field name="amount"/>
-                <field name="move_line_ids"/>
+                <field name="move_line_ids" domain="[('account_id.reconcile','=',True)]"/>
             </tree>
         </field>
     </record>
@@ -98,7 +99,7 @@
                 <separator string="Note" colspan="4"/>
                 <field name="note" nolabel="1" colspan="4"/>
                 <separator string="Reconcile Lines" colspan="4"/>
-                <field name="move_line_ids" nolabel="1" colspan="4"/>
+                <field name="move_line_ids" nolabel="1" colspan="4" height="150" domain="[('account_id.reconcile','=',True)]"/>
                 <separator string="Log" colspan="4"/>
                 <field name="log" nolabel="1" colspan="4"/>
             </form>

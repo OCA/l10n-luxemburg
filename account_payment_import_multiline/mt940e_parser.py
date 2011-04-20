@@ -5,6 +5,11 @@ import os
 import sys
 from datetime import datetime
 from datetime import date
+import re
+
+ocmt_regexp = re.compile('.*/OCMT/([A-Z]{3})([0-9,]+)/.*')
+chgs_regexp = re.compile('.*/CHGS/([A-Z]{3})([0-9,]+)/.*')
+exch_regexp = re.compile('.*/EXCH/([0-9,]+)/.*')
 
 class mt940e_account_info():
     def __init__(self, data):
@@ -35,6 +40,7 @@ class mt940e_parser(object):
         '20': 'type',
         '25': 'account_nb',
         '28': 'name',
+        '28C': 'name',
     }
 
     def t_get_date(self, raw):
@@ -45,11 +51,11 @@ class mt940e_parser(object):
 #        print(">>> parse sign: _%s_" % (raw))
         return {
             'D': -1,
-            'RC': -1,
-            'CR': -1,
+            'RC': 1,
+            'CR': 1,
             'C': 1,
-            'RD': 1,
-            'DR': 1,
+            'RD': -1,
+            'DR': -1,
         }[raw.strip()]
 
     def t_get_amount(self, raw):
@@ -72,7 +78,8 @@ class mt940e_parser(object):
                 return -1
             if x['date_start'] > y['date_start']:
                 return 1
-            return 0
+            # date are the same, so compare statement name (i.e. number of the statement)
+            return cmp(x['name'], y['name'])
         self.statement_list.sort(cmp=st_cmp)
 
     def check_suite(self):
@@ -150,11 +157,17 @@ class mt940e_parser(object):
         d = self.t_get_date(data[0:6]) # = 6
         entry_d = data[6:10] # = 4
         sign = self.t_get_sign(data[10:12]) # = 2
-        amount = self.t_get_amount(data[12:27])
-        swift_code = self.t_get_swift_code(data[27:31])
-        owner_reference = data[31:47]
+        aidx = 12
+        for k in range(16):
+            if data[aidx + k] not in '0123456789,':
+                aidx += k
+                break
+
+        amount = self.t_get_amount(data[12:aidx])
+        swift_code = self.t_get_swift_code(data[aidx:aidx+4])
+        owner_reference = data[aidx+4:aidx+4+16]
 #        print("### SWIFT CODE: %s, OWNER REF: %s" % (swift_code, owner_reference))
-        bank_reference = data[47:]
+        bank_reference = data[aidx+4+16:]
 #        if not bank_reference.lstrip().startswith('//'):
 #            raise Exception("Invalid bank reference _%s_" % (bank_reference))
 
@@ -166,7 +179,12 @@ class mt940e_parser(object):
             'owner_reference': owner_reference,
             'bank_reference': bank_reference,
         }
-#        print("NEW LINE: %s" % (new_line))
+
+        m = ocmt_regexp.match(data)
+        if m:
+            cur_amount, amount = m.groups()
+            new_line['original_amount'] = self.t_get_amount(amount)
+
         self.data['lines'].append(new_line)
 
     def p_transfert_accountinfo(self, code, data):
@@ -191,6 +209,12 @@ class mt940e_parser(object):
             '32': [27, 'beneficiary', ''], # nom donneur d'ordre
             '33': [27, 'beneficiary', ''], # nom donneur d'ordre
             '38': [31, 'iban', ''],
+            '60': [35, 'beneficiary_details', 'Beneficiary Details'],
+            '61': [35, 'beneficiary_details', ''],
+            '62': [35, 'beneficiary_details', ''],
+            '63': [35, 'beneficiary_details', ''],
+            '64': [35, 'beneficiary_details', ''],
+            '65': [35, 'beneficiary_details', ''],
         }
         cline = data[2:]
         cdata = {
@@ -204,8 +228,9 @@ class mt940e_parser(object):
 #            'account_info': '',
 #            'client_info': '',
             'beneficiary': '',
+            'beneficiary_details': '',
 #            'bank_code': '',
-            'original_amount': '',
+#            'original_amount': '',  <<<< now this is setup on the :61: line
 #            'beneficiary_name': '',
             'iban': '',
         }
@@ -241,6 +266,14 @@ class mt940e_parser(object):
                     cdata[_infocode[c][1]] += i
             except KeyError:
                 raise Exception("Unknonw account info code %s" % (c))
+        chgs_m = chgs_regexp.match(cdata.get('details',''))
+        if chgs_m:
+            chgs_cur, chgs_amount = chgs_m.groups()
+            cdata['charges'] = self.t_get_amount(chgs_amount)
+        exch_m = exch_regexp.match(cdata.get('details', ''))
+        if exch_m:
+            exch_rate, = exch_m.groups()
+            cdata['exchange_rate'] = self.t_get_amount(exch_rate)
 #        offset = 0
 #        while True:
 #            x = cline.find('?', offset)
@@ -270,9 +303,12 @@ class mt940e_parser(object):
         '20': p_statement_start,
         '25': code_simple_store,
         '28': code_simple_store,
+        '28C': code_simple_store,
+        '60M': p_opening_balance,
         '60F': p_opening_balance,
         '61': p_transfert_statement,
         '86': p_transfert_accountinfo,
+        '62M': p_ending_balance,
         '62F': p_ending_balance,
     }
 
@@ -317,12 +353,11 @@ class mt940e_parser(object):
             self.check_suite()
         except Exception:
             raise Exception("statements are not following each other, or doest no have the same account number, currency or type")
-        if len(self.statement_list) > 1:
+        if len(self.statement_list) > 0:
             # we need to group statement inside one
             self.reset_data()
             print("%s" % (self.statement_list[0].keys()))
             self.data.update({
-                'name': '%s -> %s' % (self.statement_list[0]['name'], self.statement_list[-1]['name']),
                 'date_start': self.statement_list[0]['date_start'],
                 'date_end': self.statement_list[0]['date_end'],
                 'balance_start': self.statement_list[0]['balance_start'],
@@ -332,6 +367,15 @@ class mt940e_parser(object):
                 'currency': self.statement_list[0]['currency'],
                 'lines': [],
             })
+            if len(self.statement_list) > 1:
+                self.data.update({
+                    'name': '%s -> %s' % (self.statement_list[0]['name'], self.statement_list[-1]['name']),
+                })
+            else:
+                self.data.update({
+                    'name': '%s' % (self.statement_list[0]['name']),
+                })
+
             for st in self.statement_list:
                 self.data['lines'].extend(st['lines'])
 

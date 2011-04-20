@@ -69,6 +69,7 @@ class account_bank_statement_mt940_import_wizard(osv.osv_memory):
         'balance_end': fields.float('Balance End'),
         'balance_end_computed': fields.function(_compute_balance_end, type='float', string='Computed Balance End', readonly=True, method=True),
         'line_ids': fields.one2many('account.bank.statement.mt940e.import.wizard.line', 'wizard_id', 'Lines'),
+        'error_msg': fields.text('Error Message', size=255),
         'state': fields.selection(_STATES, 'State', readonly=True),
     }
 
@@ -279,8 +280,8 @@ class account_bank_statement_mt940_import_wizard(osv.osv_memory):
         return False
 
     def button_import_file(self, cr, uid, ids, context=None):
-        def fail_return():
-            return self.write(cr, uid, [ ids[0] ], {'state': 'import_failed'}, context=context)
+        def fail_return(error_msg=''):
+            return self.write(cr, uid, [ ids[0] ], {'state': 'import_failed', 'error_msg': error_msg}, context=context)
         if not ids:
             return {}
         k = self.read(cr, uid, ids[0], ['file', 'filename'], context=context)[0]
@@ -305,13 +306,14 @@ class account_bank_statement_mt940_import_wizard(osv.osv_memory):
                 values[key] = val
         # Get Journal
         st_iban = p.data['account_nb'].split('/')[1]
+        st_iban = st_iban.strip()
         st_account_ids = self.pool.get('res.partner.bank').search(cr, uid, [('iban','ilike',st_iban)], context=context)
         if not st_account_ids:
-            return fail_return()
+            return fail_return('No IBAN found for: %s' % (st_iban))
         st_account = st_account_ids[0]
         st_payment_mode_ids = self.pool.get('payment.mode').search(cr, uid, [('bank_id','=',st_account)], context=context)
         if not st_payment_mode_ids:
-            return fail_return()
+            return fail_return('No payment mode found for bank account: %s' % (st_account))
         st_payment_mode = self.pool.get('payment.mode').read(cr, uid, st_payment_mode_ids[0], context=context)
         if not st_payment_mode:
             return fail_return()
@@ -332,11 +334,15 @@ class account_bank_statement_mt940_import_wizard(osv.osv_memory):
                 'note': """
 Communication: %s
 Beneficiary: %s
+Beneficiary Details: %s
 Details: %s
-                """ % (v.get('communication', ''), v.get('beneficiary',''), v.get('details')),
+                """ % (v.get('communication', ''), v.get('beneficiary',''), v.get('beneficiary_details', ''), v.get('details')),
             }
             afactor = v['amount'] >= 0 and 1 or -1
-            l['amount'] = v['original_amount'] * afactor
+            l['amount'] = v['amount']
+            if v['charges']:
+                # deduce charges from amount
+                l['amount'] -= v['charges'] * afactor
             l['log'] = []
 
             # try to dermine the partner
