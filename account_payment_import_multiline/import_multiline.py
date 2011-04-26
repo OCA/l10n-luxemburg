@@ -330,7 +330,7 @@ class account_bank_statement_mt940_import_wizard(osv.osv_memory):
         for v in p.data['lines']:
             l = {
                 'date': str(v['date']),
-                'name': v['reference'],
+                'name': v.get('reference',''),
                 'note': """
 Communication: %s
 Beneficiary: %s
