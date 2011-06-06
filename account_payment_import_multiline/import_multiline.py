@@ -325,6 +325,22 @@ class account_bank_statement_mt940_import_wizard(osv.osv_memory):
             return fail_return()
         values['period_id'] = period_ids[0]
 
+        # Check that the statement does not span on multiple periods
+        line_periods = set()
+        period_proxy = self.pool.get('account.period')
+        for v in p.data['lines']:
+            v_date = str(v['date'])
+            try:
+                # NOTE: we do not consider period wihch have 'opening/closing' checked (=> special) !
+                pids = period_proxy.search(cr, uid, [('date_start','<=',v_date),('date_stop','>=',v_date),('special','=',False)])
+            except osv.except_osv:
+                # FIXME: no period found?
+                pass
+            line_periods.update(pids)
+        if len(line_periods) > 1:
+            # more than one period, this is not allowed!
+            return fail_return('The provided file contains moves on more than one fiscal period, we could not import this')
+
         # Insert lines
         values['line_ids'] = []
         for v in p.data['lines']:
