@@ -28,7 +28,6 @@ import csv
 import pooler
 import wizard
 import base64
-from osv import osv
 import time
 import mx.DateTime
 from mx.DateTime import RelativeDateTime, now, DateTime, localtime
@@ -36,6 +35,10 @@ import tools
 from tools import ustr
 from tools.translate import _
 import unicodedata
+
+from osv import osv
+from osv import fields
+
 
 class Namespace: pass
 
@@ -46,7 +49,7 @@ form = """<?xml version="1.0"?>
    <field name="payment_method" />
    </form>"""
 
-fields = {
+base_fields = {
     'payment_method' : {
         'string': 'Payment Method',
         'type': 'many2one',
@@ -150,8 +153,10 @@ def _create_pay(self,cr,uid,data,context):
         payment_type = 'multi'
 
     payment_authz_mode = set()
-    for t in payment.mode.type.suitable_bank_types:
-        payment_authz_mode.add(t.code)
+    payment_mode_obj = self.pool.get('payment.mode')
+    suitable_bank_types = payment_mode_obj.suitable_bank_types(cr, uid, payment_code =  payment.mode.id)
+    for type in suitable_bank_types:
+        payment_authz_mode.add(type)
 
     #####################################################
     #         Séquence 0  - utilities class / functions #
@@ -378,7 +383,13 @@ def _create_pay(self,cr,uid,data,context):
     for pay in pay_lines:
         seq += 1
 
-        if _get_account(pay).state not in payment_authz_mode:
+        try:
+            account_pay_state = _get_account(pay).state
+        except MultilineDataException, e:
+            e.note = u'Ligne: %s: %s' % (seq, e.note)
+            return e.get_return_dict()
+
+        if account_pay_state not in payment_authz_mode:
             e = MultilineDataException("")
             e.note = u"Ligne %s: %s: compte bancaire n'est pas de type IBAN, impossible d'exporter" % (seq, pay['partner_id'] and pay['partner_id'][1] or '???')
             return e.get_return_dict()
@@ -472,7 +483,7 @@ def _create_pay(self,cr,uid,data,context):
             'state': 'failed',
         }
 
-    pool.get('payment.order').set_done(cr,uid,payment.id,context)
+    pool.get('payment.order').set_done(cr,uid,[payment.id],context)
     return {
         'note':log(),
         'reference': payment.id,
@@ -498,7 +509,7 @@ class wizard_pay_create(wizard.interface):
             'actions' : [],
             'result' : {'type' : 'form',
                         'arch' : form,
-                        'fields' : fields,
+                        'fields' : base_fields,
                         'state' : [('end', 'Cancel'),('export','Export') ]}
         },
         'export' : {
@@ -514,6 +525,59 @@ class wizard_pay_create(wizard.interface):
         }
 
     }
-wizard_pay_create('account.payment_create')
+#wizard_pay_create('account.payment_create')
+
+class wizard_payment_order_export(osv.osv_memory):
+    _name = 'payment.order.export.wizard'
+    _columns = {
+        'charges_code': fields.many2one('charges.code', 'Charges Code', required=True),
+        'payment_method': fields.many2one('payment.method', 'Payment Method'),
+        'export_file': fields.binary('Export File', readonly=True),
+        'export_filename': fields.char('Export Filename', size=128, readonly=True),
+        'note': fields.text('Log', readonly=True),
+        'state': fields.selection([('init','Init'),('export','Export')], 'State', required=True),
+    }
+
+    _defaults = {
+        'state': 'init',
+    }
+
+    def button_payment_export(self, cr, uid, ids, context=None):
+        if context is None:
+            context = {}
+        if not ids:
+            return {}
+        wizard = self.browse(cr, uid, ids[0], context=context)
+        data = {
+            'id': context.get('active_id', False),
+            'form': {
+                'charges_code': wizard.charges_code.id,
+            },
+        }
+#        try:
+        payment = _create_pay(self, cr, uid, data, context)
+        payment_file = payment.pop('pay',False)
+        payment['file'] = payment_file
+#        except MultilineDataException, e:
+#            self.write(cr, uid, [ids[0]], {
+#                'name': _('ERROR DURING GENERATION'),
+#                'note': str(e),
+#                'state': 'export',
+#            })
+#            return {}
+        self.write(cr, uid, [ids[0]], {
+            'note': payment.get('note',''),
+            'export_filename': payment.get('name',''),
+            'export_file': payment_file,
+            'state': 'export',
+        })
+
+        self.pool.get('account.pay').create(cr,uid, payment)
+
+        print("Payment: %s" % (payment))
+        return False
+
+wizard_payment_order_export()
+
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 

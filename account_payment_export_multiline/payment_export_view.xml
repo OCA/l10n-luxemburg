@@ -136,7 +136,7 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-    <menuitem parent="account_payment.next_id_44" id="menu_action_payment_method_tree" action="action_payment_method_tree"/>
+    <menuitem parent="account.menu_configuration_misc" id="menu_action_payment_method_tree" action="action_payment_method_tree"/>
 
     <!-- Charge Code views and menuitems-->
 
@@ -170,7 +170,7 @@
             <field name="view_mode">tree,form</field>
         </record>
     <menuitem
-            parent="account_payment.next_id_44"
+            parent="account.menu_configuration_misc"
             id="menu_action_charges_code_tree" action="action_charges_code_tree"/>
 
     <record model="ir.ui.view" id="view_payment_mode_form_multiline">

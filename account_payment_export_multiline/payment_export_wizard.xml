@@ -1,12 +1,16 @@
 <?xml version="1.0"?>
 <openerp>
-	<data>
+<data>
 
-		<wizard
-			string="Create Payment Export"
-			model="payment.order"
-			name="account.payment_create"
- 			id="wizard_account_payment_create"/>
+    <act_window
+        name="Create Payment Export"
+        res_model="payment.order.export.wizard"
+        src_model="payment.order"
+        view_mode="form"
+        target="new"
+        key2="client_action_multi"
+        view_id="view_payment_order_export_wizard_form"
+        id="action_create_payment_export"/>
 
-	</data>
+</data>
 </openerp>

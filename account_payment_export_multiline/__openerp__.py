@@ -22,28 +22,30 @@
 
 
 {
-    "name":"Payment Order Export For Multiline",
-    "version":"1.0",
-    "author":"Tiny+AJM",
-    "category":"Generic Modules/Accounting",
-    "depends": [
-        "base_vat",
-        "base_iban",
-        "account_payment"
-    ],
-    "demo_xml":[],
-    "init_xml":[],
-    "update_xml" : [
-        "security/ir.model.access.csv",
-        "payment_export_wizard.xml",
-        "payment_export_view.xml",
-        "payment_export_data.xml"
-    ],
-    "active":False,
-    "description": """
-     This module allows to export payment orders.
+    'name': 'Payment Order Export For Multiline',
+    'version': '1.0',
+    'author': 'Thamini S.à.R.L',
+    'website': 'http://www.thamini.com',
+    'category': 'Generic Modules/Accounting',
+    'description':  """
+     This module allows to export payment orders into VIR200 Multiline Format
      """,
-    "installable":True,
+    'depends': [
+        'base_vat',
+        'base_iban',
+        'account_payment'
+    ],
+    'demo_xml': [],
+    'init_xml': [],
+    'update_xml': [
+        'security/ir.model.access.csv',
+        'wizard/export_wizard_view.xml',
+        'payment_export_wizard.xml',
+        'payment_export_view.xml',
+        'payment_export_data.xml'
+    ],
+    'active': False,
+    'installable': True,
 
 }
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
