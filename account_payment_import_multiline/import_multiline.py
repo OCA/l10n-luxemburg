@@ -27,6 +27,7 @@ from StringIO import StringIO
 from osv import osv
 from osv import fields
 from tools.translate import _
+from tools.misc import logged
 from mt940e_parser import mt940e_parser
 
 class account_bank_statement_mt940e_import_wizard_line(osv.osv_memory):
@@ -53,6 +54,19 @@ class account_bank_statement_mt940_import_wizard(osv.osv_memory):
             res[stw.id] = stw.balance_start + balance
         return res
 
+    def _get_currency_id(self, cr, uid, ids, fieldname, args, context=None):
+        result = dict.fromkeys(ids, False)
+        for wizard in self.browse(cr, uid, ids, context=context):
+            journal = wizard.journal_id
+            if not journal:
+                continue
+            print("wizard: %s, journal: %s" % (str(wizard), str(journal)))
+            if journal.currency:
+                result[wizard.id] = journal.currency.id
+            else:
+                result[wizard.id] = journal.company_id.currency_id.id
+        return result
+
     _columns = {
         # step 1
         'file': fields.binary('File'),
@@ -64,7 +78,8 @@ class account_bank_statement_mt940_import_wizard(osv.osv_memory):
         'date': fields.date('Date'),
         'period_id': fields.many2one('account.period', 'Period'),
         'journal_id': fields.many2one('account.journal', 'Journal'),
-        'currency_id': fields.related('journal_id', 'currency', type='many2one', relation='res.currency', string='Currency', readonly=True),
+#        'currency_id': fields.related('journal_id', 'currency', type='many2one', relation='res.currency', string='Currency', readonly=True),
+        'currency_id': fields.function(_get_currency_id, type='many2one', relation='res.currency', string='Currency', method=True, readonly=True),
         'balance_start': fields.float('Balance Start'),
         'balance_end': fields.float('Balance End'),
         'balance_end_computed': fields.function(_compute_balance_end, type='float', string='Computed Balance End', readonly=True, method=True),
@@ -284,7 +299,7 @@ class account_bank_statement_mt940_import_wizard(osv.osv_memory):
             return self.write(cr, uid, [ ids[0] ], {'state': 'import_failed', 'error_msg': error_msg}, context=context)
         if not ids:
             return {}
-        k = self.read(cr, uid, ids[0], ['file', 'filename'], context=context)[0]
+        k = self.read(cr, uid, ids[0], ['file', 'filename'], context=context)
         if not (k and k.get('file')):
             return {}
 
@@ -411,7 +426,7 @@ Details: %s
         wizard_id = ids[0]
         wizard = self.browse(cr, uid, ids[0], context=context)
 
-        st = self.read(cr, uid, wizard_id, ['name', 'date', 'journal_id', 'period_id', 'balance_start', 'balance_end'], context=context)[0]
+        st = self.read(cr, uid, wizard_id, ['name', 'date', 'journal_id', 'period_id', 'balance_start', 'balance_end'], context=context)
         st['mt940e_filename'] = wizard.filename
         st['balance_end_real'] = st.pop('balance_end',0.0)
 
@@ -435,6 +450,7 @@ Details: %s
             st['line_ids'].append((0, 0, stline))
 
         st_id = self.pool.get('account.bank.statement').create(cr, uid, st, context=context)
+        print("ST: %s" % (st_id))
         if st_id:
             return {
                 'res_model': 'account.bank.statement',

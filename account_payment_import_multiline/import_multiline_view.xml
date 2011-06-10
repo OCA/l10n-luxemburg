@@ -7,31 +7,19 @@
         <field name="model">account.bank.statement.mt940e.import.wizard</field>
         <field name="type">form</field>
         <field name="arch" type="xml">
-            <form string="Import Multiline Payments">
-                <group states="init" colspan="4" col="2" height="600">
+            <form string="Import Multiline Payments" col="1">
+                <group col="2" fill="1" expand="1" states='init' height='400'>
                     <field name="file" filename="filename"/>
                     <field name="filename"/>
-                    <group colspan="2" col="2">
-                        <button type="special" special="cancel" string='Cancel'/>
-                        <button name="button_import_file" type="object" string='Import File'/>
-                    </group>
                 </group>
-                <group states="already_imported" height="600">
-                    <label string="This file is already imported"/>
-                    <group colspan="4" col="2">
-                        <button type="special" special="cancel" string="Cancel" icon="gtk-cancel"/>
-                        <button type="object" name="button_choose_another_file" string="Choose Another File" icon="gtk-go-back"/>
-                    </group>
+                <group col="1" expand="1" states='already_imported'>
+                    <label string="This file is already imported" align="0.5" colspan="4"/>
                 </group>
-                <group states="import_failed" height="600">
+                <group col="1" fill="1" expand="1" states='import_failed'>
                     <label string="Import error !"/>
-                    <field name="error_msg" nolabel="1" colspan="4" readonly="1"/>
-                    <group colspan="4" col="2">
-                        <button type="special" special="cancel" string="Cancel" icon="gtk-cancel"/>
-                        <button type="object" name="button_choose_another_file" string="Retry" icon="gtk-go-back"/>
-                    </group>
+                    <field name="error_msg" nolabel="1" readonly="1"/>
                 </group>
-                <group states="check_import">
+                <group col="4" fill="1" expand="1" states='check_import'>
                     <field name="name" attrs="{'required': [('state','=','check_import')]}"/>
                     <field name="date" attrs="{'required': [('state','=','check_import')]}"/>
                     <field name="journal_id" attrs="{'required': [('state','=','check_import')]}"/>
@@ -41,13 +29,19 @@
                     <field name="balance_start" attrs="{'required': [('state','=','check_import')]}"/>
                     <field name="balance_end" attrs="{'required': [('state','=','check_import')]}"/>
                     <field name="line_ids" colspan="4" nolabel="1" height="450"/>
-                    <group colspan="4" col="4">
-                        <field name="balance_end_computed"/>
-                        <button type="special" special="cancel" string="Cancel"/>
-                        <button name="button_create_real_statement" type="object" string="Create Statement" icon="gtk-execute"/>
-                    </group>
                 </group>
-                <field name="state" invisible="1"/>
+                <separator colspan="1"/>
+                <group colspan="1" col="7">
+                    <field name="state" invisible="1" nolabel="1"/>
+                    <group colspan="1" col="2" states='check_import'>
+                        <field name="balance_end_computed"/>
+                    </group>
+                    <button type="special" special="cancel" string='Cancel' states='init,already_imported,import_failed,check_import'/>
+                    <button name="button_import_file" type="object" string='Import File' states='init'/>
+                    <button type="object" name="button_choose_another_file" string="Choose Another File" icon="gtk-go-back" states='already_imported'/>
+                    <button type="object" name="button_choose_another_file" string="Retry" icon="gtk-go-back" states='import_failed'/>
+                    <button name="button_create_real_statement" type="object" string="Create Statement" icon="gtk-execute" states='check_import'/>
+                </group>
             </form>
         </field>
     </record>
@@ -62,7 +56,7 @@
 
     <menuitem id="menu_import_multiline_wizard"
         name="Import Multiline Statement"
-        parent="account.menu_finance_entries"
+        parent="account.menu_account_pp_statements"
         action="action_import_multiline_wizard"
         />
 
