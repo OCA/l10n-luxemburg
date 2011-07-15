@@ -92,6 +92,7 @@ export_fields = {
 def strip_accents(s):
     if isinstance(s, str):
         s = unicode(s, 'utf-8')
+    s.replace(u'ß', 'ss')
     return ''.join((c for c in unicodedata.normalize('NFKD', s) if unicodedata.category(c) not in ('Mn','So', 'Pf', 'Sc')))
 
 class Log:
@@ -476,6 +477,7 @@ def _create_pay(self,cr,uid,data,context):
         log.add("Successfully Exported\n--\nSummary:\n\nTotal amount paid : %.2f \nTotal Number of Payments : %d \n-- " %(total,seq))
     except Exception, e:
         log.add("Export Failed\n"+ tools.ustr(e) + 'CORRUPTED FILE !\n')
+        log.add(tools.ustr(strip_accents(ns.multiline_data)))
         return {
             'name': _('ERROR'),
             'note': log(),
