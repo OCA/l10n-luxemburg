@@ -155,7 +155,8 @@ class mt940e_parser(object):
 
     def p_transfert_statement(self, code, data):
         d = self.t_get_date(data[0:6]) # = 6
-        entry_d = data[6:10] # = 4
+
+        entry_d = self.t_get_date(self.data['date_start'].strftime('%y') + data[6:10]) # = 4
         sign = self.t_get_sign(data[10:12]) # = 2
         aidx = 12
         for k in range(16):

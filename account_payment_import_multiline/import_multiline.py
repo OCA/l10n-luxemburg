@@ -344,7 +344,7 @@ class account_bank_statement_mt940_import_wizard(osv.osv_memory):
         line_periods = set()
         period_proxy = self.pool.get('account.period')
         for v in p.data['lines']:
-            v_date = str(v['date'])
+            v_date = str(v['entry_date'])
             try:
                 # NOTE: we do not consider period wihch have 'opening/closing' checked (=> special) !
                 pids = period_proxy.search(cr, uid, [('date_start','<=',v_date),('date_stop','>=',v_date),('special','=',False)])
