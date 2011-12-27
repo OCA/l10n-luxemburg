@@ -408,7 +408,7 @@ def _create_pay(self,cr,uid,data,context):
             ("32B", u'Devise et montant en devise',
                     15,
                     '',
-                    "%s%s" % (pay['currency'][1].upper(),
+                    "%s%s" % (pay['currency'][1].split(' ',1)[0].upper(),
                               _ml_formatamount(pay['amount_currency']))),
             ("50H", u'Compte bancaire du donneur d\'ordre',
                     0,
