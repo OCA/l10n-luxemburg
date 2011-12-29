@@ -56,8 +56,9 @@
 
     <menuitem id="menu_import_multiline_wizard"
         name="Import Multiline Statement"
-        parent="account.menu_account_pp_statements"
+        parent="account.menu_finance_bank_and_cash"
         action="action_import_multiline_wizard"
+        sequence="100"
         />
 
     <record id="view_import_multiline_wizard_line_tree" model="ir.ui.view">

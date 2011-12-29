@@ -426,13 +426,29 @@ Details: %s
         wizard_id = ids[0]
         wizard = self.browse(cr, uid, ids[0], context=context)
 
-        st = self.read(cr, uid, wizard_id, ['name', 'date', 'journal_id', 'period_id', 'balance_start', 'balance_end'], context=context)
-        st['mt940e_filename'] = wizard.filename
-        st['balance_end_real'] = st.pop('balance_end',0.0)
+        st_record = self.browse(cr, uid, wizard_id, context=context)
+        st = {
+            'name': st_record.name,
+            'date': st_record.date,
+            'journal_id': st_record.journal_id.id,
+            'period_id': st_record.period_id.id,
+            'balance_start': st_record.balance_start,
+            'balance_end': st_record.balance_end,
+            'balance_end_real': st_record.balance_end,
+            'company_id': self.pool.get('res.company')._company_default_get(cr, uid, 'account.bank.statement', context=context),
+            'mt940e_filename': wizard.filename,
+            'line_ids': [],
+        }
 
-        st['line_ids'] = []
+        statement_currency_id = self.pool.get('res.users').browse(cr, uid, uid, context=context).company_id.id
+        if st_record.journal_id.currency:
+            statement_currency_id = st_record.journal_id.currency.id
 
         wizard_stline_pool = self.pool.get('account.bank.statement.mt940e.import.wizard.line')
+        move_line_obj = self.pool.get('account.move.line')
+        voucher_obj = self.pool.get('account.voucher')
+        voucher_line_obj = self.pool.get('account.voucher.line')
+
         lids = wizard_stline_pool.search(cr, uid, [('wizard_id','=',wizard_id)], context=context)
         for seq, stline in enumerate(wizard_stline_pool.read(cr, uid, lids, ['date','name','note','log', 'partner_id','account_id','amount','type','move_line_ids'], context=context)):
 
@@ -441,12 +457,50 @@ Details: %s
             log_txt = stline.pop('log', '')
             stline['note'] += u'\n%s' % (log_txt)
             if mvline_ids:
-                reconcile_data = {
-                    'name': stline['date'],
-                    'line_ids': [(6,0,mvline_ids)],
+                voucher_context = context.copy()
+                voucher_context['date'] = stline['date'] # use payment date for currency computation
+
+                voucher_amount = stline['amount']
+                voucher_type = stline['amount'] < 0 and 'payment' or 'receipt'
+    #
+    #            if line.amount_currency:
+    #                amount = currency_obj.compute(cr, uid, line.currency_id.id,
+    #                    statement.currency.id, line.amount_currency, context=ctx)
+    #            elif (line.invoice and line.invoice.currency_id.id <> statement.currency.id):
+    #                amount = currency_obj.compute(cr, uid, line.invoice.currency_id.id,
+    #                    statement.currency.id, amount, context=ctx)
+
+                voucher_context.update({'move_line_ids': mvline_ids})
+
+                default_voucher_lines = voucher_obj.onchange_partner_id(cr, uid, [],
+                                                partner_id=stline['partner_id'] or False,
+                                                journal_id=st['journal_id'],
+                                                price=abs(voucher_amount),
+                                                currency_id=statement_currency_id,
+                                                ttype=voucher_type,
+                                                date=stline['date'],
+                                                context=voucher_context)
+
+                voucher_data = {
+                        'type': voucher_type,
+                        'name': stline['name'],
+                        'partner_id': stline['partner_id'] or False,
+                        'period_id': st['period_id'],
+                        'journal_id': st['journal_id'],
+                        'account_id': stline['account_id'],
+                        'company_id': st['company_id'],
+                        'currency_id': statement_currency_id,
+                        'date': stline['date'],
+                        'amount': abs(voucher_amount),
                 }
-                reconcile_id = self.pool.get('account.bank.statement.reconcile').create(cr, uid, reconcile_data, context=context)
-                stline['reconcile_id'] = reconcile_id
+                voucher_id = voucher_obj.create(cr, uid, voucher_data, context=voucher_context)
+
+                for line in default_voucher_lines.get('value',{}).get('line_ids',[]):
+                    if line['move_line_id'] in mvline_ids:
+                        line['voucher_id'] = voucher_id
+                        voucher_line_obj.create(cr, uid, line, context=context)
+                stline['voucher_id'] = voucher_id
+
             st['line_ids'].append((0, 0, stline))
 
         st_id = self.pool.get('account.bank.statement').create(cr, uid, st, context=context)
