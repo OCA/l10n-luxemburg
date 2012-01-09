@@ -12,7 +12,7 @@
                     <label string="Line already contain a payment, this wizard will override it. Are you sure you want to continue?" fill="1" colspan="4"/>
                     <separator colspan="4"/>
                     <button special="cancel" string="Cancel" icon="gtk-cancel"/>
-                    <button name="populate_continue" string="Continue" type="object" icon="gtk-forward"/>
+                    <button name="populate_continue" string="Continue" type="object" icon="gtk-go-forward"/>
                 </group>
                 <group colspan="4" col="6" states="choose_lines">
                     <group colspan="6" col="2">
@@ -25,7 +25,7 @@
                     <button special="cancel" string="Cancel" icon="gtk-cancel"/>
                     <button name="populate_statement" string="Create Payment Reconcile" type="object" icon="gtk-ok"/>
                 </group>
-                <field name="state" colspan="4"/>
+                <field name="state" colspan="4" invisible="1"/>
             </form>
         </field>
     </record>
