@@ -45,6 +45,7 @@
         'import_multiline_data.xml',
         'import_multiline_view.xml',
         'account_bank_statement_view.xml',
+        'wizard/wizard_account_statement_line_reconcile_view.xml',
     ],
     'active': False,
     'installable': True,
