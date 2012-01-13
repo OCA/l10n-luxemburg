@@ -109,13 +109,19 @@ class wizard_account_bank_statement_line_reconcile(osv.osv_memory):
                                         ttype=voucher_type,
                                         date=line.date,
                                         context=voucher_context)
+
+        if line.amount >= 0:
+            account_id = statement.journal_id.default_credit_account_id.id
+        else:
+            account_id = statement.journal_id.default_debit_account_id.id
+
         voucher_data = {
                 'type': voucher_type,
                 'name': line.name,
                 'partner_id': line.partner_id.id or False,
                 'period_id': statement.period_id.id,
                 'journal_id': statement.journal_id.id,
-                'account_id': line.account_id.id,
+                'account_id': account_id,
                 'company_id': statement.company_id.id,
                 'currency_id': statement_currency_id,
                 'date': line.date,
