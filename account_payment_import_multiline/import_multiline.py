@@ -481,13 +481,19 @@ Details: %s
                                                 date=stline['date'],
                                                 context=voucher_context)
 
+
+                if voucher_amount >= 0:
+                    account_id = st_record.journal_id.default_credit_account_id.id
+                else:
+                    account_id = st_record.journal_id.default_debit_account_id.id
+
                 voucher_data = {
                         'type': voucher_type,
                         'name': stline['name'],
                         'partner_id': stline['partner_id'] or False,
                         'period_id': st['period_id'],
                         'journal_id': st['journal_id'],
-                        'account_id': stline['account_id'],
+                        'account_id': account_id,
                         'company_id': st['company_id'],
                         'currency_id': statement_currency_id,
                         'date': stline['date'],
