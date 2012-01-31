@@ -20,7 +20,7 @@
                         <field name="partner_id" colspan="2"/>
                     </group>
                     <separator string="Move Lines" colspan="6"/>
-                    <field name="move_line_ids" colspan="4" height="300" width="800" nolabel="1" domain="[('account_id.type','in',['receivable','payable']),('reconcile_id','=',False),('journal_id.type','in',['sale','purchase']),('state','=','valid'),('partner_id','=',partner_id)]" />
+                    <field name="move_line_ids" colspan="4" height="300" width="800" nolabel="1" domain="[('account_id.type','in',['receivable','payable']),('reconcile_id','=',False),('journal_id.type','in',['sale','purchase','general']),('state','=','valid'),('partner_id','=',partner_id)]" />
                     <separator colspan="6"/>
                     <button special="cancel" string="Cancel" icon="gtk-cancel"/>
                     <button name="populate_statement" string="Create Payment Reconcile" type="object" icon="gtk-ok"/>
