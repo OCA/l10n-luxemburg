@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+from __future__ import with_statement
 import re
 import sys
 import codecs
@@ -77,8 +78,11 @@ class INGBankStatementParser(object):
         return len(periods) > 1
 
     def parse(self, f):
-        p = Popen(['pdftotext', '-layout', '-', '-'], stdin=PIPE, stdout=PIPE, stderr=PIPE, close_fds=True)
-        (out, err) = p.communicate(input=f.read())
+        with tempfile.NamedTemporaryFile() as ftmp:
+            ftmp.write(f.read())
+            ftmp.flush()
+            p = Popen(['pdftotext', '-layout', ftmp.name, '-'], stdin=PIPE, stdout=PIPE, stderr=PIPE, close_fds=True, bufsize=-1)
+            (out, err) = p.communicate(input=f.read())
         self.parse_text(out)
         return self.get_statement_entries()
 
