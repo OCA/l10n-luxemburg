@@ -19,23 +19,43 @@ def get_pdf_raw_data(filename):
     return out
 
 
-period_re = ur'.*Période: ([0-9-]+) au ([0-9-]+).*Date: ([0-9-]+).*'
-statement_number_re = ur'\s*Extrait n° (\S+)$'
-amount_start_re = ur'.*Solde initial au ([0-9-]+)\s+([0-9,+-\.]+).*'
-amount_end_re = ur'.*Solde final au ([0-9-]+)\s+([0-9,+-\.]+).*'
-#line_re = ur'\s+([0-9-]+) (\S+?)\s{4,}(.+?)\s{4,}([0-9-]{10})\s+([0-9,\.+-]+)'
-line_re = ur'\s*?([0-9-]+) (\S+?)\s{1,}(.+?)\s{4,}([0-9-]{10})\s+([0-9,\.+-]+)'
-onlydesc_line_re = ur'^\s*(.+?)\s*$'
-empty_line_re = ur'^\s*$'
-account_iban_currency_re = ur'\s+Compte Courant : IBAN (.+)\s+?\((.+?)\)\s*'
-report_re = ur'\s+Report\s+([0-9,\.+-]+)\s*'
-
-ING_D_FORMAT = '%d-%m-%Y'
-
 #XXX: make real logging
-logging.basicConfig(level=logging.INFO)
+#logging.basicConfig(level=logging.INFO)
 
 class INGBankStatementParser(object):
+    ING_D_FORMAT = '%d-%m-%Y'
+    ING_D2_FORMAT = '%d.%m.%Y'
+
+    # generic regexp
+    empty_line_re = ur'^\s*$'
+
+    # main statement part regexp
+    period_re = ur'.*Période: ([0-9-]+) au ([0-9-]+).*Date: ([0-9-]+).*'
+    statement_number_re = ur'\s*Extrait n° (\S+)$'
+    amount_start_re = ur'.*Solde initial au ([0-9-]+)\s+([0-9,+-\.]+).*'
+    amount_end_re = ur'.*Solde final au ([0-9-]+)\s+([0-9,+-\.]+).*'
+    #line_re = ur'\s+([0-9-]+) (\S+?)\s{4,}(.+?)\s{4,}([0-9-]{10})\s+([0-9,\.+-]+)'
+    line_re = ur'\s*?([0-9-]+) (\S+?)\s{1,}(.+?)\s{4,}([0-9-]{10})\s+([0-9,\.+-]+)'
+    onlydesc_line_re = ur'^\s*(.+?)\s*$'
+    account_iban_currency_re = ur'\s+Compte Courant : IBAN (.+)\s+?\((.+?)\)\s*'
+    report_re = ur'\s+Report\s+([0-9,\.+-]+)\s*'
+
+    # detail statement part regexp
+    detail_start_re = ur'\s+AVIS DE (DEBIT|CREDIT)\s+Date: ([0-9\.]+)\s*'
+    detail_reference_re = ur'\s+Référence: (.*)\s*?'
+    detail_party_re = ur"\s+(DONNEUR D'ORDRE|BENEFICIAIRE)\s+(DONNEUR D'ORDRE|BENEFICIAIRE)\s*?"
+    detail_party_line_re = ur'\s+(.+?)\s{4,}(.+)\s*'
+
+    detail_party_account_all_re = u'\s+Compte n°: (.*?)\s+\w{3}\s+Compte n°: (.*)\s*?'
+    detail_party_account_left_re = u'\s+Compte n°: (.*)\s+\w{3}\s*'
+    detail_party_date_name_re = ur'\s+Date valeur: ([0-9.]+)\s+Auprès de: (.*)\s*'
+    detail_party_date_re = ur'\s+Date valeur: ([0-9.]+)\s*'
+
+
+    detail_motif_amount_operation_re = ur'\s+MOTIF DE PAIEMENT\s+MONTANT OPERATION\s+([0-9+.,-]+)\s+(\w+).*'
+    detail_motif_desc_re = ur'\s+(.*)\s*'
+    #detail_end_amount = ur'\s+MONTANT DEBITE\s+([0-9.,+-]+)\s+(\w+)\s*'
+    detail_end_amount_re = ur'.*\s+MONTANT (DEBITE|CREDITE)\s+([0-9.,+-]+)\s+(\w+)\s*'
 
     def __init__(self):
         self.iban = None
@@ -48,11 +68,14 @@ class INGBankStatementParser(object):
         self.amount_start = None
         self.amount_end = None
         self.lines = []
+        self.details = []
 
         self.set_mode('head')
 
     def set_mode(self, new_mode):
-        assert new_mode in ('head', 'report', 'line_out', 'line_in', 'finished')
+        assert new_mode in ('head', 'report', 'line_out', 'line_in',
+                            'detail', 'detail_head', 'detail_party', 'detail_operation', 'detail_end',
+                            'finished')
         self.mode = new_mode
 
     def to_monetary(self, txt):
@@ -91,6 +114,7 @@ class INGBankStatementParser(object):
         return self.parse_file(c)
 
     def parse_file(self, f):
+        s = self
         logger = logging.getLogger('parser')
         if isinstance(f, basestring):
             f = open(f, 'r')
@@ -99,81 +123,205 @@ class INGBankStatementParser(object):
             line = unicode(line, 'utf-8')
             #print("[%s] line: %s" % (self.mode, line,))
             if self.mode == 'head':
-                m = re.match(period_re, line)
+                m = re.match(s.period_re, line)
                 if m:
                     logger.debug("[match period] %s" % (m.groups(),))
-                    self.period_start = datetime.strptime(m.groups()[0], ING_D_FORMAT)
-                    self.period_end = datetime.strptime(m.groups()[1], ING_D_FORMAT)
-                    self.date = datetime.strptime(m.groups()[1], ING_D_FORMAT)
+                    self.period_start = datetime.strptime(m.groups()[0], s.ING_D_FORMAT)
+                    self.period_end = datetime.strptime(m.groups()[1], s.ING_D_FORMAT)
+                    self.date = datetime.strptime(m.groups()[1], s.ING_D_FORMAT)
                     continue
-                m = re.match(statement_number_re, line)
+                m = re.match(s.statement_number_re, line)
                 if m:
                     logger.debug("[match number] %s" % (m.groups(),))
                     self.number, = m.groups()
                     #self.set_mode('start')
                     continue
-                m = re.match(account_iban_currency_re, line)
+                m = re.match(s.account_iban_currency_re, line)
                 if m:
                     _iban, _currency = m.groups()
                     self.iban = _iban.replace(' ','').strip()
                     self.currency = _currency.strip()
                     continue
-                m = re.match(amount_start_re, line)
+                m = re.match(s.amount_start_re, line)
                 if m:
                     logger.debug("[match amount start] %s" % (m.groups(),))
                     self.amount_start = self.to_monetary(m.groups()[1])
                     self.set_mode('line_out')
                     continue
             elif self.mode == 'line_out':
-                m = re.match(amount_end_re, line)
+                m = re.match(s.amount_end_re, line)
                 logger.debug('[.. test amount_end] %s' % (m,))
                 if m:
                     logger.debug("[match amount end] %s" % (m.groups(),))
                     self.amount_end = self.to_monetary(m.groups()[1])
-                    self.set_mode('finished')
+                    self.set_mode('detail')
                     continue
-                m = re.match(line_re, line)
+                m = re.match(s.line_re, line)
                 logger.debug('[.. test line] %s' % (m,))
                 if m:
                     data = m.groups()
                     logger.debug("[match line] %s" % (data,))
                     self.lines.append({
-                        'date': datetime.strptime(data[0], ING_D_FORMAT),
+                        'date': datetime.strptime(data[0], s.ING_D_FORMAT),
                         'reference': data[1],
                         'name': data[2],
-                        'maturity_date': datetime.strptime(data[3], ING_D_FORMAT),
+                        'maturity_date': datetime.strptime(data[3], s.ING_D_FORMAT),
                         'amount': self.to_monetary(data[4]),
                         'note': u'',
+                        'details': {},
                     })
                     self.set_mode('line_in')
                     continue
-                m = re.match(report_re, line)
+                m = re.match(s.report_re, line)
                 logger.debug('[.. test report] %s' % (m,))
                 if m:
                     self.set_mode('report')
                     logger.debug('[> report] %s' % (line))
             elif self.mode == 'line_in':
-                m = re.match(empty_line_re, line)
+                m = re.match(s.empty_line_re, line)
                 if m:
                     logger.debug("[match empty line]")
                     self.set_mode('line_out')
                     continue
-                m = re.match(onlydesc_line_re, line)
+                m = re.match(s.onlydesc_line_re, line)
                 if m:
                     logger.debug("[match line desc_only] %s" % (m.groups(),))
                     text, = m.groups()
                     self.lines[-1]['name'] += u'\n%s' % (text)
             elif self.mode == 'report':
                 logger.debug('[report]')
-                m = re.match(report_re, line)
+                m = re.match(s.report_re, line)
                 if m:
                     self.set_mode('line_out')
                     continue
+            elif self.mode == 'detail':
+                m = re.match(s.detail_start_re, line)
+                if m:
+                    _mode, _date = m.groups()
+                    self.details.append({
+                        'date': datetime.strptime(_date, s.ING_D2_FORMAT),
+                        'maturity_date': datetime.strptime(_date, s.ING_D2_FORMAT),
+                        'type': _mode.lower(), # debit / credit
+                        'reference': '',
+                        'company_info': '',
+                        'company_account': '',
+                        'party_info': '',
+                        'party_account': '',
+                        'party_bank': '', # bank name of beneficiary
+                        'operation_info': '',
+                        'operation_amount': 00, # operation amount (w/o extra charges) ?
+                        'amount': 0.0,
+                        'currency': '',
+                    })
+                    self.set_mode('detail_head')
+                    continue
+                m = re.match(s.detail_motif_amount_operation_re, line)
+                if m:
+                    op_amount = m.groups()[0]
+                    self.details[-1]['operation_amount'] = self.to_monetary(op_amount)
+                    self.set_mode('detail_operation')
+                    continue
+                m = re.match(s.detail_end_amount_re, line)
+                if m:
+                    _mode, _amount, _currency = m.groups()
+                    self.details[-1].update({
+                        'amount': self.to_monetary(_amount),
+                        'currency': _currency,
+                    })
+                    continue
+
+            elif self.mode == 'detail_head':
+                m = re.match(s.detail_reference_re, line)
+                if m:
+                    self.details[-1]['reference'] = m.groups()[0]
+                    continue
+                m = re.match(s.detail_party_re, line)
+                if m:
+                    self.set_mode('detail_party')
+                    continue
+            elif self.mode == 'detail_party':
+                m = re.match(s.empty_line_re, line)
+                if m:
+                    self.set_mode('detail')
+                    continue
+                d = self.details[-1]
+                detail_type = d['type']
+                if detail_type == 'debit':
+                    m = re.match(s.detail_party_account_all_re, line)
+                    if m:
+                        d['company_account'], d['party_account'] = m.groups()
+                        continue
+                    m = re.match(s.detail_party_date_name_re, line)
+                    if m:
+                        _date, _party_bank = m.groups()
+                        d.update({
+                            'party_bank': _party_bank,
+                            'maturity_date': datetime.strptime(_date, s.ING_D2_FORMAT),
+                        })
+                        continue
+                elif detail_type == 'credit':
+                    m = re.match(s.detail_party_account_left_re, line)
+                    if m:
+                        d['company_account'] = m.groups()[0]
+                        continue
+                    m = re.match(s.detail_party_date_re, line)
+                    if m:
+                        _date = m.groups()[0]
+                        d.update({
+                            'maturity_date': datetime.strptime(_date, s.ING_D2_FORMAT),
+                        })
+                        continue
+
+                m = re.match(s.detail_party_line_re, line)
+                if m:
+                    txt_left, txt_right = m.groups()
+                    # left is own company, right is third party
+                    tnl = d['company_info'] and u'\n' or u''
+                    d['company_info'] += tnl + txt_left
+                    bnl = d['party_info'] and u'\n' or u''
+                    d['party_info'] += bnl + txt_right
+                    continue
+                #m = re.match(s.
+            elif self.mode == 'detail_operation':
+                m = re.match(s.empty_line_re, line)
+                if m:
+                    self.set_mode('detail')
+                    continue
+                d = self.details[-1]
+                detail_type = d['type']
+                m = re.match(s.detail_motif_desc_re, line)
+                txt = m.groups()[0]
+                onl = d['operation_info'] and u'\n' or u''
+                d['operation_info'] += onl + txt
+
+        unmatched_details = []
+        for d in self.details:
+            for l in self.lines:
+                r = []
+                for k in ['date', 'maturity_date', 'amount', 'reference']:
+                    r.append(d[k] == l[k])
+                if all(r):
+                    l['details'].update(d)
+                    if d['type'] == 'debit':
+                        p_1 = "DONNEUR D'ORDRE"
+                        p_2 = "BENEFICIAIRE"
+                    else:
+                        p_1 = "BENEFICIAIRE"
+                        p_2 = "DONNEUR D'ORDRE"
+                    break
+            else:
+                unmatched_details.append(d)
+
+        self.details = unmatched_details
 
         import pprint
-        for k in ['iban', 'currency', 'period_start', 'period_end', 'date', 'number', 'amount_start', 'amount_end', 'lines']:
+        for k in ['iban', 'currency', 'period_start', 'period_end', 'date', 'number', 'amount_start', 'amount_end', 'lines', 'details']:
             v = getattr(self, k)
             if k == 'lines':
+                #import pprint
+                #pprint.pprint(v)
+                pass
+            elif k == 'details':
                 #import pprint
                 #pprint.pprint(v)
                 pass
