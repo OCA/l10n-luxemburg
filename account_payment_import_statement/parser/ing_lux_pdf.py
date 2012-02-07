@@ -303,12 +303,29 @@ class INGBankStatementParser(object):
                 if all(r):
                     l['details'].update(d)
                     if d['type'] == 'debit':
-                        p_1 = "DONNEUR D'ORDRE"
+                        p_1 = [
+                            "DONNEUR D'ORDRE",
+                            "===============",
+                        ]
                         p_2 = "BENEFICIAIRE"
                     else:
                         p_1 = "BENEFICIAIRE"
                         p_2 = "DONNEUR D'ORDRE"
                     break
+
+#                        'date': datetime.strptime(_date, s.ING_D2_FORMAT),
+#                        'maturity_date': datetime.strptime(_date, s.ING_D2_FORMAT),
+#                        'type': _mode.lower(), # debit / credit
+#                        'reference': '',
+#                        'company_info': '',
+#                        'company_account': '',
+#                        'party_info': '',
+#                        'party_account': '',
+#                        'party_bank': '', # bank name of beneficiary
+#                        'operation_info': '',
+#                        'operation_amount': 00, # operation amount (w/o extra charges) ?
+#                        'amount': 0.0,
+#                        'currency': '',
             else:
                 unmatched_details.append(d)
 
