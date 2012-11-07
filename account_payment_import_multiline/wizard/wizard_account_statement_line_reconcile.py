@@ -118,6 +118,7 @@ class wizard_account_bank_statement_line_reconcile(osv.osv_memory):
         voucher_data = {
                 'type': voucher_type,
                 'name': line.name,
+                'pre_line': True,
                 'partner_id': line.partner_id.id or False,
                 'period_id': statement.period_id.id,
                 'journal_id': statement.journal_id.id,
