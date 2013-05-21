@@ -1,4 +1,0 @@
-"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
-"access_multiline_payment_export_history","multiline.payment.export.history","model_multiline_payment_export_history","account_payment.group_account_payment",1,1,1,1
-"access_multiline_payment_charge_code","multiline.payment.charge.code","model_multiline_payment_charge_code","account_payment.group_account_payment",1,1,1,1
-"access_multiline_payment_instruction_code","multiline.payment.instruction.code","model_multiline_payment_instruction_code","account_payment.group_account_payment",1,1,1,1
