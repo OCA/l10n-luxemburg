@@ -43,5 +43,5 @@
         'account_bank_statement_import_view.xml',
     ],
     'active': False,
-    'installable': True,
+    'installable': False,
 }

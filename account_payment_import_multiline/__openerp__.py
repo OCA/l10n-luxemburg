@@ -48,5 +48,5 @@
         'wizard/wizard_account_statement_line_reconcile_view.xml',
     ],
     'active': False,
-    'installable': True,
+    'installable': False,
 }
