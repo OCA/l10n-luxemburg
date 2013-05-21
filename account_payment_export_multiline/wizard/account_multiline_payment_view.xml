@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <!--
+            Multiline Payment Export History
+        -->
+
+        <record model="ir.ui.view" id="multiline_payment_export_history_tree_view">
+            <field name="name">multiline.payment.export.history.tree</field>
+            <field name="model">multiline.payment.export.history</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Multiline Payment Export History" colors="red:state=='failed'">
+                    <field name="payment_order_id" select="1"/>
+                    <field name="create_date" select="1"/>
+                    <field name="create_uid"/>
+                    <field name="note"/>
+                    <field name="state" select="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="multiline_payment_export_history_form_view">
+            <field name="name">multiline.payment.export.history.form</field>
+            <field name="model">multiline.payment.export.history</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Multiline Payment Export History">
+                    <field name="payment_order_id"/>
+                    <field name="state"/>
+                    <newline/>
+                    <field name="create_date"/>
+                    <field name="create_uid"/>
+                    <newline/>
+                    <field name="content" colspan="4"/>
+                    <newline/>
+                    <field name="note" colspan="4"/>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="multiline_payment_export_history_action"
+                    name="Multiline Payment Export History"
+                    res_model="multiline.payment.export.history"
+                    view_type="form"
+                    view_mode="tree,form"
+        />
+
+        <menuitem id="multiline_payment_export_history_menu"
+                  parent="account_payment.menu_main_payment"
+                  action="multiline_payment_export_history_action"
+                  sequence="40"
+        />
+
+        <!--
+            Multiline Payment Charge Code
+        -->
+
+        <record model="ir.ui.view" id="multiline_payment_charge_code_tree_view">
+            <field name="name">multiline.payment.charge.code.tree</field>
+            <field name="model">multiline.payment.charge.code</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Multiline Payment Charge Code">
+                    <field name="code"/>
+                    <field name="description" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="multiline_payment_charge_code_form_view">
+            <field name="name">multiline.payment.charge.code.form</field>
+            <field name="model">multiline.payment.charge.code</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Multiline Payment Charge Code">
+                    <field name="code" select="1"/>
+                    <newline/>
+                    <field name="description" />
+                </form>
+            </field>
+        </record>
+
+        <act_window id="multiline_payment_charge_code_acion"
+                    name="Multiline Payment Charge Code"
+                    res_model="multiline.payment.charge.code"
+                    view_type="form"
+                    view_mode="tree,form"
+        />
+
+        <menuitem id="payment_export_menu"
+                  parent="account.menu_finance_configuration"
+                  name="Payment Export"
+        />
+
+        <menuitem id="multiline_payment_charge_code_menu"
+                  parent="payment_export_menu"
+                  action="multiline_payment_charge_code_acion"
+        />
+
+        <!--
+            Inherited views
+        -->
+
+        <record model="ir.ui.view" id="payment_order_multiline_type_form_view">
+            <field name="name">payment.order.form.multiline.type.form</field>
+            <field name="model">payment.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account_payment.view_payment_order_form"/>
+            <field name="arch" type="xml">
+                <field name="mode" position="after">
+                    <field name="grouped_payment" colspan="2"/>
+                    <newline/>
+                </field>
+            </field>
+        </record>
+
+       <record model="ir.ui.view" id="payment_line_instruction_code_form_view">
+            <field name="name">payment.line.instruction.code.form</field>
+            <field name="model">payment.line</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account_payment.view_payment_line_form"/> 
+            <field name="arch" type="xml">
+                <field name="bank_id" position="after">
+                    <newline/>
+                    <field name="instruction_code_id" widget="selection"/>
+                    <newline/>
+                </field>
+            </field>
+        </record>
+
+       <record model="ir.ui.view" id="payment_order_instruction_code_form_view">
+            <field name="name">payment.order.instruction.code.form</field>
+            <field name="model">payment.order</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account_payment.view_payment_order_form"/> 
+            <field name="arch" type="xml">
+                <xpath expr="//page/field[@name='bank_id']" position="after">
+                    <newline/>
+                    <field name="instruction_code_id"/>
+                    <newline/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="payment_mode_multiline_ident_form_view">
+            <field name="name">payment.mode.multiline.ident.form</field>
+            <field name="model">payment.mode</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account_payment.view_payment_mode_form"/>
+            <field name="arch" type="xml">
+                <field name="bank_id" position="after">
+                    <field name="multiline_ident"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>
