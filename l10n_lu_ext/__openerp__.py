@@ -43,7 +43,9 @@
 """,
     "data": [
               "account_financial_report.xml",
-              ],
+              "account_financial_report_view.xml",
+              "account.account.template-2011.csv",
+            ],
     "active": False,
     "installable": True
 }

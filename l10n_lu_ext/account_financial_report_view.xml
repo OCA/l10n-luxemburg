@@ -1,0 +1,30 @@
+<openerp>
+    <data>
+    
+    <record id="action_account_report_lu_bs" model="ir.actions.act_window">
+         <field name="name">Balance Sheet</field>
+         <field name="res_model">accounting.report</field>
+         <field name="type">ir.actions.act_window</field>
+         <field name="view_type">form</field>
+         <field name="view_mode">form</field>
+         <field name="view_id" ref="account.accounting_report_view"/>
+         <field name="target">new</field>
+         <field name="context" eval="{'default_account_report_id':ref('l10n_lu.account_financial_report_13')}"/>
+    </record>
+    <menuitem icon="STOCK_PRINT" name="Balance Sheet" action="action_account_report_lu_bs" id="menu_account_report_lu_bs" parent="l10n_lu.legal_lu" sequence="1"/>
+    
+    <record id="action_account_report_lu_pl" model="ir.actions.act_window">
+             <field name="name">Profit And Loss</field>
+             <field name="res_model">accounting.report</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">form</field>
+             <field name="view_id" ref="account.accounting_report_view"/>
+             <field name="target">new</field>
+             <field name="context"></field>
+             <field name="context" eval="{'default_account_report_id':ref('l10n_lu.account_financial_report_14')}"/>
+    </record>
+    <menuitem icon="STOCK_PRINT" name="Profit And Loss" action="action_account_report_lu_pl" id="menu_account_report_lu_pl" parent="l10n_lu.legal_lu" sequence="2"/>
+    
+    </data>
+</openerp>
