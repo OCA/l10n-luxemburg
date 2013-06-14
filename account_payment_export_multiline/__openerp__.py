@@ -54,7 +54,7 @@ TODO:
     "test": [],
     "active": False,
     "licence": "AGPL-3",
-    "installable": True,
+    "installable": False,
     "auto_install": False,
     "application": False,
 }
