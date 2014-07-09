@@ -3,14 +3,14 @@ l10n_lu.lu_2011_account_0,0,Plan de compte Luxembourgeois - Loi de Juin 2009 (TH
 l10n_lu.lu_2011_account_bilan,bilan,TOTAL CLASSES 1 A 5,l10n_lu.lu_2011_account_0,view,account.data_account_type_view,f,
 l10n_lu.lu_2011_account_1,1,"CLASSE 1 - COMPTES DE CAPITAUX, DE PROVISIONS ET DE DETTES FINANCIERES",l10n_lu.lu_2011_account_bilan,view,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_10,10,Capital ou dotation des succursales et comptes de l'exploitant,l10n_lu.lu_2011_account_1,view,l10n_lu.account_type_2011_1_capital,f,
-l10n_lu.lu_2011_account_101,101,Capital souscrit (Sociétés de capitaux - Montant total),l10n_lu.lu_2011_account_10,other,l10n_lu.account_type_2011_1_capital,f,l10n_lu.account_financial_report_68
-l10n_lu.lu_2011_account_102,102,Capital souscrit non appelé (Sociétés de capitaux),l10n_lu.lu_2011_account_10,other,l10n_lu.account_type_2011_1_capital,f,l10n_lu.account_financial_report_17
-l10n_lu.lu_2011_account_103,103,Capital souscrit appelé et non versé (Sociétés de capitaux),l10n_lu.lu_2011_account_10,other,l10n_lu.account_type_2011_1_capital,f,l10n_lu.account_financial_report_18
-l10n_lu.lu_2011_account_104,104,Capital des entreprises commerçants personnes physiques et des sociétés de personnes,l10n_lu.lu_2011_account_10,view,l10n_lu.account_type_2011_1_capital,f,l10n_lu.account_financial_report_68
+l10n_lu.lu_2011_account_101,101,Capital souscrit (Sociétés de capitaux - Montant total),l10n_lu.lu_2011_account_10,other,l10n_lu.account_type_2011_1_capital,f,"l10n_lu.account_financial_report_68,l10n_lu.account_financial_report_abr_68"
+l10n_lu.lu_2011_account_102,102,Capital souscrit non appelé (Sociétés de capitaux),l10n_lu.lu_2011_account_10,other,l10n_lu.account_type_2011_1_capital,f,"l10n_lu.account_financial_report_17,l10n_lu.account_financial_report_abr_17"
+l10n_lu.lu_2011_account_103,103,Capital souscrit appelé et non versé (Sociétés de capitaux),l10n_lu.lu_2011_account_10,other,l10n_lu.account_type_2011_1_capital,f,"l10n_lu.account_financial_report_18,l10n_lu.account_financial_report_abr_18"
+l10n_lu.lu_2011_account_104,104,Capital des entreprises commerçants personnes physiques et des sociétés de personnes,l10n_lu.lu_2011_account_10,view,l10n_lu.account_type_2011_1_capital,f,"l10n_lu.account_financial_report_68,l10n_lu.account_financial_report_abr_68"
 l10n_lu.lu_2011_account_1041,1041,Commerçants personnes physiques,l10n_lu.lu_2011_account_104,other,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_1042,1042,Sociétés de personnes,l10n_lu.lu_2011_account_104,other,l10n_lu.account_type_2011_1_capital,f,
-l10n_lu.lu_2011_account_105,105,Dotation des succursales,l10n_lu.lu_2011_account_10,other,l10n_lu.account_type_2011_1_capital,f,l10n_lu.account_financial_report_68
-l10n_lu.lu_2011_account_106,106,Comptes de l'exploitant ou des coexploitants,l10n_lu.lu_2011_account_10,view,l10n_lu.account_type_2011_1_capital,f,l10n_lu.account_financial_report_68
+l10n_lu.lu_2011_account_105,105,Dotation des succursales,l10n_lu.lu_2011_account_10,other,l10n_lu.account_type_2011_1_capital,f,"l10n_lu.account_financial_report_68,l10n_lu.account_financial_report_abr_68"
+l10n_lu.lu_2011_account_106,106,Comptes de l'exploitant ou des coexploitants,l10n_lu.lu_2011_account_10,view,l10n_lu.account_type_2011_1_capital,f,"l10n_lu.account_financial_report_68,l10n_lu.account_financial_report_abr_68"
 l10n_lu.lu_2011_account_1061,1061,Prélèvements privés de l'exploitant ou des coexploitants,l10n_lu.lu_2011_account_106,view,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_10611,10611,Prélèvements en numéraire (train de vie),l10n_lu.lu_2011_account_1061,other,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_10612,10612,"Prélèvements en nature de marchandises, de produits finis et services (au prix de revient)",l10n_lu.lu_2011_account_1061,other,l10n_lu.account_type_2011_1_capital,f,
@@ -73,51 +73,51 @@ l10n_lu.lu_2011_account_106283,106283,Impôt sur la fortune,l10n_lu.lu_2011_acco
 l10n_lu.lu_2011_account_106284,106284,Impôt commercial,l10n_lu.lu_2011_account_10628,other,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_106288,106288,Autres remboursements d'impôts,l10n_lu.lu_2011_account_10628,other,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_10629,10629,Quote-part professionnelle de frais privés,l10n_lu.lu_2011_account_1062,other,l10n_lu.account_type_2011_1_capital,f,
-l10n_lu.lu_2011_account_11,11,Primes d'émission et primes assimilées,l10n_lu.lu_2011_account_1,view,l10n_lu.account_type_2011_1_capital,f,l10n_lu.account_financial_report_69
+l10n_lu.lu_2011_account_11,11,Primes d'émission et primes assimilées,l10n_lu.lu_2011_account_1,view,l10n_lu.account_type_2011_1_capital,f,"l10n_lu.account_financial_report_69,l10n_lu.account_financial_report_abr_69"
 l10n_lu.lu_2011_account_111,111,Primes d'émission,l10n_lu.lu_2011_account_11,other,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_112,112,Primes de fusion,l10n_lu.lu_2011_account_11,other,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_113,113,Primes d'apport,l10n_lu.lu_2011_account_11,other,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_114,114,Primes de conversion d'obligations en actions,l10n_lu.lu_2011_account_11,other,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_115,115,"Apport en capitaux propres non rémunéré par des titres (""Capital contribution"")",l10n_lu.lu_2011_account_11,other,l10n_lu.account_type_2011_1_capital,f,
-l10n_lu.lu_2011_account_12,12,Réserves de réévaluation,l10n_lu.lu_2011_account_1,view,l10n_lu.account_type_2011_1_capital,f,l10n_lu.account_financial_report_70
+l10n_lu.lu_2011_account_12,12,Réserves de réévaluation,l10n_lu.lu_2011_account_1,view,l10n_lu.account_type_2011_1_capital,f,"l10n_lu.account_financial_report_70,l10n_lu.account_financial_report_abr_70"
 l10n_lu.lu_2011_account_121,121,Réserves de réévaluation en application de la juste valeur,l10n_lu.lu_2011_account_12,other,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_122,122,Réserves de mise en équivalence (Participations valorisées suivant l'art. 58),l10n_lu.lu_2011_account_12,other,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_123,123,Plus-values sur écarts de conversion immunisées,l10n_lu.lu_2011_account_12,other,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_128,128,Autres réserves de réévaluation,l10n_lu.lu_2011_account_12,other,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_13,13,Réserves,l10n_lu.lu_2011_account_1,view,l10n_lu.account_type_2011_1_capital,f,
-l10n_lu.lu_2011_account_131,131,Réserve légale,l10n_lu.lu_2011_account_13,other,l10n_lu.account_type_2011_1_capital,f,l10n_lu.account_financial_report_72
-l10n_lu.lu_2011_account_132,132,Réserve pour actions propres ou parts propres,l10n_lu.lu_2011_account_13,other,l10n_lu.account_type_2011_1_capital,f,l10n_lu.account_financial_report_73
-l10n_lu.lu_2011_account_133,133,Réserves statutaires,l10n_lu.lu_2011_account_13,other,l10n_lu.account_type_2011_1_capital,f,l10n_lu.account_financial_report_74
-l10n_lu.lu_2011_account_138,138,Autres réserves,l10n_lu.lu_2011_account_13,view,l10n_lu.account_type_2011_1_capital,f,l10n_lu.account_financial_report_75
+l10n_lu.lu_2011_account_131,131,Réserve légale,l10n_lu.lu_2011_account_13,other,l10n_lu.account_type_2011_1_capital,f,"l10n_lu.account_financial_report_72,l10n_lu.account_financial_report_abr_71"
+l10n_lu.lu_2011_account_132,132,Réserve pour actions propres ou parts propres,l10n_lu.lu_2011_account_13,other,l10n_lu.account_type_2011_1_capital,f,"l10n_lu.account_financial_report_73,l10n_lu.account_financial_report_abr_71"
+l10n_lu.lu_2011_account_133,133,Réserves statutaires,l10n_lu.lu_2011_account_13,other,l10n_lu.account_type_2011_1_capital,f,"l10n_lu.account_financial_report_74,l10n_lu.account_financial_report_abr_71"
+l10n_lu.lu_2011_account_138,138,Autres réserves,l10n_lu.lu_2011_account_13,view,l10n_lu.account_type_2011_1_capital,f,"l10n_lu.account_financial_report_75,l10n_lu.account_financial_report_abr_71"
 l10n_lu.lu_2011_account_1381,1381,Réserve pour l'impôt sur la fortune,l10n_lu.lu_2011_account_138,other,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_1382,1382,Autres réserves indisponibles,l10n_lu.lu_2011_account_138,other,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_1383,1383,Autres réserves disponibles,l10n_lu.lu_2011_account_138,other,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_14,14,Résultats,l10n_lu.lu_2011_account_1,view,l10n_lu.account_type_2011_1_capital,f,
-l10n_lu.lu_2011_account_141,141,Résultats reportés,l10n_lu.lu_2011_account_14,other,l10n_lu.account_type_2011_1_capital,f,l10n_lu.account_financial_report_76
-l10n_lu.lu_2011_account_142,142,Résultat de l'exercice,l10n_lu.lu_2011_account_14,other,l10n_lu.account_type_2011_1_capital,f,l10n_lu.account_financial_report_77
-l10n_lu.lu_2011_account_15,15,Acomptes sur dividendes,l10n_lu.lu_2011_account_1,other,l10n_lu.account_type_2011_1_capital,f,l10n_lu.account_financial_report_78
-l10n_lu.lu_2011_account_16,16,Subventions d'investissement en capital,l10n_lu.lu_2011_account_1,view,l10n_lu.account_type_2011_1_capital,f,l10n_lu.account_financial_report_79
+l10n_lu.lu_2011_account_141,141,Résultats reportés,l10n_lu.lu_2011_account_14,other,l10n_lu.account_type_2011_1_capital,f,"l10n_lu.account_financial_report_76,l10n_lu.account_financial_report_abr_76"
+l10n_lu.lu_2011_account_142,142,Résultat de l'exercice,l10n_lu.lu_2011_account_14,other,l10n_lu.account_type_2011_1_capital,f,"l10n_lu.account_financial_report_77,l10n_lu.account_financial_report_abr_77"
+l10n_lu.lu_2011_account_15,15,Acomptes sur dividendes,l10n_lu.lu_2011_account_1,other,l10n_lu.account_type_2011_1_capital,f,"l10n_lu.account_financial_report_78,l10n_lu.account_financial_report_abr_78"
+l10n_lu.lu_2011_account_16,16,Subventions d'investissement en capital,l10n_lu.lu_2011_account_1,view,l10n_lu.account_type_2011_1_capital,f,"l10n_lu.account_financial_report_79,l10n_lu.account_financial_report_abr_79"
 l10n_lu.lu_2011_account_161,161,Terrains et constructions,l10n_lu.lu_2011_account_16,other,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_162,162,Installations techniques et machines,l10n_lu.lu_2011_account_16,other,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_163,163,"Autres installations, outillage, mobilier et matériel roulant",l10n_lu.lu_2011_account_16,other,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_168,168,Autres subventions d'investissement en capital,l10n_lu.lu_2011_account_16,other,l10n_lu.account_type_2011_1_capital,f,
-l10n_lu.lu_2011_account_17,17,Plus-values immunisées,l10n_lu.lu_2011_account_1,view,l10n_lu.account_type_2011_1_capital,f,l10n_lu.account_financial_report_80
+l10n_lu.lu_2011_account_17,17,Plus-values immunisées,l10n_lu.lu_2011_account_1,view,l10n_lu.account_type_2011_1_capital,f,"l10n_lu.account_financial_report_80,l10n_lu.account_financial_report_abr_80"
 l10n_lu.lu_2011_account_171,171,Plus-values immunisées à réinvestir,l10n_lu.lu_2011_account_17,other,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_172,172,Plus-values immunisées réinvesties,l10n_lu.lu_2011_account_17,other,l10n_lu.account_type_2011_1_capital,f,
 l10n_lu.lu_2011_account_18,18,Provisions,l10n_lu.lu_2011_account_1,view,l10n_lu.account_type_2011_1_provision,f,
-l10n_lu.lu_2011_account_181,181,Provisions pour pensions et obligations similaires,l10n_lu.lu_2011_account_18,other,l10n_lu.account_type_2011_1_provision,f,l10n_lu.account_financial_report_83
-l10n_lu.lu_2011_account_182,182,Provisions pour impôts,l10n_lu.lu_2011_account_18,view,l10n_lu.account_type_2011_1_provision,f,l10n_lu.account_financial_report_84
+l10n_lu.lu_2011_account_181,181,Provisions pour pensions et obligations similaires,l10n_lu.lu_2011_account_18,other,l10n_lu.account_type_2011_1_provision,f,"l10n_lu.account_financial_report_83,l10n_lu.account_financial_report_abr_82"
+l10n_lu.lu_2011_account_182,182,Provisions pour impôts,l10n_lu.lu_2011_account_18,view,l10n_lu.account_type_2011_1_provision,f,"l10n_lu.account_financial_report_84,l10n_lu.account_financial_report_abr_82"
 l10n_lu.lu_2011_account_1821,1821,Provisions pour impôt sur le revenu des collectivités,l10n_lu.lu_2011_account_182,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_1822,1822,Provisions pour impôt commercial,l10n_lu.lu_2011_account_182,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_1823,1823,Provisions pour impôt sur la fortune,l10n_lu.lu_2011_account_182,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_1828,1828,Autres provisions pour impôts,l10n_lu.lu_2011_account_182,other,l10n_lu.account_type_2011_1_provision,f,
-l10n_lu.lu_2011_account_183,183,Provisions pour impôts différés,l10n_lu.lu_2011_account_18,other,l10n_lu.account_type_2011_1_provision,f,l10n_lu.account_financial_report_84
-l10n_lu.lu_2011_account_188,188,Autres provisions,l10n_lu.lu_2011_account_18,view,l10n_lu.account_type_2011_1_provision,f,l10n_lu.account_financial_report_85
+l10n_lu.lu_2011_account_183,183,Provisions pour impôts différés,l10n_lu.lu_2011_account_18,other,l10n_lu.account_type_2011_1_provision,f,"l10n_lu.account_financial_report_84,l10n_lu.account_financial_report_abr_82"
+l10n_lu.lu_2011_account_188,188,Autres provisions,l10n_lu.lu_2011_account_18,view,l10n_lu.account_type_2011_1_provision,f,"l10n_lu.account_financial_report_85,l10n_lu.account_financial_report_abr_82"
 l10n_lu.lu_2011_account_1881,1881,Provisions d'exploitation,l10n_lu.lu_2011_account_188,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_1882,1882,Provisions financières,l10n_lu.lu_2011_account_188,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_1883,1883,Provisions exceptionnelles,l10n_lu.lu_2011_account_188,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_19,19,Dettes financières et dettes assimilées,l10n_lu.lu_2011_account_1,view,l10n_lu.account_type_2011_1_provision,f,
-l10n_lu.lu_2011_account_191,191,Dettes subordonnées,l10n_lu.lu_2011_account_19,view,l10n_lu.account_type_2011_1_provision,f,l10n_lu.account_financial_report_81
+l10n_lu.lu_2011_account_191,191,Dettes subordonnées,l10n_lu.lu_2011_account_19,view,l10n_lu.account_type_2011_1_provision,f,"l10n_lu.account_financial_report_81,l10n_lu.account_financial_report_abr_81"
 l10n_lu.lu_2011_account_1911,1911,dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_191,view,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_19111,19111,Montant principal,l10n_lu.lu_2011_account_1911,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_19112,19112,Intérêts courus,l10n_lu.lu_2011_account_1911,other,l10n_lu.account_type_2011_1_provision,f,
@@ -125,42 +125,42 @@ l10n_lu.lu_2011_account_1912,1912,dont la durée résiduelle est supérieure à 
 l10n_lu.lu_2011_account_19121,19121,Montant principal,l10n_lu.lu_2011_account_1912,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_19122,19122,Intérêts courus,l10n_lu.lu_2011_account_1912,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_192,192,Emprunts obligataires convertibles,l10n_lu.lu_2011_account_19,view,l10n_lu.account_type_2011_1_provision,f,
-l10n_lu.lu_2011_account_1921,1921,dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_192,view,l10n_lu.account_type_2011_1_provision,f,l10n_lu.account_financial_report_89
+l10n_lu.lu_2011_account_1921,1921,dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_192,view,l10n_lu.account_type_2011_1_provision,f,"l10n_lu.account_financial_report_89,l10n_lu.account_financial_report_abr_89"
 l10n_lu.lu_2011_account_19211,19211,Montant principal,l10n_lu.lu_2011_account_1921,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_19212,19212,Intérêts courus,l10n_lu.lu_2011_account_1921,other,l10n_lu.account_type_2011_1_provision,f,
-l10n_lu.lu_2011_account_1922,1922,dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_192,view,l10n_lu.account_type_2011_1_provision,f,l10n_lu.account_financial_report_90
+l10n_lu.lu_2011_account_1922,1922,dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_192,view,l10n_lu.account_type_2011_1_provision,f,"l10n_lu.account_financial_report_90,l10n_lu.account_financial_report_abr_90"
 l10n_lu.lu_2011_account_19221,19221,Montant principal,l10n_lu.lu_2011_account_1922,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_19222,19222,Intérêts courus,l10n_lu.lu_2011_account_1922,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_193,193,Emprunts obligataires non convertibles,l10n_lu.lu_2011_account_19,view,l10n_lu.account_type_2011_1_provision,f,
-l10n_lu.lu_2011_account_1931,1931,dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_193,view,l10n_lu.account_type_2011_1_provision,f,l10n_lu.account_financial_report_92
+l10n_lu.lu_2011_account_1931,1931,dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_193,view,l10n_lu.account_type_2011_1_provision,f,"l10n_lu.account_financial_report_92,l10n_lu.account_financial_report_abr_89"
 l10n_lu.lu_2011_account_19311,19311,Montant principal,l10n_lu.lu_2011_account_1931,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_19312,19312,Intérêts courus,l10n_lu.lu_2011_account_1931,other,l10n_lu.account_type_2011_1_provision,f,
-l10n_lu.lu_2011_account_1932,1932,dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_193,view,l10n_lu.account_type_2011_1_provision,f,l10n_lu.account_financial_report_93
+l10n_lu.lu_2011_account_1932,1932,dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_193,view,l10n_lu.account_type_2011_1_provision,f,"l10n_lu.account_financial_report_93,l10n_lu.account_financial_report_abr_90"
 l10n_lu.lu_2011_account_19321,19321,Montant principal,l10n_lu.lu_2011_account_1932,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_19322,19322,Intérêts courus,l10n_lu.lu_2011_account_1932,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_194,194,Dettes envers des établissements de crédit,l10n_lu.lu_2011_account_19,view,l10n_lu.account_type_2011_1_provision,f,
-l10n_lu.lu_2011_account_1941,1941,dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_194,view,l10n_lu.account_type_2011_1_provision,f,l10n_lu.account_financial_report_95
+l10n_lu.lu_2011_account_1941,1941,dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_194,view,l10n_lu.account_type_2011_1_provision,f,"l10n_lu.account_financial_report_95,l10n_lu.account_financial_report_abr_89"
 l10n_lu.lu_2011_account_19411,19411,Montant principal,l10n_lu.lu_2011_account_1941,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_19412,19412,Intérêts courus,l10n_lu.lu_2011_account_1941,other,l10n_lu.account_type_2011_1_provision,f,
-l10n_lu.lu_2011_account_1942,1942,dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_194,view,l10n_lu.account_type_2011_1_provision,f,l10n_lu.account_financial_report_96
+l10n_lu.lu_2011_account_1942,1942,dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_194,view,l10n_lu.account_type_2011_1_provision,f,"l10n_lu.account_financial_report_96,l10n_lu.account_financial_report_abr_90"
 l10n_lu.lu_2011_account_19421,19421,Montant principal,l10n_lu.lu_2011_account_1942,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_19422,19422,Intérêts courus,l10n_lu.lu_2011_account_1942,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_195,195,Dettes de leasing financier,l10n_lu.lu_2011_account_19,view,l10n_lu.account_type_2011_1_provision,f,
-l10n_lu.lu_2011_account_1951,1951,dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_195,other,l10n_lu.account_type_2011_1_provision,f,l10n_lu.account_financial_report_95
-l10n_lu.lu_2011_account_1952,1952,dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_195,other,l10n_lu.account_type_2011_1_provision,f,l10n_lu.account_financial_report_96
+l10n_lu.lu_2011_account_1951,1951,dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_195,other,l10n_lu.account_type_2011_1_provision,f,"l10n_lu.account_financial_report_95,l10n_lu.account_financial_report_abr_89"
+l10n_lu.lu_2011_account_1952,1952,dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_195,other,l10n_lu.account_type_2011_1_provision,f,"l10n_lu.account_financial_report_96,l10n_lu.account_financial_report_abr_90"
 l10n_lu.lu_2011_account_198,198,Autres emprunts et dettes assimilées,l10n_lu.lu_2011_account_19,view,l10n_lu.account_type_2011_1_provision,f,
-l10n_lu.lu_2011_account_1981,1981,dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_198,view,l10n_lu.account_type_2011_1_provision,f,l10n_lu.account_financial_report_116
+l10n_lu.lu_2011_account_1981,1981,dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_198,view,l10n_lu.account_type_2011_1_provision,f,"l10n_lu.account_financial_report_116,l10n_lu.account_financial_report_abr_89"
 l10n_lu.lu_2011_account_19811,19811,Autres emprunts,l10n_lu.lu_2011_account_1981,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_19812,19812,Rentes viagères capitalisées,l10n_lu.lu_2011_account_1981,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_19813,19813,Autres dettes assimilées,l10n_lu.lu_2011_account_1981,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_19814,19814,Intérêts courus sur autres emprunts et dettes assimilées,l10n_lu.lu_2011_account_1981,other,l10n_lu.account_type_2011_1_provision,f,
-l10n_lu.lu_2011_account_1982,1982,dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_198,view,l10n_lu.account_type_2011_1_provision,f,l10n_lu.account_financial_report_117
+l10n_lu.lu_2011_account_1982,1982,dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_198,view,l10n_lu.account_type_2011_1_provision,f,"l10n_lu.account_financial_report_117,l10n_lu.account_financial_report_abr_90"
 l10n_lu.lu_2011_account_19821,19821,Autres emprunts,l10n_lu.lu_2011_account_1982,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_19822,19822,Rentes viagères capitalisées,l10n_lu.lu_2011_account_1982,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_19823,19823,Autres dettes assimilées,l10n_lu.lu_2011_account_1982,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_19824,19824,Intérêts courus sur autres emprunts et dettes assimilées,l10n_lu.lu_2011_account_1982,other,l10n_lu.account_type_2011_1_provision,f,
 l10n_lu.lu_2011_account_2,2,CLASSE 2 - COMPTES DE FRAIS D’ETABLISSEMENT ET D’ACTIFS IMMOBILISES,l10n_lu.lu_2011_account_bilan,view,account.data_account_type_view,f,
-l10n_lu.lu_2011_account_20,20,Frais d'établissement et frais assimilés,l10n_lu.lu_2011_account_2,view,l10n_lu.account_type_2011_2_immo,f,l10n_lu.account_financial_report_19
+l10n_lu.lu_2011_account_20,20,Frais d'établissement et frais assimilés,l10n_lu.lu_2011_account_2,view,l10n_lu.account_type_2011_2_immo,f,"l10n_lu.account_financial_report_19,l10n_lu.account_financial_report_abr_19"
 l10n_lu.lu_2011_account_201,201,Frais de constitution,l10n_lu.lu_2011_account_20,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_202,202,Frais de premier établissement,l10n_lu.lu_2011_account_20,view,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_2021,2021,Frais de prospection,l10n_lu.lu_2011_account_202,other,l10n_lu.account_type_2011_2_immo,f,
@@ -169,9 +169,9 @@ l10n_lu.lu_2011_account_203,203,"Frais d'augmentation de capital et d'opération
 l10n_lu.lu_2011_account_204,204,Frais d'émission d'emprunts,l10n_lu.lu_2011_account_20,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_208,208,Autres frais assimilés,l10n_lu.lu_2011_account_20,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_21,21,Immobilisations incorporelles,l10n_lu.lu_2011_account_2,view,l10n_lu.account_type_2011_2_immo,f,
-l10n_lu.lu_2011_account_211,211,Frais de recherche et de développement,l10n_lu.lu_2011_account_21,other,l10n_lu.account_type_2011_2_immo,f,l10n_lu.account_financial_report_22
+l10n_lu.lu_2011_account_211,211,Frais de recherche et de développement,l10n_lu.lu_2011_account_21,other,l10n_lu.account_type_2011_2_immo,f,"l10n_lu.account_financial_report_22,l10n_lu.account_financial_report_abr_21"
 l10n_lu.lu_2011_account_212,212,"Concessions, brevets, licences, marques ainsi que droits et valeurs similaires",l10n_lu.lu_2011_account_21,view,l10n_lu.account_type_2011_2_immo,f,
-l10n_lu.lu_2011_account_2121,2121,Acquis à titre onéreux (Actifs incorporels non produits),l10n_lu.lu_2011_account_212,view,l10n_lu.account_type_2011_2_immo,f,l10n_lu.account_financial_report_24
+l10n_lu.lu_2011_account_2121,2121,Acquis à titre onéreux (Actifs incorporels non produits),l10n_lu.lu_2011_account_212,view,l10n_lu.account_type_2011_2_immo,f,"l10n_lu.account_financial_report_24,l10n_lu.account_financial_report_abr_21"
 l10n_lu.lu_2011_account_21211,21211,Concessions,l10n_lu.lu_2011_account_2121,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_21212,21212,Brevets,l10n_lu.lu_2011_account_2121,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_21213,21213,Licences informatiques (logiciels et progiciels informatiques),l10n_lu.lu_2011_account_2121,other,l10n_lu.account_type_2011_2_immo,f,
@@ -180,7 +180,7 @@ l10n_lu.lu_2011_account_21215,21215,Droits et valeurs similaires acquis à titre
 l10n_lu.lu_2011_account_212151,212151,Droits d'auteur et de reproduction,l10n_lu.lu_2011_account_21215,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_212152,212152,Droits d'émission,l10n_lu.lu_2011_account_21215,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_212158,212158,Autres droits et valeurs similaires acquis à titre onéreux,l10n_lu.lu_2011_account_21215,other,l10n_lu.account_type_2011_2_immo,f,
-l10n_lu.lu_2011_account_2122,2122,Créés par l'entreprise elle-même (Actifs incorporels produits),l10n_lu.lu_2011_account_212,view,l10n_lu.account_type_2011_2_immo,f,l10n_lu.account_financial_report_25
+l10n_lu.lu_2011_account_2122,2122,Créés par l'entreprise elle-même (Actifs incorporels produits),l10n_lu.lu_2011_account_212,view,l10n_lu.account_type_2011_2_immo,f,"l10n_lu.account_financial_report_25,l10n_lu.account_financial_report_abr_21"
 l10n_lu.lu_2011_account_21221,21221,Concessions,l10n_lu.lu_2011_account_2122,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_21222,21222,Brevets,l10n_lu.lu_2011_account_2122,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_21223,21223,Licences informatiques (logiciels et progiciels informatiques),l10n_lu.lu_2011_account_2122,other,l10n_lu.account_type_2011_2_immo,f,
@@ -189,13 +189,13 @@ l10n_lu.lu_2011_account_21225,21225,Droits et valeurs similaires créés par l'e
 l10n_lu.lu_2011_account_212251,212251,Droits d'auteur et de reproduction,l10n_lu.lu_2011_account_21225,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_212252,212252,Droits d'émission,l10n_lu.lu_2011_account_21225,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_212258,212258,Autres droits et valeurs similaires créés par l'entreprise elle-même,l10n_lu.lu_2011_account_21225,other,l10n_lu.account_type_2011_2_immo,f,
-l10n_lu.lu_2011_account_213,213,"Fonds de commerce, dans la mesure où il a été acquis à titre onéreux",l10n_lu.lu_2011_account_21,other,l10n_lu.account_type_2011_2_immo,f,l10n_lu.account_financial_report_26
-l10n_lu.lu_2011_account_214,214,Acomptes versés et immobilisations incorporelles en cours,l10n_lu.lu_2011_account_21,view,l10n_lu.account_type_2011_2_immo,f,l10n_lu.account_financial_report_27
+l10n_lu.lu_2011_account_213,213,"Fonds de commerce, dans la mesure où il a été acquis à titre onéreux",l10n_lu.lu_2011_account_21,other,l10n_lu.account_type_2011_2_immo,f,"l10n_lu.account_financial_report_26,l10n_lu.account_financial_report_abr_21"
+l10n_lu.lu_2011_account_214,214,Acomptes versés et immobilisations incorporelles en cours,l10n_lu.lu_2011_account_21,view,l10n_lu.account_type_2011_2_immo,f,"l10n_lu.account_financial_report_27,l10n_lu.account_financial_report_abr_21"
 l10n_lu.lu_2011_account_2141,2141,Frais de recherche et de développement,l10n_lu.lu_2011_account_214,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_2142,2142,"Concessions, brevets, licences, marques ainsi que droits et valeurs similaires",l10n_lu.lu_2011_account_214,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_2143,2143,Fonds de commerce,l10n_lu.lu_2011_account_214,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_22,22,Immobilisations corporelles,l10n_lu.lu_2011_account_2,view,l10n_lu.account_type_2011_2_immo,f,
-l10n_lu.lu_2011_account_221,221,Terrains et constructions,l10n_lu.lu_2011_account_22,view,l10n_lu.account_type_2011_2_immo,f,l10n_lu.account_financial_report_29
+l10n_lu.lu_2011_account_221,221,Terrains et constructions,l10n_lu.lu_2011_account_22,view,l10n_lu.account_type_2011_2_immo,f,"l10n_lu.account_financial_report_29,l10n_lu.account_financial_report_abr_28"
 l10n_lu.lu_2011_account_2211,2211,Terrains,l10n_lu.lu_2011_account_221,view,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_22111,22111,Terrains nus,l10n_lu.lu_2011_account_2211,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_22112,22112,Terrains aménagés,l10n_lu.lu_2011_account_2211,other,l10n_lu.account_type_2011_2_immo,f,
@@ -213,10 +213,10 @@ l10n_lu.lu_2011_account_22128,22128,Agencements et aménagements d'autres terrai
 l10n_lu.lu_2011_account_2213,2213,Constructions,l10n_lu.lu_2011_account_221,view,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_22131,22131,Constructions sur sol propre,l10n_lu.lu_2011_account_2213,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_22132,22132,Constructions sur sol d'autrui,l10n_lu.lu_2011_account_2213,other,l10n_lu.account_type_2011_2_immo,f,
-l10n_lu.lu_2011_account_222,222,Installations techniques et machines,l10n_lu.lu_2011_account_22,view,l10n_lu.account_type_2011_2_immo,f,l10n_lu.account_financial_report_30
+l10n_lu.lu_2011_account_222,222,Installations techniques et machines,l10n_lu.lu_2011_account_22,view,l10n_lu.account_type_2011_2_immo,f,"l10n_lu.account_financial_report_30,l10n_lu.account_financial_report_abr_28"
 l10n_lu.lu_2011_account_2221,2221,Installations techniques,l10n_lu.lu_2011_account_222,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_2222,2222,Machines,l10n_lu.lu_2011_account_222,other,l10n_lu.account_type_2011_2_immo,f,
-l10n_lu.lu_2011_account_223,223,"Autres installations, outillage, mobilier et matériel roulant",l10n_lu.lu_2011_account_22,view,l10n_lu.account_type_2011_2_immo,f,l10n_lu.account_financial_report_31
+l10n_lu.lu_2011_account_223,223,"Autres installations, outillage, mobilier et matériel roulant",l10n_lu.lu_2011_account_22,view,l10n_lu.account_type_2011_2_immo,f,"l10n_lu.account_financial_report_31,l10n_lu.account_financial_report_abr_28"
 l10n_lu.lu_2011_account_2231,2231,Equipement de transport et de manutention,l10n_lu.lu_2011_account_223,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_2232,2232,Véhicules de transport,l10n_lu.lu_2011_account_223,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_2233,2233,Outillage,l10n_lu.lu_2011_account_223,other,l10n_lu.account_type_2011_2_immo,f,
@@ -225,7 +225,7 @@ l10n_lu.lu_2011_account_2235,2235,Matériel informatique (hardware),l10n_lu.lu_2
 l10n_lu.lu_2011_account_2236,2236,Cheptel,l10n_lu.lu_2011_account_223,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_2237,2237,Emballages récupérables,l10n_lu.lu_2011_account_223,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_2238,2238,Autres installations,l10n_lu.lu_2011_account_223,other,l10n_lu.account_type_2011_2_immo,f,
-l10n_lu.lu_2011_account_224,224,Acomptes versés et immobilisations corporelles en cours,l10n_lu.lu_2011_account_22,view,l10n_lu.account_type_2011_2_immo,f,l10n_lu.account_financial_report_32
+l10n_lu.lu_2011_account_224,224,Acomptes versés et immobilisations corporelles en cours,l10n_lu.lu_2011_account_22,view,l10n_lu.account_type_2011_2_immo,f,"l10n_lu.account_financial_report_32,l10n_lu.account_financial_report_abr_28"
 l10n_lu.lu_2011_account_2241,2241,Terrains et constructions,l10n_lu.lu_2011_account_224,view,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_22411,22411,Terrains,l10n_lu.lu_2011_account_2241,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_22412,22412,Agencements et aménagements de terrains,l10n_lu.lu_2011_account_2241,other,l10n_lu.account_type_2011_2_immo,f,
@@ -233,11 +233,11 @@ l10n_lu.lu_2011_account_22413,22413,Constructions,l10n_lu.lu_2011_account_2241,o
 l10n_lu.lu_2011_account_2242,2242,Installations techniques et machines,l10n_lu.lu_2011_account_224,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_2243,2243,"Autres installations, outillage, mobilier et matériel roulant",l10n_lu.lu_2011_account_224,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_23,23,Immobilisations financières,l10n_lu.lu_2011_account_2,view,l10n_lu.account_type_2011_2_immo,f,
-l10n_lu.lu_2011_account_231,231,Parts dans des entreprises liées,l10n_lu.lu_2011_account_23,other,l10n_lu.account_type_2011_2_immo,f,l10n_lu.account_financial_report_34
-l10n_lu.lu_2011_account_232,232,Créances sur des entreprises liées,l10n_lu.lu_2011_account_23,other,l10n_lu.account_type_2011_2_immo,f,l10n_lu.account_financial_report_35
-l10n_lu.lu_2011_account_233,233,Parts dans des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_23,other,l10n_lu.account_type_2011_2_immo,f,l10n_lu.account_financial_report_36
-l10n_lu.lu_2011_account_234,234,Créances sur des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_23,other,l10n_lu.account_type_2011_2_immo,f,l10n_lu.account_financial_report_37
-l10n_lu.lu_2011_account_235,235,Titres ayant le caractère d'immobilisations,l10n_lu.lu_2011_account_23,view,l10n_lu.account_type_2011_2_immo,f,l10n_lu.account_financial_report_38
+l10n_lu.lu_2011_account_231,231,Parts dans des entreprises liées,l10n_lu.lu_2011_account_23,other,l10n_lu.account_type_2011_2_immo,f,"l10n_lu.account_financial_report_34,l10n_lu.account_financial_report_abr_33"
+l10n_lu.lu_2011_account_232,232,Créances sur des entreprises liées,l10n_lu.lu_2011_account_23,other,l10n_lu.account_type_2011_2_immo,f,"l10n_lu.account_financial_report_35,l10n_lu.account_financial_report_abr_33"
+l10n_lu.lu_2011_account_233,233,Parts dans des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_23,other,l10n_lu.account_type_2011_2_immo,f,"l10n_lu.account_financial_report_36,l10n_lu.account_financial_report_abr_33"
+l10n_lu.lu_2011_account_234,234,Créances sur des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_23,other,l10n_lu.account_type_2011_2_immo,f,"l10n_lu.account_financial_report_37,l10n_lu.account_financial_report_abr_33"
+l10n_lu.lu_2011_account_235,235,Titres ayant le caractère d'immobilisations,l10n_lu.lu_2011_account_23,view,l10n_lu.account_type_2011_2_immo,f,"l10n_lu.account_financial_report_38,l10n_lu.account_financial_report_abr_33"
 l10n_lu.lu_2011_account_2351,2351,Titres immobilisés (droit de propriété),l10n_lu.lu_2011_account_235,view,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_23511,23511,Actions,l10n_lu.lu_2011_account_2351,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_23518,23518,Autres titres immobilisés (droit de propriété),l10n_lu.lu_2011_account_2351,other,l10n_lu.account_type_2011_2_immo,f,
@@ -245,7 +245,7 @@ l10n_lu.lu_2011_account_2352,2352,Titres immobilisés (droit de créance),l10n_l
 l10n_lu.lu_2011_account_23521,23521,Obligations,l10n_lu.lu_2011_account_2352,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_23528,23528,Autres titres immobilisés (droit de créance),l10n_lu.lu_2011_account_2352,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_2358,2358,Autres titres ayant le caractère d'immobilisations,l10n_lu.lu_2011_account_235,other,l10n_lu.account_type_2011_2_immo,f,
-l10n_lu.lu_2011_account_236,236,Prêts et créances immobilisées,l10n_lu.lu_2011_account_23,view,l10n_lu.account_type_2011_2_immo,f,l10n_lu.account_financial_report_39
+l10n_lu.lu_2011_account_236,236,Prêts et créances immobilisées,l10n_lu.lu_2011_account_23,view,l10n_lu.account_type_2011_2_immo,f,"l10n_lu.account_financial_report_39,l10n_lu.account_financial_report_abr_33"
 l10n_lu.lu_2011_account_2361,2361,Prêts,l10n_lu.lu_2011_account_236,view,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_23611,23611,Prêts participatifs,l10n_lu.lu_2011_account_2361,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_23612,23612,Prêts aux associés,l10n_lu.lu_2011_account_2361,other,l10n_lu.account_type_2011_2_immo,f,
@@ -255,9 +255,9 @@ l10n_lu.lu_2011_account_2362,2362,Dépôts et cautionnements versés,l10n_lu.lu_
 l10n_lu.lu_2011_account_23621,23621,Dépôts,l10n_lu.lu_2011_account_2362,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_23622,23622,Cautionnements,l10n_lu.lu_2011_account_2362,other,l10n_lu.account_type_2011_2_immo,f,
 l10n_lu.lu_2011_account_2363,2363,Créances immobilisées,l10n_lu.lu_2011_account_236,other,l10n_lu.account_type_2011_2_immo,f,
-l10n_lu.lu_2011_account_237,237,Actions propres ou parts propres,l10n_lu.lu_2011_account_23,other,l10n_lu.account_type_2011_2_immo,f,l10n_lu.account_financial_report_40
+l10n_lu.lu_2011_account_237,237,Actions propres ou parts propres,l10n_lu.lu_2011_account_23,other,l10n_lu.account_type_2011_2_immo,f,"l10n_lu.account_financial_report_40,l10n_lu.account_financial_report_abr_33"
 l10n_lu.lu_2011_account_3,3,CLASSE 3 - COMPTES DE STOCKS,l10n_lu.lu_2011_account_bilan,view,account.data_account_type_view,f,
-l10n_lu.lu_2011_account_30,30,Matières premières et consommables,l10n_lu.lu_2011_account_3,view,l10n_lu.account_type_2011_3_stock,f,l10n_lu.account_financial_report_43
+l10n_lu.lu_2011_account_30,30,Matières premières et consommables,l10n_lu.lu_2011_account_3,view,l10n_lu.account_type_2011_3_stock,f,"l10n_lu.account_financial_report_43,l10n_lu.account_financial_report_abr_42"
 l10n_lu.lu_2011_account_301,301,Matières premières,l10n_lu.lu_2011_account_30,other,l10n_lu.account_type_2011_3_stock,f,
 l10n_lu.lu_2011_account_302,302,Matières consommables,l10n_lu.lu_2011_account_30,other,l10n_lu.account_type_2011_3_stock,f,
 l10n_lu.lu_2011_account_303,303,Fournitures consommables,l10n_lu.lu_2011_account_30,view,l10n_lu.account_type_2011_3_stock,f,
@@ -274,12 +274,12 @@ l10n_lu.lu_2011_account_3041,3041,Emballages non-récupérables,l10n_lu.lu_2011_
 l10n_lu.lu_2011_account_3042,3042,Emballages récupérables,l10n_lu.lu_2011_account_304,other,l10n_lu.account_type_2011_3_stock,f,
 l10n_lu.lu_2011_account_3043,3043,Emballages à usage mixte,l10n_lu.lu_2011_account_304,other,l10n_lu.account_type_2011_3_stock,f,
 l10n_lu.lu_2011_account_305,305,Approvisionnements,l10n_lu.lu_2011_account_30,other,l10n_lu.account_type_2011_3_stock,f,
-l10n_lu.lu_2011_account_31,31,Produits en cours de fabrication et commandes en cours,l10n_lu.lu_2011_account_3,view,l10n_lu.account_type_2011_3_stock,f,l10n_lu.account_financial_report_44
+l10n_lu.lu_2011_account_31,31,Produits en cours de fabrication et commandes en cours,l10n_lu.lu_2011_account_3,view,l10n_lu.account_type_2011_3_stock,f,"l10n_lu.account_financial_report_44,l10n_lu.account_financial_report_abr_42"
 l10n_lu.lu_2011_account_311,311,Produits en cours de fabrication,l10n_lu.lu_2011_account_31,other,l10n_lu.account_type_2011_3_stock,f,
 l10n_lu.lu_2011_account_312,312,Commandes en cours – Produits,l10n_lu.lu_2011_account_31,other,l10n_lu.account_type_2011_3_stock,f,
 l10n_lu.lu_2011_account_313,313,Commandes en cours – Prestations de services,l10n_lu.lu_2011_account_31,other,l10n_lu.account_type_2011_3_stock,f,
 l10n_lu.lu_2011_account_314,314,Immeubles en construction,l10n_lu.lu_2011_account_31,other,l10n_lu.account_type_2011_3_stock,f,
-l10n_lu.lu_2011_account_32,32,Produits finis et marchandises,l10n_lu.lu_2011_account_3,view,l10n_lu.account_type_2011_3_stock,f,l10n_lu.account_financial_report_45
+l10n_lu.lu_2011_account_32,32,Produits finis et marchandises,l10n_lu.lu_2011_account_3,view,l10n_lu.account_type_2011_3_stock,f,"l10n_lu.account_financial_report_45,l10n_lu.account_financial_report_abr_42"
 l10n_lu.lu_2011_account_321,321,Produits finis,l10n_lu.lu_2011_account_32,other,l10n_lu.account_type_2011_3_stock,f,
 l10n_lu.lu_2011_account_322,322,Produits intermédiaires,l10n_lu.lu_2011_account_32,other,l10n_lu.account_type_2011_3_stock,f,
 l10n_lu.lu_2011_account_323,323,Produits résiduels,l10n_lu.lu_2011_account_32,view,l10n_lu.account_type_2011_3_stock,f,
@@ -288,26 +288,26 @@ l10n_lu.lu_2011_account_3232,3232,Rebuts,l10n_lu.lu_2011_account_323,other,l10n_
 l10n_lu.lu_2011_account_3233,3233,Matières de récupération,l10n_lu.lu_2011_account_323,other,l10n_lu.account_type_2011_3_stock,f,
 l10n_lu.lu_2011_account_326,326,Marchandises,l10n_lu.lu_2011_account_32,other,l10n_lu.account_type_2011_3_stock,f,
 l10n_lu.lu_2011_account_327,327,"Marchandises en voie d'acheminement, mises en dépôt ou données en consignation",l10n_lu.lu_2011_account_32,other,l10n_lu.account_type_2011_3_stock,f,
-l10n_lu.lu_2011_account_33,33,Terrains et immeubles destinés à la revente,l10n_lu.lu_2011_account_3,view,l10n_lu.account_type_2011_3_stock,f,l10n_lu.account_financial_report_45
+l10n_lu.lu_2011_account_33,33,Terrains et immeubles destinés à la revente,l10n_lu.lu_2011_account_3,view,l10n_lu.account_type_2011_3_stock,f,"l10n_lu.account_financial_report_45,l10n_lu.account_financial_report_abr_42"
 l10n_lu.lu_2011_account_331,331,Terrains,l10n_lu.lu_2011_account_33,other,l10n_lu.account_type_2011_3_stock,f,
 l10n_lu.lu_2011_account_332,332,Immeubles,l10n_lu.lu_2011_account_33,view,l10n_lu.account_type_2011_3_stock,f,
 l10n_lu.lu_2011_account_3321,3321,Immeubles acquis,l10n_lu.lu_2011_account_332,other,l10n_lu.account_type_2011_3_stock,f,
 l10n_lu.lu_2011_account_3322,3322,Immeubles construits,l10n_lu.lu_2011_account_332,other,l10n_lu.account_type_2011_3_stock,f,
-l10n_lu.lu_2011_account_34,34,Acomptes versés,l10n_lu.lu_2011_account_3,view,l10n_lu.account_type_2011_3_stock,f,l10n_lu.account_financial_report_46
+l10n_lu.lu_2011_account_34,34,Acomptes versés,l10n_lu.lu_2011_account_3,view,l10n_lu.account_type_2011_3_stock,f,"l10n_lu.account_financial_report_46,l10n_lu.account_financial_report_abr_42"
 l10n_lu.lu_2011_account_341,341,Acomptes versés sur matières premières et consommables,l10n_lu.lu_2011_account_34,other,l10n_lu.account_type_2011_3_stock,f,
 l10n_lu.lu_2011_account_342,342,Acomptes versés sur produits en cours de fabrication et commandes en cours,l10n_lu.lu_2011_account_34,other,l10n_lu.account_type_2011_3_stock,f,
 l10n_lu.lu_2011_account_343,343,Acomptes versés sur produits finis et marchandises,l10n_lu.lu_2011_account_34,other,l10n_lu.account_type_2011_3_stock,f,
 l10n_lu.lu_2011_account_344,344,Acomptes versés sur terrains et immeubles destinés à la revente,l10n_lu.lu_2011_account_34,other,l10n_lu.account_type_2011_3_stock,f,
 l10n_lu.lu_2011_account_4,4,CLASSE 4 - COMPTES DE TIERS,l10n_lu.lu_2011_account_bilan,view,account.data_account_type_view,f,
 l10n_lu.lu_2011_account_40,40,Créances résultant de ventes et prestations de services,l10n_lu.lu_2011_account_4,view,l10n_lu.account_type_2011_4_creance,f,
-l10n_lu.lu_2011_account_401,401,Créances dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_40,view,l10n_lu.account_type_2011_4_creance,f,l10n_lu.account_financial_report_49
+l10n_lu.lu_2011_account_401,401,Créances dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_40,view,l10n_lu.account_type_2011_4_creance,f,"l10n_lu.account_financial_report_49,l10n_lu.account_financial_report_abr_49"
 l10n_lu.lu_2011_account_4011,4011,Clients,l10n_lu.lu_2011_account_401,receivable,l10n_lu.account_type_2011_4_creance,t,
 l10n_lu.lu_2011_account_4012,4012,Clients – Effets à recevoir,l10n_lu.lu_2011_account_401,receivable,l10n_lu.account_type_2011_4_creance,t,
 l10n_lu.lu_2011_account_4013,4013,Clients douteux ou litigieux,l10n_lu.lu_2011_account_401,receivable,l10n_lu.account_type_2011_4_creance,t,
 l10n_lu.lu_2011_account_4014,4014,Clients – Factures à établir,l10n_lu.lu_2011_account_401,receivable,l10n_lu.account_type_2011_4_creance,t,
 l10n_lu.lu_2011_account_4015,4015,Clients créditeurs,l10n_lu.lu_2011_account_401,receivable,l10n_lu.account_type_2011_4_creance,t,
 l10n_lu.lu_2011_account_4019,4019,Corrections de valeur,l10n_lu.lu_2011_account_401,other,l10n_lu.account_type_2011_4_creance,f,
-l10n_lu.lu_2011_account_402,402,Créances dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_40,view,l10n_lu.account_type_2011_4_creance,f,l10n_lu.account_financial_report_50
+l10n_lu.lu_2011_account_402,402,Créances dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_40,view,l10n_lu.account_type_2011_4_creance,f,"l10n_lu.account_financial_report_50,l10n_lu.account_financial_report_abr_50"
 l10n_lu.lu_2011_account_4021,4021,Clients,l10n_lu.lu_2011_account_402,receivable,l10n_lu.account_type_2011_4_creance,t,
 l10n_lu.lu_2011_account_4022,4022,Clients – Effets à recevoir,l10n_lu.lu_2011_account_402,receivable,l10n_lu.account_type_2011_4_creance,t,
 l10n_lu.lu_2011_account_4023,4023,Clients douteux ou litigieux,l10n_lu.lu_2011_account_402,receivable,l10n_lu.account_type_2011_4_creance,t,
@@ -316,14 +316,14 @@ l10n_lu.lu_2011_account_4025,4025,Clients créditeurs,l10n_lu.lu_2011_account_40
 l10n_lu.lu_2011_account_4029,4029,Corrections de valeur,l10n_lu.lu_2011_account_402,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_41,41,Créances sur des entreprises liées et sur des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_4,view,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_411,411,Créances sur des entreprises liées,l10n_lu.lu_2011_account_41,view,l10n_lu.account_type_2011_4_creance,f,
-l10n_lu.lu_2011_account_4111,4111,Créances dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_411,view,l10n_lu.account_type_2011_4_creance,f,l10n_lu.account_financial_report_52
+l10n_lu.lu_2011_account_4111,4111,Créances dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_411,view,l10n_lu.account_type_2011_4_creance,f,"l10n_lu.account_financial_report_50,l10n_lu.account_financial_report_abr_50"
 l10n_lu.lu_2011_account_41111,41111,Ventes de marchandises et de prestations de services,l10n_lu.lu_2011_account_4111,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_41112,41112,Prêts et avances,l10n_lu.lu_2011_account_4111,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_41113,41113,Intérêts courus,l10n_lu.lu_2011_account_4111,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_41114,41114,Dividendes à recevoir,l10n_lu.lu_2011_account_4111,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_41118,41118,Autres créances,l10n_lu.lu_2011_account_4111,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_41119,41119,Corrections de valeur,l10n_lu.lu_2011_account_4111,other,l10n_lu.account_type_2011_4_creance,f,
-l10n_lu.lu_2011_account_4112,4112,Créances dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_411,view,l10n_lu.account_type_2011_4_creance,f,l10n_lu.account_financial_report_53
+l10n_lu.lu_2011_account_4112,4112,Créances dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_411,view,l10n_lu.account_type_2011_4_creance,f,"l10n_lu.account_financial_report_53,l10n_lu.account_financial_report_abr_50"
 l10n_lu.lu_2011_account_41121,41121,Ventes de marchandises et de prestations de services,l10n_lu.lu_2011_account_4112,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_41122,41122,Prêts et avances,l10n_lu.lu_2011_account_4112,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_41123,41123,Intérêts courus,l10n_lu.lu_2011_account_4112,other,l10n_lu.account_type_2011_4_creance,f,
@@ -331,14 +331,14 @@ l10n_lu.lu_2011_account_41124,41124,Dividendes à recevoir,l10n_lu.lu_2011_accou
 l10n_lu.lu_2011_account_41128,41128,Autres créances,l10n_lu.lu_2011_account_4112,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_41129,41129,Corrections de valeur,l10n_lu.lu_2011_account_4112,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_412,412,Créances sur des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_41,view,l10n_lu.account_type_2011_4_creance,f,
-l10n_lu.lu_2011_account_4121,4121,Créances dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_412,view,l10n_lu.account_type_2011_4_creance,f,l10n_lu.account_financial_report_55
+l10n_lu.lu_2011_account_4121,4121,Créances dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_412,view,l10n_lu.account_type_2011_4_creance,f,"l10n_lu.account_financial_report_55,l10n_lu.account_financial_report_abr_49"
 l10n_lu.lu_2011_account_41211,41211,Ventes de marchandises et de prestations de service,l10n_lu.lu_2011_account_4121,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_41212,41212,Prêts et avances,l10n_lu.lu_2011_account_4121,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_41213,41213,Intérêts courus,l10n_lu.lu_2011_account_4121,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_41214,41214,Dividendes à recevoir,l10n_lu.lu_2011_account_4121,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_41218,41218,Autres créances,l10n_lu.lu_2011_account_4121,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_41219,41219,Corrections de valeur,l10n_lu.lu_2011_account_4121,other,l10n_lu.account_type_2011_4_creance,f,
-l10n_lu.lu_2011_account_4122,4122,Créances dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_412,view,l10n_lu.account_type_2011_4_creance,f,l10n_lu.account_financial_report_56
+l10n_lu.lu_2011_account_4122,4122,Créances dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_412,view,l10n_lu.account_type_2011_4_creance,f,"l10n_lu.account_financial_report_56,l10n_lu.account_financial_report_abr_50"
 l10n_lu.lu_2011_account_41221,41221,Ventes de marchandises et de prestations de service,l10n_lu.lu_2011_account_4122,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_41222,41222,Prêts et avances,l10n_lu.lu_2011_account_4122,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_41223,41223,Intérêts courus,l10n_lu.lu_2011_account_4122,other,l10n_lu.account_type_2011_4_creance,f,
@@ -346,7 +346,7 @@ l10n_lu.lu_2011_account_41224,41224,Dividendes à recevoir,l10n_lu.lu_2011_accou
 l10n_lu.lu_2011_account_41228,41228,Autres créances,l10n_lu.lu_2011_account_4122,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_41229,41229,Corrections de valeur,l10n_lu.lu_2011_account_4122,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_42,42,Autres créances,l10n_lu.lu_2011_account_4,view,l10n_lu.account_type_2011_4_creance,f,
-l10n_lu.lu_2011_account_421,421,Autres créances dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_42,view,l10n_lu.account_type_2011_4_creance,f,l10n_lu.account_financial_report_58
+l10n_lu.lu_2011_account_421,421,Autres créances dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_42,view,l10n_lu.account_type_2011_4_creance,f,"l10n_lu.account_financial_report_58,l10n_lu.account_financial_report_abr_49"
 l10n_lu.lu_2011_account_4211,4211,Personnel – Avances et acomptes,l10n_lu.lu_2011_account_421,view,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_42111,42111,Avances et acomptes,l10n_lu.lu_2011_account_4211,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_42119,42119,Corrections de valeur,l10n_lu.lu_2011_account_4211,other,l10n_lu.account_type_2011_4_creance,f,
@@ -383,7 +383,7 @@ l10n_lu.lu_2011_account_421811,421811,TVA étrangères,l10n_lu.lu_2011_account_4
 l10n_lu.lu_2011_account_421818,421818,Autres impôts étrangers,l10n_lu.lu_2011_account_42181,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_42188,42188,Autres créances diverses,l10n_lu.lu_2011_account_4218,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_42189,42189,Corrections de valeur,l10n_lu.lu_2011_account_4218,other,l10n_lu.account_type_2011_4_creance,f,
-l10n_lu.lu_2011_account_422,422,Autres créances dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_42,view,l10n_lu.account_type_2011_4_creance,f,l10n_lu.account_financial_report_59
+l10n_lu.lu_2011_account_422,422,Autres créances dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_42,view,l10n_lu.account_type_2011_4_creance,f,"l10n_lu.account_financial_report_59,l10n_lu.account_financial_report_abr_50"
 l10n_lu.lu_2011_account_4221,4221,Personnel – Avances et acomptes,l10n_lu.lu_2011_account_422,view,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_42211,42211,Avances et acomptes,l10n_lu.lu_2011_account_4221,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_42219,42219,Corrections de valeur,l10n_lu.lu_2011_account_4221,other,l10n_lu.account_type_2011_4_creance,f,
@@ -424,11 +424,11 @@ l10n_lu.lu_2011_account_422818,422818,Autres impôts étrangers,l10n_lu.lu_2011_
 l10n_lu.lu_2011_account_42288,42288,Autres créances diverses,l10n_lu.lu_2011_account_4228,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_42289,42289,Corrections de valeur sur autres créances diverses,l10n_lu.lu_2011_account_4228,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_43,43,Acomptes reçus sur commandes pour autant qu'ils ne sont pas déduits des stocks de façon distincte,l10n_lu.lu_2011_account_4,view,l10n_lu.account_type_2011_4_dette,f,
-l10n_lu.lu_2011_account_431,431,Acomptes reçus dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_43,other,l10n_lu.account_type_2011_4_dette,f,l10n_lu.account_financial_report_98
-l10n_lu.lu_2011_account_432,432,Acomptes reçus dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_43,other,l10n_lu.account_type_2011_4_dette,f,l10n_lu.account_financial_report_99
+l10n_lu.lu_2011_account_431,431,Acomptes reçus dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_43,other,l10n_lu.account_type_2011_4_dette,f,"l10n_lu.account_financial_report_98,l10n_lu.account_financial_report_abr_89"
+l10n_lu.lu_2011_account_432,432,Acomptes reçus dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_43,other,l10n_lu.account_type_2011_4_dette,f,"l10n_lu.account_financial_report_99,l10n_lu.account_financial_report_abr_90"
 l10n_lu.lu_2011_account_44,44,Dettes sur achats et prestations de services et dettes représentées par des effets de commerce,l10n_lu.lu_2011_account_4,view,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_441,441,Dettes sur achats et prestations de services,l10n_lu.lu_2011_account_44,view,l10n_lu.account_type_2011_4_dette,f,
-l10n_lu.lu_2011_account_4411,4411,Dettes sur achats et prestations de services dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_441,view,l10n_lu.account_type_2011_4_dette,f,l10n_lu.account_financial_report_101
+l10n_lu.lu_2011_account_4411,4411,Dettes sur achats et prestations de services dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_441,view,l10n_lu.account_type_2011_4_dette,f,"l10n_lu.account_financial_report_101,l10n_lu.account_financial_report_abr_89"
 l10n_lu.lu_2011_account_44111,44111,Fournisseurs,l10n_lu.lu_2011_account_4411,payable,l10n_lu.account_type_2011_4_dette,t,
 l10n_lu.lu_2011_account_44112,44112,Fournisseurs – Factures non parvenues,l10n_lu.lu_2011_account_4411,payable,l10n_lu.account_type_2011_4_dette,t,
 l10n_lu.lu_2011_account_44113,44113,Fournisseurs débiteurs,l10n_lu.lu_2011_account_4411,view,l10n_lu.account_type_2011_4_dette,f,
@@ -436,7 +436,7 @@ l10n_lu.lu_2011_account_441131,441131,Fournisseurs – Avances et acomptes vers�
 l10n_lu.lu_2011_account_441132,441132,Fournisseurs – Créances pour emballages et matériel à rendre,l10n_lu.lu_2011_account_44113,payable,l10n_lu.account_type_2011_4_dette,t,
 l10n_lu.lu_2011_account_441133,441133,Fournisseurs – Autres avoirs,l10n_lu.lu_2011_account_44113,payable,l10n_lu.account_type_2011_4_dette,t,
 l10n_lu.lu_2011_account_441134,441134,"Rabais, remises, ristournes à obtenir et autres avoirs non encore reçus",l10n_lu.lu_2011_account_44113,payable,l10n_lu.account_type_2011_4_dette,t,
-l10n_lu.lu_2011_account_4412,4412,Dettes sur achats et prestations de services dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_441,view,l10n_lu.account_type_2011_4_dette,f,l10n_lu.account_financial_report_102
+l10n_lu.lu_2011_account_4412,4412,Dettes sur achats et prestations de services dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_441,view,l10n_lu.account_type_2011_4_dette,f,"l10n_lu.account_financial_report_102,l10n_lu.account_financial_report_abr_90"
 l10n_lu.lu_2011_account_44121,44121,Fournisseurs,l10n_lu.lu_2011_account_4412,payable,l10n_lu.account_type_2011_4_dette,t,
 l10n_lu.lu_2011_account_44122,44122,Fournisseurs – Factures non parvenues,l10n_lu.lu_2011_account_4412,payable,l10n_lu.account_type_2011_4_dette,t,
 l10n_lu.lu_2011_account_44123,44123,Fournisseurs débiteurs,l10n_lu.lu_2011_account_4412,view,l10n_lu.account_type_2011_4_dette,f,
@@ -445,37 +445,37 @@ l10n_lu.lu_2011_account_441232,441232,Fournisseurs – Créances pour emballages
 l10n_lu.lu_2011_account_441233,441233,Fournisseurs – Autres avoirs,l10n_lu.lu_2011_account_44123,payable,l10n_lu.account_type_2011_4_dette,t,
 l10n_lu.lu_2011_account_441234,441234,"Rabais, remises, ristournes à obtenir et autres avoirs non encore reçus",l10n_lu.lu_2011_account_44123,payable,l10n_lu.account_type_2011_4_dette,t,
 l10n_lu.lu_2011_account_442,442,Dettes représentées par des effets de commerce,l10n_lu.lu_2011_account_44,view,l10n_lu.account_type_2011_4_dette,f,
-l10n_lu.lu_2011_account_4421,4421,Dettes représentées par des effets de commerce dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_442,other,l10n_lu.account_type_2011_4_dette,f,l10n_lu.account_financial_report_104
-l10n_lu.lu_2011_account_4422,4422,Dettes représentées par des effets de commerce dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_442,other,l10n_lu.account_type_2011_4_dette,f,l10n_lu.account_financial_report_105
+l10n_lu.lu_2011_account_4421,4421,Dettes représentées par des effets de commerce dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_442,other,l10n_lu.account_type_2011_4_dette,f,"l10n_lu.account_financial_report_104,l10n_lu.account_financial_report_abr_89"
+l10n_lu.lu_2011_account_4422,4422,Dettes représentées par des effets de commerce dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_442,other,l10n_lu.account_type_2011_4_dette,f,"l10n_lu.account_financial_report_105,l10n_lu.account_financial_report_abr_90"
 l10n_lu.lu_2011_account_45,45,Dettes envers des entreprises liées et des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_4,view,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_451,451,Dettes envers des entreprises liées,l10n_lu.lu_2011_account_45,view,l10n_lu.account_type_2011_4_dette,f,
-l10n_lu.lu_2011_account_4511,4511,Dettes envers des entreprises liées dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_451,view,l10n_lu.account_type_2011_4_dette,f,l10n_lu.account_financial_report_107
+l10n_lu.lu_2011_account_4511,4511,Dettes envers des entreprises liées dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_451,view,l10n_lu.account_type_2011_4_dette,f,"l10n_lu.account_financial_report_107,l10n_lu.account_financial_report_abr_89"
 l10n_lu.lu_2011_account_45111,45111,Ventes de marchandises et de prestations de services,l10n_lu.lu_2011_account_4511,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_45112,45112,Prêts et avances,l10n_lu.lu_2011_account_4511,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_45113,45113,Intérêts courus,l10n_lu.lu_2011_account_4511,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_45114,45114,Dividendes à payer,l10n_lu.lu_2011_account_4511,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_45118,45118,Autres dettes,l10n_lu.lu_2011_account_4511,other,l10n_lu.account_type_2011_4_dette,f,
-l10n_lu.lu_2011_account_4512,4512,Dettes envers des entreprises liées dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_451,view,l10n_lu.account_type_2011_4_dette,f,l10n_lu.account_financial_report_108
+l10n_lu.lu_2011_account_4512,4512,Dettes envers des entreprises liées dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_451,view,l10n_lu.account_type_2011_4_dette,f,"l10n_lu.account_financial_report_108,l10n_lu.account_financial_report_abr_90"
 l10n_lu.lu_2011_account_45121,45121,Ventes de marchandises et de prestations de services,l10n_lu.lu_2011_account_4512,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_45122,45122,Prêts et avances,l10n_lu.lu_2011_account_4512,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_45123,45123,Intérêts courus,l10n_lu.lu_2011_account_4512,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_45124,45124,Dividendes à payer,l10n_lu.lu_2011_account_4512,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_45128,45128,Autres dettes,l10n_lu.lu_2011_account_4512,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_452,452,Dettes envers des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_45,view,l10n_lu.account_type_2011_4_dette,f,
-l10n_lu.lu_2011_account_4521,4521,Dettes envers des entreprises avec lesquelles la société a un lien de participation dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_452,view,l10n_lu.account_type_2011_4_dette,f,l10n_lu.account_financial_report_110
+l10n_lu.lu_2011_account_4521,4521,Dettes envers des entreprises avec lesquelles la société a un lien de participation dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_452,view,l10n_lu.account_type_2011_4_dette,f,"l10n_lu.account_financial_report_110,l10n_lu.account_financial_report_abr_89"
 l10n_lu.lu_2011_account_45211,45211,Ventes de marchandises et de prestations de services,l10n_lu.lu_2011_account_4521,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_45212,45212,Prêts et avances,l10n_lu.lu_2011_account_4521,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_45213,45213,Intérêts courus,l10n_lu.lu_2011_account_4521,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_45214,45214,Dividendes à payer,l10n_lu.lu_2011_account_4521,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_45218,45218,Autres dettes,l10n_lu.lu_2011_account_4521,other,l10n_lu.account_type_2011_4_dette,f,
-l10n_lu.lu_2011_account_4522,4522,Dettes envers des entreprises avec lesquelles la société a un lien de participation dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_452,view,l10n_lu.account_type_2011_4_dette,f,l10n_lu.account_financial_report_111
+l10n_lu.lu_2011_account_4522,4522,Dettes envers des entreprises avec lesquelles la société a un lien de participation dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_452,view,l10n_lu.account_type_2011_4_dette,f,"l10n_lu.account_financial_report_111,l10n_lu.account_financial_report_abr_90"
 l10n_lu.lu_2011_account_45221,45221,Ventes de marchandises et de prestations de services,l10n_lu.lu_2011_account_4522,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_45222,45222,Prêts et avances,l10n_lu.lu_2011_account_4522,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_45223,45223,Intérêts courus,l10n_lu.lu_2011_account_4522,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_45224,45224,Dividendes à payer,l10n_lu.lu_2011_account_4522,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_45228,45228,Autres dettes,l10n_lu.lu_2011_account_4522,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_46,46,Dettes fiscales et dettes envers la sécurité sociale,l10n_lu.lu_2011_account_4,view,l10n_lu.account_type_2011_4_dette,f,
-l10n_lu.lu_2011_account_461,461,Dettes fiscales,l10n_lu.lu_2011_account_46,view,l10n_lu.account_type_2011_4_dette,f,l10n_lu.account_financial_report_113
+l10n_lu.lu_2011_account_461,461,Dettes fiscales,l10n_lu.lu_2011_account_46,view,l10n_lu.account_type_2011_4_dette,f,"l10n_lu.account_financial_report_113,l10n_lu.account_financial_report_abr_89"
 l10n_lu.lu_2011_account_4611,4611,Administrations communales,l10n_lu.lu_2011_account_461,view,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_46111,46111,Impôts communaux,l10n_lu.lu_2011_account_4611,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_46112,46112,Taxes communales,l10n_lu.lu_2011_account_4611,other,l10n_lu.account_type_2011_4_dette,f,
@@ -515,12 +515,12 @@ l10n_lu.lu_2011_account_461423,461423,Droits d'hypothèques,l10n_lu.lu_2011_acco
 l10n_lu.lu_2011_account_461424,461424,Droits de timbre,l10n_lu.lu_2011_account_46142,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_461428,461428,Autres impôts indirects,l10n_lu.lu_2011_account_46142,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_4615,4615,Administrations fiscales étrangères,l10n_lu.lu_2011_account_461,other,l10n_lu.account_type_2011_4_dette,f,
-l10n_lu.lu_2011_account_462,462,Dettes au titre de la sécurité sociale,l10n_lu.lu_2011_account_46,view,l10n_lu.account_type_2011_4_dette,f,l10n_lu.account_financial_report_114
+l10n_lu.lu_2011_account_462,462,Dettes au titre de la sécurité sociale,l10n_lu.lu_2011_account_46,view,l10n_lu.account_type_2011_4_dette,f,"l10n_lu.account_financial_report_114,l10n_lu.account_financial_report_abr_90"
 l10n_lu.lu_2011_account_4621,4621,Centre Commun de Sécurité Sociale (CCSS),l10n_lu.lu_2011_account_462,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_4622,4622,Organismes de sécurité sociale étrangers,l10n_lu.lu_2011_account_462,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_4628,4628,Autres organismes sociaux,l10n_lu.lu_2011_account_462,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_47,47,Autres dettes,l10n_lu.lu_2011_account_4,view,l10n_lu.account_type_2011_4_dette,f,
-l10n_lu.lu_2011_account_471,471,Autres dettes dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_47,view,l10n_lu.account_type_2011_4_dette,f,l10n_lu.account_financial_report_116
+l10n_lu.lu_2011_account_471,471,Autres dettes dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_47,view,l10n_lu.account_type_2011_4_dette,f,"l10n_lu.account_financial_report_116,l10n_lu.account_financial_report_abr_89"
 l10n_lu.lu_2011_account_4711,4711,Dépôts et cautionnements reçus,l10n_lu.lu_2011_account_471,view,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_47111,47111,Dépôts,l10n_lu.lu_2011_account_4711,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_47112,47112,Cautionnements,l10n_lu.lu_2011_account_4711,other,l10n_lu.account_type_2011_4_dette,f,
@@ -536,7 +536,7 @@ l10n_lu.lu_2011_account_47143,47143,"Personnel – Oppositions, saisies",l10n_lu
 l10n_lu.lu_2011_account_47148,47148,Personnel – Autres,l10n_lu.lu_2011_account_4714,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_4715,4715,Etat – Droits d'émission à restituer,l10n_lu.lu_2011_account_471,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_4718,4718,Autres dettes diverses,l10n_lu.lu_2011_account_471,other,l10n_lu.account_type_2011_4_dette,f,
-l10n_lu.lu_2011_account_472,472,Autres dettes dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_47,view,l10n_lu.account_type_2011_4_dette,f,l10n_lu.account_financial_report_117
+l10n_lu.lu_2011_account_472,472,Autres dettes dont la durée résiduelle est supérieure à un an,l10n_lu.lu_2011_account_47,view,l10n_lu.account_type_2011_4_dette,f,"l10n_lu.account_financial_report_117,l10n_lu.account_financial_report_abr_90"
 l10n_lu.lu_2011_account_4721,4721,Dépôts et cautionnements reçus,l10n_lu.lu_2011_account_472,view,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_47211,47211,Dépôts,l10n_lu.lu_2011_account_4721,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_47212,47212,Cautionnements,l10n_lu.lu_2011_account_4721,other,l10n_lu.account_type_2011_4_dette,f,
@@ -553,26 +553,26 @@ l10n_lu.lu_2011_account_47248,47248,Personnel – Autres,l10n_lu.lu_2011_account
 l10n_lu.lu_2011_account_4726,4726,Etat – Droits d'émission à restituer,l10n_lu.lu_2011_account_472,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_4728,4728,Autres dettes diverses,l10n_lu.lu_2011_account_472,other,l10n_lu.account_type_2011_4_dette,f,
 l10n_lu.lu_2011_account_48,48,Comptes de régularisation,l10n_lu.lu_2011_account_4,view,account.data_account_type_view,f,
-l10n_lu.lu_2011_account_481,481,Charges à reporter,l10n_lu.lu_2011_account_48,other,l10n_lu.account_type_2011_4_regul_actif,f,l10n_lu.account_financial_report_65
-l10n_lu.lu_2011_account_482,482,Produits à reporter,l10n_lu.lu_2011_account_48,other,l10n_lu.account_type_2011_4_regul_passif,f,l10n_lu.account_financial_report_118
-l10n_lu.lu_2011_account_483,483,Etat - Droits d'émission alloués,l10n_lu.lu_2011_account_48,other,l10n_lu.account_type_2011_4_regul_passif,f,l10n_lu.account_financial_report_118
-l10n_lu.lu_2011_account_484,484,Comptes transitoires ou d'attente – Actif,l10n_lu.lu_2011_account_48,other,l10n_lu.account_type_2011_4_regul_actif,f,l10n_lu.account_financial_report_65
-l10n_lu.lu_2011_account_485,485,Comptes transitoires ou d'attente – Passif,l10n_lu.lu_2011_account_48,other,l10n_lu.account_type_2011_4_regul_passif,f,l10n_lu.account_financial_report_118
-l10n_lu.lu_2011_account_486,486,Comptes de liaison – Actif,l10n_lu.lu_2011_account_48,other,l10n_lu.account_type_2011_4_regul_actif,f,l10n_lu.account_financial_report_65
-l10n_lu.lu_2011_account_487,487,Comptes de liaison – Passif,l10n_lu.lu_2011_account_48,other,l10n_lu.account_type_2011_4_regul_passif,f,l10n_lu.account_financial_report_118
+l10n_lu.lu_2011_account_481,481,Charges à reporter,l10n_lu.lu_2011_account_48,other,l10n_lu.account_type_2011_4_regul_actif,f,"l10n_lu.account_financial_report_65,l10n_lu.account_financial_report_abr_65"
+l10n_lu.lu_2011_account_482,482,Produits à reporter,l10n_lu.lu_2011_account_48,other,l10n_lu.account_type_2011_4_regul_passif,f,"l10n_lu.account_financial_report_118,l10n_lu.account_financial_report_abr_118"
+l10n_lu.lu_2011_account_483,483,Etat - Droits d'émission alloués,l10n_lu.lu_2011_account_48,other,l10n_lu.account_type_2011_4_regul_passif,f,"l10n_lu.account_financial_report_118,l10n_lu.account_financial_report_abr_118"
+l10n_lu.lu_2011_account_484,484,Comptes transitoires ou d'attente – Actif,l10n_lu.lu_2011_account_48,other,l10n_lu.account_type_2011_4_regul_actif,f,"l10n_lu.account_financial_report_65,l10n_lu.account_financial_report_abr_65"
+l10n_lu.lu_2011_account_485,485,Comptes transitoires ou d'attente – Passif,l10n_lu.lu_2011_account_48,other,l10n_lu.account_type_2011_4_regul_passif,f,"l10n_lu.account_financial_report_118,l10n_lu.account_financial_report_abr_118"
+l10n_lu.lu_2011_account_486,486,Comptes de liaison – Actif,l10n_lu.lu_2011_account_48,other,l10n_lu.account_type_2011_4_regul_actif,f,"l10n_lu.account_financial_report_65,l10n_lu.account_financial_report_abr_65"
+l10n_lu.lu_2011_account_487,487,Comptes de liaison – Passif,l10n_lu.lu_2011_account_48,other,l10n_lu.account_type_2011_4_regul_passif,f,"l10n_lu.account_financial_report_118,l10n_lu.account_financial_report_abr_118"
 l10n_lu.lu_2011_account_5,5,CLASSE 5 - COMPTES FINANCIERS,l10n_lu.lu_2011_account_bilan,view,account.data_account_type_view,f,
 l10n_lu.lu_2011_account_50,50,Valeurs mobilières,l10n_lu.lu_2011_account_5,view,l10n_lu.account_type_2011_5_disponibilite,f,
-l10n_lu.lu_2011_account_501,501,Parts dans des entreprises liées,l10n_lu.lu_2011_account_50,other,l10n_lu.account_type_2011_5_disponibilite,f,l10n_lu.account_financial_report_61
-l10n_lu.lu_2011_account_502,502,Parts dans des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_50,other,l10n_lu.account_type_2011_5_disponibilite,f,l10n_lu.account_financial_report_61
-l10n_lu.lu_2011_account_503,503,Actions propres ou parts propres,l10n_lu.lu_2011_account_50,other,l10n_lu.account_type_2011_5_disponibilite,f,l10n_lu.account_financial_report_62
-l10n_lu.lu_2011_account_508,508,Autres valeurs mobilières,l10n_lu.lu_2011_account_50,view,l10n_lu.account_type_2011_5_disponibilite,f,l10n_lu.account_financial_report_63
+l10n_lu.lu_2011_account_501,501,Parts dans des entreprises liées,l10n_lu.lu_2011_account_50,other,l10n_lu.account_type_2011_5_disponibilite,f,"l10n_lu.account_financial_report_61,l10n_lu.account_financial_report_abr_60"
+l10n_lu.lu_2011_account_502,502,Parts dans des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_50,other,l10n_lu.account_type_2011_5_disponibilite,f,"l10n_lu.account_financial_report_61,l10n_lu.account_financial_report_abr_60"
+l10n_lu.lu_2011_account_503,503,Actions propres ou parts propres,l10n_lu.lu_2011_account_50,other,l10n_lu.account_type_2011_5_disponibilite,f,"l10n_lu.account_financial_report_62,l10n_lu.account_financial_report_abr_60"
+l10n_lu.lu_2011_account_508,508,Autres valeurs mobilières,l10n_lu.lu_2011_account_50,view,l10n_lu.account_type_2011_5_disponibilite,f,"l10n_lu.account_financial_report_63,l10n_lu.account_financial_report_abr_60"
 l10n_lu.lu_2011_account_5081,5081,Actions – Titres cotés,l10n_lu.lu_2011_account_508,other,l10n_lu.account_type_2011_5_disponibilite,f,
 l10n_lu.lu_2011_account_5082,5082,Actions – Titres non cotés,l10n_lu.lu_2011_account_508,other,l10n_lu.account_type_2011_5_disponibilite,f,
 l10n_lu.lu_2011_account_5083,5083,Obligations et autres titres de créance émis par la société et rachetés par elle,l10n_lu.lu_2011_account_508,other,l10n_lu.account_type_2011_5_disponibilite,f,
 l10n_lu.lu_2011_account_5084,5084,Obligations – Titres cotés,l10n_lu.lu_2011_account_508,other,l10n_lu.account_type_2011_5_disponibilite,f,
 l10n_lu.lu_2011_account_5085,5085,Obligations – Titres non cotés,l10n_lu.lu_2011_account_508,other,l10n_lu.account_type_2011_5_disponibilite,f,
 l10n_lu.lu_2011_account_5088,5088,Autres valeurs mobilières diverses,l10n_lu.lu_2011_account_508,other,l10n_lu.account_type_2011_5_disponibilite,f,
-l10n_lu.lu_2011_account_51,51,"Avoirs en banques, avoirs en comptes de chèques postaux, chèques et encaisse",l10n_lu.lu_2011_account_5,view,l10n_lu.account_type_2011_5_disponibilite,f,l10n_lu.account_financial_report_64
+l10n_lu.lu_2011_account_51,51,"Avoirs en banques, avoirs en comptes de chèques postaux, chèques et encaisse",l10n_lu.lu_2011_account_5,view,l10n_lu.account_type_2011_5_disponibilite,f,"l10n_lu.account_financial_report_64,l10n_lu.account_financial_report_abr_64"
 l10n_lu.lu_2011_account_511,511,Chèques à encaisser,l10n_lu.lu_2011_account_51,other,l10n_lu.account_type_2011_5_disponibilite,f,
 l10n_lu.lu_2011_account_512,512,Valeurs à l'encaissement,l10n_lu.lu_2011_account_51,other,l10n_lu.account_type_2011_5_disponibilite,f,
 l10n_lu.lu_2011_account_513,513,Banques,l10n_lu.lu_2011_account_51,view,l10n_lu.account_type_2011_5_disponibilite,f,
@@ -582,9 +582,9 @@ l10n_lu.lu_2011_account_514,514,Compte chèque postal,l10n_lu.lu_2011_account_51
 l10n_lu.lu_2011_account_516,516,Caisse,l10n_lu.lu_2011_account_51,other,l10n_lu.account_type_2011_5_disponibilite,f,
 l10n_lu.lu_2011_account_517,517,Virements internes,l10n_lu.lu_2011_account_51,other,l10n_lu.account_type_2011_5_disponibilite,t,
 l10n_lu.lu_2011_account_518,518,Autres avoirs,l10n_lu.lu_2011_account_51,other,l10n_lu.account_type_2011_5_disponibilite,f,
-l10n_lu.lu_2011_account_resultat,resultat,TOTAL CLASSES 6 ET 7,l10n_lu.lu_2011_account_0,view,account.data_account_type_view,,"l10n_lu.account_financial_report_77,l10n_lu.account_financial_report_161"
+l10n_lu.lu_2011_account_resultat,resultat,TOTAL CLASSES 6 ET 7,l10n_lu.lu_2011_account_0,view,account.data_account_type_view,,"l10n_lu.account_financial_report_77,l10n_lu.account_financial_report_161,l10n_lu.account_financial_report_abr_77,l10n_lu.account_financial_report_abr_161"
 l10n_lu.lu_2011_account_6,6,CLASSE 6 - COMPTES DE CHARGES,l10n_lu.lu_2011_account_resultat,view,account.data_account_type_view,f,
-l10n_lu.lu_2011_account_60,60,Consommation de marchandises et de matières premières et consommables,l10n_lu.lu_2011_account_6,view,l10n_lu.account_type_2011_6_charge_exploitation,f,l10n_lu.account_financial_report_120
+l10n_lu.lu_2011_account_60,60,Consommation de marchandises et de matières premières et consommables,l10n_lu.lu_2011_account_6,view,l10n_lu.account_type_2011_6_charge_exploitation,f,"l10n_lu.account_financial_report_120,l10n_lu.account_financial_report_abr_120"
 l10n_lu.lu_2011_account_601,601,Matières premières,l10n_lu.lu_2011_account_60,view,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_602,602,Matières consommables,l10n_lu.lu_2011_account_60,view,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_603,603,Fournitures consommables,l10n_lu.lu_2011_account_60,view,l10n_lu.account_type_2011_6_charge_exploitation,f,
@@ -643,7 +643,7 @@ l10n_lu.lu_2011_account_6095,6095,Approvisionnements,l10n_lu.lu_2011_account_609
 l10n_lu.lu_2011_account_6096,6096,Achats de biens destinés à la revente,l10n_lu.lu_2011_account_609,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6098,6098,Achats non stockés et achats incorporés aux ouvrages et produits,l10n_lu.lu_2011_account_609,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6099,6099,"Rabais, remises et ristournes non affectés",l10n_lu.lu_2011_account_609,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
-l10n_lu.lu_2011_account_61,61,Autres charges externes,l10n_lu.lu_2011_account_6,view,l10n_lu.account_type_2011_6_charge_exploitation,f,l10n_lu.account_financial_report_121
+l10n_lu.lu_2011_account_61,61,Autres charges externes,l10n_lu.lu_2011_account_6,view,l10n_lu.account_type_2011_6_charge_exploitation,f,"l10n_lu.account_financial_report_121,l10n_lu.account_financial_report_abr_120"
 l10n_lu.lu_2011_account_611,611,Loyers et charges locatives,l10n_lu.lu_2011_account_61,view,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6111,6111,Locations immobilières,l10n_lu.lu_2011_account_611,view,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_61111,61111,Terrains,l10n_lu.lu_2011_account_6111,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
@@ -751,7 +751,7 @@ l10n_lu.lu_2011_account_6187,6187,Cotisations aux associations professionnelles,
 l10n_lu.lu_2011_account_6188,6188,Autres charges externes diverses,l10n_lu.lu_2011_account_618,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_619,619,"Rabais, remises et ristournes obtenus sur autres charges externes",l10n_lu.lu_2011_account_61,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_62,62,Frais de personnel,l10n_lu.lu_2011_account_6,view,l10n_lu.account_type_2011_6_charge_exploitation,f,
-l10n_lu.lu_2011_account_621,621,Rémunérations des salariés,l10n_lu.lu_2011_account_62,view,l10n_lu.account_type_2011_6_charge_exploitation,f,l10n_lu.account_financial_report_123
+l10n_lu.lu_2011_account_621,621,Rémunérations des salariés,l10n_lu.lu_2011_account_62,view,l10n_lu.account_type_2011_6_charge_exploitation,f,"l10n_lu.account_financial_report_123,l10n_lu.account_financial_report_abr_123"
 l10n_lu.lu_2011_account_6211,6211,Salaires bruts,l10n_lu.lu_2011_account_621,view,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_62111,62111,Salaires de base,l10n_lu.lu_2011_account_6211,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_62112,62112,Suppléments pour travail,l10n_lu.lu_2011_account_6211,view,l10n_lu.account_type_2011_6_charge_exploitation,f,
@@ -769,11 +769,11 @@ l10n_lu.lu_2011_account_6219,6219,Remboursements sur salaires,l10n_lu.lu_2011_ac
 l10n_lu.lu_2011_account_62191,62191,Remboursements mutualité,l10n_lu.lu_2011_account_6219,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_62192,62192,"Remboursements pour congé politique, sportif, culturel, éducatif et mandats sociaux",l10n_lu.lu_2011_account_6219,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_62193,62193,Remboursements trimestre de faveur,l10n_lu.lu_2011_account_6219,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
-l10n_lu.lu_2011_account_622,622,Autre personnel,l10n_lu.lu_2011_account_62,view,l10n_lu.account_type_2011_6_charge_exploitation,f,l10n_lu.account_financial_report_123
+l10n_lu.lu_2011_account_622,622,Autre personnel,l10n_lu.lu_2011_account_62,view,l10n_lu.account_type_2011_6_charge_exploitation,f,"l10n_lu.account_financial_report_123,l10n_lu.account_financial_report_abr_123"
 l10n_lu.lu_2011_account_6221,6221,Etudiants,l10n_lu.lu_2011_account_622,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6222,6222,Salaires occasionnels,l10n_lu.lu_2011_account_622,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6228,6228,Autre personnel temporaire,l10n_lu.lu_2011_account_622,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
-l10n_lu.lu_2011_account_623,623,Charges sociales (part patronale),l10n_lu.lu_2011_account_62,view,l10n_lu.account_type_2011_6_charge_exploitation,f,l10n_lu.account_financial_report_124
+l10n_lu.lu_2011_account_623,623,Charges sociales (part patronale),l10n_lu.lu_2011_account_62,view,l10n_lu.account_type_2011_6_charge_exploitation,f,"l10n_lu.account_financial_report_124,l10n_lu.account_financial_report_abr_124"
 l10n_lu.lu_2011_account_6231,6231,Charges sociales salariés,l10n_lu.lu_2011_account_623,view,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_62311,62311,Caisse Nationale de Santé,l10n_lu.lu_2011_account_6231,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_62312,62312,Caisse Nationale d'Assurance-Pension,l10n_lu.lu_2011_account_6231,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
@@ -782,28 +782,28 @@ l10n_lu.lu_2011_account_6232,6232,Assurance accidents du travail,l10n_lu.lu_2011
 l10n_lu.lu_2011_account_6233,6233,Service de santé au travail,l10n_lu.lu_2011_account_623,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6238,6238,Autres charges sociales patronales,l10n_lu.lu_2011_account_623,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6239,6239,Remboursements de charges sociales,l10n_lu.lu_2011_account_623,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
-l10n_lu.lu_2011_account_624,624,Pensions complémentaires,l10n_lu.lu_2011_account_62,view,l10n_lu.account_type_2011_6_charge_exploitation,f,l10n_lu.account_financial_report_125
+l10n_lu.lu_2011_account_624,624,Pensions complémentaires,l10n_lu.lu_2011_account_62,view,l10n_lu.account_type_2011_6_charge_exploitation,f,"l10n_lu.account_financial_report_125,l10n_lu.account_financial_report_abr_125"
 l10n_lu.lu_2011_account_6241,6241,Primes à des fonds de pensions extérieurs,l10n_lu.lu_2011_account_624,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6242,6242,Dotation aux provisions pour pensions complémentaires,l10n_lu.lu_2011_account_624,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6243,6243,Retenue d'impôt sur pension complémentaire,l10n_lu.lu_2011_account_624,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6244,6244,Prime d'assurance insolvabilité,l10n_lu.lu_2011_account_624,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6245,6245,Pensions complémentaires versées par l'employeur,l10n_lu.lu_2011_account_624,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
-l10n_lu.lu_2011_account_628,628,Autres charges sociales,l10n_lu.lu_2011_account_62,view,l10n_lu.account_type_2011_6_charge_exploitation,f,l10n_lu.account_financial_report_126
+l10n_lu.lu_2011_account_628,628,Autres charges sociales,l10n_lu.lu_2011_account_62,view,l10n_lu.account_type_2011_6_charge_exploitation,f,"l10n_lu.account_financial_report_126,l10n_lu.account_financial_report_abr_126"
 l10n_lu.lu_2011_account_6281,6281,Médecine du travail,l10n_lu.lu_2011_account_628,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6288,6288,Autres charges sociales diverses,l10n_lu.lu_2011_account_628,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_63,63,Dotations aux corrections de valeur des éléments d'actif non financiers,l10n_lu.lu_2011_account_6,view,l10n_lu.account_type_2011_6_charge_exploitation,f,
-l10n_lu.lu_2011_account_631,631,Dotations aux corrections de valeur sur frais d'établissement et frais assimilés,l10n_lu.lu_2011_account_63,view,l10n_lu.account_type_2011_6_charge_exploitation,f,l10n_lu.account_financial_report_128
+l10n_lu.lu_2011_account_631,631,Dotations aux corrections de valeur sur frais d'établissement et frais assimilés,l10n_lu.lu_2011_account_63,view,l10n_lu.account_type_2011_6_charge_exploitation,f,"l10n_lu.account_financial_report_128,l10n_lu.account_financial_report_abr_128"
 l10n_lu.lu_2011_account_6311,6311,Frais de constitution,l10n_lu.lu_2011_account_631,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6312,6312,Frais de premier établissement,l10n_lu.lu_2011_account_631,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6313,6313,Frais d'augmentation de capital et d'opérations diverses,l10n_lu.lu_2011_account_631,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6314,6314,Frais d'émission d'emprunts,l10n_lu.lu_2011_account_631,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6318,6318,Autres frais assimilés,l10n_lu.lu_2011_account_631,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
-l10n_lu.lu_2011_account_632,632,Dotations aux corrections de valeur sur immobilisations incorporelles,l10n_lu.lu_2011_account_63,view,l10n_lu.account_type_2011_6_charge_exploitation,f,l10n_lu.account_financial_report_128
+l10n_lu.lu_2011_account_632,632,Dotations aux corrections de valeur sur immobilisations incorporelles,l10n_lu.lu_2011_account_63,view,l10n_lu.account_type_2011_6_charge_exploitation,f,"l10n_lu.account_financial_report_128,l10n_lu.account_financial_report_abr_128"
 l10n_lu.lu_2011_account_6321,6321,Frais de recherche et de développement,l10n_lu.lu_2011_account_632,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6322,6322,"Concessions, brevets, licences, marques ainsi que droits et valeurs similaires",l10n_lu.lu_2011_account_632,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6323,6323,Fonds de commerce dans la mesure où il a été acquis à titre onéreux,l10n_lu.lu_2011_account_632,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6324,6324,Acomptes versés et immobilisations incorporelles en cours,l10n_lu.lu_2011_account_632,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
-l10n_lu.lu_2011_account_633,633,Dotations aux corrections de valeur sur immobilisations corporelles,l10n_lu.lu_2011_account_63,view,l10n_lu.account_type_2011_6_charge_exploitation,f,l10n_lu.account_financial_report_128
+l10n_lu.lu_2011_account_633,633,Dotations aux corrections de valeur sur immobilisations corporelles,l10n_lu.lu_2011_account_63,view,l10n_lu.account_type_2011_6_charge_exploitation,f,"l10n_lu.account_financial_report_128,l10n_lu.account_financial_report_abr_128"
 l10n_lu.lu_2011_account_6331,6331,Terrains et constructions,l10n_lu.lu_2011_account_633,view,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_63311,63311,Terrains,l10n_lu.lu_2011_account_6331,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_63312,63312,Agencements et aménagements de terrains,l10n_lu.lu_2011_account_6331,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
@@ -811,17 +811,17 @@ l10n_lu.lu_2011_account_63313,63313,Constructions,l10n_lu.lu_2011_account_6331,o
 l10n_lu.lu_2011_account_6332,6332,Installations techniques et machines,l10n_lu.lu_2011_account_633,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6333,6333,"Autres installations, outillage, mobilier et matériel roulant",l10n_lu.lu_2011_account_633,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6334,6334,Acomptes versés et immobilisations corporelles en cours,l10n_lu.lu_2011_account_633,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
-l10n_lu.lu_2011_account_634,634,Dotations aux corrections de valeur sur stocks,l10n_lu.lu_2011_account_63,view,l10n_lu.account_type_2011_6_charge_exploitation,f,l10n_lu.account_financial_report_129
+l10n_lu.lu_2011_account_634,634,Dotations aux corrections de valeur sur stocks,l10n_lu.lu_2011_account_63,view,l10n_lu.account_type_2011_6_charge_exploitation,f,"l10n_lu.account_financial_report_129,l10n_lu.account_financial_report_abr_129"
 l10n_lu.lu_2011_account_6341,6341,Matières premières et consommables,l10n_lu.lu_2011_account_634,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6342,6342,Produits en cours de fabrication et commandes en cours,l10n_lu.lu_2011_account_634,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6343,6343,Produits finis et marchandises,l10n_lu.lu_2011_account_634,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6344,6344,Terrains et immeubles destinés à la revente,l10n_lu.lu_2011_account_634,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6345,6345,Acomptes versés,l10n_lu.lu_2011_account_634,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
-l10n_lu.lu_2011_account_635,635,Dotations aux corrections de valeur sur créances de l'actif circulant,l10n_lu.lu_2011_account_63,view,l10n_lu.account_type_2011_6_charge_exploitation,f,l10n_lu.account_financial_report_129
+l10n_lu.lu_2011_account_635,635,Dotations aux corrections de valeur sur créances de l'actif circulant,l10n_lu.lu_2011_account_63,view,l10n_lu.account_type_2011_6_charge_exploitation,f,"l10n_lu.account_financial_report_129,l10n_lu.account_financial_report_abr_129"
 l10n_lu.lu_2011_account_6351,6351,Créances résultant de ventes et prestations de services,l10n_lu.lu_2011_account_635,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6352,6352,Créances sur des entreprises liées et des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_635,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6353,6353,Autres créances,l10n_lu.lu_2011_account_635,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
-l10n_lu.lu_2011_account_64,64,Autres charges d'exploitation,l10n_lu.lu_2011_account_6,view,l10n_lu.account_type_2011_6_charge_exploitation,f,l10n_lu.account_financial_report_130
+l10n_lu.lu_2011_account_64,64,Autres charges d'exploitation,l10n_lu.lu_2011_account_6,view,l10n_lu.account_type_2011_6_charge_exploitation,f,"l10n_lu.account_financial_report_130,l10n_lu.account_financial_report_abr_130"
 l10n_lu.lu_2011_account_641,641,"Redevances pour concessions, brevets, licences, marques, droits et valeurs similaires",l10n_lu.lu_2011_account_64,view,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6411,6411,Concessions,l10n_lu.lu_2011_account_641,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_6412,6412,Brevets,l10n_lu.lu_2011_account_641,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
@@ -859,7 +859,7 @@ l10n_lu.lu_2011_account_647,647,Dotations aux plus-values immunisées,l10n_lu.lu
 l10n_lu.lu_2011_account_648,648,Autres charges d'exploitation diverses,l10n_lu.lu_2011_account_64,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_649,649,Dotations aux provisions d'exploitation,l10n_lu.lu_2011_account_64,other,l10n_lu.account_type_2011_6_charge_exploitation,f,
 l10n_lu.lu_2011_account_65,65,Charges financières,l10n_lu.lu_2011_account_6,view,l10n_lu.account_type_2011_6_charge_finance,f,
-l10n_lu.lu_2011_account_651,651,Dotations aux corrections de valeur et ajustements pour juste valeur sur immobilisations financières,l10n_lu.lu_2011_account_65,view,l10n_lu.account_type_2011_6_charge_finance,f,l10n_lu.account_financial_report_131
+l10n_lu.lu_2011_account_651,651,Dotations aux corrections de valeur et ajustements pour juste valeur sur immobilisations financières,l10n_lu.lu_2011_account_65,view,l10n_lu.account_type_2011_6_charge_finance,f,"l10n_lu.account_financial_report_131,l10n_lu.account_financial_report_abr_131"
 l10n_lu.lu_2011_account_6511,6511,Dotations aux corrections de valeur sur immobilisations financières,l10n_lu.lu_2011_account_651,view,l10n_lu.account_type_2011_6_charge_finance,f,
 l10n_lu.lu_2011_account_65111,65111,Parts dans des entreprises liées,l10n_lu.lu_2011_account_6511,other,l10n_lu.account_type_2011_6_charge_finance,f,
 l10n_lu.lu_2011_account_65112,65112,Créances sur des entreprises liées,l10n_lu.lu_2011_account_6511,other,l10n_lu.account_type_2011_6_charge_finance,f,
@@ -869,7 +869,7 @@ l10n_lu.lu_2011_account_65115,65115,Titres ayant le caractère d'immobilisations
 l10n_lu.lu_2011_account_65116,65116,Prêts et créances immobilisées,l10n_lu.lu_2011_account_6511,other,l10n_lu.account_type_2011_6_charge_finance,f,
 l10n_lu.lu_2011_account_65117,65117,Actions propres ou parts propres,l10n_lu.lu_2011_account_6511,other,l10n_lu.account_type_2011_6_charge_finance,f,
 l10n_lu.lu_2011_account_6512,6512,Ajustements pour juste valeur sur immobilisations financières,l10n_lu.lu_2011_account_651,other,l10n_lu.account_type_2011_6_charge_finance,f,
-l10n_lu.lu_2011_account_653,653,Dotations aux corrections de valeur et ajustements pour juste valeur sur éléments financiers de l'actif circulant,l10n_lu.lu_2011_account_65,view,l10n_lu.account_type_2011_6_charge_finance,f,l10n_lu.account_financial_report_132
+l10n_lu.lu_2011_account_653,653,Dotations aux corrections de valeur et ajustements pour juste valeur sur éléments financiers de l'actif circulant,l10n_lu.lu_2011_account_65,view,l10n_lu.account_type_2011_6_charge_finance,f,"l10n_lu.account_financial_report_132,l10n_lu.account_financial_report_abr_132"
 l10n_lu.lu_2011_account_6531,6531,Dotations aux corrections de valeur sur valeurs mobilières,l10n_lu.lu_2011_account_653,view,l10n_lu.account_type_2011_6_charge_finance,f,
 l10n_lu.lu_2011_account_65311,65311,Parts dans des entreprises liées,l10n_lu.lu_2011_account_6531,other,l10n_lu.account_type_2011_6_charge_finance,f,
 l10n_lu.lu_2011_account_65312,65312,Parts dans des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_6531,other,l10n_lu.account_type_2011_6_charge_finance,f,
@@ -878,29 +878,29 @@ l10n_lu.lu_2011_account_65318,65318,Autres valeurs mobilières,l10n_lu.lu_2011_a
 l10n_lu.lu_2011_account_6532,6532,Dotations aux corrections de valeur sur créances sur des entreprises liées et sur des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_653,other,l10n_lu.account_type_2011_6_charge_finance,f,
 l10n_lu.lu_2011_account_6533,6533,Dotations aux corrections de valeur sur autres créances,l10n_lu.lu_2011_account_653,other,l10n_lu.account_type_2011_6_charge_finance,f,
 l10n_lu.lu_2011_account_6534,6534,Ajustements pour juste valeur sur éléments financiers de l'actif circulant,l10n_lu.lu_2011_account_653,other,l10n_lu.account_type_2011_6_charge_finance,f,
-l10n_lu.lu_2011_account_654,654,Moins-values de cession de valeurs mobilières,l10n_lu.lu_2011_account_65,view,l10n_lu.account_type_2011_6_charge_finance,f,l10n_lu.account_financial_report_135
+l10n_lu.lu_2011_account_654,654,Moins-values de cession de valeurs mobilières,l10n_lu.lu_2011_account_65,view,l10n_lu.account_type_2011_6_charge_finance,f,"l10n_lu.account_financial_report_135,l10n_lu.account_financial_report_abr_135"
 l10n_lu.lu_2011_account_6541,6541,Parts dans des entreprises liées,l10n_lu.lu_2011_account_654,other,l10n_lu.account_type_2011_6_charge_finance,f,
 l10n_lu.lu_2011_account_6542,6542,Parts dans des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_654,other,l10n_lu.account_type_2011_6_charge_finance,f,
 l10n_lu.lu_2011_account_6543,6543,Actions propres ou parts propres,l10n_lu.lu_2011_account_654,other,l10n_lu.account_type_2011_6_charge_finance,f,
 l10n_lu.lu_2011_account_6548,6548,Autres valeurs mobilières,l10n_lu.lu_2011_account_654,other,l10n_lu.account_type_2011_6_charge_finance,f,
 l10n_lu.lu_2011_account_655,655,Intérêts et escomptes,l10n_lu.lu_2011_account_65,view,l10n_lu.account_type_2011_6_charge_finance,f,
-l10n_lu.lu_2011_account_6551,6551,Intérêts des dettes financières,l10n_lu.lu_2011_account_655,view,l10n_lu.account_type_2011_6_charge_finance,f,l10n_lu.account_financial_report_135
+l10n_lu.lu_2011_account_6551,6551,Intérêts des dettes financières,l10n_lu.lu_2011_account_655,view,l10n_lu.account_type_2011_6_charge_finance,f,"l10n_lu.account_financial_report_135,l10n_lu.account_financial_report_abr_135"
 l10n_lu.lu_2011_account_65511,65511,Intérêts des dettes subordonnées,l10n_lu.lu_2011_account_6551,other,l10n_lu.account_type_2011_6_charge_finance,f,
 l10n_lu.lu_2011_account_65512,65512,Intérêts des emprunts obligataires,l10n_lu.lu_2011_account_6551,other,l10n_lu.account_type_2011_6_charge_finance,f,
-l10n_lu.lu_2011_account_6552,6552,Intérêts bancaires et assimilés,l10n_lu.lu_2011_account_655,view,l10n_lu.account_type_2011_6_charge_finance,f,l10n_lu.account_financial_report_135
+l10n_lu.lu_2011_account_6552,6552,Intérêts bancaires et assimilés,l10n_lu.lu_2011_account_655,view,l10n_lu.account_type_2011_6_charge_finance,f,"l10n_lu.account_financial_report_135,l10n_lu.account_financial_report_abr_135"
 l10n_lu.lu_2011_account_65521,65521,Intérêts bancaires sur comptes courants,l10n_lu.lu_2011_account_6552,other,l10n_lu.account_type_2011_6_charge_finance,f,
 l10n_lu.lu_2011_account_65522,65522,Intérêts bancaires sur opérations de financement,l10n_lu.lu_2011_account_6552,other,l10n_lu.account_type_2011_6_charge_finance,f,
 l10n_lu.lu_2011_account_65523,65523,Intérêts sur leasings financiers,l10n_lu.lu_2011_account_6552,other,l10n_lu.account_type_2011_6_charge_finance,f,
-l10n_lu.lu_2011_account_6553,6553,Intérêts sur dettes commerciales,l10n_lu.lu_2011_account_655,other,l10n_lu.account_type_2011_6_charge_finance,f,l10n_lu.account_financial_report_135
-l10n_lu.lu_2011_account_6554,6554,Intérêts sur des entreprises liées et sur des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_655,other,l10n_lu.account_type_2011_6_charge_finance,f,l10n_lu.account_financial_report_134
-l10n_lu.lu_2011_account_6555,6555,Escomptes et frais sur effets,l10n_lu.lu_2011_account_655,other,l10n_lu.account_type_2011_6_charge_finance,f,l10n_lu.account_financial_report_135
-l10n_lu.lu_2011_account_6556,6556,Escomptes accordés,l10n_lu.lu_2011_account_655,other,l10n_lu.account_type_2011_6_charge_finance,f,l10n_lu.account_financial_report_135
-l10n_lu.lu_2011_account_6558,6558,Intérêts sur autres emprunts et dettes,l10n_lu.lu_2011_account_655,other,l10n_lu.account_type_2011_6_charge_finance,f,l10n_lu.account_financial_report_135
-l10n_lu.lu_2011_account_656,656,Pertes de change,l10n_lu.lu_2011_account_65,other,l10n_lu.account_type_2011_6_charge_finance,f,l10n_lu.account_financial_report_135
-l10n_lu.lu_2011_account_657,657,Quote-part de perte dans les entreprises collectives (autres que les sociétés de capitaux),l10n_lu.lu_2011_account_65,other,l10n_lu.account_type_2011_6_charge_finance,f,l10n_lu.account_financial_report_135
-l10n_lu.lu_2011_account_658,658,Autres charges financières,l10n_lu.lu_2011_account_65,other,l10n_lu.account_type_2011_6_charge_finance,f,l10n_lu.account_financial_report_135
-l10n_lu.lu_2011_account_659,659,Dotations aux provisions financières,l10n_lu.lu_2011_account_65,other,l10n_lu.account_type_2011_6_charge_finance,f,l10n_lu.account_financial_report_135
-l10n_lu.lu_2011_account_66,66,Charges exceptionnelles,l10n_lu.lu_2011_account_6,view,l10n_lu.account_type_2011_6_charge_exception,f,l10n_lu.account_financial_report_136
+l10n_lu.lu_2011_account_6553,6553,Intérêts sur dettes commerciales,l10n_lu.lu_2011_account_655,other,l10n_lu.account_type_2011_6_charge_finance,f,"l10n_lu.account_financial_report_135,l10n_lu.account_financial_report_abr_135"
+l10n_lu.lu_2011_account_6554,6554,Intérêts sur des entreprises liées et sur des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_655,other,l10n_lu.account_type_2011_6_charge_finance,f,"l10n_lu.account_financial_report_134,l10n_lu.account_financial_report_abr_134"
+l10n_lu.lu_2011_account_6555,6555,Escomptes et frais sur effets,l10n_lu.lu_2011_account_655,other,l10n_lu.account_type_2011_6_charge_finance,f,"l10n_lu.account_financial_report_135,l10n_lu.account_financial_report_abr_135"
+l10n_lu.lu_2011_account_6556,6556,Escomptes accordés,l10n_lu.lu_2011_account_655,other,l10n_lu.account_type_2011_6_charge_finance,f,"l10n_lu.account_financial_report_135,l10n_lu.account_financial_report_abr_135"
+l10n_lu.lu_2011_account_6558,6558,Intérêts sur autres emprunts et dettes,l10n_lu.lu_2011_account_655,other,l10n_lu.account_type_2011_6_charge_finance,f,"l10n_lu.account_financial_report_135,l10n_lu.account_financial_report_abr_135"
+l10n_lu.lu_2011_account_656,656,Pertes de change,l10n_lu.lu_2011_account_65,other,l10n_lu.account_type_2011_6_charge_finance,f,"l10n_lu.account_financial_report_135,l10n_lu.account_financial_report_abr_135"
+l10n_lu.lu_2011_account_657,657,Quote-part de perte dans les entreprises collectives (autres que les sociétés de capitaux),l10n_lu.lu_2011_account_65,other,l10n_lu.account_type_2011_6_charge_finance,f,"l10n_lu.account_financial_report_135,l10n_lu.account_financial_report_abr_135"
+l10n_lu.lu_2011_account_658,658,Autres charges financières,l10n_lu.lu_2011_account_65,other,l10n_lu.account_type_2011_6_charge_finance,f,"l10n_lu.account_financial_report_135,l10n_lu.account_financial_report_abr_135"
+l10n_lu.lu_2011_account_659,659,Dotations aux provisions financières,l10n_lu.lu_2011_account_65,other,l10n_lu.account_type_2011_6_charge_finance,f,"l10n_lu.account_financial_report_135,l10n_lu.account_financial_report_abr_135"
+l10n_lu.lu_2011_account_66,66,Charges exceptionnelles,l10n_lu.lu_2011_account_6,view,l10n_lu.account_type_2011_6_charge_exception,f,"l10n_lu.account_financial_report_136,l10n_lu.account_financial_report_abr_136"
 l10n_lu.lu_2011_account_661,661,Dotations aux corrections de valeur exceptionnelles sur immobilisations incorporelles et corporelles,l10n_lu.lu_2011_account_66,view,l10n_lu.account_type_2011_6_charge_exception,f,
 l10n_lu.lu_2011_account_6611,6611,Sur immobilisations incorporelles,l10n_lu.lu_2011_account_661,other,l10n_lu.account_type_2011_6_charge_exception,f,
 l10n_lu.lu_2011_account_6612,6612,Sur immobilisations corporelles,l10n_lu.lu_2011_account_661,other,l10n_lu.account_type_2011_6_charge_exception,f,
@@ -928,7 +928,7 @@ l10n_lu.lu_2011_account_6683,6683,Dommages et intérêts,l10n_lu.lu_2011_account
 l10n_lu.lu_2011_account_6684,6684,Malis provenant de clauses d'indexation,l10n_lu.lu_2011_account_668,other,l10n_lu.account_type_2011_6_charge_exception,f,
 l10n_lu.lu_2011_account_6688,6688,Autres charges exceptionnelles diverses,l10n_lu.lu_2011_account_668,other,l10n_lu.account_type_2011_6_charge_exception,f,
 l10n_lu.lu_2011_account_669,669,Dotations aux provisions exceptionnelles,l10n_lu.lu_2011_account_66,other,l10n_lu.account_type_2011_6_charge_exception,f,
-l10n_lu.lu_2011_account_67,67,Impôts sur le résultat,l10n_lu.lu_2011_account_6,view,l10n_lu.account_type_2011_6_charge_impot,f,l10n_lu.account_financial_report_137
+l10n_lu.lu_2011_account_67,67,Impôts sur le résultat,l10n_lu.lu_2011_account_6,view,l10n_lu.account_type_2011_6_charge_impot,f,"l10n_lu.account_financial_report_137,l10n_lu.account_financial_report_abr_137"
 l10n_lu.lu_2011_account_671,671,Impôt sur le revenu des collectivités,l10n_lu.lu_2011_account_67,view,l10n_lu.account_type_2011_6_charge_impot,f,
 l10n_lu.lu_2011_account_6711,6711,Exercice courant,l10n_lu.lu_2011_account_671,other,l10n_lu.account_type_2011_6_charge_impot,f,
 l10n_lu.lu_2011_account_6712,6712,Exercices antérieurs,l10n_lu.lu_2011_account_671,other,l10n_lu.account_type_2011_6_charge_impot,f,
@@ -945,7 +945,7 @@ l10n_lu.lu_2011_account_6738,6738,Autres impôts étrangers,l10n_lu.lu_2011_acco
 l10n_lu.lu_2011_account_679,679,Dotations aux provisions pour impôts sur le résultat,l10n_lu.lu_2011_account_67,view,l10n_lu.account_type_2011_6_charge_impot,f,
 l10n_lu.lu_2011_account_6791,6791,Dotations aux provisions pour impôts,l10n_lu.lu_2011_account_679,other,l10n_lu.account_type_2011_6_charge_impot,f,
 l10n_lu.lu_2011_account_6792,6792,Dotations aux provisions pour impôts différés,l10n_lu.lu_2011_account_679,other,l10n_lu.account_type_2011_6_charge_impot,f,
-l10n_lu.lu_2011_account_68,68,Autres impôts ne figurant pas sous le poste ci-dessus,l10n_lu.lu_2011_account_6,view,l10n_lu.account_type_2011_6_charge_impot,f,l10n_lu.account_financial_report_138
+l10n_lu.lu_2011_account_68,68,Autres impôts ne figurant pas sous le poste ci-dessus,l10n_lu.lu_2011_account_6,view,l10n_lu.account_type_2011_6_charge_impot,f,"l10n_lu.account_financial_report_138,l10n_lu.account_financial_report_abr_138"
 l10n_lu.lu_2011_account_681,681,Impôt sur la fortune,l10n_lu.lu_2011_account_68,view,l10n_lu.account_type_2011_6_charge_impot,f,
 l10n_lu.lu_2011_account_6811,6811,Exercice courant,l10n_lu.lu_2011_account_681,other,l10n_lu.account_type_2011_6_charge_impot,f,
 l10n_lu.lu_2011_account_6812,6812,Exercices antérieurs,l10n_lu.lu_2011_account_681,other,l10n_lu.account_type_2011_6_charge_impot,f,
@@ -954,7 +954,7 @@ l10n_lu.lu_2011_account_683,683,Impôts étrangers,l10n_lu.lu_2011_account_68,ot
 l10n_lu.lu_2011_account_688,688,Autres impôts et taxes,l10n_lu.lu_2011_account_68,other,l10n_lu.account_type_2011_6_charge_impot,f,
 l10n_lu.lu_2011_account_689,689,Dotations aux provisions pour autres impôts,l10n_lu.lu_2011_account_68,other,l10n_lu.account_type_2011_6_charge_impot,f,
 l10n_lu.lu_2011_account_7,7,CLASSE 7 - COMPTES DE PRODUITS,l10n_lu.lu_2011_account_resultat,view,account.data_account_type_view,f,
-l10n_lu.lu_2011_account_70,70,Montant net du chiffre d'affaires,l10n_lu.lu_2011_account_7,view,l10n_lu.account_type_2011_7_produit_exploitation,f,l10n_lu.account_financial_report_141
+l10n_lu.lu_2011_account_70,70,Montant net du chiffre d'affaires,l10n_lu.lu_2011_account_7,view,l10n_lu.account_type_2011_7_produit_exploitation,f,"l10n_lu.account_financial_report_141,l10n_lu.account_financial_report_abr_141"
 l10n_lu.lu_2011_account_701,701,Ventes sur commandes en cours,l10n_lu.lu_2011_account_70,view,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7011,7011,Produits,l10n_lu.lu_2011_account_701,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7012,7012,Prestations de services,l10n_lu.lu_2011_account_701,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
@@ -982,7 +982,7 @@ l10n_lu.lu_2011_account_7094,7094,Sur ventes de produits résiduels,l10n_lu.lu_2
 l10n_lu.lu_2011_account_7095,7095,Sur ventes d'éléments destinés à la revente,l10n_lu.lu_2011_account_709,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7096,7096,Sur prestations de services,l10n_lu.lu_2011_account_709,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7098,7098,Sur autres éléments du chiffre d'affaires,l10n_lu.lu_2011_account_709,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
-l10n_lu.lu_2011_account_71,71,"Variation des stocks de produits finis, d'en cours de fabrication et des commandes en cours",l10n_lu.lu_2011_account_7,view,l10n_lu.account_type_2011_7_produit_exploitation,f,l10n_lu.account_financial_report_142
+l10n_lu.lu_2011_account_71,71,"Variation des stocks de produits finis, d'en cours de fabrication et des commandes en cours",l10n_lu.lu_2011_account_7,view,l10n_lu.account_type_2011_7_produit_exploitation,f,"l10n_lu.account_financial_report_142,l10n_lu.account_financial_report_abr_141"
 l10n_lu.lu_2011_account_711,711,Variation des stocks de produits en cours de fabrication et de commandes en cours,l10n_lu.lu_2011_account_71,view,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7111,7111,Variation des stocks de produits en cours,l10n_lu.lu_2011_account_711,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7112,7112,Variation des stocks de commandes en cours – produits,l10n_lu.lu_2011_account_711,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
@@ -994,7 +994,7 @@ l10n_lu.lu_2011_account_7122,7122,Variation des stocks de produits intermédiair
 l10n_lu.lu_2011_account_7123,7123,Variation des stocks de produits résiduels,l10n_lu.lu_2011_account_712,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7126,7126,Variation des stocks de marchandises,l10n_lu.lu_2011_account_712,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7127,7127,"Variation des stocks de marchandises en voie d'acheminement, mises en dépôt ou données en consignation",l10n_lu.lu_2011_account_712,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
-l10n_lu.lu_2011_account_72,72,Production immobilisée,l10n_lu.lu_2011_account_7,view,l10n_lu.account_type_2011_7_produit_exploitation,f,l10n_lu.account_financial_report_143
+l10n_lu.lu_2011_account_72,72,Production immobilisée,l10n_lu.lu_2011_account_7,view,l10n_lu.account_type_2011_7_produit_exploitation,f,"l10n_lu.account_financial_report_143,l10n_lu.account_financial_report_abr_141"
 l10n_lu.lu_2011_account_721,721,Immobilisations incorporelles,l10n_lu.lu_2011_account_72,view,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7211,7211,Frais de recherche et développement,l10n_lu.lu_2011_account_721,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7212,7212,"Concessions, brevets, licences, marques, droits et valeurs similaires",l10n_lu.lu_2011_account_721,view,l10n_lu.account_type_2011_7_produit_exploitation,f,
@@ -1010,12 +1010,12 @@ l10n_lu.lu_2011_account_7221,7221,Terrains et constructions,l10n_lu.lu_2011_acco
 l10n_lu.lu_2011_account_7222,7222,Installations techniques et machines,l10n_lu.lu_2011_account_722,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7223,7223,"Autres installations, outillage, mobilier et matériel roulant",l10n_lu.lu_2011_account_722,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_73,73,Reprises de corrections de valeur des éléments d'actif non financiers,l10n_lu.lu_2011_account_7,view,l10n_lu.account_type_2011_7_produit_exploitation,f,
-l10n_lu.lu_2011_account_732,732,Reprises de corrections de valeur sur immobilisations incorporelles,l10n_lu.lu_2011_account_73,view,l10n_lu.account_type_2011_7_produit_exploitation,f,l10n_lu.account_financial_report_145
+l10n_lu.lu_2011_account_732,732,Reprises de corrections de valeur sur immobilisations incorporelles,l10n_lu.lu_2011_account_73,view,l10n_lu.account_type_2011_7_produit_exploitation,f,"l10n_lu.account_financial_report_145,l10n_lu.account_financial_report_abr_141"
 l10n_lu.lu_2011_account_7321,7321,Frais de recherche et de développement,l10n_lu.lu_2011_account_732,view,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7322,7322,"Concessions, brevets, licences, marques ainsi que droits et valeurs similaires",l10n_lu.lu_2011_account_732,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7323,7323,"Fonds de commerce, dans la mesure où il a été acquis à titre onéreux",l10n_lu.lu_2011_account_732,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7324,7324,Acomptes versés et immobilisations incorporelles en cours,l10n_lu.lu_2011_account_732,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
-l10n_lu.lu_2011_account_733,733,Reprises de corrections de valeur sur immobilisations corporelles,l10n_lu.lu_2011_account_73,view,l10n_lu.account_type_2011_7_produit_exploitation,f,l10n_lu.account_financial_report_145
+l10n_lu.lu_2011_account_733,733,Reprises de corrections de valeur sur immobilisations corporelles,l10n_lu.lu_2011_account_73,view,l10n_lu.account_type_2011_7_produit_exploitation,f,"l10n_lu.account_financial_report_145,l10n_lu.account_financial_report_abr_141"
 l10n_lu.lu_2011_account_7331,7331,Terrains et constructions,l10n_lu.lu_2011_account_733,view,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_73311,73311,Terrains,l10n_lu.lu_2011_account_7331,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_73312,73312,Agencements et aménagements de terrains,l10n_lu.lu_2011_account_7331,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
@@ -1024,17 +1024,17 @@ l10n_lu.lu_2011_account_73314,73314,Constructions sur sol d'autrui,l10n_lu.lu_20
 l10n_lu.lu_2011_account_7332,7332,Installations techniques et machines,l10n_lu.lu_2011_account_733,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7333,7333,"Autres installations, outillage, mobilier et matériel roulant",l10n_lu.lu_2011_account_733,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7334,7334,Acomptes versés et immobilisations corporelles en cours,l10n_lu.lu_2011_account_733,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
-l10n_lu.lu_2011_account_734,734,Reprises de corrections de valeur sur stocks,l10n_lu.lu_2011_account_73,view,l10n_lu.account_type_2011_7_produit_exploitation,f,l10n_lu.account_financial_report_146
+l10n_lu.lu_2011_account_734,734,Reprises de corrections de valeur sur stocks,l10n_lu.lu_2011_account_73,view,l10n_lu.account_type_2011_7_produit_exploitation,f,"l10n_lu.account_financial_report_146,l10n_lu.account_financial_report_abr_141"
 l10n_lu.lu_2011_account_7341,7341,Matières premières et consommables,l10n_lu.lu_2011_account_734,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7342,7342,Produits en cours de fabrication et commandes en cours,l10n_lu.lu_2011_account_734,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7343,7343,Produits finis et marchandises,l10n_lu.lu_2011_account_734,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7344,7344,Terrains et immeubles destinés à la revente,l10n_lu.lu_2011_account_734,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7345,7345,Acomptes versés,l10n_lu.lu_2011_account_734,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
-l10n_lu.lu_2011_account_735,735,Reprises de corrections de valeur sur créances de l'actif circulant,l10n_lu.lu_2011_account_73,view,l10n_lu.account_type_2011_7_produit_exploitation,f,l10n_lu.account_financial_report_146
+l10n_lu.lu_2011_account_735,735,Reprises de corrections de valeur sur créances de l'actif circulant,l10n_lu.lu_2011_account_73,view,l10n_lu.account_type_2011_7_produit_exploitation,f,"l10n_lu.account_financial_report_146,l10n_lu.account_financial_report_abr_141"
 l10n_lu.lu_2011_account_7351,7351,Créances résultant de ventes et prestations de services,l10n_lu.lu_2011_account_735,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7352,7352,Créances sur des entreprises liées et sur des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_735,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7353,7353,Autres créances,l10n_lu.lu_2011_account_735,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
-l10n_lu.lu_2011_account_74,74,Autres produits d'exploitation,l10n_lu.lu_2011_account_7,view,l10n_lu.account_type_2011_7_produit_exploitation,f,l10n_lu.account_financial_report_147
+l10n_lu.lu_2011_account_74,74,Autres produits d'exploitation,l10n_lu.lu_2011_account_7,view,l10n_lu.account_type_2011_7_produit_exploitation,f,"l10n_lu.account_financial_report_147,l10n_lu.account_financial_report_abr_147"
 l10n_lu.lu_2011_account_741,741,"Redevances pour concessions, brevets, licences, marques, droits et valeurs similaires",l10n_lu.lu_2011_account_74,view,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7411,7411,Concessions,l10n_lu.lu_2011_account_741,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
 l10n_lu.lu_2011_account_7412,7412,Brevets,l10n_lu.lu_2011_account_741,other,l10n_lu.account_type_2011_7_produit_exploitation,f,
@@ -1064,57 +1064,57 @@ l10n_lu.lu_2011_account_749,749,Reprises sur provisions d'exploitation,l10n_lu.l
 l10n_lu.lu_2011_account_75,75,Produits financiers,l10n_lu.lu_2011_account_7,view,l10n_lu.account_type_2011_7_produit_financier,f,
 l10n_lu.lu_2011_account_751,751,Reprises sur corrections de valeur et ajustements pour juste valeur sur immobilisations financières,l10n_lu.lu_2011_account_75,view,l10n_lu.account_type_2011_7_produit_financier,f,
 l10n_lu.lu_2011_account_7511,7511,Reprises sur corrections de valeur sur immobilisations financières,l10n_lu.lu_2011_account_751,view,l10n_lu.account_type_2011_7_produit_financier,f,
-l10n_lu.lu_2011_account_75111,75111,Parts dans des entreprises liées,l10n_lu.lu_2011_account_7511,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_149
-l10n_lu.lu_2011_account_75112,75112,Créances sur des entreprises liées,l10n_lu.lu_2011_account_7511,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_149
-l10n_lu.lu_2011_account_75113,75113,Parts dans des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_7511,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_150
-l10n_lu.lu_2011_account_75114,75114,Créances sur des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_7511,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_150
-l10n_lu.lu_2011_account_75115,75115,Titres ayant le caractère d'immobilisations,l10n_lu.lu_2011_account_7511,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_150
-l10n_lu.lu_2011_account_75116,75116,Prêts et créances immobilisées,l10n_lu.lu_2011_account_7511,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_150
-l10n_lu.lu_2011_account_75117,75117,Actions propres ou parts propres,l10n_lu.lu_2011_account_7511,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_150
-l10n_lu.lu_2011_account_7512,7512,Ajustements pour juste valeur sur immobilisations financières,l10n_lu.lu_2011_account_751,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_150
+l10n_lu.lu_2011_account_75111,75111,Parts dans des entreprises liées,l10n_lu.lu_2011_account_7511,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_149,l10n_lu.account_financial_report_abr_149"
+l10n_lu.lu_2011_account_75112,75112,Créances sur des entreprises liées,l10n_lu.lu_2011_account_7511,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_149,l10n_lu.account_financial_report_abr_149"
+l10n_lu.lu_2011_account_75113,75113,Parts dans des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_7511,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_150,l10n_lu.account_financial_report_abr_150"
+l10n_lu.lu_2011_account_75114,75114,Créances sur des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_7511,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_150,l10n_lu.account_financial_report_abr_150"
+l10n_lu.lu_2011_account_75115,75115,Titres ayant le caractère d'immobilisations,l10n_lu.lu_2011_account_7511,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_150,l10n_lu.account_financial_report_abr_150"
+l10n_lu.lu_2011_account_75116,75116,Prêts et créances immobilisées,l10n_lu.lu_2011_account_7511,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_150,l10n_lu.account_financial_report_abr_150"
+l10n_lu.lu_2011_account_75117,75117,Actions propres ou parts propres,l10n_lu.lu_2011_account_7511,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_150,l10n_lu.account_financial_report_abr_150"
+l10n_lu.lu_2011_account_7512,7512,Ajustements pour juste valeur sur immobilisations financières,l10n_lu.lu_2011_account_751,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_150,l10n_lu.account_financial_report_abr_150"
 l10n_lu.lu_2011_account_752,752,Revenus des immobilisations financières,l10n_lu.lu_2011_account_75,view,l10n_lu.account_type_2011_7_produit_financier,f,
-l10n_lu.lu_2011_account_7521,7521,Parts dans des entreprises liées,l10n_lu.lu_2011_account_752,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_149
-l10n_lu.lu_2011_account_7522,7522,Créances sur des entreprises liées,l10n_lu.lu_2011_account_752,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_149
-l10n_lu.lu_2011_account_7523,7523,Parts dans des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_752,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_150
-l10n_lu.lu_2011_account_7524,7524,Créances sur des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_752,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_150
-l10n_lu.lu_2011_account_7525,7525,Titres ayant le caractère d'immobilisations,l10n_lu.lu_2011_account_752,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_150
-l10n_lu.lu_2011_account_7526,7526,Prêts et créances immobilisées,l10n_lu.lu_2011_account_752,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_150
-l10n_lu.lu_2011_account_7527,7527,Actions propres ou parts propres,l10n_lu.lu_2011_account_752,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_150
+l10n_lu.lu_2011_account_7521,7521,Parts dans des entreprises liées,l10n_lu.lu_2011_account_752,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_149,l10n_lu.account_financial_report_abr_149"
+l10n_lu.lu_2011_account_7522,7522,Créances sur des entreprises liées,l10n_lu.lu_2011_account_752,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_149,l10n_lu.account_financial_report_abr_149"
+l10n_lu.lu_2011_account_7523,7523,Parts dans des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_752,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_150,l10n_lu.account_financial_report_abr_150"
+l10n_lu.lu_2011_account_7524,7524,Créances sur des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_752,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_150,l10n_lu.account_financial_report_abr_150"
+l10n_lu.lu_2011_account_7525,7525,Titres ayant le caractère d'immobilisations,l10n_lu.lu_2011_account_752,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_150,l10n_lu.account_financial_report_abr_150"
+l10n_lu.lu_2011_account_7526,7526,Prêts et créances immobilisées,l10n_lu.lu_2011_account_752,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_150,l10n_lu.account_financial_report_abr_150"
+l10n_lu.lu_2011_account_7527,7527,Actions propres ou parts propres,l10n_lu.lu_2011_account_752,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_150,l10n_lu.account_financial_report_abr_150"
 l10n_lu.lu_2011_account_753,753,Reprises sur corrections de valeur et ajustements pour juste valeur sur éléments financiers de l'actif circulant,l10n_lu.lu_2011_account_75,view,l10n_lu.account_type_2011_7_produit_financier,f,
-l10n_lu.lu_2011_account_7531,7531,Reprises sur corrections de valeur sur créances sur des entreprises liées et sur des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_753,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_152
-l10n_lu.lu_2011_account_7532,7532,Reprises sur corrections de valeur sur autres créances,l10n_lu.lu_2011_account_753,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_153
+l10n_lu.lu_2011_account_7531,7531,Reprises sur corrections de valeur sur créances sur des entreprises liées et sur des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_753,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_152,l10n_lu.account_financial_report_abr_152"
+l10n_lu.lu_2011_account_7532,7532,Reprises sur corrections de valeur sur autres créances,l10n_lu.lu_2011_account_753,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_153,l10n_lu.account_financial_report_abr_153"
 l10n_lu.lu_2011_account_7533,7533,Reprises sur corrections de valeur sur valeurs mobilières,l10n_lu.lu_2011_account_753,view,l10n_lu.account_type_2011_7_produit_financier,f,
-l10n_lu.lu_2011_account_75331,75331,Parts dans des entreprises liées,l10n_lu.lu_2011_account_7533,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_152
-l10n_lu.lu_2011_account_75332,75332,Parts dans des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_7533,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_153
-l10n_lu.lu_2011_account_75333,75333,Actions propres ou parts propres,l10n_lu.lu_2011_account_7533,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_153
-l10n_lu.lu_2011_account_75338,75338,Autres valeurs mobilières,l10n_lu.lu_2011_account_7533,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_153
-l10n_lu.lu_2011_account_7534,7534,Ajustements pour juste valeur sur éléments financiers de l'actif circulant,l10n_lu.lu_2011_account_753,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_153
+l10n_lu.lu_2011_account_75331,75331,Parts dans des entreprises liées,l10n_lu.lu_2011_account_7533,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_152,l10n_lu.account_financial_report_abr_152"
+l10n_lu.lu_2011_account_75332,75332,Parts dans des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_7533,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_153,l10n_lu.account_financial_report_abr_153"
+l10n_lu.lu_2011_account_75333,75333,Actions propres ou parts propres,l10n_lu.lu_2011_account_7533,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_153,l10n_lu.account_financial_report_abr_153"
+l10n_lu.lu_2011_account_75338,75338,Autres valeurs mobilières,l10n_lu.lu_2011_account_7533,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_153,l10n_lu.account_financial_report_abr_153"
+l10n_lu.lu_2011_account_7534,7534,Ajustements pour juste valeur sur éléments financiers de l'actif circulant,l10n_lu.lu_2011_account_753,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_153,l10n_lu.account_financial_report_abr_153"
 l10n_lu.lu_2011_account_754,754,Plus-value de cession et autres produits de valeurs mobilières,l10n_lu.lu_2011_account_75,view,l10n_lu.account_type_2011_7_produit_financier,f,
 l10n_lu.lu_2011_account_7541,7541,Plus-value de cession de valeurs mobilières,l10n_lu.lu_2011_account_754,view,l10n_lu.account_type_2011_7_produit_financier,f,
-l10n_lu.lu_2011_account_75411,75411,Parts dans des entreprises liées,l10n_lu.lu_2011_account_7541,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_152
-l10n_lu.lu_2011_account_75412,75412,Parts dans des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_7541,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_153
-l10n_lu.lu_2011_account_75413,75413,Actions propres ou parts propres,l10n_lu.lu_2011_account_7541,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_153
-l10n_lu.lu_2011_account_75418,75418,Autres valeurs mobilières,l10n_lu.lu_2011_account_7541,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_153
+l10n_lu.lu_2011_account_75411,75411,Parts dans des entreprises liées,l10n_lu.lu_2011_account_7541,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_152,l10n_lu.account_financial_report_abr_152"
+l10n_lu.lu_2011_account_75412,75412,Parts dans des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_7541,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_153,l10n_lu.account_financial_report_abr_153"
+l10n_lu.lu_2011_account_75413,75413,Actions propres ou parts propres,l10n_lu.lu_2011_account_7541,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_153,l10n_lu.account_financial_report_abr_153"
+l10n_lu.lu_2011_account_75418,75418,Autres valeurs mobilières,l10n_lu.lu_2011_account_7541,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_153,l10n_lu.account_financial_report_abr_153"
 l10n_lu.lu_2011_account_7548,7548,Autres produits de valeurs mobilières,l10n_lu.lu_2011_account_754,view,l10n_lu.account_type_2011_7_produit_financier,f,
-l10n_lu.lu_2011_account_75481,75481,Parts dans des entreprises liées,l10n_lu.lu_2011_account_7548,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_152
-l10n_lu.lu_2011_account_75482,75482,Parts dans des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_7548,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_153
-l10n_lu.lu_2011_account_75483,75483,Actions propres ou parts propres,l10n_lu.lu_2011_account_7548,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_153
-l10n_lu.lu_2011_account_75488,75488,Autres valeurs mobilières,l10n_lu.lu_2011_account_7548,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_153
+l10n_lu.lu_2011_account_75481,75481,Parts dans des entreprises liées,l10n_lu.lu_2011_account_7548,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_152,l10n_lu.account_financial_report_abr_152"
+l10n_lu.lu_2011_account_75482,75482,Parts dans des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_7548,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_153,l10n_lu.account_financial_report_abr_153"
+l10n_lu.lu_2011_account_75483,75483,Actions propres ou parts propres,l10n_lu.lu_2011_account_7548,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_153,l10n_lu.account_financial_report_abr_153"
+l10n_lu.lu_2011_account_75488,75488,Autres valeurs mobilières,l10n_lu.lu_2011_account_7548,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_153,l10n_lu.account_financial_report_abr_153"
 l10n_lu.lu_2011_account_755,755,Autres intérêts et escomptes,l10n_lu.lu_2011_account_75,view,l10n_lu.account_type_2011_7_produit_financier,f,
-l10n_lu.lu_2011_account_7552,7552,Intérêts bancaires et assimilés,l10n_lu.lu_2011_account_755,view,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_156
+l10n_lu.lu_2011_account_7552,7552,Intérêts bancaires et assimilés,l10n_lu.lu_2011_account_755,view,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_156,l10n_lu.account_financial_report_abr_156"
 l10n_lu.lu_2011_account_75521,75521,Intérêts sur comptes courants,l10n_lu.lu_2011_account_7552,other,l10n_lu.account_type_2011_7_produit_financier,f,
 l10n_lu.lu_2011_account_75522,75522,Intérêts sur comptes à terme,l10n_lu.lu_2011_account_7552,other,l10n_lu.account_type_2011_7_produit_financier,f,
 l10n_lu.lu_2011_account_75523,75523,Intérêts sur leasings financiers,l10n_lu.lu_2011_account_7552,other,l10n_lu.account_type_2011_7_produit_financier,f,
-l10n_lu.lu_2011_account_7553,7553,Intérêts sur créances commerciales,l10n_lu.lu_2011_account_755,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_156
-l10n_lu.lu_2011_account_7554,7554,Intérêts sur des entreprises liées et des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_755,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_155
-l10n_lu.lu_2011_account_7555,7555,Escomptes d'effets de commerce,l10n_lu.lu_2011_account_755,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_156
-l10n_lu.lu_2011_account_7556,7556,Escomptes obtenus,l10n_lu.lu_2011_account_755,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_156
-l10n_lu.lu_2011_account_7558,7558,Intérêts sur autres créances,l10n_lu.lu_2011_account_755,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_156
+l10n_lu.lu_2011_account_7553,7553,Intérêts sur créances commerciales,l10n_lu.lu_2011_account_755,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_156,l10n_lu.account_financial_report_abr_156"
+l10n_lu.lu_2011_account_7554,7554,Intérêts sur des entreprises liées et des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_755,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_155,l10n_lu.account_financial_report_abr_155"
+l10n_lu.lu_2011_account_7555,7555,Escomptes d'effets de commerce,l10n_lu.lu_2011_account_755,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_156,l10n_lu.account_financial_report_abr_156"
+l10n_lu.lu_2011_account_7556,7556,Escomptes obtenus,l10n_lu.lu_2011_account_755,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_156,l10n_lu.account_financial_report_abr_156"
+l10n_lu.lu_2011_account_7558,7558,Intérêts sur autres créances,l10n_lu.lu_2011_account_755,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_156,l10n_lu.account_financial_report_abr_156"
 l10n_lu.lu_2011_account_756,756,Gains de change,l10n_lu.lu_2011_account_75,other,l10n_lu.account_type_2011_7_produit_financier,f,
 l10n_lu.lu_2011_account_757,757,Quote-part de bénéfice dans les entreprises collectives (autres que les sociétés de capitaux),l10n_lu.lu_2011_account_75,other,l10n_lu.account_type_2011_7_produit_financier,f,
-l10n_lu.lu_2011_account_758,758,Autres produits financiers,l10n_lu.lu_2011_account_75,other,l10n_lu.account_type_2011_7_produit_financier,f,l10n_lu.account_financial_report_156
+l10n_lu.lu_2011_account_758,758,Autres produits financiers,l10n_lu.lu_2011_account_75,other,l10n_lu.account_type_2011_7_produit_financier,f,"l10n_lu.account_financial_report_156,l10n_lu.account_financial_report_abr_156"
 l10n_lu.lu_2011_account_759,759,Reprises sur provisions financières,l10n_lu.lu_2011_account_75,other,l10n_lu.account_type_2011_7_produit_financier,f,
-l10n_lu.lu_2011_account_76,76,Produits exceptionnels,l10n_lu.lu_2011_account_7,view,l10n_lu.account_type_2011_7_produit_exceptionnel,f,l10n_lu.account_financial_report_157
+l10n_lu.lu_2011_account_76,76,Produits exceptionnels,l10n_lu.lu_2011_account_7,view,l10n_lu.account_type_2011_7_produit_exceptionnel,f,"l10n_lu.account_financial_report_157,l10n_lu.account_financial_report_abr_157"
 l10n_lu.lu_2011_account_761,761,Reprises sur corrections de valeur exceptionnelles sur immobilisations incorporelles et corporelles,l10n_lu.lu_2011_account_76,view,l10n_lu.account_type_2011_7_produit_exceptionnel,f,
 l10n_lu.lu_2011_account_7611,7611,Immobilisations incorporelles,l10n_lu.lu_2011_account_761,other,l10n_lu.account_type_2011_7_produit_exceptionnel,f,
 l10n_lu.lu_2011_account_7612,7612,Immobilisations corporelles,l10n_lu.lu_2011_account_761,other,l10n_lu.account_type_2011_7_produit_exceptionnel,f,
@@ -1144,14 +1144,14 @@ l10n_lu.lu_2011_account_7685,7685,Bonis provenant de clauses d'indexation,l10n_l
 l10n_lu.lu_2011_account_7686,7686,Bonis provenant du rachat par l'entreprise d'actions et d'obligations émises par elle-même,l10n_lu.lu_2011_account_768,other,l10n_lu.account_type_2011_7_produit_exceptionnel,f,
 l10n_lu.lu_2011_account_7688,7688,Autres produits exceptionnels divers,l10n_lu.lu_2011_account_768,other,l10n_lu.account_type_2011_7_produit_exceptionnel,f,
 l10n_lu.lu_2011_account_769,769,Reprises sur provisions exceptionnelles,l10n_lu.lu_2011_account_76,other,l10n_lu.account_type_2011_7_produit_exceptionnel,f,
-l10n_lu.lu_2011_account_77,77,Régularisations d'impôts sur le résultat,l10n_lu.lu_2011_account_7,view,l10n_lu.account_type_2011_7_produit_exceptionnel,f,l10n_lu.account_financial_report_137
+l10n_lu.lu_2011_account_77,77,Régularisations d'impôts sur le résultat,l10n_lu.lu_2011_account_7,view,l10n_lu.account_type_2011_7_produit_exceptionnel,f,"l10n_lu.account_financial_report_137,l10n_lu.account_financial_report_abr_137"
 l10n_lu.lu_2011_account_771,771,Régularisations d'impôt sur le revenu des collectivités,l10n_lu.lu_2011_account_77,other,l10n_lu.account_type_2011_7_produit_exceptionnel,f,
 l10n_lu.lu_2011_account_772,772,Régularisations d'impôt commercial,l10n_lu.lu_2011_account_77,other,l10n_lu.account_type_2011_7_produit_exceptionnel,f,
 l10n_lu.lu_2011_account_773,773,Régularisations d'impôts étrangers sur le résultat,l10n_lu.lu_2011_account_77,other,l10n_lu.account_type_2011_7_produit_exceptionnel,f,
 l10n_lu.lu_2011_account_779,779,Reprises sur provisions pour impôts sur le résultat,l10n_lu.lu_2011_account_77,view,l10n_lu.account_type_2011_7_produit_exceptionnel,f,
 l10n_lu.lu_2011_account_7791,7791,Reprises sur provisions pour impôts,l10n_lu.lu_2011_account_779,other,l10n_lu.account_type_2011_7_produit_exceptionnel,f,
 l10n_lu.lu_2011_account_7792,7792,Reprises sur provisions pour impôts différés,l10n_lu.lu_2011_account_779,other,l10n_lu.account_type_2011_7_produit_exceptionnel,f,
-l10n_lu.lu_2011_account_78,78,Régularisations d'autres impôts ne figurant pas sous le poste ci-dessus,l10n_lu.lu_2011_account_7,view,l10n_lu.account_type_2011_7_produit_exceptionnel,f,l10n_lu.account_financial_report_138
+l10n_lu.lu_2011_account_78,78,Régularisations d'autres impôts ne figurant pas sous le poste ci-dessus,l10n_lu.lu_2011_account_7,view,l10n_lu.account_type_2011_7_produit_exceptionnel,f,"l10n_lu.account_financial_report_138,l10n_lu.account_financial_report_abr_138"
 l10n_lu.lu_2011_account_781,781,Régularisations d'impôt sur la fortune,l10n_lu.lu_2011_account_78,other,l10n_lu.account_type_2011_7_produit_exceptionnel,f,
 l10n_lu.lu_2011_account_782,782,Régularisations de taxes d'abonnement,l10n_lu.lu_2011_account_78,other,l10n_lu.account_type_2011_7_produit_exceptionnel,f,
 l10n_lu.lu_2011_account_783,783,Régularisations d'impôts étrangers,l10n_lu.lu_2011_account_78,other,l10n_lu.account_type_2011_7_produit_exceptionnel,f,

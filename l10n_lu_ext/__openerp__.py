@@ -37,15 +37,21 @@
     "depends": ["l10n_lu"],
     "module": "",
     "description": """
+    Improvements to the official l10n_lu.
 
-    This module adds menu: Balance Sheet and Profit and Loss in Accounting > Reporting > Legal reports > Luxembourg
+    * Backport and improvements of 7.0 l10n_lu account chart
+    * Backport and improvements of 7.0 P&L and Balance Sheet reports
+    * Abbreviated P&L and Balance Sheet reports
+    * New menus: Balance Sheet and Profit and Loss in
+      Accounting > Reporting > Legal reports > Luxembourg
 
 """,
     "data": [
-              "account_financial_report.xml",
-              "account_financial_report_view.xml",
-              "account.account.template-2011.csv",
-            ],
+        "account_financial_report.xml",
+        "account_financial_report_abr.xml",
+        "account_financial_report_view.xml",
+        "account.account.template-2011.csv",
+    ],
     "active": False,
     "installable": True
 }
