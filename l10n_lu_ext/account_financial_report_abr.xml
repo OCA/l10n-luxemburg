@@ -294,7 +294,7 @@
       <field name="style_overwrite" eval="2"/>
       <field name="sign" eval="-1"/>
       <field name="display_detail">detail_flat</field>
-      <field name="type">accounts</field>
+      <field name="type">sum</field>
       <field name="parent_id" ref="l10n_lu.account_financial_report_abr_66"/>
     </record>
 
