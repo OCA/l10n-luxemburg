@@ -316,7 +316,7 @@ l10n_lu.lu_2011_account_4025,4025,Clients créditeurs,l10n_lu.lu_2011_account_40
 l10n_lu.lu_2011_account_4029,4029,Corrections de valeur,l10n_lu.lu_2011_account_402,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_41,41,Créances sur des entreprises liées et sur des entreprises avec lesquelles la société a un lien de participation,l10n_lu.lu_2011_account_4,view,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_411,411,Créances sur des entreprises liées,l10n_lu.lu_2011_account_41,view,l10n_lu.account_type_2011_4_creance,f,
-l10n_lu.lu_2011_account_4111,4111,Créances dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_411,view,l10n_lu.account_type_2011_4_creance,f,"l10n_lu.account_financial_report_50,l10n_lu.account_financial_report_abr_50"
+l10n_lu.lu_2011_account_4111,4111,Créances dont la durée résiduelle est inférieure ou égale à un an,l10n_lu.lu_2011_account_411,view,l10n_lu.account_type_2011_4_creance,f,"l10n_lu.account_financial_report_52,l10n_lu.account_financial_report_abr_49"
 l10n_lu.lu_2011_account_41111,41111,Ventes de marchandises et de prestations de services,l10n_lu.lu_2011_account_4111,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_41112,41112,Prêts et avances,l10n_lu.lu_2011_account_4111,other,l10n_lu.account_type_2011_4_creance,f,
 l10n_lu.lu_2011_account_41113,41113,Intérêts courus,l10n_lu.lu_2011_account_4111,other,l10n_lu.account_type_2011_4_creance,f,
