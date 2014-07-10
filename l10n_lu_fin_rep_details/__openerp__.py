@@ -37,13 +37,13 @@
     "depends": ["l10n_lu_ext"],
     "module": "",
     "description": """
-    On account_finacial set replace display_detail as detail_flat
-    except for:
-    * P&L: 12. Profit de l'exercice
-    * P&L: 12. Perte de l'exercice
-    * P&L: RESULTAT DE L'EXERCICE A TRANSFERER AU 142
-    * Bilan: VI. Résultat de l'exercice
-
+    Luxemburg financial report details
+    
+    Display account details in the following Luxemburg financial reports
+    * balance sheet
+    * abbreviated balance sheet
+    * profit and loss
+    * abbreviated profit and loss
 """,
     "data": [
         "account_financial_report.xml",
