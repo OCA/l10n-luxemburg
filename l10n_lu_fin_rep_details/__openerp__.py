@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Authors: Stéphane Bidoul & Laetitia Gangloff
-#    Copyright (c) 2013 Acsone SA/NV (http://www.acsone.eu)
+#    Authors: Laetitia Gangloff
+#    Copyright (c) 2014 Acsone SA/NV (http://www.acsone.eu)
 #    All Rights Reserved
 #
 #    WARNING: This program as such is intended to be used by professional
@@ -28,22 +28,26 @@
 ##############################################################################
 
 {
-    "name": "Luxembourg - Accounting - extension",
+    "name": "Luxembourg - Accounting - Financial Report Details",
     "version": "0.1",
     "author": "ACSONE SA/NV",
     "license": "GPL-3",
     "category": "Accounting & Finance",
     "website": "http://acsone.eu",
-    "depends": ["l10n_lu"],
+    "depends": ["l10n_lu_ext"],
     "module": "",
     "description": """
-    Improvements to the official l10n_lu.
-
-    * New menus: Balance Sheet and Profit and Loss in
-      Accounting > Reporting > Legal reports > Luxembourg
+    Luxemburg financial report details
+    
+    Display account details in the following Luxemburg financial reports
+    * balance sheet
+    * abbreviated balance sheet
+    * profit and loss
+    * abbreviated profit and loss
 """,
     "data": [
-       "account_financial_report_view.xml",
+        "account_financial_report.xml",
+        "account_financial_report_abr.xml",
     ],
     "active": False,
     "installable": True
