@@ -50,6 +50,6 @@
              <field name="context" eval="{'default_account_report_id':ref('l10n_lu.account_financial_report_abr_14')}"/>
     </record>
     <menuitem icon="STOCK_PRINT" name="Profit And Loss (abbreviated)" action="action_account_report_lu_pl_abr" id="menu_account_report_lu_pl_abr" parent="l10n_lu.legal_lu" sequence="2"/>
-    
+
     </data>
 </openerp>
