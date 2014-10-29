@@ -43,7 +43,7 @@
       Accounting > Reporting > Legal reports > Luxembourg
 """,
     "data": [
-       "account_financial_report_view.xml",
+        "account_financial_report_view.xml",
     ],
     "active": False,
     "installable": True
