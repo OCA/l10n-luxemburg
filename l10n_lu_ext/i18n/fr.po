@@ -26,4 +26,16 @@ msgstr "Bilan"
 #: model:ir.ui.menu,name:l10n_lu_ext.menu_account_report_lu_pl
 msgid "Profit And Loss"
 msgstr "Comptes de Charges"
- 
+
+#. module: l10n_lu_ext
+#: model:ir.actions.act_window,name:l10n_lu_ext.action_account_report_lu_bs_abr
+#: model:ir.ui.menu,name:l10n_lu_ext.menu_account_report_lu_bs_abr
+msgid "Balance Sheet (abbreviated)"
+msgstr "Bilan (abrégé)"
+
+#. module: l10n_lu_ext
+#: model:ir.actions.act_window,name:l10n_lu_ext.action_account_report_lu_pl_abr
+#: model:ir.ui.menu,name:l10n_lu_ext.menu_account_report_lu_pl_abr
+msgid "Profit And Loss (abbreviated)"
+msgstr "Comptes de Charges (abrégé)"
+

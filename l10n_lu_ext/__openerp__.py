@@ -3,14 +3,6 @@
 #
 #    Authors: Stéphane Bidoul & Laetitia Gangloff
 #    Copyright (c) 2013 Acsone SA/NV (http://www.acsone.eu)
-#    All Rights Reserved
-#
-#    WARNING: This program as such is intended to be used by professional
-#    programmers who take the whole responsibility of assessing all potential
-#    consequences resulting from its eventual inadequacies and bugs.
-#    End users who are looking for a ready-to-use solution with commercial
-#    guarantees and support are strongly advised to contact a Free Software
-#    Service Company.
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -28,24 +20,22 @@
 ##############################################################################
 
 {
-    "name": "Luxembourg - Accounting - extension",
+    "name": "Luxembourg - Accounting - Extension",
     "version": "0.1",
     "author": "ACSONE SA/NV",
-    "license": "GPL-3",
+    "license": "AGPL-3",
     "category": "Accounting & Finance",
     "website": "http://acsone.eu",
     "depends": ["l10n_lu"],
-    "module": "",
     "description": """
+    Improvements to the official l10n_lu.
 
-    This module adds menu: Balance Sheet and Profit and Loss in Accounting > Reporting > Legal reports > Luxembourg
-
+    * New menus: Balance Sheet and Profit and Loss in
+      Accounting > Reporting > Legal reports > Luxembourg
 """,
     "data": [
-              "account_financial_report_view.xml",
-            ],
+        "account_financial_report_view.xml",
+    ],
     "active": False,
     "installable": True
 }
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
