@@ -1,9 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import os
 import sys
-from datetime import datetime
 from datetime import date
 import re
 
@@ -11,9 +9,11 @@ ocmt_regexp = re.compile('.*/OCMT/([A-Z]{3})([0-9,]+)/.*')
 chgs_regexp = re.compile('.*/CHGS/([A-Z]{3})([0-9,]+)/.*')
 exch_regexp = re.compile('.*/EXCH/([0-9,]+)/.*')
 
+
 class mt940e_account_info():
+
     def __init__(self, data):
-        self.data = data.replace('\n','').replace('\r','')
+        self.data = data.replace('\n', '').replace('\r', '')
         self.ndata = len(data)
         self.offset = self.data.find('?')
 
@@ -24,14 +24,15 @@ class mt940e_account_info():
         if self.offset == -1:
             raise StopIteration
 
-        next = self.data.find('?', self.offset+1)
-        code = self.data[self.offset+1:self.offset+3]
+        next = self.data.find('?', self.offset + 1)
+        code = self.data[self.offset + 1:self.offset + 3]
         if next != -1:
-            info = self.data[self.offset+3:next]
+            info = self.data[self.offset + 3:next]
         else:
-            info = self.data[self.offset+3:]
+            info = self.data[self.offset + 3:]
         self.offset = next
         return (code, info)
+
 
 class mt940e_parser(object):
     _tagsep = ':'
@@ -44,11 +45,11 @@ class mt940e_parser(object):
     }
 
     def t_get_date(self, raw):
-#        print(">>> parse date: _%s_" % (raw))
-        return date(year=2000+int(raw[0:2]), month=int(raw[2:4]), day=int(raw[4:6]))
+        #        print(">>> parse date: _%s_" % (raw))
+        return date(year=2000 + int(raw[0:2]), month=int(raw[2:4]), day=int(raw[4:6]))
 
     def t_get_sign(self, raw):
-#        print(">>> parse sign: _%s_" % (raw))
+        #        print(">>> parse sign: _%s_" % (raw))
         return {
             'D': -1,
             'RC': 1,
@@ -59,13 +60,14 @@ class mt940e_parser(object):
         }[raw.strip()]
 
     def t_get_amount(self, raw):
-#        print(">>> parse amount: _%s_" % (raw))
-        return float(raw.replace(',','.'))
+        #        print(">>> parse amount: _%s_" % (raw))
+        return float(raw.replace(',', '.'))
 
     def t_get_swift_code(self, raw):
-#        print(">>> parse swift code: _%s_" % (raw))
+        #        print(">>> parse swift code: _%s_" % (raw))
         if raw[0] != 'N':
-            raise Exception("Invalid Swift Code, should start with N, %s" % (raw))
+            raise Exception(
+                "Invalid Swift Code, should start with N, %s" % (raw))
         return raw[1:4]
 
     def code_simple_store(self, code, data):
@@ -78,7 +80,8 @@ class mt940e_parser(object):
                 return -1
             if x['date_start'] > y['date_start']:
                 return 1
-            # date are the same, so compare statement name (i.e. number of the statement)
+            # date are the same, so compare statement name (i.e. number of the
+            # statement)
             return cmp(x['name'], y['name'])
         self.statement_list.sort(cmp=st_cmp)
 
@@ -104,10 +107,12 @@ class mt940e_parser(object):
             elif acct != st['account_nb']:
                 raise Exception("account number differs")
             elif not (s - 0.00001 < st['balance_start'] < s + 0.00001):
-                raise Exception("ending and starting balance are not following each others")
+                raise Exception(
+                    "ending and starting balance are not following each others")
             else:
                 s = st['balance_end']
-                print("S: %s, ST: number: %s, start: %s, end: %s" % (s, st['name'], st['balance_start'], st['balance_end']))
+                print("S: %s, ST: number: %s, start: %s, end: %s" %
+                      (s, st['name'], st['balance_start'], st['balance_end']))
                 #raise Exception("Statement are not following each other")
         # everything OK
         return True
@@ -147,17 +152,19 @@ class mt940e_parser(object):
 #        print("Currency: %s" % (currency))
 #        print("Abs Amount: %s" % (abs_amount))
         if self.data.get('currency') != currency:
-            raise Exception("Invalid bank statement, opening and ending currency differs")
+            raise Exception(
+                "Invalid bank statement, opening and ending currency differs")
         self.data.update({
             'date_end': d,
             'balance_end': abs_amount * sign,
         })
 
     def p_transfert_statement(self, code, data):
-        d = self.t_get_date(data[0:6]) # = 6
+        d = self.t_get_date(data[0:6])  # = 6
 
-        entry_d = self.t_get_date(self.data['date_start'].strftime('%y') + data[6:10]) # = 4
-        sign = self.t_get_sign(data[10:12]) # = 2
+        entry_d = self.t_get_date(
+            self.data['date_start'].strftime('%y') + data[6:10])  # = 4
+        sign = self.t_get_sign(data[10:12])  # = 2
         aidx = 12
         for k in range(16):
             if data[aidx + k] not in '0123456789,':
@@ -165,10 +172,10 @@ class mt940e_parser(object):
                 break
 
         amount = self.t_get_amount(data[12:aidx])
-        swift_code = self.t_get_swift_code(data[aidx:aidx+4])
-        owner_reference = data[aidx+4:aidx+4+16]
-#        print("### SWIFT CODE: %s, OWNER REF: %s" % (swift_code, owner_reference))
-        bank_reference = data[aidx+4+16:]
+        swift_code = self.t_get_swift_code(data[aidx:aidx + 4])
+        owner_reference = data[aidx + 4:aidx + 4 + 16]
+# print("### SWIFT CODE: %s, OWNER REF: %s" % (swift_code, owner_reference))
+        bank_reference = data[aidx + 4 + 16:]
 #        if not bank_reference.lstrip().startswith('//'):
 #            raise Exception("Invalid bank reference _%s_" % (bank_reference))
 
@@ -206,9 +213,9 @@ class mt940e_parser(object):
             '28': [27, 'exchange_rate', ''],
             #'29': [27, 'exchange_rate', ''],
             #'30': [8, 'bank_code', ''],
-            '31': [24, 'communication', ''], # numéro du compte bénénficiaire
-            '32': [27, 'beneficiary', ''], # nom donneur d'ordre
-            '33': [27, 'beneficiary', ''], # nom donneur d'ordre
+            '31': [24, 'communication', ''],  # numéro du compte bénénficiaire
+            '32': [27, 'beneficiary', ''],  # nom donneur d'ordre
+            '33': [27, 'beneficiary', ''],  # nom donneur d'ordre
             '38': [31, 'iban', ''],
             '60': [35, 'beneficiary_details', 'Beneficiary Details'],
             '61': [35, 'beneficiary_details', ''],
@@ -220,21 +227,22 @@ class mt940e_parser(object):
         cline = data[2:]
         cdata = {
             'reference': '',
-#            'trans_num': '',
+            #            'trans_num': '',
             'details': '',
             'amount_currency': '',
             'communication': '',
             'charges': '',
             'exchange_rate': '',
-#            'account_info': '',
-#            'client_info': '',
+            #            'account_info': '',
+            #            'client_info': '',
             'beneficiary': '',
             'beneficiary_details': '',
-#            'bank_code': '',
-#            'original_amount': '',  <<<< now this is setup on the :61: line
-#            'beneficiary_name': '',
+            #            'bank_code': '',
+            #            'original_amount': '',  <<<< now this is setup on the :61: line
+            #            'beneficiary_name': '',
             'iban': '',
         }
+
         def update_extra(content):
             _, type, val, _ = content.split('/')
             if type == 'OCMT':
@@ -246,7 +254,7 @@ class mt940e_parser(object):
 
         info = mt940e_account_info(cline)
         for (c, i) in info:
-#            print("C: %s, I: %s" % (c, i))
+            #            print("C: %s, I: %s" % (c, i))
             if not c or not i:
                 continue
 #            print("C: %s %s" % (c, type(c)))
@@ -254,20 +262,20 @@ class mt940e_parser(object):
                 if c in ('26', '27', '28'):
                     update_extra(i)
                 else:
-#                if c in ('21', '22', '33') and len(i) > 7:
-#                    print("FIXUP?")
-#                    if not cdata[_infocode[c][1]][-1:].isspace() \
-#                            and not i[0].isspace():
-#                        i = ' %s' % (i)
-#                    ipos = i[7:].find(' ')
-#                    if ipos != -1:
-#                        k = i[:ipos+7] + i[ipos+1+7:]
-#                        print("FIXUP: %s" % (k))
-#                        i = k
+                    #                if c in ('21', '22', '33') and len(i) > 7:
+                    #                    print("FIXUP?")
+                    #                    if not cdata[_infocode[c][1]][-1:].isspace() \
+                    #                            and not i[0].isspace():
+                    #                        i = ' %s' % (i)
+                    #                    ipos = i[7:].find(' ')
+                    #                    if ipos != -1:
+                    #                        k = i[:ipos+7] + i[ipos+1+7:]
+                    #                        print("FIXUP: %s" % (k))
+                    #                        i = k
                     cdata[_infocode[c][1]] += i
             except KeyError:
                 raise Exception("Unknonw account info code %s" % (c))
-        chgs_m = chgs_regexp.match(cdata.get('details',''))
+        chgs_m = chgs_regexp.match(cdata.get('details', ''))
         if chgs_m:
             chgs_cur, chgs_amount = chgs_m.groups()
             cdata['charges'] = self.t_get_amount(chgs_amount)
@@ -283,6 +291,7 @@ class mt940e_parser(object):
 #                break
 #            offset = x+1
         # cleanup details fields (extra space are added every 35 chars)
+
         def cleanup_text_field(text, range):
             z = ''
             t = text
@@ -323,19 +332,18 @@ class mt940e_parser(object):
             'type': '',
             'account_nb': '',
             'name': '',
-            'date_start': '', # date of opening balance
+            'date_start': '',  # date of opening balance
             'date_end': '',
             'balance_start': '',
             'balance_end': '',
             'currency': '',
             'lines': [],
         }
-        pass
 
     def parse(self, f):
-#        print("%s" % (self._tagsep))
+        #        print("%s" % (self._tagsep))
         for l in f.readlines():
-            l = l.replace('\r','').replace('\n', '')
+            l = l.replace('\r', '').replace('\n', '')
             if l and l[0] == self._tagsep:
                 self.elem.append(l)
 
@@ -343,7 +351,7 @@ class mt940e_parser(object):
                 self.elem[-1] += l
 
         for e in self.elem:
-#            print(e)
+            #            print(e)
             code, d = e[1:].split(self._tagsep, 1)
 #            print("Code: %s, D: %s" % (code, d))
             if code in self._codes:
@@ -353,7 +361,8 @@ class mt940e_parser(object):
         try:
             self.check_suite()
         except Exception:
-            raise Exception("statements are not following each other, or doest no have the same account number, currency or type")
+            raise Exception(
+                "statements are not following each other, or doest no have the same account number, currency or type")
         if len(self.statement_list) > 0:
             # we need to group statement inside one
             self.reset_data()
@@ -398,4 +407,5 @@ if __name__ == '__main__':
     p.parse(f)
     #print("P.statements: %s" % (p.statement_list))
     for st in p.statement_list:
-        print("%s - %s (%s) [ %s -> %s]" % (st['name'], st['date_start'], str(type(st['date_start'])),  st['balance_start'], st['balance_end']))
+        print("%s - %s (%s) [ %s -> %s]" % (st['name'], st['date_start'],
+                                            str(type(st['date_start'])),  st['balance_start'], st['balance_end']))

@@ -25,6 +25,7 @@
 
 from osv import osv, fields
 
+
 class multiline_payment_export_history(osv.Model):
     _name = "multiline.payment.export.history"
     _description = "Multiline Payment Export History"
@@ -34,7 +35,7 @@ class multiline_payment_export_history(osv.Model):
         'payment_order_id': fields.many2one('payment.order', 'Payment Order', readonly=True),
         'content': fields.binary('Multiline Content', readonly=True),
         'note': fields.text('Export Log', readonly=True),
-        'state': fields.selection([('failed','Failed'),('succeeded', 'Succeeded')], 'Status', readonly=True),
+        'state': fields.selection([('failed', 'Failed'), ('succeeded', 'Succeeded')], 'Status', readonly=True),
 
         'create_date': fields.datetime('Creation Date', required=True, readonly=True),
         'create_uid': fields.many2one('res.users', 'Creation User', required=True, readonly=True),
@@ -42,15 +43,17 @@ class multiline_payment_export_history(osv.Model):
 
     _order = "create_date desc"
 
+
 class multiline_payment_charge_code(osv.Model):
     _name = "multiline.payment.charge.code"
     _description = "Multiline Payment Charge Code"
     _rec_name = 'code'
 
     _columns = {
-        'code': fields.char('Charge Code',size=3,required=True),
+        'code': fields.char('Charge Code', size=3, required=True),
         'description': fields.text('Description'),
     }
+
 
 class multiline_payment_instruction_code(osv.Model):
     _name = "multiline.payment.instruction.code"
@@ -61,19 +64,22 @@ class multiline_payment_instruction_code(osv.Model):
         'code': fields.char('Code', size=34, required=True),
     }
 
+
 class payment_order_multiline_type(osv.Model):
     _inherit = "payment.order"
 
     _columns = {
-        'grouped_payment': fields.boolean('Grouped Payment', states={'done':[('readonly',True)]}),
+        'grouped_payment': fields.boolean('Grouped Payment', states={'done': [('readonly', True)]}),
     }
+
 
 class payment_line_instruction_code(osv.Model):
     _inherit = "payment.line"
-    
+
     _columns = {
         'instruction_code_id': fields.many2one('multiline.payment.instruction.code', 'Instruction Code'),
     }
+
 
 class payment_mode_multiline_ident(osv.Model):
     _inherit = "payment.mode"

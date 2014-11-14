@@ -26,18 +26,19 @@ from osv import fields
 from tools.translate import _
 from tools.misc import cache
 
+
 class ir_config(osv.osv):
     _name = 'ir.config'
     _description = 'Database Config Options'
 
     def _get_type_selection(self, cr, uid, context=None):
-        return  [
-            ('str','String'),
-            ('int','Integer'),
+        return [
+            ('str', 'String'),
+            ('int', 'Integer'),
             ('float', 'Float'),
-            ('bool','Boolean'),
+            ('bool', 'Boolean'),
             ('ref', 'Reference'),
-            ('python','Python Code'),
+            ('python', 'Python Code'),
         ]
 
     _columns = {
@@ -75,14 +76,16 @@ class ir_config(osv.osv):
     @cache(skiparg=2)
     def get(self, cr, uid, option_name):
         cr.sql_log = True
-        cr.execute("SELECT value, default_value, type FROM ir_config WHERE name = %s LIMIT 1", (option_name,))
+        cr.execute(
+            "SELECT value, default_value, type FROM ir_config WHERE name = %s LIMIT 1", (option_name,))
         data = cr.dictfetchone()
         cr.sql_log = False
         if data:
             # specific case for Python options
             if data['type'] == 'python':
                 try:
-                    fnct = getattr(self, 'get_value_'+option_name.replace('.','_'))
+                    fnct = getattr(
+                        self, 'get_value_' + option_name.replace('.', '_'))
                     return fnct(cr, uid, option_name)
                 except AttributeError:
                     return False
@@ -100,7 +103,8 @@ class ir_config(osv.osv):
     def reset_default_values(self, cr, uid, ids, context=None):
         if context is None:
             context = {}
-        default_values = self.read(cr, uid, ids, ['default_value'], context=context)
+        default_values = self.read(
+            cr, uid, ids, ['default_value'], context=context)
         for default_value in default_values:
             self.write(cr, uid, [default_value['id']],
                        {'value': default_value['default_value']}, context=context)
@@ -111,8 +115,9 @@ class ir_config(osv.osv):
             context = {}
         if 'value' in vals.keys():
             for option in self.read(cr, uid, ids, [], context=context):
-                optname_validate = 'validate_'+option['name'].replace('.','_')
-                opttype_validate = 'validate_type_'+option['type']
+                optname_validate = 'validate_' + \
+                    option['name'].replace('.', '_')
+                opttype_validate = 'validate_type_' + option['type']
                 try:
                     validate_fnct = getattr(self, optname_validate)
                     validate_fnct(cr, uid, option, vals, context=context)
@@ -132,7 +137,6 @@ class ir_config(osv.osv):
            @raise osv.except_osv in case of an error
         """
         #raise osv.except_osv(_('Error'), _('Invalid value for this type'))
-        pass
 
     def validate_type_int(self, cr, uid, option, vals, context=None):
         """default validation methods for integer option
@@ -142,10 +146,12 @@ class ir_config(osv.osv):
             context = {}
         if 'default_value' in vals.keys():
             if not vals['default_value'].isdigit():
-                raise osv.except_osv(_('Error'), _('The dafault value must be a integer.'))
+                raise osv.except_osv(
+                    _('Error'), _('The dafault value must be a integer.'))
         if 'value' in vals.keys():
             if not vals['value'].isdigit():
-                raise osv.except_osv(_('Error'), _('The value must be a integer.'))
+                raise osv.except_osv(
+                    _('Error'), _('The value must be a integer.'))
         return True
 
     def validate_type_float(self, cr, uid, option, vals, context=None):
@@ -158,12 +164,14 @@ class ir_config(osv.osv):
             try:
                 float(vals['default_value'])
             except ValueError:
-                raise osv.except_osv(_('Error'), _('The default value must be a float.'))
+                raise osv.except_osv(
+                    _('Error'), _('The default value must be a float.'))
         if 'value' in vals.keys():
             try:
                 float(vals['value'])
             except ValueError:
-                raise osv.except_osv(_('Error'), _('The value must be a float.'))
+                raise osv.except_osv(
+                    _('Error'), _('The value must be a float.'))
         return True
 
     def validate_type_boolean(self, cr, uid, option, vals, context=None):
@@ -174,10 +182,12 @@ class ir_config(osv.osv):
             context = {}
         if 'default_value' in vals.keys():
             if not vals['default_value'] in ['0', '1', '']:
-                raise osv.except_osv(_('Error'), _('The dafault value must be a boolean.'))
+                raise osv.except_osv(
+                    _('Error'), _('The dafault value must be a boolean.'))
         if 'value' in vals.keys():
             if not vals['value'] in ['0', '1', '']:
-                raise osv.except_osv(_('Error'), _('The value must be a boolean.'))
+                raise osv.except_osv(
+                    _('Error'), _('The value must be a boolean.'))
         return True
 
 
