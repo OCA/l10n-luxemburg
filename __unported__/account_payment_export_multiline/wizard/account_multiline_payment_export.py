@@ -35,15 +35,21 @@ from tools import ustr
 from tools.translate import _
 import unicodedata
 
+
 class Log:
+
     def __init__(self):
         self.content = ""
-    def add(self,s):
+
+    def add(self, s):
         self.content = self.content + s
+
     def __call__(self):
         return self.content
 
+
 class MultilineDataException(Exception):
+
     def __init__(self, error):
         Exception.__init__(self, error)
         self.note = error
@@ -55,11 +61,13 @@ class MultilineDataException(Exception):
             'state': 'failed',
         }
 
+
 def strip_accents(s):
     if isinstance(s, str):
         s = unicode(s, 'utf-8')
     s.replace(u'ß', 'ss')
-    return ''.join((c for c in unicodedata.normalize('NFKD', s) if unicodedata.category(c) not in ('Mn','So', 'Pf', 'Sc')))
+    return ''.join((c for c in unicodedata.normalize('NFKD', s) if unicodedata.category(c) not in ('Mn', 'So', 'Pf', 'Sc')))
+
 
 class multiline_payment_export(osv.TransientModel):
     _name = 'multiline.payment.export'
@@ -68,13 +76,14 @@ class multiline_payment_export(osv.TransientModel):
         'content': fields.binary('Exported Content', readonly=True),
         'filename': fields.char('Export Filename', size=128, readonly=True),
         'note': fields.text('Log', readonly=True),
-        'state': fields.selection([('init','Init'),('export','Export')], 'State', required=True),
+        'state': fields.selection([('init', 'Init'), ('export', 'Export')], 'State', required=True),
     }
 
     def default_get(self, cr, uid, fields, context=None):
         res = {'state': 'init'}
-        
-        ids = self.pool.get('multiline.payment.charge.code').search(cr, uid, [('code','=','OUR')], context=context)
+
+        ids = self.pool.get('multiline.payment.charge.code').search(
+            cr, uid, [('code', '=', 'OUR')], context=context)
         if ids:
             res['charge_code_id'] = ids[0]
 
@@ -84,35 +93,37 @@ class multiline_payment_export(osv.TransientModel):
         #####################################################
         #         Sequence 0  - initialisation              #
         #####################################################
-        
+
         log = Log()
-    
+
         multiline_export = []
-    
+
         # payment order
-        payment = self.pool.get('payment.order').browse(cr, uid, data['id'], context)
-    
+        payment = self.pool.get('payment.order').browse(
+            cr, uid, data['id'], context)
+
         # payment lines
         payment_line_obj = self.pool.get('payment.line')
-        pay_line_ids = payment_line_obj.search(cr, uid, [('order_id','=',data['id'])])
+        pay_line_ids = payment_line_obj.search(
+            cr, uid, [('order_id', '=', data['id'])])
         pay_lines = payment_line_obj.read(cr, uid, pay_line_ids,
-                    ['date','company_currency','currency',
-                     'partner_id','amount','amount_currency',
-                     'bank_id','move_line_id',
-                     'name','info_owner','info_partner',
-                     'communication','communication2',
-                     'instruction_code_id']
-        )
-        
+                                          ['date', 'company_currency', 'currency',
+                                           'partner_id', 'amount', 'amount_currency',
+                                           'bank_id', 'move_line_id',
+                                           'name', 'info_owner', 'info_partner',
+                                           'communication', 'communication2',
+                                           'instruction_code_id']
+                                          )
+
         # partner bank
         partner_bank_obj = self.pool.get('res.partner.bank')
         # instruction code
-        instruction_code_obj = self.pool.get('multiline.payment.instruction.code')
+        instruction_code_obj = self.pool.get(
+            'multiline.payment.instruction.code')
         # charge code
-        charges_code_obj = self.pool.get('multiline.payment.charge.code')
         # payment mode
         payment_mode_obj = self.pool.get('payment.mode')
-    
+
         # payment type
         # :multi = one debit per line
         # :group = one debit for all lines
@@ -122,29 +133,30 @@ class multiline_payment_export(osv.TransientModel):
         else:
             grouped = payment.grouped_payment
 
-        suitable_bank_types = payment_mode_obj.suitable_bank_types(cr, uid, payment_code=payment.mode.id)
+        suitable_bank_types = payment_mode_obj.suitable_bank_types(
+            cr, uid, payment_code=payment.mode.id)
         payment_authz_mode = set()
         for type in suitable_bank_types:
             payment_authz_mode.add(type)
-    
+
         #####################################################
         #         Sequence 0  - utilities class / functions #
         #####################################################
-    
+
         def _ml_string_split(string, limit):
             s_list = []
             while len(string):
                 # Remove unauthorized chars at line start
-                while string[0] in (':','-'):
+                while string[0] in (':', '-'):
                     string = string[1:]
                 s_list.append(string[:limit])
                 string = string[limit:]
             return s_list
-    
+
         def _ml_string_split_preformatted(string_list, limit):
             c_list = [
-                string_list[0][:limit], # Name
-                string_list[1][:limit], # Street
+                string_list[0][:limit],  # Name
+                string_list[1][:limit],  # Street
             ]
             if string_list[2] == 'Luxembourg':
                 c_list += [
@@ -152,10 +164,10 @@ class multiline_payment_export(osv.TransientModel):
                 ]
             else:
                 c_list += [
-                    (' '.join([ string_list[x] for x in (3, 4, 5, 2)]))[:limit],
+                    (' '.join([string_list[x] for x in (3, 4, 5, 2)]))[:limit],
                 ]
             return c_list
-    
+
         def _ml_string(code, string):
             s = u''
             if code:
@@ -163,17 +175,17 @@ class multiline_payment_export(osv.TransientModel):
             s += u"%s" % (string)
             s.replace('\n', '')
             return s
-    
+
         def _ml_add(code, string):
             multiline_export.append(_ml_string(code, string))
-    
+
         def _ml_addlist_error_return(exception):
             pass
-    
+
         def _ml_addlist(sequence_list, payment, payment_line=False, mode=False, sequence=-1):
             for (c, desc, l, m, s) in sequence_list:
                 # Condition check, if False: line will not be added to datas
-                if isinstance(m, (unicode,str)):
+                if isinstance(m, (unicode, str)):
                     if m and ((m != 'multi') != mode):
                         continue
                 else:
@@ -182,8 +194,11 @@ class multiline_payment_export(osv.TransientModel):
                         if not m_ret:
                             continue
                     except MultilineDataException, e:
-                        e_line = sequence != -1 and ('Ligne %s, %s:\n'%(sequence, payment_line['partner_id'][1])) or ''
-                        e.note = '%s%s %s: %s' % (ustr(e_line),c,desc,ustr(e.note))
+                        e_line = sequence != - \
+                            1 and (
+                                'Ligne %s, %s:\n' % (sequence, payment_line['partner_id'][1])) or ''
+                        e.note = '%s%s %s: %s' % (
+                            ustr(e_line), c, desc, ustr(e.note))
                         raise e
                 # Execute function is it's one
                 if callable(s):
@@ -191,12 +206,14 @@ class multiline_payment_export(osv.TransientModel):
                         s = s(payment, payment_line)
                     except MultilineDataException, e:
                         # Add infos from local context
-                        e_line = sequence != -1 and ('Ligne %s, %s:\n'%(sequence, payment_line['partner_id'][1])) or ''
-                        e.note = u'%s%s %s: %s' % (e_line,c,desc,e.note)
+                        e_line = sequence != - \
+                            1 and (
+                                'Ligne %s, %s:\n' % (sequence, payment_line['partner_id'][1])) or ''
+                        e.note = u'%s%s %s: %s' % (e_line, c, desc, e.note)
                         raise e
                 # Convert to list
                 if not isinstance(s, list):
-                    s = [ s ]
+                    s = [s]
                 for s_idx, s_val in enumerate(s):
                     s_val.encode('utf-8')
                     # check length limit
@@ -207,24 +224,24 @@ class multiline_payment_export(osv.TransientModel):
                         _ml_add(c, s_val)
                     else:
                         _ml_add('', s_val)
-    
+
         def _ml_formatamount(amount, digit=12):
             # TODO: ... implement coma management
-            s = ('%.2f' % (amount)).strip().replace(' ','')
+            s = ('%.2f' % (amount)).strip().replace(' ', '')
             t = s.split('.')
             if len(t[0]) > digit:
                 raise "AMOUT TOO BIG"
             return '%s,%s' % (t[0][:12], t[1][:2])
-    
+
         #####################################################
         #         Sequence 1  - functions                   #
         #####################################################
-    
+
         def browse_one(pool, id):
             if isinstance(id, tuple):
                 id = id[0]
             return pool.browse(cr, uid, [id])[0]
-    
+
         def _get_order_date_value(payment_order):
             date = ''
             if payment_order.date_prefered == 'fixed':
@@ -235,30 +252,33 @@ class multiline_payment_export(osv.TransientModel):
                 return time.strftime('%y%m%d', time.strptime(date, '%Y-%m-%d'))
             else:
                 return time.strftime('%y%m%d')
-    
+
         def _get_bank_bic(partner_bank_id):
             # type = partner / beneficiary
             bank_id = partner_bank_id.bank
             if not bank_id:
-                raise MultilineDataException(u"pas de banque associée au compte bancaire")
+                raise MultilineDataException(
+                    u"pas de banque associée au compte bancaire")
             if not bank_id.bic:
-                raise MultilineDataException(u"pas de code BIC spécifié sur la banque")
+                raise MultilineDataException(
+                    u"pas de code BIC spécifié sur la banque")
             return bank_id.bic
-    
+
         def _get_bank_account(bank_id, with_owner_info=True,
-                                       use_owner_code=False,
-                                       no_compress_line=False):
+                              use_owner_code=False,
+                              no_compress_line=False):
             data = ''
             if not bank_id:
-                raise MultilineDataException(u"pas de compte bancaire spécifié")
+                raise MultilineDataException(
+                    u"pas de compte bancaire spécifié")
             if bank_id.state == 'iban':
-                data += bank_id.iban.replace(' ','').upper()
+                data += bank_id.iban.replace(' ', '').upper()
             else:
                 data += bank_id.acc_number[:34].upper()
             if with_owner_info:
                 t_list = []
                 s_list = [
-                    (bank_id.owner_name and bank_id.owner_name.strip() \
+                    (bank_id.owner_name and bank_id.owner_name.strip()
                         or (use_owner_code and bank_id.partner_id.ref or
                             bank_id.partner_id.name)),
                     (bank_id.street and bank_id.street.strip() or ''),
@@ -267,32 +287,34 @@ class multiline_payment_export(osv.TransientModel):
                     (bank_id.city and bank_id.city or ''),
                     (bank_id.state_id and bank_id.state_id.name or ''),
                 ]
-    
+
                 if no_compress_line:
                     t_list = _ml_string_split_preformatted(s_list, 35)
                 else:
-                    s_list = [ x for x in s_list if x ]
+                    s_list = [x for x in s_list if x]
                     s = u' '.join(s_list)
                     t_list = _ml_string_split(s, 35)
-    
+
                 if len(t_list) > 4:
                     t_list = t_list[:4]
-    
-            return [ u"/" + data ] + t_list
-    
+
+            return [u"/" + data] + t_list
+
         def _get_account(pay):
             if not pay['bank_id']:
-                raise MultilineDataException(u"pas de compte bancaire spécifié")
+                raise MultilineDataException(
+                    u"pas de compte bancaire spécifié")
             return browse_one(partner_bank_obj, pay['bank_id'])
-    
+
         def _get_communication(pay):
             s = (pay['communication'] or u'')
             s += (pay['communication2'] or u'')
-            # don't allow double point or accentuated char to crash multiline import
-            s = strip_accents(s).replace(':','') 
+            # don't allow double point or accentuated char to crash multiline
+            # import
+            s = strip_accents(s).replace(':', '')
             s_list = _ml_string_split(s, 35)
             return s_list[:4]
-    
+
         #####################################################
         #         Séquence A  - début de fichier            #
         #####################################################
@@ -322,7 +344,7 @@ class multiline_payment_export(osv.TransientModel):
             _ml_addlist(start_sequence, payment, mode=grouped)
         except MultilineDataException, e:
             return e.get_return_dict()
-    
+
         #####################################################
         #       Séquence B - Une séquence par paiement      #
         #####################################################
@@ -330,38 +352,40 @@ class multiline_payment_export(osv.TransientModel):
         total = 0.0
         for pay in pay_lines:
             seq += 1
-    
+
             try:
                 account_pay_state = _get_account(pay).state
             except MultilineDataException, e:
                 e.note = u'Ligne: %s: %s' % (seq, e.note)
                 return e.get_return_dict()
-    
+
             if account_pay_state not in payment_authz_mode:
                 e = MultilineDataException("")
-                e.note = u"Ligne %s: %s: compte bancaire n'est pas de type IBAN, impossible d'exporter" % (seq, pay['partner_id'] and pay['partner_id'][1] or '???')
+                e.note = u"Ligne %s: %s: compte bancaire n'est pas de type IBAN, impossible d'exporter" % (
+                    seq, pay['partner_id'] and pay['partner_id'][1] or '???')
                 return e.get_return_dict()
-    
+
             payment_sequence_B = [
                 ("21", u'Référence de l\'opération',
-                        16,
-                        'multi',
-                        pay['name'] and (payment.reference+'-'+pay['name']) or payment.reference),
+                 16,
+                 'multi',
+                 pay['name'] and (payment.reference + '-' + pay['name']) or payment.reference),
                 ("23E", u'Instruction banque donneur d\'ordre',
                         35,
-                        lambda *a: pay['instruction_code_id'] and True or False,
-                        lambda *a: browse_one(instruction_code_obj, pay['instruction_code_id']).code.upper()),
+                        lambda *
+                 a: pay['instruction_code_id'] and True or False,
+                 lambda *a: browse_one(instruction_code_obj, pay['instruction_code_id']).code.upper()),
                 ("32B", u'Devise et montant en devise',
                         15,
                         '',
-                        "%s%s" % (pay['currency'][1].split(' ',1)[0].upper(),
+                        "%s%s" % (pay['currency'][1].split(' ', 1)[0].upper(),
                                   _ml_formatamount(pay['amount_currency']))),
                 ("50H", u'Compte bancaire du donneur d\'ordre',
                         0,
                         'multi',
                         lambda paym, *a: _get_bank_account(paym.mode.bank_id,
-                                                use_owner_code=True,
-                                                no_compress_line=True)),
+                                                           use_owner_code=True,
+                                                           no_compress_line=True)),
                 ("57A", u'Code BIC banque bénéficiaire',
                         15,
                         lambda *a: _get_account(pay).state == 'iban',
@@ -371,17 +395,17 @@ class multiline_payment_export(osv.TransientModel):
                         lambda *a: _get_account(pay).state != 'iban',
                         "TODO: Nom de la banque du bénéficiaire"),
                 ("59", u'Numéro du compte bancaire du bénéficiaire',
-                        0,
-                        '',
-                        lambda *a: _get_bank_account(_get_account(pay))),
+                 0,
+                 '',
+                 lambda *a: _get_bank_account(_get_account(pay))),
                 ("70", u'Libellé de l\'opération',
-                        # 1ere ligne peut etre ref standard national: ***14x*** 
-                        0,
-                        '',
-                        lambda *a: _get_communication(pay)),
+                 # 1ere ligne peut etre ref standard national: ***14x***
+                 0,
+                 '',
+                 lambda *a: _get_communication(pay)),
                 ("77B", u'Information IBLC pour montant > 8676,2733 EUR',
                         0,
-                        lambda *a: False, # TODO
+                        lambda *a: False,  # TODO
                         "TODO Information IFBL"),
                 ("71A", u'Mode de facturation des frais bancaire',
                         3,
@@ -394,7 +418,7 @@ class multiline_payment_export(osv.TransientModel):
                 total += pay['amount_currency']
             except MultilineDataException, e:
                 return e.get_return_dict()
-    
+
         #####################################################
         #           Séquence C  - Fin de fichier            #
         #####################################################
@@ -404,15 +428,15 @@ class multiline_payment_export(osv.TransientModel):
                     '',
                     unicode(seq).upper()),
             ("19", u'Montant total toutes devises confondues',
-                    17,
-                    '',
-                    unicode(_ml_formatamount(total)).upper()),
+             17,
+             '',
+             unicode(_ml_formatamount(total)).upper()),
         ]
         try:
             _ml_addlist(payment_sequence_C, payment, mode=grouped)
         except MultilineDataException, e:
             return e.get_return_dict()
-    
+
         #####################################################
         #           Fin de création du fichier LUP          #
         #####################################################
@@ -422,7 +446,8 @@ class multiline_payment_export(osv.TransientModel):
             # Setup multiline data in place
             pay_order = strip_accents(mx)
             pay_order = pay_order.encode('ascii', 'ignore')
-            log.add("Successfully Exported\n--\nSummary:\n\nTotal amount paid : %.2f \nTotal Number of Payments : %d \n-- " %(total,seq))
+            log.add(
+                "Successfully Exported\n--\nSummary:\n\nTotal amount paid : %.2f \nTotal Number of Payments : %d \n-- " % (total, seq))
         except Exception, e:
             log.add("Export Failed\n" + tools.ustr(e) + 'CORRUPTED FILE !\n')
             log.add(tools.ustr(strip_accents(mx)))
@@ -431,9 +456,9 @@ class multiline_payment_export(osv.TransientModel):
                 'note': log(),
                 'state': 'failed',
             }
-    
+
         return {
-            'name': payment.reference.replace('/','-') + str(payment.id) + '.lup',
+            'name': payment.reference.replace('/', '-') + str(payment.id) + '.lup',
             'note': log(),
             'content': base64.encodestring(pay_order),
             'state': 'succeeded',
@@ -457,7 +482,7 @@ class multiline_payment_export(osv.TransientModel):
         self.write(cr, uid, [ids[0]], {
             'content': content,
             'filename': payment.get('name', ''),
-            'note': payment.get('note',''),
+            'note': payment.get('note', ''),
             'state': 'export',
         })
 

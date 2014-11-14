@@ -22,16 +22,16 @@
 ##############################################################################
 
 {
-    "name" : "Core Config",
-    "version" : "0.1",
-    "author" : "Thamini",
-    "category" : "Generic Modules/Others",
+    "name": "Core Config",
+    "version": "0.1",
+    "author": "Thamini",
+    "category": "Generic Modules/Others",
     "website": "http://www.thamini.com",
     "description": "",
-    "depends" : ['base'],
-    "init_xml" : [
+    "depends": ['base'],
+    "init_xml": [
     ],
-    "update_xml" : [
+    "update_xml": [
         "ir_config_view.xml",
         "security/ir.model.access.csv"
     ],

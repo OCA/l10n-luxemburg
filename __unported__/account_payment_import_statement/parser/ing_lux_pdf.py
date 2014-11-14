@@ -4,23 +4,23 @@
 from __future__ import with_statement
 import re
 import sys
-import codecs
 import tempfile
 from subprocess import Popen, PIPE
 import subprocess
 import logging
-import time
 from datetime import datetime
 from cStringIO import StringIO
 
+
 def get_pdf_raw_data(filename):
-    p = subprocess.Popen(['pdftotext', '-layout', filename, '-'], stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True)
+    p = subprocess.Popen(['pdftotext', '-layout', filename, '-'],
+                         stdout=subprocess.PIPE, stderr=subprocess.PIPE, close_fds=True)
     (out, err) = p.communicate()
     return out
 
 
-#XXX: make real logging
-#logging.basicConfig(level=logging.INFO)
+# XXX: make real logging
+# logging.basicConfig(level=logging.INFO)
 
 class INGBankStatementParser(object):
     ING_D_FORMAT = '%d-%m-%Y'
@@ -51,7 +51,6 @@ class INGBankStatementParser(object):
     detail_party_date_name_re = ur'\s+Date valeur: ([0-9.]+)\s+Auprès de: (.*)\s*'
     detail_party_date_re = ur'\s+Date valeur: ([0-9.]+)\s*'
 
-
     detail_motif_amount_operation_re = ur'\s+MOTIF DE PAIEMENT\s+MONTANT OPERATION\s+([0-9+.,-]+)\s+(\w+).*'
     detail_motif_desc_re = ur'\s+(.*)\s*'
     #detail_end_amount = ur'\s+MONTANT DEBITE\s+([0-9.,+-]+)\s+(\w+)\s*'
@@ -79,7 +78,7 @@ class INGBankStatementParser(object):
         self.mode = new_mode
 
     def to_monetary(self, txt):
-        v = txt.strip().replace('.','').replace(',','.')
+        v = txt.strip().replace('.', '').replace(',', '.')
         return float(v)
 
     def is_valid(self):
@@ -87,24 +86,26 @@ class INGBankStatementParser(object):
             if getattr(self, k) is None:
                 return False
         a = self.amount_start
-        a += sum([ d['amount'] for d in self.lines ])
+        a += sum([d['amount'] for d in self.lines])
         if abs(a - self.amount_end) < 10 ** -4:
             return True
         return False
 
     def get_period_from_date(self, dt):
-        #TODO: do a real search based on OERP periods
+        # TODO: do a real search based on OERP periods
         return dt.strftime('%Y-%m')
 
     def is_multi_periods(self):
-        periods = set([ self.get_period_from_date(d['maturity_date']) for d in self.lines ])
+        periods = set([self.get_period_from_date(d['maturity_date'])
+                       for d in self.lines])
         return len(periods) > 1
 
     def parse(self, f):
         with tempfile.NamedTemporaryFile() as ftmp:
             ftmp.write(f.read())
             ftmp.flush()
-            p = Popen(['pdftotext', '-layout', ftmp.name, '-'], stdin=PIPE, stdout=PIPE, stderr=PIPE, close_fds=True, bufsize=-1)
+            p = Popen(['pdftotext', '-layout', ftmp.name, '-'], stdin=PIPE,
+                      stdout=PIPE, stderr=PIPE, close_fds=True, bufsize=-1)
             (out, err) = p.communicate(input=f.read())
         self.parse_text(out)
         return self.get_statement_entries()
@@ -126,20 +127,23 @@ class INGBankStatementParser(object):
                 m = re.match(s.period_re, line)
                 if m:
                     logger.debug("[match period] %s" % (m.groups(),))
-                    self.period_start = datetime.strptime(m.groups()[0], s.ING_D_FORMAT)
-                    self.period_end = datetime.strptime(m.groups()[1], s.ING_D_FORMAT)
-                    self.date = datetime.strptime(m.groups()[1], s.ING_D_FORMAT)
+                    self.period_start = datetime.strptime(
+                        m.groups()[0], s.ING_D_FORMAT)
+                    self.period_end = datetime.strptime(
+                        m.groups()[1], s.ING_D_FORMAT)
+                    self.date = datetime.strptime(
+                        m.groups()[1], s.ING_D_FORMAT)
                     continue
                 m = re.match(s.statement_number_re, line)
                 if m:
                     logger.debug("[match number] %s" % (m.groups(),))
                     self.number, = m.groups()
-                    #self.set_mode('start')
+                    # self.set_mode('start')
                     continue
                 m = re.match(s.account_iban_currency_re, line)
                 if m:
                     _iban, _currency = m.groups()
-                    self.iban = _iban.replace(' ','').strip()
+                    self.iban = _iban.replace(' ', '').strip()
                     self.currency = _currency.strip()
                     continue
                 m = re.match(s.amount_start_re, line)
@@ -201,15 +205,16 @@ class INGBankStatementParser(object):
                     self.details.append({
                         'date': datetime.strptime(_date, s.ING_D2_FORMAT),
                         'maturity_date': datetime.strptime(_date, s.ING_D2_FORMAT),
-                        'type': _mode.lower(), # debit / credit
+                        'type': _mode.lower(),  # debit / credit
                         'reference': '',
                         'company_info': '',
                         'company_account': '',
                         'party_info': '',
                         'party_account': '',
-                        'party_bank': '', # bank name of beneficiary
+                        'party_bank': '',  # bank name of beneficiary
                         'operation_info': '',
-                        'operation_amount': 00, # operation amount (w/o extra charges) ?
+                        # operation amount (w/o extra charges) ?
+                        'operation_amount': 00,
                         'amount': 0.0,
                         'currency': '',
                     })
@@ -218,7 +223,8 @@ class INGBankStatementParser(object):
                 m = re.match(s.detail_motif_amount_operation_re, line)
                 if m:
                     op_amount = m.groups()[0]
-                    self.details[-1]['operation_amount'] = self.to_monetary(op_amount)
+                    self.details[-
+                                 1]['operation_amount'] = self.to_monetary(op_amount)
                     self.set_mode('detail_operation')
                     continue
                 m = re.match(s.detail_end_amount_re, line)
@@ -281,7 +287,7 @@ class INGBankStatementParser(object):
                     bnl = d['party_info'] and u'\n' or u''
                     d['party_info'] += bnl + txt_right
                     continue
-                #m = re.match(s.
+                # m = re.match(s.
             elif self.mode == 'detail_operation':
                 m = re.match(s.empty_line_re, line)
                 if m:
@@ -307,23 +313,21 @@ class INGBankStatementParser(object):
                             "DONNEUR D'ORDRE",
                             "===============",
                         ]
-                        p_2 = "BENEFICIAIRE"
                     else:
-                        p_1 = "BENEFICIAIRE"
-                        p_2 = "DONNEUR D'ORDRE"
+                        pass
                     break
 
 #                        'date': datetime.strptime(_date, s.ING_D2_FORMAT),
 #                        'maturity_date': datetime.strptime(_date, s.ING_D2_FORMAT),
-#                        'type': _mode.lower(), # debit / credit
+# 'type': _mode.lower(), # debit / credit
 #                        'reference': '',
 #                        'company_info': '',
 #                        'company_account': '',
 #                        'party_info': '',
 #                        'party_account': '',
-#                        'party_bank': '', # bank name of beneficiary
+# 'party_bank': '', # bank name of beneficiary
 #                        'operation_info': '',
-#                        'operation_amount': 00, # operation amount (w/o extra charges) ?
+# 'operation_amount': 00, # operation amount (w/o extra charges) ?
 #                        'amount': 0.0,
 #                        'currency': '',
             else:
@@ -331,20 +335,18 @@ class INGBankStatementParser(object):
 
         self.details = unmatched_details
 
-        import pprint
         for k in ['iban', 'currency', 'period_start', 'period_end', 'date', 'number', 'amount_start', 'amount_end', 'lines', 'details']:
             v = getattr(self, k)
             if k == 'lines':
                 #import pprint
-                #pprint.pprint(v)
+                # pprint.pprint(v)
                 pass
             elif k == 'details':
                 #import pprint
-                #pprint.pprint(v)
+                # pprint.pprint(v)
                 pass
             else:
                 print("%s: %s" % (k, v,))
-
 
     def get_statement_entries(self):
         if not self.is_valid():
@@ -360,8 +362,10 @@ class INGBankStatementParser(object):
                 if lp['__period'] == p:
                     lp['lines'].append(l)
                     lp['amount_end'] += l['amount']
-                    lp['period_start'] = min(lp['period_start'], l['maturity_date'])
-                    lp['period_end'] = max(lp['period_end'], l['maturity_date'])
+                    lp['period_start'] = min(
+                        lp['period_start'], l['maturity_date'])
+                    lp['period_end'] = max(
+                        lp['period_end'], l['maturity_date'])
                     break
             else:
                 if not len(line_by_period):
@@ -378,7 +382,7 @@ class INGBankStatementParser(object):
                     'date': self.date,
                     'period_start': l['maturity_date'],
                     'period_end': l['maturity_date'],
-                    'lines': [ l ],
+                    'lines': [l],
                 })
             #line_by_period.setdefault(p, []).append(l)
 
@@ -398,9 +402,9 @@ if __name__ == '__main__':
         sys.exit(2)
 
     t = get_pdf_raw_data(sys.argv[1])
-    #print(type(t))
+    # print(type(t))
     ib = INGBankStatementParser()
-    #ib.parse_file(sys.argv[1])
+    # ib.parse_file(sys.argv[1])
     ib.parse_text(t)
 
     print("==> Is valid: %s" % (ib.is_valid()))
@@ -411,11 +415,10 @@ if __name__ == '__main__':
     pprint.pprint(sts)
 
 
-
 #import codecs
 #
 #lines = codecs.open(sys.argv[1], 'r', encoding='utf-8').readlines()
-#for line in lines:
+# for line in lines:
 #    print("line: %s <%s>" % (line, type(line)))
 #    m = re.match(period_re, line)
 #    print("m1: %s" % (str(m)))

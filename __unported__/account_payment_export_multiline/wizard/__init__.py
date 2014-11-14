@@ -23,8 +23,7 @@
 #
 ##############################################################################
 
-import account_multiline_payment_export
+from . import account_multiline_payment_export
 import wizard
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-
