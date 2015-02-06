@@ -25,6 +25,7 @@
     'version': '0.1',
     'author': 'Thamini S.à.R.L',
     'website': 'http://www.thamini.com',
+    'license': 'AGPL-3',
     'description': """
         Allow importation of electronic bank statement (format MT940e)
         exported from multiline

@@ -29,6 +29,7 @@
     'author': 'Thamini S.à.R.L',
     "maintainer": "ACSONE SA/NV",
     "website": "http://www.acsone.eu",
+    "license": "AGPL-3",
     "images": [],
     "category": "Generic Modules/Accounting",
     "complexity": "normal",
