@@ -27,6 +27,7 @@
     "author" : "Thamini",
     "category" : "Generic Modules/Others",
     "website": "http://www.thamini.com",
+    "license": "AGPL-3",
     "description": "",
     "depends" : ['base'],
     "init_xml" : [
