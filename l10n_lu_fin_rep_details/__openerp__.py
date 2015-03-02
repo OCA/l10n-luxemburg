@@ -30,7 +30,7 @@
 {
     "name": "Luxembourg - Accounting - Financial Report Details",
     "version": "0.1",
-    "author": "ACSONE SA/NV",
+    "author": "ACSONE SA/NV,Odoo Community Association (OCA)",
     "license": "GPL-3",
     "category": "Accounting & Finance",
     "website": "http://acsone.eu",

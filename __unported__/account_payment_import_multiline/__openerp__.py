@@ -23,7 +23,7 @@
 {
     'name': 'account_payment_import_multiline',
     'version': '0.1',
-    'author': 'Thamini S.à.R.L',
+    'author': "Thamini S.à.R.L,Odoo Community Association (OCA)",
     'website': 'http://www.thamini.com',
     'description': """
         Allow importation of electronic bank statement (format MT940e)
