@@ -24,7 +24,7 @@
 {
     "name" : "Core Config",
     "version" : "0.1",
-    "author" : "Thamini",
+    "author" : "Thamini,Odoo Community Association (OCA)",
     "category" : "Generic Modules/Others",
     "website": "http://www.thamini.com",
     "description": "",

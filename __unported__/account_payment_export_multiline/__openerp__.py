@@ -26,7 +26,7 @@
 {
     "name": "Multiline Payment Export",
     "version": "1.1",
-    'author': 'Thamini S.à.R.L',
+    'author': "Thamini S.à.R.L,Odoo Community Association (OCA)",
     "maintainer": "ACSONE SA/NV",
     "website": "http://www.acsone.eu",
     "images": [],
