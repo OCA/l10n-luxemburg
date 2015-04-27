@@ -1,13 +1,13 @@
-# Translation of OpenERP Server.
+# Translation of Odoo Server.
 # This file contains the translation of the following modules:
 #	* l10n_lu_ext
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 6.1\n"
+"Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-21 08:16+0000\n"
-"PO-Revision-Date: 2013-05-21 08:16+0000\n"
+"POT-Creation-Date: 2015-04-27 19:47+0000\n"
+"PO-Revision-Date: 2015-04-27 19:47+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,20 +22,40 @@ msgid "Balance Sheet"
 msgstr "Bilan"
 
 #. module: l10n_lu_ext
-#: model:ir.actions.act_window,name:l10n_lu_ext.action_account_report_lu_pl
-#: model:ir.ui.menu,name:l10n_lu_ext.menu_account_report_lu_pl
-msgid "Profit And Loss"
-msgstr "Comptes de Charges"
-
-#. module: l10n_lu_ext
 #: model:ir.actions.act_window,name:l10n_lu_ext.action_account_report_lu_bs_abr
 #: model:ir.ui.menu,name:l10n_lu_ext.menu_account_report_lu_bs_abr
 msgid "Balance Sheet (abbreviated)"
 msgstr "Bilan (abrégé)"
 
 #. module: l10n_lu_ext
+#: model:ir.model,name:l10n_lu_ext.model_res_company
+msgid "Companies"
+msgstr "Sociétés"
+
+#. module: l10n_lu_ext
+#: model:ir.ui.menu,name:l10n_lu_ext.legal_lu
+msgid "Luxembourg"
+msgstr "Luxembourg"
+
+#. module: l10n_lu_ext
+#: field:res.company,matricule:0
+msgid "National Id Number"
+msgstr "Matricule"
+
+#. module: l10n_lu_ext
+#: model:ir.actions.act_window,name:l10n_lu_ext.action_account_report_lu_pl
+#: model:ir.ui.menu,name:l10n_lu_ext.menu_account_report_lu_pl
+msgid "Profit And Loss"
+msgstr "Comptes de Charges"
+
+#. module: l10n_lu_ext
 #: model:ir.actions.act_window,name:l10n_lu_ext.action_account_report_lu_pl_abr
 #: model:ir.ui.menu,name:l10n_lu_ext.menu_account_report_lu_pl_abr
 msgid "Profit And Loss (abbreviated)"
 msgstr "Comptes de Charges (abrégé)"
+
+#. module: l10n_lu_ext
+#: help:res.company,matricule:0
+msgid "Tax Identification Number delivered by the authorities as soon as the company is registered"
+msgstr "Numéro d'identification fiscale délivré par les autorités dès que la société est enregistrée"
 
