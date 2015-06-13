@@ -8,7 +8,7 @@
             <field name="inherit_id" ref="base.view_company_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='vat']" position="before">
-                    <field name="matricule" attrs="{'invisible': [('country_id', '!=', %(base.lu)d)]}"/>
+                    <field name="l10n_lu_matricule" attrs="{'invisible': [('country_id', '!=', %(base.lu)d)]}"/>
                 </xpath>
             </field>
         </record>

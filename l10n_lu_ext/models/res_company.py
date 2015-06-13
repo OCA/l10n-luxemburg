@@ -30,7 +30,7 @@ class ResCompany(models.Model):
 
     _inherit = "res.company"
 
-    matricule = fields.Char(
-        string='National Id Number', size=13,
-        help='Tax Identification Number delivered by the authorities '
+    l10n_lu_matricule = fields.Char(
+        string='Luxembourg Matricule', size=13,
+        help='Identification Number delivered by the Luxembourg authorities '
              'as soon as the company is registered')

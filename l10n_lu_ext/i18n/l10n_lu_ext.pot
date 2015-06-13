@@ -39,7 +39,7 @@ msgstr ""
 
 #. module: l10n_lu_ext
 #: field:res.company,matricule:0
-msgid "National Id Number"
+msgid "Luxembourg Matricule"
 msgstr ""
 
 #. module: l10n_lu_ext
@@ -56,6 +56,6 @@ msgstr ""
 
 #. module: l10n_lu_ext
 #: help:res.company,matricule:0
-msgid "Tax Identification Number delivered by the authorities as soon as the company is registered"
+msgid "Tax Identification Number delivered by the Luxembourg authorities as soon as the company is registered"
 msgstr ""
 

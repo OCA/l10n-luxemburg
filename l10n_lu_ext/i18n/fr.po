@@ -39,8 +39,8 @@ msgstr "Luxembourg"
 
 #. module: l10n_lu_ext
 #: field:res.company,matricule:0
-msgid "National Id Number"
-msgstr "Matricule"
+msgid "Luxembourg Matricule"
+msgstr "Luxembourg Matricule"
 
 #. module: l10n_lu_ext
 #: model:ir.actions.act_window,name:l10n_lu_ext.action_account_report_lu_pl
@@ -56,6 +56,6 @@ msgstr "Comptes de Charges (abrégé)"
 
 #. module: l10n_lu_ext
 #: help:res.company,matricule:0
-msgid "Tax Identification Number delivered by the authorities as soon as the company is registered"
-msgstr "Numéro d'identification fiscale délivré par les autorités dès que la société est enregistrée"
+msgid "Tax Identification Number delivered by the Luxembourg authorities as soon as the company is registered"
+msgstr "Numéro d'identification fiscale délivré par les autorités du Luxembourg dès que la société est enregistrée"
 
