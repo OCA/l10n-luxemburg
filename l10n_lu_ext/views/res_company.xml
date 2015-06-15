@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_company_form">
+            <field name="name">res.company.form (l10n_lu_ext)</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='vat']" position="before">
+                    <field name="l10n_lu_matricule" attrs="{'invisible': [('country_id', '!=', %(base.lu)d)]}"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

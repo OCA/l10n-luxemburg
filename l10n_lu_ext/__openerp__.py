@@ -35,6 +35,7 @@
 """,
     "data": [
         "account_financial_report_view.xml",
+        "views/res_company.xml",
     ],
     "active": False,
     "installable": True
