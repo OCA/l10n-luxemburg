@@ -165,7 +165,11 @@
       <field name="display_detail">detail_flat</field>
     </record>
 
-    <record model="account.financial.report" id="l10n_lu.account_financial_report_abr_147">
+    <record model="account.financial.report" id="l10n_lu.account_financial_report_abr_145">
+      <field name="display_detail">detail_flat</field>
+    </record>
+
+    <record model="account.financial.report" id="l10n_lu.account_financial_report_abr_146">
       <field name="display_detail">detail_flat</field>
     </record>
 
@@ -194,6 +198,14 @@
     </record>
 
     <record model="account.financial.report" id="l10n_lu.account_financial_report_abr_157">
+      <field name="display_detail">detail_flat</field>
+    </record>
+
+    <record model="account.financial.report" id="l10n_lu.account_financial_report_abr_164">
+      <field name="display_detail">detail_flat</field>
+    </record>
+
+    <record model="account.financial.report" id="l10n_lu.account_financial_report_abr_165">
       <field name="display_detail">detail_flat</field>
     </record>
 
