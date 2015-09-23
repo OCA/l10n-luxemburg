@@ -16,6 +16,7 @@ addon | version | summary
 --- | --- | ---
 [l10n_lu_ext](l10n_lu_ext/) | 0.1 | Luxembourg - Accounting - Extension
 [l10n_lu_fin_rep_details](l10n_lu_fin_rep_details/) | 0.1 | Luxembourg - Accounting - Financial Report Details
+
 [//]: # (end addons)
 
 Translation Status
