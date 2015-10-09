@@ -21,7 +21,7 @@
 
 {
     "name": "Luxembourg - Accounting - Extension",
-    "version": "0.1",
+    "version": "8.0.0.1.0",
     "author": "ACSONE SA/NV,Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "category": "Accounting & Finance",
