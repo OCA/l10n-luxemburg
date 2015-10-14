@@ -10,6 +10,13 @@ These addons complement the Odoo official l10n_lu.
 
 
 [//]: # (addons)
+Unported addons
+---------------
+addon | version | summary
+--- | --- | ---
+[l10n_lu_ext](l10n_lu_ext/) | 8.0.0.1.0 (unported) | Luxembourg - Accounting - Extension
+[l10n_lu_fin_rep_details](l10n_lu_fin_rep_details/) | 8.0.0.1.0 (unported) | Luxembourg - Accounting - Financial Report Details
+
 [//]: # (end addons)
 
 Translation Status
