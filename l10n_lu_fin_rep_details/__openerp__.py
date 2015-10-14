@@ -41,5 +41,5 @@
         "account_financial_report_abr.xml",
     ],
     "active": False,
-    "installable": True
+    'installable': False
 }
