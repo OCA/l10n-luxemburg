@@ -1,0 +1,751 @@
+# -*- coding: utf-8 -*-
+
+from datetime import datetime
+from datetime import timedelta
+from cStringIO import StringIO
+from lxml import etree
+import re as re
+import base64
+
+from openerp import models, fields, api, tools
+from openerp.exceptions import ValidationError, Warning
+from openerp.osv import osv
+from openerp.tools.safe_eval import safe_eval
+from openerp.tools.translate import _
+from openerp.addons.mis_builder.models.aep import\
+    AccountingExpressionProcessor as AEP
+from openerp.addons.mis_builder.models.accounting_none import AccountingNone
+
+
+class ecdf_mis_report(models.TransientModel):
+    '''
+    This wizard allows to generate three types of financial reports :
+        - Profit & Loss (P&L)
+        - Balance Sheet (BS)
+        - Chart of Accounts (CA)
+    P&L and BS can be generated in abbreviated version or not
+    The selected reports (max. 3) are written in a downloadable XML file
+    '''
+    _name = 'ecdf.mis.report'
+    _description = 'eCDF MIS Report Wizard'
+    _inherit = "account.common.report"
+
+    # Main info
+    language = fields.Selection(
+        (('FR', 'FR'), ('DE', 'DE'), ('EN', 'EN')),
+        'Language',
+        required=True
+    )
+    target_move = fields.Selection(
+        [('posted', 'All Posted Entries'), ('all', 'All Entries')],
+        string='Target Moves',
+        required=True,
+        default='posted'
+    )
+    # Reports types
+    with_pl = fields.Boolean('Profit & Loss',
+                             default=True)
+    with_bs = fields.Boolean('Balance Sheet',
+                             default=True)
+    with_ac = fields.Boolean('Chart of Accounts', default=True)
+    reports_type = fields.Selection((('full', 'Full'),
+                                     ('abbreviated', 'Abbreviated')),
+                                    'Reports Type',
+                                    default='full',
+                                    required=True)
+    # Fiscal years
+    current_fiscyear = fields.Many2one('account.fiscalyear',
+                                       'Current Fiscal Year',
+                                       required=True)
+    prev_fiscyear = fields.Many2one('account.fiscalyear',
+                                    'Previous Fiscal Year')
+    # Comments
+    remarks = fields.Text('Comments')
+    # Agent
+    matricule = fields.Char('Matricule',
+                            size=13)
+    vat = fields.Char("Tax ID",
+                      size=8)
+    company_registry = fields.Char('Company Registry',
+                                   size=7)
+    # File name (computed)
+    file_name = fields.Char('File name',
+                            size=24,
+                            compute='_compute_file_name')
+    full_file_name = fields.Char('Full file name',
+                                 size=28,
+                                 compute='_compute_full_file_name')
+    # File
+    xml_file = fields.Binary('XML File', readonly=True)
+
+    @api.depends('chart_account_id.company_id.ecdf_prefixe')
+    @api.multi
+    def _compute_file_name(self):
+        '''
+        000000XyyyymmddThhmmssNN
+        Position 1 - 6: eCDF prefix of the user's company
+        Position 7: file type (X for XML files)
+        Position 8 - 15: creation date of the file, format yyyymmdd
+        Position 16: the character « T » (Time)
+        Position 17 - 22: creation time of the file, format hhmmss
+        Position 23 - 24: sequence number (NN) in range (01 - 99)
+        for the unicity of the names of the files created in the same second
+        '''
+        for record in self:
+            res = ""
+            nbr = 1
+            dtf = "X%Y%m%dT%H%M%S"
+            prefixe = record.chart_account_id.company_id.ecdf_prefixe
+            if not prefixe:
+                prefixe = '000000'
+            res = prefixe + datetime.now().strftime(dtf) + str("%02d" % nbr)
+            record.file_name = res
+
+    @api.depends('file_name')
+    @api.multi
+    def _compute_full_file_name(self):
+        '''
+        Compute : file name + its extension
+        '''
+        for record in self:
+            extension = ".xml"
+            record.full_file_name = record.file_name + extension
+
+    @api.multi
+    @api.onchange('chart_account_id')
+    def _onChange_company(self):
+        '''
+        On Change : 'chart_account_id'
+        Fields 'current_fiscyear' and 'prev_fiscyear' are reset
+        '''
+        for record in self:
+            record.current_fiscyear = False
+            record.prev_fiscyear = False
+
+    @api.multi
+    @api.onchange('current_fiscyear')
+    def _onchange_current_fiscal_year(self):
+        '''
+        On Change : 'current_fiscyear'
+        The field 'prev_fiscyear' is set with the year before current_fiscyear
+        '''
+        for rec in self:
+            rec.prev_fiscyear = False
+            if rec.current_fiscyear:
+                # get the date stop
+                previous_date_stop = datetime.strftime(
+                    datetime.strptime(
+                        rec.current_fiscyear.date_start,
+                        "%Y-%m-%d"
+                    ) - timedelta(days=1),
+                    "%Y-%m-%d"
+                )
+                # search fiscal year with the previous date stop as date stop
+                rec.prev_fiscyear = rec.env['account.fiscalyear'].search(
+                    [('date_stop', '=', previous_date_stop),
+                     ('company_id', '=', rec.current_fiscyear.company_id.id)]
+                )
+
+    @api.multi
+    @api.constrains('prev_fiscyear')
+    def _check_prev_fiscyear(self):
+        '''
+        Constraint : prev_fiscyear < current_fiscyear
+        '''
+        for rec in self:
+            prev_fiscyear = rec.prev_fiscyear
+            prev_datestop = datetime.strftime(
+                datetime.strptime(
+                    rec.current_fiscyear.date_start,
+                    "%Y-%m-%d"
+                ) - timedelta(days=1),
+                "%Y-%m-%d"
+            )
+            if prev_fiscyear and prev_datestop != prev_fiscyear.date_stop:
+                raise ValidationError(
+                    "Previous fiscal year must be before current fiscal year"
+                )
+
+    @api.multi
+    def _get_ecdf_file_version(self):
+        '''
+        :returns: the XML file version
+        '''
+        return '1.1'
+
+    @api.multi
+    def _get_interface(self):
+        '''
+        :returns: eCDF interface ID (provided by eCDF)
+        '''
+        return 'COPL3'
+
+    @api.multi
+    def _get_matr_declarer(self):
+        '''
+        :returns: Luxemburg matricule of the company
+        If no matricule, ValueError exception is raised
+        '''
+        for record in self:
+            matr = record.chart_account_id.company_id.l10n_lu_matricule
+            if not matr:
+                raise ValueError("Matricule not present")
+            return matr
+
+    @api.multi
+    def _get_rcs_declarer(self):
+        '''
+        :returns: RCS number of the company, 7 characters
+        If no RCS number, default value 'NE' is returned
+        (RCS : 'Numéro de registre de Commerce et des Sociétés')
+        '''
+        for record in self:
+            rcs = record.chart_account_id.company_id.company_registry
+            if rcs:
+                return rcs
+            else:
+                return 'NE'
+
+    @api.multi
+    def _get_vat_declarer(self):
+        '''
+        :returns: VAT number of the company, 8 characters
+        If no VAT number, default value 'NE' is returned
+        '''
+        for record in self:
+            vat = record.chart_account_id.company_id.vat
+            if vat:
+                if vat.startswith('LU'):
+                    vat = vat[2:]
+                    return vat
+                else:
+                    return 'NE'
+
+    @api.multi
+    def _get_matr_agent(self):
+        '''
+        :returns: Agent matricule provided in the form
+        If no agent matricule provided, the company one is returned
+        '''
+        for record in self:
+            if self.matricule:
+                return record.matricule
+            else:
+                return record._get_matr_declarer()
+
+    @api.multi
+    def _get_rcs_agent(self):
+        '''
+        :returns: RCS number (Numéro de registre de Commerce et des Sociétés)\
+        provided in the form.
+        If no RCS number has been provided, the company one is returned
+        If no RCS number of the company, default value 'NE' is returned
+        '''
+        for record in self:
+            if record.matricule:
+                if record.company_registry:
+                    return record.company_registry
+                else:
+                    return 'NE'
+            else:
+                return record._get_rcs_declarer()
+
+    @api.multi
+    def _get_vat_agent(self):
+        '''
+        :returns: VAT number provided in the form. If no VAT number has been\
+        provided, the VAT number of the company is returned.
+        If no VAT number of the company, default value 'NE' is returned
+        '''
+        for record in self:
+            if record.matricule:
+                if record.vat:
+                    return record.vat
+                else:
+                    return 'NE'
+            else:
+                return record._get_vat_declarer()
+
+    @api.multi
+    def _get_language(self):
+        '''
+        :returns: the selected language in the form. Values can be :
+                    - "FR" for french
+                    - "DE" for german
+                    - "EN" for english
+        '''
+        for record in self:
+            return record.language
+
+    # 12. Profit/Perte de l'exercice are mandatory even if there are no moves
+    KEEP_ZERO = (
+        # CA_PLANCOMPTA
+        "639", "640", "735", "736",
+    )
+
+    def _append_num_field(self, element, ecdf, val, zero=False, comment=None):
+        '''
+        A numeric field's value can be a integer or a float
+        The only decimal separator accepted is the coma (",")
+        The point (".") is not accepted as a decimal separator nor as a \
+        thousands separator
+        :param element: XML node
+        :param ecdf: eCDF technical code
+        :param val: value to add in the XML node
+        :param zero: if True, val has to be turned into 0.0 (default False)
+        :param comment: Optional comment
+        '''
+        if (val is None or val is AccountingNone) and \
+                ecdf not in self.KEEP_ZERO:
+            return
+        # Mandatory value (keep_zero)
+        if zero or val is None or val is AccountingNone:
+            val = 0.0
+        value = round(val, 2)
+        if comment:
+            element.append(etree.Comment(comment))
+        child = etree.Element('NumericField', id=ecdf)
+        child.text = ("%.2f" % value).replace('.', ',')
+        element.append(child)
+
+    @api.multi
+    def _append_fr_lines(self, data_curr, formData, data_prev=None):
+        '''
+        Appends lines "NumericField" in the "FormData" node
+        :param data_curr: data of the previous year
+        :param formData: XML node "FormData"
+        :param data_prev: date of the previous year
+        '''
+        # Regex : group('current') : ecdf_code for current year
+        #         group('previous') : ecdf_code for previous year
+        exp = r"""^ecdf\_(?P<previous>\d*)\_(?P<current>\d*)"""
+        rexp = re.compile(exp, re.X)
+        for record in self:
+            for report in data_curr['content']:
+                if not report['kpi_technical_name']:
+                    continue
+                line_match = rexp.match(report['kpi_technical_name'])
+                if line_match:
+                    ecdf_code = line_match.group('current')
+                    record._append_num_field(
+                        formData,
+                        ecdf_code,
+                        report['cols'][0]['val'] or 0.0,
+                        comment=" current - %s " % report['kpi_name']
+                    )
+            if data_prev:  # Previous fiscal year
+                for report in data_prev['content']:
+                    if not report['kpi_technical_name']:
+                        continue
+                    line_match = rexp.match(report['kpi_technical_name'])
+                    if line_match:
+                        ecdf_code = line_match.group('previous')
+                        record._append_num_field(
+                            formData,
+                            ecdf_code,
+                            report['cols'][0]['val'] or 0.0,
+                            comment=" previous - %s " % report['kpi_name']
+                        )
+            else:  # No Previous fical year
+                formData.append(etree.Comment(" no previous year"))
+                for report in data_curr['content']:
+                    if not report['kpi_technical_name']:
+                        continue
+                    line_match = rexp.match(report['kpi_technical_name'])
+                    if line_match:
+                        ecdf_code = line_match.group('previous')
+                        record._append_num_field(formData,
+                                                 ecdf_code,
+                                                 report['cols'][0]['val'],
+                                                 zero=True)
+
+    @api.multi
+    def _get_finan_report(self, data_current, report_type, data_previous=None):
+        '''
+        Generates a financial report (P&L or Balance Sheet) in XML format
+        :param data_current: dictionary of data of the current year
+        :param report_type: technical name of the report type
+        :param data_previous: dictionary of data of the previous year
+        :returns: XML node called "declaration"
+        '''
+        for record in self:
+            period_ids = (self.env['account.period'].search(
+                [('special', '=', False),
+                 ('fiscalyear_id', '=', record.current_fiscyear.id)]
+            )).sorted(key=lambda r: r.date_start)
+            period_from = period_ids[0]
+            period_to = period_ids[-1]
+            currency = record.chart_account_id.company_id.currency_id
+            declaration = etree.Element('Declaration',
+                                        type=report_type,
+                                        language=record._get_language(),
+                                        model='1')
+            year = etree.Element('Year')
+            year.text = datetime.strptime(period_from.date_start,
+                                          "%Y-%m-%d").strftime("%Y")
+            period = etree.Element('Period')
+            period.text = '1'
+            formData = etree.Element('FormData')
+            tfid = etree.Element('TextField', id='01')
+            tfid.text = datetime.strptime(period_from.date_start,
+                                          "%Y-%m-%d").strftime("%d/%m/%Y")
+            formData.append(tfid)
+            tfid = etree.Element('TextField', id='02')
+            tfid.text = datetime.strptime(period_to.date_stop,
+                                          "%Y-%m-%d").strftime("%d/%m/%Y")
+            formData.append(tfid)
+            tfid = etree.Element('TextField', id='03')
+            tfid.text = currency.name
+            formData.append(tfid)
+
+            record._append_fr_lines(data_current,
+                                    formData,
+                                    data_previous)
+
+            declaration.append(year)
+            declaration.append(period)
+            declaration.append(formData)
+
+            return declaration
+
+    @api.multi
+    def _get_chart_ac(self, data, report_type):
+        '''
+        Generates the chart of accounts in XML format
+        :param data: Dictionary of values (name, technical name, value)
+        :param report_type: Technical name of the report type
+        :returns: XML node called "declaration"
+        '''
+        # Regex : group('debit') : ecdf_code for debit column
+        #         group('credit') ecdf_code for credit column
+        exp = r"""^ecdf\_(?P<debit>\d*)\_(?P<credit>\d*)"""
+        rexp = re.compile(exp, re.X)
+
+        for record in self:
+            period_ids = (self.env['account.period'].search(
+                [('special', '=', False),
+                 ('fiscalyear_id', '=', record.current_fiscyear.id)]
+            )).sorted(key=lambda r: r.date_start)
+            period_from = period_ids[0]
+            period_to = period_ids[-1]
+            currency = record.chart_account_id.company_id.currency_id
+            declaration = etree.Element('Declaration',
+                                        type=report_type,
+                                        language=record._get_language(),
+                                        model='1')
+            year = etree.Element('Year')
+            year.text = datetime.strptime(period_from.date_start,
+                                          "%Y-%m-%d").strftime("%Y")
+            period = etree.Element('Period')
+            period.text = '1'
+            formData = etree.Element('FormData')
+            tfid = etree.Element('TextField', id='01')
+            tfid.text = datetime.strptime(period_from.date_start,
+                                          "%Y-%m-%d").strftime("%d/%m/%Y")
+            formData.append(tfid)
+            tfid = etree.Element('TextField', id='02')
+            tfid.text = datetime.strptime(period_to.date_stop,
+                                          "%Y-%m-%d").strftime("%d/%m/%Y")
+            formData.append(tfid)
+            tfid = etree.Element('TextField', id='03')
+            tfid.text = currency.name
+            formData.append(tfid)
+
+            if record.remarks:  # add remarks in chart of accounts
+                fid = etree.Element('TextField', id='2385')
+                fid.text = record.remarks
+                formData.append(fid)
+
+            for report in data['content']:
+                if not report['kpi_technical_name']:
+                    continue
+                line_match = rexp.match(report['kpi_technical_name'])
+                if line_match:
+                    if report['cols'][0]['val'] is not AccountingNone:
+                        balance = round(report['cols'][0]['val'], 2)
+                        if balance <= 0:  # 0.0 must be in the credit column
+                            ecdf_code = line_match.group('credit')
+                            balance = abs(balance)
+                            comment = 'credit'
+                        else:
+                            ecdf_code = line_match.group('debit')
+                            comment = 'debit'
+
+                        # code 106 appears 2 times in the chart of accounts
+                        # with different ecdf codes
+                        # so we hard-code it here:
+                        # this is the only exception to the general algorithm
+                        if report['kpi_name'][:5] == '106 -':
+                            if balance <= 0.0:
+                                ecdf_codes = ['0118', '2260']
+                            else:
+                                ecdf_codes = ['0117', '2259']
+
+                            record._append_num_field(
+                                formData, ecdf_codes[0], balance,
+                                comment=" %s - %s " % (comment,
+                                                       report['kpi_name'])
+                            )
+                            record._append_num_field(
+                                formData, ecdf_codes[1], balance,
+                                comment=" %s - %s " % (comment,
+                                                       report['kpi_name'])
+                            )
+
+                        record._append_num_field(
+                            formData, ecdf_code, balance,
+                            comment=" %s - %s " % (comment, report['kpi_name'])
+                        )
+
+            declaration.append(year)
+            declaration.append(period)
+            declaration.append(formData)
+
+            return declaration
+
+    def compute_period(self, fiscal_year, kpi_ids, aep):
+        '''
+        Computes the value of the kpi's for the specified period
+        :param fiscal_year: Fiscal year to take into account
+        :param kpi_ids: List of KPI's
+        :param aep: Accounting Expression Processor
+        :returns: Dictionary of values by KPI names
+        '''
+        res = {}
+
+        localdict = {
+            'registry': self.pool,
+            'AccountingNone': AccountingNone,
+        }
+
+        # localdict.update(period._fetch_queries())
+
+        period_from = None
+        period_to = None
+        period_ids = (self.env['account.period'].search(
+            [('special', '=', False), ('fiscalyear_id', '=', fiscal_year.id)])
+        ).sorted(key=lambda r: r.date_start)
+        if period_ids:
+            period_from = period_ids[0]
+            period_to = period_ids[-1]
+        aep.do_queries(fiscal_year.date_start, fiscal_year.date_stop,
+                       period_from, period_to,
+                       self.target_move,
+                       [])
+
+        compute_queue = kpi_ids
+        recompute_queue = []
+        while True:
+            for kpi in compute_queue:
+                try:
+                    kpi_eval_expression = aep.replace_expr(kpi.expression)
+                    kpi_val = safe_eval(kpi_eval_expression, localdict)
+                except (NameError, ValueError):
+                    recompute_queue.append(kpi)
+                    kpi_val = None
+                except:
+                    kpi_val = None
+
+                localdict[kpi.name] = kpi_val
+
+                res[kpi.name] = {
+                    'val': kpi_val,
+                }
+
+            if len(recompute_queue) == 0:
+                # nothing to recompute, we are done
+                break
+            if len(recompute_queue) == len(compute_queue):
+                # could not compute anything in this iteration
+                # (ie real Value errors or cyclic dependency)
+                # so we stop trying
+                break
+            # try again
+            compute_queue = recompute_queue
+            recompute_queue = []
+
+        return res
+
+    @api.multi
+    def compute(self, mis_template, fiscal_year):
+        '''
+        Builds the "content" dictionary, with name, technical name and values\
+        for each KPI expression
+        :param mis_template: template MIS Builder of the report
+        :param fiscal_year: fiscal year to compute
+        :returns: computed content dictionary
+        '''
+        for record in self:
+            # prepare AccountingExpressionProcessor
+            aep = AEP(record.env)
+            for kpi in mis_template.kpi_ids:
+                aep.parse_expr(kpi.expression)
+            aep.done_parsing(record.chart_account_id)
+            kpi_values = record.compute_period(fiscal_year,
+                                               mis_template.kpi_ids,
+                                               aep)
+
+            # prepare content
+            content = []
+            rows_by_kpi_name = {}
+            for kpi in mis_template.kpi_ids:
+                rows_by_kpi_name[kpi.name] = {
+                    'kpi_name': kpi.description,
+                    'kpi_technical_name': kpi.name,
+                    'cols': [],
+                }
+                content.append(rows_by_kpi_name[kpi.name])
+
+            # add kpi values
+            for kpi_name in kpi_values:
+                rows_by_kpi_name[kpi_name]['cols'].append(kpi_values[kpi_name])
+
+        return {'content': content}
+
+    @api.multi
+    def print_xml(self):
+        '''
+        Generates the selected financial reports in XML format
+        The string is written in the base64 field "xml_file"
+        '''
+        for record in self:
+            ECDF_NAMESPACE = "http://www.ctie.etat.lu/2011/ecdf"
+            NSMAP = {None: ECDF_NAMESPACE}  # the default namespace(no prefix)
+
+            root = etree.Element("eCDFDeclarations", nsmap=NSMAP)
+
+            # File Reference
+            fileReference = etree.Element('FileReference')
+            fileReference.text = record.file_name
+            root.append(fileReference)
+            # File Version
+            fileVersion = etree.Element('eCDFFileVersion')
+            fileVersion.text = record._get_ecdf_file_version()
+            root.append(fileVersion)
+            # Interface
+            interface = etree.Element('Interface')
+            interface.text = record._get_interface()
+            root.append(interface)
+            # Agent
+            agent = etree.Element('Agent')
+            matrAgent = etree.Element('MatrNbr')
+            matrAgent.text = record._get_matr_agent()
+            rcsAgent = etree.Element('RCSNbr')
+            rcsAgent.text = record._get_rcs_agent()
+            vatAgent = etree.Element('VATNbr')
+            vatAgent.text = record._get_vat_agent()
+            agent.append(matrAgent)
+            agent.append(rcsAgent)
+            agent.append(vatAgent)
+            root.append(agent)
+            # Declarations
+            declarations = etree.Element('Declarations')
+            declarer = etree.Element('Declarer')
+            matrDeclarer = etree.Element('MatrNbr')
+            matrDeclarer.text = record._get_matr_declarer()
+            rcsDeclarer = etree.Element('RCSNbr')
+            rcsDeclarer.text = record._get_rcs_declarer()
+            vatDeclarer = etree.Element('VATNbr')
+            vatDeclarer.text = record._get_vat_declarer()
+            declarer.append(matrDeclarer)
+            declarer.append(rcsDeclarer)
+            declarer.append(vatDeclarer)
+
+            reports = []
+            templ = {
+                'CA_PLANCOMPTA': 'Luxembourg Chart of Accounts',
+                'CA_BILAN': 'Luxembourg Balance Sheet',
+                'CA_BILANABR': 'Luxembourg Balance Sheet (abbreviated)',
+                'CA_COMPP': 'Luxembourg Profit & Loss',
+                'CA_COMPPABR': 'Luxembourg Profit & Loss (abbreviated)',
+            }
+
+            # Report
+            if record.with_ac:  # Chart of Accounts
+                reports.append({'type': 'CA_PLANCOMPTA',
+                                'templ': templ['CA_PLANCOMPTA']})
+            if record.with_bs:  # Balance Sheet
+                if record.reports_type == 'full':
+                    reports.append({'type': 'CA_BILAN',
+                                    'templ': templ['CA_BILAN']})
+                else:  # Balance Sheet abreviated
+                    reports.append({'type': 'CA_BILANABR',
+                                    'templ': templ['CA_BILANABR']})
+            if record.with_pl:  # Profit and Loss
+                if record.reports_type == 'full':
+                    reports.append({'type': 'CA_COMPP',
+                                    'templ': templ['CA_COMPP']})
+                else:  # Profit and Loss abreviated
+                    reports.append({'type': 'CA_COMPPABR',
+                                    'templ': templ['CA_COMPPABR']})
+
+            if not reports:
+                raise osv.except_osv(_('Error'), _('No report type selected'))
+
+            error_not_found = ""
+            for report in reports:
+                mis_report = record.env['mis.report'].search([('name',
+                                                               '=',
+                                                               report['templ']
+                                                               )])
+
+                # If the MIS template has not been found
+                if not mis_report or not len(mis_report):
+                    error_not_found += '\n\t - ' + report['templ']
+
+                data_current = record.compute(mis_report,
+                                              record.current_fiscyear)
+                data_previous = None
+                if report['type'] != 'CA_PLANCOMPTA':
+                    if record.prev_fiscyear:  # Previous year
+                        data_previous = record.compute(mis_report,
+                                                       record.prev_fiscyear)
+                    declarer.append(record._get_finan_report(data_current,
+                                                             report['type'],
+                                                             data_previous))
+                else:  # Chart of accounts
+                    declarer.append(record._get_chart_ac(data_current,
+                                                         report['type']
+                                                         )
+                                    )
+
+            # Warning message if template(s) not found
+            if error_not_found:
+                raise Warning(
+                    'MIS Template(s) not found :',
+                    error_not_found
+                )
+
+            # Declarer
+            declarations.append(declarer)
+            root.append(declarations)
+
+            # Write the xml
+            xml = etree.tostring(root, encoding='UTF-8', xml_declaration=True)
+            # Validate the generated XML schema
+            xsd = tools.file_open('l10n_lu_mis_ecdf/xsd/ecdf-v1.1.xsd')
+            xmlschema_doc = etree.parse(xsd)
+            xmlschema = etree.XMLSchema(xmlschema_doc)
+            # Reparse only to have line numbers in error messages?
+            xml_to_validate = StringIO(xml)
+            parse_result = etree.parse(xml_to_validate)
+            # Validation
+            if xmlschema.validate(parse_result):
+                record.xml_file = base64.encodestring(xml)
+                return {
+                    'name': 'eCDF MIS Report',
+                    'type': 'ir.actions.act_window',
+                    'res_model': 'ecdf.mis.report',
+                    'view_mode': 'form',
+                    'view_type': 'form',
+                    'res_id': record.id,
+                    'views': [(False, 'form')],
+                    'target': 'new',
+                }
+            else:
+                error = xmlschema.error_log[0]
+                raise osv.except_osv(
+                    _('The generated XML file does not fit the\
+                    required schema !'),
+                    error.message
+                )
