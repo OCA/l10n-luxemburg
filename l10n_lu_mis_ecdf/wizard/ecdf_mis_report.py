@@ -653,11 +653,11 @@ class ecdf_mis_report(models.TransientModel):
 
             reports = []
             templ = {
-                'CA_PLANCOMPTA': 'Luxembourg Chart of Accounts',
-                'CA_BILAN': 'Luxembourg Balance Sheet',
-                'CA_BILANABR': 'Luxembourg Balance Sheet (abbreviated)',
-                'CA_COMPP': 'Luxembourg Profit & Loss',
-                'CA_COMPPABR': 'Luxembourg Profit & Loss (abbreviated)',
+                'CA_PLANCOMPTA': 'l10n_lu_mis_reports.mis_report_ca',
+                'CA_BILAN': 'l10n_lu_mis_reports.mis_report_bs',
+                'CA_BILANABR': 'l10n_lu_mis_reports.mis_report_abr_bs',
+                'CA_COMPP': 'l10n_lu_mis_reports.mis_report_pl',
+                'CA_COMPPABR': 'l10n_lu_mis_reports.mis_report_abr_pl',
             }
 
             # Report
@@ -684,10 +684,10 @@ class ecdf_mis_report(models.TransientModel):
 
             error_not_found = ""
             for report in reports:
-                mis_report = record.env['mis.report'].search([('name',
-                                                               '=',
-                                                               report['templ']
-                                                               )])
+                # Search MIS template by XML ID
+                mis_env = record.env['mis.report']
+                id_mis_report = record.env.ref(report['templ']).id
+                mis_report = mis_env.search([('id', '=', id_mis_report)])
 
                 # If the MIS template has not been found
                 if not mis_report or not len(mis_report):
@@ -696,6 +696,7 @@ class ecdf_mis_report(models.TransientModel):
                 data_current = record.compute(mis_report,
                                               record.current_fiscyear)
                 data_previous = None
+
                 if report['type'] != 'CA_PLANCOMPTA':
                     if record.prev_fiscyear:  # Previous year
                         data_previous = record.compute(mis_report,
