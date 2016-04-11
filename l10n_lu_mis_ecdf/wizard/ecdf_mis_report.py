@@ -10,7 +10,6 @@ import base64
 from openerp import models, fields, api, tools
 from openerp.exceptions import ValidationError, Warning
 from openerp.osv import osv
-from openerp.tools.safe_eval import safe_eval
 from openerp.tools.translate import _
 from openerp.addons.mis_builder.models.aep import\
     AccountingExpressionProcessor as AEP
@@ -503,69 +502,6 @@ class ecdf_mis_report(models.TransientModel):
 
             return declaration
 
-    def compute_period(self, fiscal_year, kpi_ids, aep):
-        '''
-        Computes the value of the kpi's for the specified period
-        :param fiscal_year: Fiscal year to take into account
-        :param kpi_ids: List of KPI's
-        :param aep: Accounting Expression Processor
-        :returns: Dictionary of values by KPI names
-        '''
-        res = {}
-
-        localdict = {
-            'registry': self.pool,
-            'AccountingNone': AccountingNone,
-        }
-
-        # localdict.update(period._fetch_queries())
-
-        period_from = None
-        period_to = None
-        period_ids = (self.env['account.period'].search(
-            [('special', '=', False), ('fiscalyear_id', '=', fiscal_year.id)])
-        ).sorted(key=lambda r: r.date_start)
-        if period_ids:
-            period_from = period_ids[0]
-            period_to = period_ids[-1]
-        aep.do_queries(fiscal_year.date_start, fiscal_year.date_stop,
-                       period_from, period_to,
-                       self.target_move,
-                       [])
-
-        compute_queue = kpi_ids
-        recompute_queue = []
-        while True:
-            for kpi in compute_queue:
-                try:
-                    kpi_eval_expression = aep.replace_expr(kpi.expression)
-                    kpi_val = safe_eval(kpi_eval_expression, localdict)
-                except (NameError, ValueError):
-                    recompute_queue.append(kpi)
-                    kpi_val = None
-                except:
-                    kpi_val = None
-
-                localdict[kpi.name] = kpi_val
-
-                res[kpi.name] = {
-                    'val': kpi_val,
-                }
-
-            if len(recompute_queue) == 0:
-                # nothing to recompute, we are done
-                break
-            if len(recompute_queue) == len(compute_queue):
-                # could not compute anything in this iteration
-                # (ie real Value errors or cyclic dependency)
-                # so we stop trying
-                break
-            # try again
-            compute_queue = recompute_queue
-            recompute_queue = []
-
-        return res
-
     @api.multi
     def compute(self, mis_template, fiscal_year):
         '''
@@ -581,10 +517,25 @@ class ecdf_mis_report(models.TransientModel):
             for kpi in mis_template.kpi_ids:
                 aep.parse_expr(kpi.expression)
             aep.done_parsing(record.chart_account_id)
-            kpi_values = record.compute_period(fiscal_year,
-                                               mis_template.kpi_ids,
-                                               aep)
+            # Search periods
+            period_from = None
+            period_to = None
+            period_ids = (self.env['account.period'].search(
+                [('special', '=', False),
+                 ('fiscalyear_id', '=', fiscal_year.id)])
+            ).sorted(key=lambda r: r.date_start)
+            if period_ids:
+                period_from = period_ids[0]
+                period_to = period_ids[-1]
 
+            # Compute KPI values
+            kpi_values = mis_template._compute(self.env.lang, aep,
+                                               fiscal_year.date_start,
+                                               fiscal_year.date_stop,
+                                               period_from,
+                                               period_to,
+                                               record.target_move
+                                               )
             # prepare content
             content = []
             rows_by_kpi_name = {}
