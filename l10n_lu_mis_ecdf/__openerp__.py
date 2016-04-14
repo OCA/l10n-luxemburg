@@ -2,11 +2,10 @@
     "name": "Luxembourg - Accounting - MIS - eCDF",
     "version": "8.0.1.0.0",
     "author": "ACSONE SA/NV",
-    "license": "Other proprietary",
+    "license": "AGPL-3",
     "category": "Accounting & Finance",
     "website": "http://acsone.eu",
-    "depends": ["l10n_lu_ext",
-                "l10n_lu_mis_reports"],
+    "depends": ["l10n_lu_mis_reports"],
     "module": "",
     "summary": "Generates eCDF financial reports with MIS Builder",
     "data": [
