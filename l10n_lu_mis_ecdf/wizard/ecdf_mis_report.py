@@ -460,7 +460,7 @@ class ecdf_mis_report(models.TransientModel):
                     continue
                 line_match = rexp.match(report['kpi_technical_name'])
                 if line_match:
-                    if report['cols'][0]['val'] is not AccountingNone:
+                    if report['cols'][0]['val'] not in [AccountingNone, None]:
                         balance = round(report['cols'][0]['val'], 2)
                         if balance <= 0:  # 0.0 must be in the credit column
                             ecdf_code = line_match.group('credit')
