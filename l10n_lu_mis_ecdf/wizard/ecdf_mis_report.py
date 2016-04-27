@@ -428,7 +428,7 @@ class EcdfMisReport(models.TransientModel):
                                           "%Y-%m-%d").strftime("%Y")
             period = etree.Element('Period')
             period.text = '1'
-            form_data = etree.Element('form_data')
+            form_data = etree.Element('FormData')
             tfid = etree.Element('TextField', id='01')
             tfid.text = datetime.strptime(period_from.date_start,
                                           "%Y-%m-%d").strftime("%d/%m/%Y")
@@ -481,7 +481,7 @@ class EcdfMisReport(models.TransientModel):
                                           "%Y-%m-%d").strftime("%Y")
             period = etree.Element('Period')
             period.text = '1'
-            form_data = etree.Element('form_data')
+            form_data = etree.Element('FormData')
             tfid = etree.Element('TextField', id='01')
             tfid.text = datetime.strptime(period_from.date_start,
                                           "%Y-%m-%d").strftime("%d/%m/%Y")
@@ -609,11 +609,11 @@ class EcdfMisReport(models.TransientModel):
             root = etree.Element("eCDFDeclarations", nsmap=NSMAP)
 
             # File Reference
-            file_reference = etree.Element('file_reference')
+            file_reference = etree.Element('FileReference')
             file_reference.text = record.file_name
             root.append(file_reference)
             # File Version
-            file_version = etree.Element('eCDFfile_version')
+            file_version = etree.Element('eCDFFileVersion')
             file_version.text = record.get_ecdf_file_version()
             root.append(file_version)
             # Interface
