@@ -76,6 +76,44 @@ class ecdf_mis_report(models.TransientModel):
                                  compute='_compute_full_file_name')
     # File
     xml_file = fields.Binary('XML File', readonly=True)
+    
+    @api.multi
+    @api.constrains('matricule')
+    def check_matr(self):
+        '''
+        Constraint : lenght of Matricule must be 11 or 13
+        '''
+        for record in self:
+            if record.matricule and len(record.matricule) not in [11, 13]:
+                raise ValidationError('Matricule must be 11 or 13 characters \
+                long.')
+
+    @api.multi
+    @api.constrains('company_registry')
+    def check_rcs(self):
+        '''
+        Constraint : regex validation on RCS Number
+        '''
+        exp = r"""^[A-Z][^0]\d{1,5}"""
+        rexp = re.compile(exp, re.X)
+        for record in self:
+            if record.company_registry and not rexp.match(record.company_registry):
+                raise ValidationError('RCS number must begin with an uppercase\
+                 letter followed by 2 to 6 digits. The first digit must not be\
+                  0.')
+
+    @api.multi
+    @api.constrains('vat')
+    def check_vat(self):
+        '''
+        Constraint : regex validation on VAT Number
+        '''
+        exp = r"""^[A-Z]{2}\d{8}"""
+        rexp = re.compile(exp, re.X)
+        for record in self:
+            if record.vat and not rexp.match(record.vat):
+                raise ValidationError('VAT number must begin with two \
+                uppercase letters followed by 8 digits.')
 
     @api.depends('chart_account_id.company_id.ecdf_prefixe')
     @api.multi
