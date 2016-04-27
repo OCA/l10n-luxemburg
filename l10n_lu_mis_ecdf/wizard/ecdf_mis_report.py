@@ -3,10 +3,10 @@
 from datetime import datetime
 from datetime import timedelta
 from cStringIO import StringIO
-from lxml import etree
 import re as re
 import base64
 
+from lxml import etree
 from openerp import models, fields, api, tools
 from openerp.exceptions import ValidationError, Warning
 from openerp.osv import osv
@@ -16,7 +16,7 @@ from openerp.addons.mis_builder.models.aep import\
 from openerp.addons.mis_builder.models.accounting_none import AccountingNone
 
 
-class ecdf_mis_report(models.TransientModel):
+class EcdfMisReport(models.TransientModel):
     '''
     This wizard allows to generate three types of financial reports :
         - Profit & Loss (P&L)
@@ -76,7 +76,7 @@ class ecdf_mis_report(models.TransientModel):
                                  compute='_compute_full_file_name')
     # File
     xml_file = fields.Binary('XML File', readonly=True)
-    
+
     @api.multi
     @api.constrains('matricule')
     def check_matr(self):
@@ -84,7 +84,9 @@ class ecdf_mis_report(models.TransientModel):
         Constraint : lenght of Matricule must be 11 or 13
         '''
         for record in self:
-            if record.matricule and len(record.matricule) not in [11, 13]:
+            if not record.matricule:
+                return
+            if len(record.matricule) not in [11, 13]:
                 raise ValidationError('Matricule must be 11 or 13 characters \
                 long.')
 
@@ -97,7 +99,9 @@ class ecdf_mis_report(models.TransientModel):
         exp = r"""^[A-Z][^0]\d{1,5}"""
         rexp = re.compile(exp, re.X)
         for record in self:
-            if record.company_registry and not rexp.match(record.company_registry):
+            if not record.company_registry:
+                return
+            if not rexp.match(record.company_registry):
                 raise ValidationError('RCS number must begin with an uppercase\
                  letter followed by 2 to 6 digits. The first digit must not be\
                   0.')
@@ -111,7 +115,9 @@ class ecdf_mis_report(models.TransientModel):
         exp = r"""^[A-Z]{2}\d{8}"""
         rexp = re.compile(exp, re.X)
         for record in self:
-            if record.vat and not rexp.match(record.vat):
+            if not record.vat:
+                return
+            if not rexp.match(record.vat):
                 raise ValidationError('VAT number must begin with two \
                 uppercase letters followed by 8 digits.')
 
@@ -150,7 +156,7 @@ class ecdf_mis_report(models.TransientModel):
 
     @api.multi
     @api.onchange('chart_account_id')
-    def _onChange_company(self):
+    def _onchange_company(self):
         '''
         On Change : 'chart_account_id'
         Fields 'current_fiscyear' and 'prev_fiscyear' are reset
@@ -204,21 +210,21 @@ class ecdf_mis_report(models.TransientModel):
                 )
 
     @api.multi
-    def _get_ecdf_file_version(self):
+    def get_ecdf_file_version(self):
         '''
         :returns: the XML file version
         '''
         return '1.1'
 
     @api.multi
-    def _get_interface(self):
+    def get_interface(self):
         '''
         :returns: eCDF interface ID (provided by eCDF)
         '''
         return 'COPL3'
 
     @api.multi
-    def _get_matr_declarer(self):
+    def get_matr_declarer(self):
         '''
         :returns: Luxemburg matricule of the company
         If no matricule, ValueError exception is raised
@@ -230,7 +236,7 @@ class ecdf_mis_report(models.TransientModel):
             return matr
 
     @api.multi
-    def _get_rcs_declarer(self):
+    def get_rcs_declarer(self):
         '''
         :returns: RCS number of the company, 7 characters
         If no RCS number, default value 'NE' is returned
@@ -244,7 +250,7 @@ class ecdf_mis_report(models.TransientModel):
                 return 'NE'
 
     @api.multi
-    def _get_vat_declarer(self):
+    def get_vat_declarer(self):
         '''
         :returns: VAT number of the company, 8 characters
         If no VAT number, default value 'NE' is returned
@@ -259,7 +265,7 @@ class ecdf_mis_report(models.TransientModel):
                     return 'NE'
 
     @api.multi
-    def _get_matr_agent(self):
+    def get_matr_agent(self):
         '''
         :returns: Agent matricule provided in the form
         If no agent matricule provided, the company one is returned
@@ -268,10 +274,10 @@ class ecdf_mis_report(models.TransientModel):
             if self.matricule:
                 return record.matricule
             else:
-                return record._get_matr_declarer()
+                return record.get_matr_declarer()
 
     @api.multi
-    def _get_rcs_agent(self):
+    def get_rcs_agent(self):
         '''
         :returns: RCS number (Numéro de registre de Commerce et des Sociétés)\
         provided in the form.
@@ -285,10 +291,10 @@ class ecdf_mis_report(models.TransientModel):
                 else:
                     return 'NE'
             else:
-                return record._get_rcs_declarer()
+                return record.get_rcs_declarer()
 
     @api.multi
-    def _get_vat_agent(self):
+    def get_vat_agent(self):
         '''
         :returns: VAT number provided in the form. If no VAT number has been\
         provided, the VAT number of the company is returned.
@@ -301,10 +307,10 @@ class ecdf_mis_report(models.TransientModel):
                 else:
                     return 'NE'
             else:
-                return record._get_vat_declarer()
+                return record.get_vat_declarer()
 
     @api.multi
-    def _get_language(self):
+    def get_language(self):
         '''
         :returns: the selected language in the form. Values can be :
                     - "FR" for french
@@ -346,11 +352,11 @@ class ecdf_mis_report(models.TransientModel):
         element.append(child)
 
     @api.multi
-    def _append_fr_lines(self, data_curr, formData, data_prev=None):
+    def _append_fr_lines(self, data_curr, form_data, data_prev=None):
         '''
-        Appends lines "NumericField" in the "FormData" node
+        Appends lines "NumericField" in the "form_data" node
         :param data_curr: data of the previous year
-        :param formData: XML node "FormData"
+        :param form_data: XML node "form_data"
         :param data_prev: date of the previous year
         '''
         # Regex : group('current') : ecdf_code for current year
@@ -365,7 +371,7 @@ class ecdf_mis_report(models.TransientModel):
                 if line_match:
                     ecdf_code = line_match.group('current')
                     record._append_num_field(
-                        formData,
+                        form_data,
                         ecdf_code,
                         report['cols'][0]['val'] or 0.0,
                         comment=" current - %s " % report['kpi_name']
@@ -378,20 +384,20 @@ class ecdf_mis_report(models.TransientModel):
                     if line_match:
                         ecdf_code = line_match.group('previous')
                         record._append_num_field(
-                            formData,
+                            form_data,
                             ecdf_code,
                             report['cols'][0]['val'] or 0.0,
                             comment=" previous - %s " % report['kpi_name']
                         )
             else:  # No Previous fical year
-                formData.append(etree.Comment(" no previous year"))
+                form_data.append(etree.Comment(" no previous year"))
                 for report in data_curr['content']:
                     if not report['kpi_technical_name']:
                         continue
                     line_match = rexp.match(report['kpi_technical_name'])
                     if line_match:
                         ecdf_code = line_match.group('previous')
-                        record._append_num_field(formData,
+                        record._append_num_field(form_data,
                                                  ecdf_code,
                                                  report['cols'][0]['val'],
                                                  zero=True)
@@ -415,33 +421,33 @@ class ecdf_mis_report(models.TransientModel):
             currency = record.chart_account_id.company_id.currency_id
             declaration = etree.Element('Declaration',
                                         type=report_type,
-                                        language=record._get_language(),
+                                        language=record.get_language(),
                                         model='1')
             year = etree.Element('Year')
             year.text = datetime.strptime(period_from.date_start,
                                           "%Y-%m-%d").strftime("%Y")
             period = etree.Element('Period')
             period.text = '1'
-            formData = etree.Element('FormData')
+            form_data = etree.Element('form_data')
             tfid = etree.Element('TextField', id='01')
             tfid.text = datetime.strptime(period_from.date_start,
                                           "%Y-%m-%d").strftime("%d/%m/%Y")
-            formData.append(tfid)
+            form_data.append(tfid)
             tfid = etree.Element('TextField', id='02')
             tfid.text = datetime.strptime(period_to.date_stop,
                                           "%Y-%m-%d").strftime("%d/%m/%Y")
-            formData.append(tfid)
+            form_data.append(tfid)
             tfid = etree.Element('TextField', id='03')
             tfid.text = currency.name
-            formData.append(tfid)
+            form_data.append(tfid)
 
             record._append_fr_lines(data_current,
-                                    formData,
+                                    form_data,
                                     data_previous)
 
             declaration.append(year)
             declaration.append(period)
-            declaration.append(formData)
+            declaration.append(form_data)
 
             return declaration
 
@@ -468,30 +474,30 @@ class ecdf_mis_report(models.TransientModel):
             currency = record.chart_account_id.company_id.currency_id
             declaration = etree.Element('Declaration',
                                         type=report_type,
-                                        language=record._get_language(),
+                                        language=record.get_language(),
                                         model='1')
             year = etree.Element('Year')
             year.text = datetime.strptime(period_from.date_start,
                                           "%Y-%m-%d").strftime("%Y")
             period = etree.Element('Period')
             period.text = '1'
-            formData = etree.Element('FormData')
+            form_data = etree.Element('form_data')
             tfid = etree.Element('TextField', id='01')
             tfid.text = datetime.strptime(period_from.date_start,
                                           "%Y-%m-%d").strftime("%d/%m/%Y")
-            formData.append(tfid)
+            form_data.append(tfid)
             tfid = etree.Element('TextField', id='02')
             tfid.text = datetime.strptime(period_to.date_stop,
                                           "%Y-%m-%d").strftime("%d/%m/%Y")
-            formData.append(tfid)
+            form_data.append(tfid)
             tfid = etree.Element('TextField', id='03')
             tfid.text = currency.name
-            formData.append(tfid)
+            form_data.append(tfid)
 
             if record.remarks:  # add remarks in chart of accounts
                 fid = etree.Element('TextField', id='2385')
                 fid.text = record.remarks
-                formData.append(fid)
+                form_data.append(fid)
 
             for report in data['content']:
                 if not report['kpi_technical_name']:
@@ -519,24 +525,24 @@ class ecdf_mis_report(models.TransientModel):
                                 ecdf_codes = ['0117', '2259']
 
                             record._append_num_field(
-                                formData, ecdf_codes[0], balance,
+                                form_data, ecdf_codes[0], balance,
                                 comment=" %s - %s " % (comment,
                                                        report['kpi_name'])
                             )
                             record._append_num_field(
-                                formData, ecdf_codes[1], balance,
+                                form_data, ecdf_codes[1], balance,
                                 comment=" %s - %s " % (comment,
                                                        report['kpi_name'])
                             )
 
                         record._append_num_field(
-                            formData, ecdf_code, balance,
+                            form_data, ecdf_code, balance,
                             comment=" %s - %s " % (comment, report['kpi_name'])
                         )
 
             declaration.append(year)
             declaration.append(period)
-            declaration.append(formData)
+            declaration.append(form_data)
 
             return declaration
 
@@ -561,7 +567,7 @@ class ecdf_mis_report(models.TransientModel):
             period_ids = (self.env['account.period'].search(
                 [('special', '=', False),
                  ('fiscalyear_id', '=', fiscal_year.id)])
-            ).sorted(key=lambda r: r.date_start)
+                          ).sorted(key=lambda r: r.date_start)
             if period_ids:
                 period_from = period_ids[0]
                 period_to = period_ids[-1]
@@ -572,8 +578,7 @@ class ecdf_mis_report(models.TransientModel):
                                                fiscal_year.date_stop,
                                                period_from,
                                                period_to,
-                                               record.target_move
-                                               )
+                                               record.target_move)
             # prepare content
             content = []
             rows_by_kpi_name = {}
@@ -604,41 +609,41 @@ class ecdf_mis_report(models.TransientModel):
             root = etree.Element("eCDFDeclarations", nsmap=NSMAP)
 
             # File Reference
-            fileReference = etree.Element('FileReference')
-            fileReference.text = record.file_name
-            root.append(fileReference)
+            file_reference = etree.Element('file_reference')
+            file_reference.text = record.file_name
+            root.append(file_reference)
             # File Version
-            fileVersion = etree.Element('eCDFFileVersion')
-            fileVersion.text = record._get_ecdf_file_version()
-            root.append(fileVersion)
+            file_version = etree.Element('eCDFfile_version')
+            file_version.text = record.get_ecdf_file_version()
+            root.append(file_version)
             # Interface
             interface = etree.Element('Interface')
-            interface.text = record._get_interface()
+            interface.text = record.get_interface()
             root.append(interface)
             # Agent
             agent = etree.Element('Agent')
-            matrAgent = etree.Element('MatrNbr')
-            matrAgent.text = record._get_matr_agent()
-            rcsAgent = etree.Element('RCSNbr')
-            rcsAgent.text = record._get_rcs_agent()
-            vatAgent = etree.Element('VATNbr')
-            vatAgent.text = record._get_vat_agent()
-            agent.append(matrAgent)
-            agent.append(rcsAgent)
-            agent.append(vatAgent)
+            matr_agent = etree.Element('MatrNbr')
+            matr_agent.text = record.get_matr_agent()
+            rcs_agent = etree.Element('RCSNbr')
+            rcs_agent.text = record.get_rcs_agent()
+            vat_agent = etree.Element('VATNbr')
+            vat_agent.text = record.get_vat_agent()
+            agent.append(matr_agent)
+            agent.append(rcs_agent)
+            agent.append(vat_agent)
             root.append(agent)
             # Declarations
             declarations = etree.Element('Declarations')
             declarer = etree.Element('Declarer')
-            matrDeclarer = etree.Element('MatrNbr')
-            matrDeclarer.text = record._get_matr_declarer()
-            rcsDeclarer = etree.Element('RCSNbr')
-            rcsDeclarer.text = record._get_rcs_declarer()
-            vatDeclarer = etree.Element('VATNbr')
-            vatDeclarer.text = record._get_vat_declarer()
-            declarer.append(matrDeclarer)
-            declarer.append(rcsDeclarer)
-            declarer.append(vatDeclarer)
+            matr_declarer = etree.Element('MatrNbr')
+            matr_declarer.text = record.get_matr_declarer()
+            rcs_declarer = etree.Element('RCSNbr')
+            rcs_declarer.text = record.get_rcs_declarer()
+            vat_declarer = etree.Element('VATNbr')
+            vat_declarer.text = record.get_vat_declarer()
+            declarer.append(matr_declarer)
+            declarer.append(rcs_declarer)
+            declarer.append(vat_declarer)
 
             reports = []
             templ = {
@@ -695,9 +700,7 @@ class ecdf_mis_report(models.TransientModel):
                                                              data_previous))
                 else:  # Chart of accounts
                     declarer.append(record._get_chart_ac(data_current,
-                                                         report['type']
-                                                         )
-                                    )
+                                                         report['type']))
 
             # Warning message if template(s) not found
             if error_not_found:
