@@ -2,9 +2,9 @@
 <openerp>
 	<data>
 	
-	<record id="ecdf_mis_report_view" model="ir.ui.view">
-		<field name="name">eCDF MIS Report</field>
-		<field name="model">ecdf.mis.report</field>
+	<record id="ecdf_report_view" model="ir.ui.view">
+		<field name="name">eCDF Report</field>
+		<field name="model">ecdf.report</field>
 		<field name="arch" type="xml">
 			<form>
 			<field name="company_id" invisible="1" />
@@ -51,19 +51,19 @@
 		</field>
 	</record>
 	
-	<record id="action_mis_ecdf_report" model="ir.actions.act_window">
-		<field name="name">eCDF MIS Report</field>
+	<record id="action_ecdf_report" model="ir.actions.act_window">
+		<field name="name">eCDF Report</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">ecdf.mis.report</field>
+        <field name="res_model">ecdf.report</field>
         <field name="view_type">form</field>
         <field name="view_mode">form</field>
-        <field name="view_id" ref="ecdf_mis_report_view" />
+        <field name="view_id" ref="ecdf_report_view" />
         <field name="target">new</field>
-        <field name="context">{'model':'ecdf.mis.report'}</field>
+        <field name="context">{'model':'ecdf.report'}</field>
 	</record>
 	
-	<menuitem id="menu_mis_ecdf_reporting" name="eCDF MIS annual reports"
-		parent="l10n_lu_ext.legal_lu" action="action_mis_ecdf_report" />
+	<menuitem id="menu_ecdf_reporting" name="eCDF annual reports"
+		parent="l10n_lu_ext.legal_lu" action="action_ecdf_report" />
 	
 	</data>
 </openerp>
