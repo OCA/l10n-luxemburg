@@ -16,7 +16,7 @@ from openerp.addons.mis_builder.models.aep import\
 from openerp.addons.mis_builder.models.accounting_none import AccountingNone
 
 
-class EcdfMisReport(models.TransientModel):
+class EcdfReport(models.TransientModel):
     '''
     This wizard allows to generate three types of financial reports :
         - Profit & Loss (P&L)
@@ -25,8 +25,8 @@ class EcdfMisReport(models.TransientModel):
     P&L and BS can be generated in abbreviated version or not
     The selected reports (max. 3) are written in a downloadable XML file
     '''
-    _name = 'ecdf.mis.report'
-    _description = 'eCDF MIS Report Wizard'
+    _name = 'ecdf.report'
+    _description = 'eCDF Report Wizard'
     _inherit = "account.common.report"
 
     # Main info
@@ -716,7 +716,7 @@ class EcdfMisReport(models.TransientModel):
             # Write the xml
             xml = etree.tostring(root, encoding='UTF-8', xml_declaration=True)
             # Validate the generated XML schema
-            xsd = tools.file_open('l10n_lu_mis_ecdf/xsd/ecdf-v1.1.xsd')
+            xsd = tools.file_open('l10n_lu_ecdf/xsd/ecdf-v1.1.xsd')
             xmlschema_doc = etree.parse(xsd)
             xmlschema = etree.XMLSchema(xmlschema_doc)
             # Reparse only to have line numbers in error messages?
@@ -726,9 +726,9 @@ class EcdfMisReport(models.TransientModel):
             if xmlschema.validate(parse_result):
                 record.xml_file = base64.encodestring(xml)
                 return {
-                    'name': 'eCDF MIS Report',
+                    'name': 'eCDF Report',
                     'type': 'ir.actions.act_window',
-                    'res_model': 'ecdf.mis.report',
+                    'res_model': 'ecdf.report',
                     'view_mode': 'form',
                     'view_type': 'form',
                     'res_id': record.id,

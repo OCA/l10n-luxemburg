@@ -1,16 +1,17 @@
 {
-    "name": "Luxembourg - Accounting - MIS - eCDF",
+    "name": "eCDF annual reports",
     "version": "8.0.1.0.0",
     "author": "ACSONE SA/NV",
     "license": "AGPL-3",
     "category": "Accounting & Finance",
     "website": "http://acsone.eu",
-    "depends": ["l10n_lu_mis_reports"],
+    "depends": ["l10n_lu_mis_reports",
+                "mis_builder"],
     "module": "",
-    "summary": "Generates eCDF financial reports with MIS Builder",
+    "summary": "Generates XML eCDF annual financial reports",
     "data": [
         "views/res_company.xml",
-        "wizard/ecdf_mis_report_view.xml",
+        "wizard/ecdf_report_view.xml",
     ],
     "installable": True,
 }
