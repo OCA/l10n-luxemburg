@@ -209,14 +209,14 @@ class EcdfReport(models.TransientModel):
                     "Previous fiscal year must be before current fiscal year"
                 )
 
-    @api.multi
+    @staticmethod
     def get_ecdf_file_version(self):
         '''
         :returns: the XML file version
         '''
         return '1.1'
 
-    @api.multi
+    @staticmethod
     def get_interface(self):
         '''
         :returns: eCDF interface ID (provided by eCDF)
@@ -564,10 +564,10 @@ class EcdfReport(models.TransientModel):
             # Search periods
             period_from = None
             period_to = None
-            period_ids = (self.env['account.period'].search(
+            period_ids = self.env['account.period'].search(
                 [('special', '=', False),
                  ('fiscalyear_id', '=', fiscal_year.id)])
-                          ).sorted(key=lambda r: r.date_start)
+            period_ids = period_ids.sorted(key=lambda r: r.date_start)
             if period_ids:
                 period_from = period_ids[0]
                 period_to = period_ids[-1]
@@ -603,10 +603,10 @@ class EcdfReport(models.TransientModel):
         The string is written in the base64 field "xml_file"
         '''
         for record in self:
-            ECDF_NAMESPACE = "http://www.ctie.etat.lu/2011/ecdf"
-            NSMAP = {None: ECDF_NAMESPACE}  # the default namespace(no prefix)
+            ecdf_namespace = "http://www.ctie.etat.lu/2011/ecdf"
+            nsmap = {None: ecdf_namespace}  # the default namespace(no prefix)
 
-            root = etree.Element("eCDFDeclarations", nsmap=NSMAP)
+            root = etree.Element("eCDFDeclarations", nsmap=nsmap)
 
             # File Reference
             file_reference = etree.Element('FileReference')
