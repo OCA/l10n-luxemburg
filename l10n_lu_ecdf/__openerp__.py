@@ -3,7 +3,7 @@
 {
     "name": "eCDF annual reports",
     "version": "8.0.1.0.0",
-    "author": "ACSONE SA/NV",
+    "author": "Odoo Community Association (OCA), ACSONE SA/NV",
     "license": "AGPL-3",
     "category": "Accounting & Finance",
     "website": "http://acsone.eu",
