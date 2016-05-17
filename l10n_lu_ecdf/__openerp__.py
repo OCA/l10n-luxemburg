@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 {
     "name": "eCDF annual reports",
     "version": "8.0.1.0.0",
