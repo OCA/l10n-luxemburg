@@ -1,4 +1,16 @@
 # -*- coding: utf-8 -*-
+'''
+This module provides a wizard able to generate XML annual financial reports
+Generated files are ready for eCDF
+Reports : 
+ - Profit & Loss (P&L)
+ - Profit & Loss Abbreviated (P&L)
+ - Balance Sheet (BS)
+ - Balance Sheet Abbreviated (BS)
+ - Chart of Accounts (CA)
+ 
+Generation is based on MIS Builder
+'''
 
 from datetime import datetime
 from datetime import timedelta
@@ -8,8 +20,8 @@ import base64
 
 from lxml import etree
 from openerp import models, fields, api, tools
-from openerp.exceptions import ValidationError, Warning
-from openerp.osv import osv
+from openerp.exceptions import ValidationError
+from openerp.exceptions import Warning as UserError
 from openerp.tools.translate import _
 from openerp.addons.mis_builder.models.aep import\
     AccountingExpressionProcessor as AEP
@@ -87,8 +99,8 @@ class EcdfReport(models.TransientModel):
             if not record.matricule:
                 return
             if len(record.matricule) not in [11, 13]:
-                raise ValidationError('Matricule must be 11 or 13 characters \
-                long.')
+                raise ValidationError(_('Matricule must be 11 or 13 \
+                characters long.'))
 
     @api.multi
     @api.constrains('company_registry')
@@ -102,9 +114,9 @@ class EcdfReport(models.TransientModel):
             if not record.company_registry:
                 return
             if not rexp.match(record.company_registry):
-                raise ValidationError('RCS number must begin with an uppercase\
-                 letter followed by 2 to 6 digits. The first digit must not be\
-                  0.')
+                raise ValidationError(_('RCS number must begin with an \
+                uppercase letter followed by 2 to 6 digits. \
+                The first digit must not be 0.'))
 
     @api.multi
     @api.constrains('vat')
@@ -118,8 +130,8 @@ class EcdfReport(models.TransientModel):
             if not record.vat:
                 return
             if not rexp.match(record.vat):
-                raise ValidationError('VAT number must begin with two \
-                uppercase letters followed by 8 digits.')
+                raise ValidationError(_('VAT number must begin with two \
+                uppercase letters followed by 8 digits.'))
 
     @api.depends('chart_account_id.company_id.ecdf_prefixe')
     @api.multi
@@ -206,18 +218,18 @@ class EcdfReport(models.TransientModel):
             )
             if prev_fiscyear and prev_datestop != prev_fiscyear.date_stop:
                 raise ValidationError(
-                    "Previous fiscal year must be before current fiscal year"
+                    _('Previous fiscal year must be before the current one')
                 )
 
     @staticmethod
-    def get_ecdf_file_version(self):
+    def get_ecdf_file_version():
         '''
         :returns: the XML file version
         '''
         return '1.1'
 
     @staticmethod
-    def get_interface(self):
+    def get_interface():
         '''
         :returns: eCDF interface ID (provided by eCDF)
         '''
@@ -232,7 +244,7 @@ class EcdfReport(models.TransientModel):
         for record in self:
             matr = record.chart_account_id.company_id.l10n_lu_matricule
             if not matr:
-                raise ValueError("Matricule not present")
+                raise ValueError(_('Matricule not present'))
             return matr
 
     @api.multi
@@ -674,7 +686,8 @@ class EcdfReport(models.TransientModel):
                                     'templ': templ['CA_COMPPABR']})
 
             if not reports:
-                raise osv.except_osv(_('Error'), _('No report type selected'))
+                raise UserError(_('No report type selected'),
+                                _('Please, select a report type'))
 
             error_not_found = ""
             for report in reports:
@@ -704,10 +717,9 @@ class EcdfReport(models.TransientModel):
 
             # Warning message if template(s) not found
             if error_not_found:
-                raise Warning(
-                    'MIS Template(s) not found :',
-                    error_not_found
-                )
+                raise UserError(
+                    _('MIS Template(s) not found :'),
+                    error_not_found)
 
             # Declarer
             declarations.append(declarer)
@@ -737,8 +749,6 @@ class EcdfReport(models.TransientModel):
                 }
             else:
                 error = xmlschema.error_log[0]
-                raise osv.except_osv(
-                    _('The generated XML file does not fit the\
-                    required schema !'),
-                    error.message
-                )
+                raise UserError(
+                    _('The generated file doesn\'t fit the required schema !'),
+                    error.message)
