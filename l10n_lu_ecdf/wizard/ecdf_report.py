@@ -2,13 +2,13 @@
 '''
 This module provides a wizard able to generate XML annual financial reports
 Generated files are ready for eCDF
-Reports : 
+Reports :
  - Profit & Loss (P&L)
  - Profit & Loss Abbreviated (P&L)
  - Balance Sheet (BS)
  - Balance Sheet Abbreviated (BS)
  - Chart of Accounts (CA)
- 
+
 Generation is based on MIS Builder
 '''
 
