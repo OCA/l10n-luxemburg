@@ -64,9 +64,14 @@ class TestL10nLuEcdf(common.TransactionCase):
             self.report.matricule = '111111111112'
 
         # Matricule OK
-        self.report.matricule = '11111111111'
         try:
-            self.report.check_matr()
+            self.report.matricule = '11111111111'
+        except ValidationError:
+            self.fail()
+
+        # No matricule
+        try:
+            self.report.matricule = None
         except ValidationError:
             self.fail()
 
@@ -92,9 +97,14 @@ class TestL10nLuEcdf(common.TransactionCase):
             self.report.company_registry = '1123456'
 
         # RCS OK
-        self.report.company_registry = 'L123456'
         try:
-            self.report.check_rcs()
+            self.report.company_registry = 'L123456'
+        except ValidationError:
+            self.fail()
+
+        # No RCS
+        try:
+            self.report.company_registry = None
         except ValidationError:
             self.fail()
 
@@ -115,11 +125,20 @@ class TestL10nLuEcdf(common.TransactionCase):
             self.report.vat = 'LU1234567'
 
         # VAT OK
-        self.report.vat = 'LU12345678'
         try:
-            self.report.check_vat()
+            self.report.vat = 'LU12345678'
         except ValidationError:
             self.fail()
+
+        # No VAT
+        try:
+            self.report.vat = None
+        except ValidationError:
+            self.fail()
+
+    def check_prev_fiscyear(self):
+        with self.assertRaises(ValidationError), self.cr.savepoint():
+            self.report.previous_fiscal_year = self.current_fiscal_year
 
     def test_compute_file_name(self):
         '''
@@ -151,7 +170,13 @@ class TestL10nLuEcdf(common.TransactionCase):
         report_interface = self.report.get_interface()
         interface = 'COPL3'
 
-        self.assertEquals(report_interface, interface)
+        self.assertEqual(report_interface, interface)
+
+    def test_get_language(self):
+        language = self.report.get_language()
+        expected = 'FR'
+
+        self.assertEqual(language, expected)
 
     def test_append_num_field(self):
         # Initial data : code not in KEEP_ZERO
