@@ -1,0 +1,1 @@
+from test_l10n_lu_ecdf import TestL10nLuEcdf
