@@ -283,7 +283,7 @@ class EcdfReport(models.TransientModel):
         If no agent matricule provided, the company one is returned
         '''
         for record in self:
-            if self.matricule:
+            if record.matricule:
                 return record.matricule
             else:
                 return record.get_matr_declarer()
