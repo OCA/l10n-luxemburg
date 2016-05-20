@@ -76,7 +76,7 @@ class EcdfReport(models.TransientModel):
     matricule = fields.Char('Matricule',
                             size=13)
     vat = fields.Char("Tax ID",
-                      size=8)
+                      size=10)
     company_registry = fields.Char('Company Registry',
                                    size=7)
     # File name (computed)
@@ -108,7 +108,7 @@ class EcdfReport(models.TransientModel):
         '''
         Constraint : regex validation on RCS Number
         '''
-        exp = r"""^[A-Z][^0]\d{1,5}"""
+        exp = r"""^[A-Z][^0]\d{1,5}$"""
         rexp = re.compile(exp, re.X)
         for record in self:
             if not record.company_registry:
@@ -124,7 +124,7 @@ class EcdfReport(models.TransientModel):
         '''
         Constraint : regex validation on VAT Number
         '''
-        exp = r"""^[A-Z]{2}\d{8}"""
+        exp = r"""^[A-Z]{2}\d{8}$"""
         rexp = re.compile(exp, re.X)
         for record in self:
             if not record.vat:
