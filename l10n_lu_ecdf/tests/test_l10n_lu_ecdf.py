@@ -18,7 +18,11 @@ class TestL10nLuEcdf(common.TransactionCase):
         self.account_fiscalyear = self.env['account.fiscalyear']
 
         # Company instance
-        self.company = self.res_company.create({'name': 'eCDF Company'})
+        self.company = self.res_company.create({
+            'name': 'eCDF Company',
+            'l10n_lu_matricule': '0000000000000',
+            'company_registry': 'L123456',
+            'vat': 'LU12345613'})
 
         # Current fiscal year instance
         self.current_fiscal_year = self.account_fiscalyear.create({
@@ -178,6 +182,24 @@ class TestL10nLuEcdf(common.TransactionCase):
 
         self.assertEqual(language, expected)
 
+    def test_get_matr_agent(self):
+        report_matr = self.report.get_matr_agent()
+        expected = '1111111111111'
+
+        self.assertEqual(report_matr, expected)
+
+    def test_get_rcs_agent(self):
+        report_rcs = self.report.get_rcs_agent()
+        expected = 'L123456'
+
+        self.assertEqual(report_rcs, expected)
+
+    def test_get_vat_agent(self):
+        report_vat = self.report.get_vat_agent()
+        expected = 'LU12345678'
+
+        self.assertEqual(report_vat, expected)
+
     def test_append_num_field(self):
         # Initial data : code not in KEEP_ZERO
         ecdf = '123'
@@ -269,7 +291,10 @@ class TestL10nLuEcdf(common.TransactionCase):
                       'style': None,
                       'val': 123,
                       'val_r': '\u202f724\xa0747\xa0\u20ac',
-                      'expr': 'ecdf_602_601 + ecdf_604_603'}]}]}
+                      'expr': 'ecdf_602_601 + ecdf_604_603'}]},
+            {'kpi_name': 'empty',
+             'kpi_technical_name': '',
+             'cols': [{}]}]}
 
         data_previous = {'content': [{
             'kpi_name': 'A. CHARGES',
@@ -283,7 +308,10 @@ class TestL10nLuEcdf(common.TransactionCase):
                       'style': None,
                       'val': 321,
                       'val_r': '\u202f724\xa0747\xa0\u20ac',
-                      'expr': 'ecdf_602_601 + ecdf_604_603'}]}]}
+                      'expr': 'ecdf_602_601 + ecdf_604_603'}]},
+            {'kpi_name': 'empty',
+             'kpi_technical_name': '',
+             'cols': [{}]}]}
 
         # Test with no previous year
         element = etree.Element('FormData')
