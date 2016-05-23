@@ -196,7 +196,7 @@ class TestL10nLuEcdf(common.TransactionCase):
 
     def test_get_vat_agent(self):
         report_vat = self.report.get_vat_agent()
-        expected = 'LU12345678'
+        expected = '12345678'
 
         self.assertEqual(report_vat, expected)
 
