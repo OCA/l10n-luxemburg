@@ -314,7 +314,10 @@ class EcdfReport(models.TransientModel):
         '''
         for record in self:
             if record.vat:
-                return record.vat
+                vat = record.vat
+                if vat.startswith('LU'):
+                    vat = vat[2:]
+                return vat
             else:
                 return record.get_vat_declarer()
 
