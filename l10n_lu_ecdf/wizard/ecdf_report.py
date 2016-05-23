@@ -272,9 +272,9 @@ class EcdfReport(models.TransientModel):
             if vat:
                 if vat.startswith('LU'):
                     vat = vat[2:]
-                    return vat
-                else:
-                    return 'NE'
+                return vat
+            else:
+                return 'NE'
 
     @api.multi
     def get_matr_agent(self):
@@ -313,11 +313,8 @@ class EcdfReport(models.TransientModel):
         If no VAT number of the company, default value 'NE' is returned
         '''
         for record in self:
-            if record.matricule:
-                if record.vat:
-                    return record.vat
-                else:
-                    return 'NE'
+            if record.vat:
+                return record.vat
             else:
                 return record.get_vat_declarer()
 
