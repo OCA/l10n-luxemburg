@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 (http://www.altova.com) by Christophe Schweitzer (Centre Informatique de l'Etat (CIE)) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ecdf="http://www.ctie.etat.lu/2011/ecdf" targetNamespace="http://www.ctie.etat.lu/2011/ecdf" elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	<xsd:simpleType name="TNumericField">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[-+]?[0-9]{1,15}(,[0-9]{1,2})?"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--  Root schema element eCDFDeclarations  -->
+	<xsd:element name="eCDFDeclarations">
+		<xsd:annotation>
+			<xsd:documentation>eCDF Document definition root element</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="ecdf:FileReference"/>
+				<xsd:element ref="ecdf:eCDFFileVersion"/>
+				<xsd:element ref="ecdf:Interface"/>
+				<xsd:element ref="ecdf:Agent"/>
+				<xsd:element ref="ecdf:Declarations"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!--  Agnet Element -->
+	<xsd:element name="Agent">
+		<xsd:annotation>
+			<xsd:documentation>Agent details.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="ecdf:MatrNbr"/>
+				<xsd:element ref="ecdf:RCSNbr"/>
+				<xsd:element ref="ecdf:VATNbr"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!--  Declarations element -->
+	<xsd:element name="Declarations">
+		<xsd:annotation>
+			<xsd:documentation>Lists all the eCDF declarations grouped by declarer. The "Declarations" element may contain several "Declaration" elements for several "Declarer" elements.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="ecdf:Declarer" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!--  Declarer element -->
+	<xsd:element name="Declarer">
+		<xsd:annotation>
+			<xsd:documentation>Declarer details. </xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="ecdf:MatrNbr"/>
+				<xsd:element ref="ecdf:RCSNbr"/>
+				<xsd:element ref="ecdf:VATNbr"/>
+				<xsd:element ref="ecdf:Declaration" maxOccurs="999"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!-- Declaration element -->
+	<xsd:element name="Declaration">
+		<xsd:annotation>
+			<xsd:documentation>Details of the included declaration.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="ecdf:Year"/>
+				<xsd:element ref="ecdf:Period"/>
+				<xsd:element ref="ecdf:FormData"/>
+			</xsd:sequence>
+			<xsd:attribute name="language" type="ecdf:TLanguage" use="required"/>
+			<xsd:attribute name="type" use="required">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="20"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+			<xsd:attribute name="model" use="required">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:maxLength value="20"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<!--  FormData element  -->
+	<xsd:element name="FormData">
+		<xsd:annotation>
+			<xsd:documentation>The fields of a declaration followed by one entry for each table (if any)</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+					<xsd:element ref="ecdf:Choice"/>
+					<xsd:element ref="ecdf:NumericField"/>
+					<xsd:element ref="ecdf:TextField"/>
+				</xsd:choice>
+				<xsd:element ref="ecdf:Table" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Table">
+		<xsd:annotation>
+			<xsd:documentation>Details of a table.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="ecdf:Line" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Line">
+		<xsd:annotation>
+			<xsd:documentation>Details of a table line.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="ecdf:NumericField"/>
+				<xsd:element ref="ecdf:TextField"/>
+				<xsd:element ref="ecdf:Choice"/>
+			</xsd:choice>
+			<xsd:attribute name="num" type="xsd:positiveInteger" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+	<!-- Elements -->
+	<xsd:element name="Choice">
+		<xsd:annotation>
+			<xsd:documentation>Choice field . A yes/no choice. Value yes:1 no:0</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="ecdf:TChoice">
+					<xsd:attributeGroup ref="ecdf:IdAtt"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Year" type="ecdf:TYear">
+		<xsd:annotation>
+			<xsd:documentation>Corresponding year for this declaration: INTEGER[4]</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Period" type="ecdf:TPeriod">
+		<xsd:annotation>
+			<xsd:documentation>Period of this declaration: INTEGER. For yearly declarations the period is 1.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="Interface" type="ecdf:TInterface">
+		<xsd:annotation>
+			<xsd:documentation>User interface: STRING</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="NumericField">
+		<xsd:annotation>
+			<xsd:documentation>Numeric field. Decimal separator is the comma</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="ecdf:TNumericField">
+					<xsd:attributeGroup ref="ecdf:IdAtt"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TextField">
+		<xsd:annotation>
+			<xsd:documentation>Text field</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:extension base="ecdf:TTextField">
+					<xsd:attributeGroup ref="ecdf:IdAtt"/>
+				</xsd:extension>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="VATNbr" type="ecdf:TVATNbr">
+		<xsd:annotation>
+			<xsd:documentation>VAT number: STRING[8]</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="MatrNbr" type="ecdf:TMatrNbr">
+		<xsd:annotation>
+			<xsd:documentation>Matricule number: STRING[11] or STRING[13]</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="RCSNbr" type="ecdf:TRCSNbr">
+		<xsd:annotation>
+			<xsd:documentation>RCS number: STRING[7]</xsd:documentation>
+		</xsd:annotation>
+		<!-- Voir format voulu pour ce numéro-->
+	</xsd:element>
+	<xsd:element name="FileReference" type="ecdf:TFileRef">
+		<xsd:annotation>
+			<xsd:documentation>Reference of the file: must match the filename and the FileReference pattern described in the provided documentation.</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="eCDFFileVersion" type="ecdf:TeCDFFileVersion">
+		<xsd:annotation>
+			<xsd:documentation>Version of the eCDF File Format: STRING</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<!-- Base types-->
+	<xsd:simpleType name="TInterface">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TChoice">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TTextField">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1800"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TYear">
+		<xsd:restriction base="xsd:integer">
+			<xsd:minInclusive value="2000"/>
+			<xsd:maxExclusive value="3000"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TPeriod">
+		<xsd:restriction base="xsd:integer">
+			<xsd:minInclusive value="0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TVATNbr">
+		<xsd:restriction base="xsd:string">
+			<!--			<xsd:pattern value="[0-9]{8}"/>
+			<xsd:pattern value="NE"/>-->
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TMatrNbr">
+		<xsd:restriction base="xsd:string">
+			<!--<xsd:pattern value="[0-9]{11}"/>
+			<xsd:pattern value="[0-9]{13}"/>-->
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TRCSNbr">
+		<xsd:restriction base="xsd:string">
+			<!--<xsd:pattern value="[A-Z][0-9]{1,7}"/>
+			<xsd:pattern value="NE"/>-->
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TFileRef">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9A-Z]{6}[XB][0-9]{4}[0-1][0-9][0-3][0-9][T][0-2][0-9][0-5][0-9][0-5][0-9][0-9]{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TeCDFFileVersion">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TLanguage">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="FR"/>
+			<xsd:enumeration value="EN"/>
+			<xsd:enumeration value="DE"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Attributes -->
+	<xsd:attributeGroup name="IdAtt">
+		<xsd:annotation>
+			<xsd:documentation>id: Unique (field/column) identifier: INTEGER</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="id" use="required">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:minLength value="1"/>
+					<xsd:maxLength value="50"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+	</xsd:attributeGroup>
+</xsd:schema>
