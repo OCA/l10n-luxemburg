@@ -207,19 +207,13 @@ class EcdfReport(models.TransientModel):
         '''
         Constraint : prev_fiscyear < current_fiscyear
         '''
-        for rec in self:
-            prev_fiscyear = rec.prev_fiscyear
-            prev_datestop = datetime.strftime(
-                datetime.strptime(
-                    rec.current_fiscyear.date_start,
-                    "%Y-%m-%d"
-                ) - timedelta(days=1),
-                "%Y-%m-%d"
-            )
-            if prev_fiscyear and prev_datestop != prev_fiscyear.date_stop:
+        for record in self:
+            prev_fiscyear_date_stop = record.prev_fiscyear.date_stop
+            current_fiscyear_date_start = record.current_fiscyear.date_start
+
+            if prev_fiscyear_date_stop > current_fiscyear_date_start:
                 raise ValidationError(
-                    _('Previous fiscal year must be before the current one')
-                )
+                    _('Previous fiscal year must be before the current one'))
 
     @staticmethod
     def get_ecdf_file_version():
