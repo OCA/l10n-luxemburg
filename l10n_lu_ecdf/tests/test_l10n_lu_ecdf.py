@@ -6,6 +6,8 @@ from datetime import datetime
 from openerp.addons.mis_builder.models.accounting_none import AccountingNone
 import re as re
 from openerp.exceptions import ValidationError
+import logging
+_logger = logging.getLogger(__name__)
 
 
 class TestL10nLuEcdf(common.TransactionCase):
@@ -16,44 +18,54 @@ class TestL10nLuEcdf(common.TransactionCase):
         self.ecdf_report = self.env['ecdf.report']
         self.res_company = self.env['res.company']
         self.account_fiscalyear = self.env['account.fiscalyear']
+        self.account_account = self.env['account.account']
 
         # Company instance
-        self.company = self.res_company.create({
-            'name': 'eCDF Company',
-            'l10n_lu_matricule': '0000000000000',
-            'company_registry': 'L123456',
-            'vat': 'LU12345613'})
+        self.company = self.env.ref('base.main_company')
+        self.company.l10n_lu_matricule = '0000000000000'
+        self.company.company_registry = 'L654321'
+        self.company.vat = 'LU12345613'
+
+        # 'Chart of account' instance
+        self.chart_of_account = self.account_account.search([('parent_id',
+                                                              '=',
+                                                              False)])
 
         # Current fiscal year instance
         self.current_fiscal_year = self.account_fiscalyear.create({
             'company_id': self.company.id,
             'name': 'current_fiscalyear',
             'code': '123456',
-            'date_start': datetime.strptime('01012016', "%d%m%Y").date(),
-            'date_stop': datetime.strptime('31122016', "%d%m%Y").date()})
+            'date_start': datetime.strptime('01012015', "%d%m%Y").date(),
+            'date_stop': datetime.strptime('31122015', "%d%m%Y").date()})
+
+        self.current_fiscal_year.create_period()
 
         # Previous fiscal year instance
         self.previous_fiscal_year = self.account_fiscalyear.create({
             'company_id': self.company.id,
             'name': 'previous_fiscalyear',
             'code': '654321',
-            'date_start': datetime.strptime('01012015', "%d%m%Y").date(),
-            'date_stop': datetime.strptime('31122015', "%d%m%Y").date()})
+            'date_start': datetime.strptime('01012014', "%d%m%Y").date(),
+            'date_stop': datetime.strptime('31122014', "%d%m%Y").date()})
+
+        self.previous_fiscal_year.create_period()
 
         # eCDF report instance
         self.report = self.env['ecdf.report'].create({
             'language': 'FR',
             'target_move': 'posted',
             'with_pl': True,
-            'with_bs': False,
-            'with_ac': False,
+            'with_bs': True,
+            'with_ac': True,
             'reports_type': 'full',
             'current_fiscyear': self.current_fiscal_year.id,
             'prev_fiscyear': self.previous_fiscal_year.id,
             'remarks': "comment",
             'matricule': '1111111111111',
             'vat': 'LU12345678',
-            'company_registry': 'L123456'})
+            'company_registry': 'L123456',
+            'chart_account_id': self.chart_of_account.id})
 
     def test_check_matr(self):
         '''
@@ -182,25 +194,88 @@ class TestL10nLuEcdf(common.TransactionCase):
 
         self.assertEqual(language, expected)
 
+    # GETTERS AGENT
+
     def test_get_matr_agent(self):
+        # With a matricule set to the agent
         report_matr = self.report.get_matr_agent()
         expected = '1111111111111'
+        self.assertEqual(report_matr, expected)
 
+        # With no matricule set to the agent
+        self.report.matricule = False
+        report_matr = self.report.get_matr_agent()
+        # The excpected matricule is the company one
+        expected = '0000000000000'
         self.assertEqual(report_matr, expected)
 
     def test_get_rcs_agent(self):
+        # With a rcs number set to the agent
         report_rcs = self.report.get_rcs_agent()
         expected = 'L123456'
+        self.assertEqual(report_rcs, expected)
 
+        # With no rcs number set to the agent
+        self.report.company_registry = False
+        report_rcs = self.report.get_rcs_agent()
+        # The expected rcs is the company one
+        expected = 'L654321'
         self.assertEqual(report_rcs, expected)
 
     def test_get_vat_agent(self):
+        # With a vat number set to the agent, without the two letters
         report_vat = self.report.get_vat_agent()
         expected = '12345678'
-
         self.assertEqual(report_vat, expected)
 
+        # With no vat number set to the agent
+        self.report.vat = False
+        report_vat = self.report.get_vat_agent()
+        # The expected vat is the company one, without the two letters
+        expected = '12345613'
+        self.assertEqual(report_vat, expected)
+
+    # GETTERS DECLARER
+
+    def test_get_matr_declarer(self):
+        # With a matricule set to the company
+        declarer_matr = self.report.get_matr_declarer()
+        expected = '0000000000000'
+        self.assertEqual(declarer_matr, expected)
+
+        # With no matricule set to the company
+        self.company.l10n_lu_matricule = False
+        with self.assertRaises(ValueError), self.cr.savepoint():
+            declarer_matr = self.report.get_matr_declarer()
+
+    def test_get_rcs_declarer(self):
+        # With a rcs number set to the company
+        declarer_rcs = self.report.get_rcs_declarer()
+        expected = 'L654321'
+        self.assertEqual(declarer_rcs, expected)
+
+        # With no rcs number set to the company
+        self.company.company_registry = False
+        declarer_rcs = self.report.get_rcs_declarer()
+        expected = 'NE'
+        self.assertEqual(declarer_rcs, expected)
+
+    def test_get_vat_declarer(self):
+        # With a vat number set to the company
+        declarer_vat = self.report.get_vat_declarer()
+        expected = '12345613'
+        self.assertEqual(declarer_vat, expected)
+
+        # With no vat number set to the company
+        self.company.vat = False
+        declarer_vat = self.report.get_vat_declarer()
+        expected = 'NE'
+        self.assertEqual(declarer_vat, expected)
+
     def test_append_num_field(self):
+        '''
+        Test of bordeline cases of the method append_num_field
+        '''
         # Initial data : code not in KEEP_ZERO
         ecdf = '123'
         comment = "A comment"
@@ -279,6 +354,9 @@ class TestL10nLuEcdf(common.TransactionCase):
         self.assertEqual(etree.tostring(element), expected)
 
     def test_append_fr_lines(self):
+        '''
+        Test of method 'append_fr_lines' with and without previous year
+        '''
         data_current = {'content': [{
             'kpi_name': 'A. CHARGES',
             'kpi_technical_name': 'ecdf_642_641',
@@ -328,3 +406,23 @@ class TestL10nLuEcdf(common.TransactionCase):
 <NumericField id="641">123,00</NumericField><!-- previous - A. CHARGES -->\
 <NumericField id="642">321,00</NumericField></FormData>'
         self.assertEqual(etree.tostring(element), expected)
+
+    def test_print_xml(self):
+        '''
+        Main test : generation of all types of reports
+        Chart of account, Profit and Loss, Balance Sheet
+        '''
+        # Type : full
+        self.report.print_xml()
+
+        # Type abbreviated
+        self.report.reports_type = 'abbreviated'
+        self.report.print_xml()
+
+        # With no previous fiscal year, abbreaviated
+        self.report.prev_fiscyear = False
+        self.report.print_xml()
+
+        # With no previous year, full
+        self.report.reports_type = 'full'
+        self.report.print_xml()
