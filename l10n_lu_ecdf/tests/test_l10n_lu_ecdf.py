@@ -1,12 +1,15 @@
 # -*- coding: utf-8 -*-
 
-from openerp.tests import common
-from lxml import etree
 from datetime import datetime
-from openerp.addons.mis_builder.models.accounting_none import AccountingNone
-import re as re
-from openerp.exceptions import ValidationError
 import logging
+import re as re
+
+from lxml import etree
+from openerp.addons.mis_builder.models.accounting_none import AccountingNone
+from openerp.exceptions import ValidationError
+from openerp.exceptions import Warning as UserError
+from openerp.tests import common
+
 _logger = logging.getLogger(__name__)
 
 
@@ -39,8 +42,6 @@ class TestL10nLuEcdf(common.TransactionCase):
             'date_start': datetime.strptime('01012015', "%d%m%Y").date(),
             'date_stop': datetime.strptime('31122015', "%d%m%Y").date()})
 
-        self.current_fiscal_year.create_period()
-
         # Previous fiscal year instance
         self.previous_fiscal_year = self.account_fiscalyear.create({
             'company_id': self.company.id,
@@ -49,7 +50,21 @@ class TestL10nLuEcdf(common.TransactionCase):
             'date_start': datetime.strptime('01012014', "%d%m%Y").date(),
             'date_stop': datetime.strptime('31122014', "%d%m%Y").date()})
 
-        self.previous_fiscal_year.create_period()
+        # Fiscal year : 2008
+        self.fiscal_year_2008 = self.account_fiscalyear.create({
+            'company_id': self.company.id,
+            'name': 'fiscalyear_2008',
+            'code': '214365',
+            'date_start': datetime.strptime('01012008', "%d%m%Y").date(),
+            'date_stop': datetime.strptime('31122008', "%d%m%Y").date()})
+
+        # Fiscal year : 2007
+        self.fiscal_year_2007 = self.account_fiscalyear.create({
+            'company_id': self.company.id,
+            'name': 'fiscalyear_2007',
+            'code': '563412',
+            'date_start': datetime.strptime('01012007', "%d%m%Y").date(),
+            'date_stop': datetime.strptime('31122007', "%d%m%Y").date()})
 
         # eCDF report instance
         self.report = self.env['ecdf.report'].create({
@@ -407,11 +422,42 @@ class TestL10nLuEcdf(common.TransactionCase):
 <NumericField id="642">321,00</NumericField></FormData>'
         self.assertEqual(etree.tostring(element), expected)
 
+    def test_onchange_current_fiscal_year(self):
+        self.report.current_fiscyear = self.fiscal_year_2008.id
+        self.report._onchange_current_fiscal_year()
+        if self.report.prev_fiscyear != self.fiscal_year_2007:
+            self.fail()
+
     def test_print_xml(self):
         '''
         Main test : generation of all types of reports
         Chart of account, Profit and Loss, Balance Sheet
         '''
+        # Financial reports : Fiscal years with no period
+        self.report.with_ac = False
+        with self.assertRaises(UserError), self.cr.savepoint():
+            self.report.print_xml()
+
+        # Chart of account : Fiscal years with no period
+        self.report.with_ac = True
+        self.report.with_bs = False
+        self.report.with_pl = False
+        with self.assertRaises(UserError), self.cr.savepoint():
+            self.report.print_xml()
+
+        # Periods of fiscal years
+        self.current_fiscal_year.create_period()
+        self.previous_fiscal_year.create_period()
+
+        # No report selected
+        self.report.with_ac = False
+        with self.assertRaises(UserError), self.cr.savepoint():
+            self.report.print_xml()
+
+        self.report.with_ac = True
+        self.report.with_bs = True
+        self.report.with_pl = True
+
         # Type : full
         self.report.print_xml()
 
