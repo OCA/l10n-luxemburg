@@ -264,7 +264,8 @@ class EcdfReport(models.TransientModel):
     @api.multi
     def get_vat_declarer(self):
         '''
-        :returns: VAT number of the company, 8 characters
+        :returns: VAT number of the company, 8 characters, without the two\
+        uppercase letters 'LU'
         If no VAT number, default value 'NE' is returned
         '''
         for record in self:
@@ -297,11 +298,8 @@ class EcdfReport(models.TransientModel):
         If no RCS number of the company, default value 'NE' is returned
         '''
         for record in self:
-            if record.matricule:
-                if record.company_registry:
-                    return record.company_registry
-                else:
-                    return 'NE'
+            if record.company_registry:
+                return record.company_registry
             else:
                 return record.get_rcs_declarer()
 
@@ -309,7 +307,8 @@ class EcdfReport(models.TransientModel):
     def get_vat_agent(self):
         '''
         :returns: VAT number provided in the form. If no VAT number has been\
-        provided, the VAT number of the company is returned.
+        provided, the VAT number of the company is returned, without the two\
+        uppercase letters 'LU'.
         If no VAT number of the company, default value 'NE' is returned
         '''
         for record in self:
@@ -428,6 +427,10 @@ class EcdfReport(models.TransientModel):
                 [('special', '=', False),
                  ('fiscalyear_id', '=', record.current_fiscyear.id)]
             )).sorted(key=lambda r: r.date_start)
+
+            if not period_ids:
+                return
+
             period_from = period_ids[0]
             period_to = period_ids[-1]
             currency = record.chart_account_id.company_id.currency_id
@@ -481,9 +484,12 @@ class EcdfReport(models.TransientModel):
                 [('special', '=', False),
                  ('fiscalyear_id', '=', record.current_fiscyear.id)]
             )).sorted(key=lambda r: r.date_start)
+
+            if not period_ids:
+                return
+
             period_from = period_ids[0]
             period_to = period_ids[-1]
-            currency = record.chart_account_id.company_id.currency_id
             declaration = etree.Element('Declaration',
                                         type=report_type,
                                         language=record.get_language(),
@@ -503,7 +509,7 @@ class EcdfReport(models.TransientModel):
                                           "%Y-%m-%d").strftime("%d/%m/%Y")
             form_data.append(tfid)
             tfid = etree.Element('TextField', id='03')
-            tfid.text = currency.name
+            tfid.text = record.chart_account_id.company_id.currency_id.name
             form_data.append(tfid)
 
             if record.remarks:  # add remarks in chart of accounts
@@ -708,12 +714,16 @@ class EcdfReport(models.TransientModel):
                     if record.prev_fiscyear:  # Previous year
                         data_previous = record.compute(mis_report,
                                                        record.prev_fiscyear)
-                    declarer.append(record._get_finan_report(data_current,
-                                                             report['type'],
-                                                             data_previous))
+                    financial_report = record._get_finan_report(data_current,
+                                                                report['type'],
+                                                                data_previous)
+                    if financial_report is not None:
+                        declarer.append(financial_report)
                 else:  # Chart of accounts
-                    declarer.append(record._get_chart_ac(data_current,
-                                                         report['type']))
+                    chart_of_account = record._get_chart_ac(data_current,
+                                                            report['type'])
+                    if chart_of_account is not None:
+                        declarer.append(chart_of_account)
 
             # Warning message if template(s) not found
             if error_not_found:
