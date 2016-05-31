@@ -335,7 +335,7 @@ class EcdfReport(models.TransientModel):
                 val = 0.0
             else:
                 return
-        value = round(val, 2)
+        value = round(val, 2) or 0.0
         if comment:
             element.append(etree.Comment(comment))
         child = etree.Element('NumericField', id=ecdf)
