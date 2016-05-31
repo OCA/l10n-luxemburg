@@ -171,25 +171,17 @@ class TestL10nLuEcdf(common.TransactionCase):
         with self.assertRaises(ValidationError), self.cr.savepoint():
             self.report.previous_fiscal_year = self.current_fiscal_year
 
-    def test_compute_file_name(self):
+    def test_compute_file_reference(self):
         '''
-        File name must match the following pattern : 000000XyyyymmddThhmmssNN
+        File ref must match the following pattern : 000000XyyyymmddThhmmssNN
         '''
         # Regular expression of the expected file name
         exp = r"""^\d{6}X\d{8}T\d{8}$"""
         rexp = re.compile(exp, re.X)
 
-        self.report._compute_file_name()
+        self.report._compute_file_reference()
 
-        self.assertIsNotNone(rexp.match(self.report.file_name))
-
-    def test_compute_full_file_name(self):
-        '''
-        Full file name must be the computed file name with ".xml" at the end
-        '''
-        self.report._compute_full_file_name()
-        expected = self.report.file_name + '.xml'
-        self.assertEqual(self.report.full_file_name, expected)
+        self.assertIsNotNone(rexp.match(self.report.file_reference))
 
     def test_get_ecdf_file_version(self):
         report_file_version = self.report.get_ecdf_file_version()

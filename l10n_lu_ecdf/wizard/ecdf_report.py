@@ -80,12 +80,11 @@ class EcdfReport(models.TransientModel):
     company_registry = fields.Char('Company Registry',
                                    size=7)
     # File name (computed)
-    file_name = fields.Char('File name',
-                            size=24,
-                            compute='_compute_file_name')
+    file_reference = fields.Char('File name',
+                                 size=24,
+                                 compute='_compute_file_reference')
     full_file_name = fields.Char('Full file name',
-                                 size=28,
-                                 compute='_compute_full_file_name')
+                                 size=28)
     # File
     xml_file = fields.Binary('XML File', readonly=True)
 
@@ -135,7 +134,7 @@ class EcdfReport(models.TransientModel):
 
     @api.depends('chart_account_id.company_id.ecdf_prefixe')
     @api.multi
-    def _compute_file_name(self):
+    def _compute_file_reference(self):
         '''
         000000XyyyymmddThhmmssNN
         Position 1 - 6: eCDF prefix of the user's company
@@ -147,24 +146,13 @@ class EcdfReport(models.TransientModel):
         for the unicity of the names of the files created in the same second
         '''
         for record in self:
-            res = ""
             nbr = 1
             dtf = "X%Y%m%dT%H%M%S"
             prefixe = record.chart_account_id.company_id.ecdf_prefixe
             if not prefixe:
                 prefixe = '000000'
             res = prefixe + datetime.now().strftime(dtf) + str("%02d" % nbr)
-            record.file_name = res
-
-    @api.depends('file_name')
-    @api.multi
-    def _compute_full_file_name(self):
-        '''
-        Compute : file name + its extension
-        '''
-        for record in self:
-            extension = ".xml"
-            record.full_file_name = record.file_name + extension
+            record.file_reference = res
 
     @api.multi
     @api.onchange('chart_account_id')
@@ -623,8 +611,10 @@ class EcdfReport(models.TransientModel):
         root = etree.Element("eCDFDeclarations", nsmap=nsmap)
 
         # File Reference
+        ref = self.file_reference
+        self.full_file_name = ref + '.xml'  # for the download widget
         file_reference = etree.Element('FileReference')
-        file_reference.text = self.file_name
+        file_reference.text = ref
         root.append(file_reference)
         # File Version
         file_version = etree.Element('eCDFFileVersion')
