@@ -521,6 +521,8 @@ class EcdfReport(models.TransientModel):
                     # with different ecdf codes
                     # so we hard-code it here:
                     # this is the only exception to the general algorithm
+                    # TODO why not have 2 kpi's which return the same result
+                    #      so the algorithm remains generic?
                     if report['kpi_name'][:5] == '106 -':
                         if balance <= 0.0:
                             ecdf_codes = ['0118', '2260']
