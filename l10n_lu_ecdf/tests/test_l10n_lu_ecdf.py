@@ -174,7 +174,6 @@ class TestL10nLuEcdf(common.TransactionCase):
     def test_compute_file_name(self):
         '''
         File name must match the following pattern : 000000XyyyymmddThhmmssNN
-        Full file name must be the computed file name with ".xml" at the end
         '''
         # Regular expression of the expected file name
         exp = r"""^\d{6}X\d{8}T\d{8}$"""
@@ -184,6 +183,11 @@ class TestL10nLuEcdf(common.TransactionCase):
 
         self.assertIsNotNone(rexp.match(self.report.file_name))
 
+    def test_compute_full_file_name(self):
+        '''
+        Full file name must be the computed file name with ".xml" at the end
+        '''
+        self.report._compute_full_file_name()
         expected = self.report.file_name + '.xml'
         self.assertEqual(self.report.full_file_name, expected)
 
