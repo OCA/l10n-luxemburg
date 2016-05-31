@@ -366,7 +366,7 @@ class EcdfReport(models.TransientModel):
                     record._append_num_field(
                         form_data,
                         ecdf_code,
-                        report['val'] or 0.0,
+                        report['val'],
                         comment=" current - %s " % report['kpi_name']
                     )
             if data_prev:  # Previous fiscal year
@@ -379,7 +379,7 @@ class EcdfReport(models.TransientModel):
                         record._append_num_field(
                             form_data,
                             ecdf_code,
-                            report['val'] or 0.0,
+                            report['val'],
                             comment=" previous - %s " % report['kpi_name']
                         )
             else:  # No Previous fical year
