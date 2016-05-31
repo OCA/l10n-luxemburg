@@ -290,7 +290,7 @@ class TestL10nLuEcdf(common.TransactionCase):
         # Test with valid float value
         element = etree.Element('FormData')
         val = 5.5
-        self.report._append_num_field(element, ecdf, val, False, comment)
+        self.report._append_num_field(element, ecdf, val, comment)
         expected = '<FormData><!--A comment--><NumericField id="123">\
 5,50</NumericField></FormData>'
         self.assertEqual(etree.tostring(element), expected)
@@ -298,14 +298,14 @@ class TestL10nLuEcdf(common.TransactionCase):
         # Test with None value, code not in KEEP_ZERO
         element = etree.Element('FormData')
         val = None
-        self.report._append_num_field(element, ecdf, val, False, comment)
+        self.report._append_num_field(element, ecdf, val, comment)
         expected = '<FormData/>'
         self.assertEqual(etree.tostring(element), expected)
 
         # Test with AccountingNone value, code not in KEEP_ZERO
         element = etree.Element('FormData')
         val = AccountingNone
-        self.report._append_num_field(element, ecdf, val, False, comment)
+        self.report._append_num_field(element, ecdf, val, comment)
         expected = '<FormData/>'
         self.assertEqual(etree.tostring(element), expected)
 
@@ -315,7 +315,7 @@ class TestL10nLuEcdf(common.TransactionCase):
         # Test with None value, code in KEEP_ZERO
         element = etree.Element('FormData')
         val = None
-        self.report._append_num_field(element, ecdf, val, False, comment)
+        self.report._append_num_field(element, ecdf, val, comment)
         expected = '<FormData><!--A comment--><NumericField id="639">0,00\
 </NumericField></FormData>'
         self.assertEqual(etree.tostring(element), expected)
@@ -323,31 +323,7 @@ class TestL10nLuEcdf(common.TransactionCase):
         # Test with AccountingNone value, code in KEEP_ZERO
         element = etree.Element('FormData')
         val = AccountingNone
-        self.report._append_num_field(element, ecdf, val, False, comment)
-        expected = '<FormData><!--A comment--><NumericField id="639">0,00\
-</NumericField></FormData>'
-        self.assertEqual(etree.tostring(element), expected)
-
-        # Test with None value, code not in KEEP_ZERO
-        element = etree.Element('FormData')
-        val = None
-        self.report._append_num_field(element, ecdf, val, True, comment)
-        expected = '<FormData><!--A comment--><NumericField id="639">0,00\
-</NumericField></FormData>'
-        self.assertEqual(etree.tostring(element), expected)
-
-        # Test with AccountingNone value, code not in KEEP_ZERO
-        element = etree.Element('FormData')
-        val = AccountingNone
-        self.report._append_num_field(element, ecdf, val, True, comment)
-        expected = '<FormData><!--A comment--><NumericField id="639">0,00\
-</NumericField></FormData>'
-        self.assertEqual(etree.tostring(element), expected)
-
-        # Test with valid float value
-        element = etree.Element('FormData')
-        val = 5.5
-        self.report._append_num_field(element, ecdf, val, True, comment)
+        self.report._append_num_field(element, ecdf, val, comment)
         expected = '<FormData><!--A comment--><NumericField id="639">0,00\
 </NumericField></FormData>'
         self.assertEqual(etree.tostring(element), expected)
@@ -355,8 +331,8 @@ class TestL10nLuEcdf(common.TransactionCase):
         # Test without comment
         element = etree.Element('FormData')
         val = 5.5
-        self.report._append_num_field(element, ecdf, val, True)
-        expected = '<FormData><NumericField id="639">0,00</NumericField>\
+        self.report._append_num_field(element, ecdf, val)
+        expected = '<FormData><NumericField id="639">5,50</NumericField>\
 </FormData>'
         self.assertEqual(etree.tostring(element), expected)
 

@@ -319,7 +319,7 @@ class EcdfReport(models.TransientModel):
         "639", "640", "735", "736",
     )
 
-    def _append_num_field(self, element, ecdf, val, zero=False, comment=None):
+    def _append_num_field(self, element, ecdf, val, comment=None):
         '''
         A numeric field's value can be a integer or a float
         The only decimal separator accepted is the coma (",")
@@ -328,15 +328,13 @@ class EcdfReport(models.TransientModel):
         :param element: XML node
         :param ecdf: eCDF technical code
         :param val: value to add in the XML node
-        :param zero: if True, val has to be turned into 0.0 (default False)
         :param comment: Optional comment
         '''
-        if (val is None or val is AccountingNone) and \
-                ecdf not in self.KEEP_ZERO:
-            return
-        # Mandatory value (keep_zero)
-        if zero or val is None or val is AccountingNone:
-            val = 0.0
+        if val is None or val is AccountingNone:
+            if ecdf in self.KEEP_ZERO:
+                val = 0.0
+            else:
+                return
         value = round(val, 2)
         if comment:
             element.append(etree.Comment(comment))
@@ -367,7 +365,8 @@ class EcdfReport(models.TransientModel):
                         report['val'],
                         comment=" current - %s " % report['kpi_name']
                     )
-            if data_prev:  # Previous fiscal year
+            if data_prev:
+                # Previous fiscal year
                 for report in data_prev:
                     line_match = rexp.match(report['kpi_technical_name'])
                     if line_match:
@@ -378,16 +377,18 @@ class EcdfReport(models.TransientModel):
                             report['val'],
                             comment=" previous - %s " % report['kpi_name']
                         )
-            else:  # No Previous fical year
+            else:
+                # No Previous fical year: we must output 0.0 for
+                # items where we have a value in current fiscal year
                 form_data.append(etree.Comment(" no previous year"))
                 for report in data_curr:
                     line_match = rexp.match(report['kpi_technical_name'])
                     if line_match:
                         ecdf_code = line_match.group('previous')
-                        record._append_num_field(form_data,
-                                                 ecdf_code,
-                                                 report['val'],
-                                                 zero=True)
+                        if report['val'] not in (AccountingNone, None):
+                            record._append_num_field(form_data,
+                                                     ecdf_code,
+                                                     0.0)
 
     @api.multi
     def _get_finan_report(self, data_current, report_type, data_previous=None):
@@ -496,7 +497,7 @@ class EcdfReport(models.TransientModel):
         for report in data:
             line_match = rexp.match(report['kpi_technical_name'])
             if line_match:
-                if report['val'] not in [AccountingNone, None]:
+                if report['val'] not in (AccountingNone, None):
                     balance = round(report['val'], 2)
                     if balance <= 0:  # 0.0 must be in the credit column
                         ecdf_code = line_match.group('credit')
