@@ -364,39 +364,21 @@ class TestL10nLuEcdf(common.TransactionCase):
         '''
         Test of method 'append_fr_lines' with and without previous year
         '''
-        data_current = {'content': [{
+        data_current = [{
             'kpi_name': 'A. CHARGES',
             'kpi_technical_name': 'ecdf_642_641',
-            'cols': [{'suffix': '\u20ac',
-                      'prefix': False,
-                      'period_id': None,
-                      'drilldown': False,
-                      'is_percentage': False,
-                      'dp': 0,
-                      'style': None,
-                      'val': 123,
-                      'val_r': '\u202f724\xa0747\xa0\u20ac',
-                      'expr': 'ecdf_602_601 + ecdf_604_603'}]},
+            'val': 123},
             {'kpi_name': 'empty',
              'kpi_technical_name': '',
-             'cols': [{}]}]}
+             'val': None}]
 
-        data_previous = {'content': [{
+        data_previous = [{
             'kpi_name': 'A. CHARGES',
             'kpi_technical_name': 'ecdf_642_641',
-            'cols': [{'suffix': '\u20ac',
-                      'prefix': False,
-                      'period_id': None,
-                      'drilldown': False,
-                      'is_percentage': False,
-                      'dp': 0,
-                      'style': None,
-                      'val': 321,
-                      'val_r': '\u202f724\xa0747\xa0\u20ac',
-                      'expr': 'ecdf_602_601 + ecdf_604_603'}]},
+            'val': 321},
             {'kpi_name': 'empty',
              'kpi_technical_name': '',
-             'cols': [{}]}]}
+             'cols': None}]
 
         # Test with no previous year
         element = etree.Element('FormData')
