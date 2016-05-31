@@ -416,49 +416,49 @@ class EcdfReport(models.TransientModel):
         :param data_previous: dictionary of data of the previous year
         :returns: XML node called "declaration"
         '''
-        for record in self:
-            period_ids = (self.env['account.period'].search(
-                [('special', '=', False),
-                 ('fiscalyear_id', '=', record.current_fiscyear.id)]
-            )).sorted(key=lambda r: r.date_start)
+        self.ensure_one()
+        period_ids = (self.env['account.period'].search(
+            [('special', '=', False),
+                ('fiscalyear_id', '=', self.current_fiscyear.id)]
+        )).sorted(key=lambda r: r.date_start)
 
-            if not period_ids:
-                return
+        if not period_ids:
+            return
 
-            period_from = period_ids[0]
-            period_to = period_ids[-1]
-            currency = record.chart_account_id.company_id.currency_id
-            declaration = etree.Element('Declaration',
-                                        type=report_type,
-                                        language=record.get_language(),
-                                        model='1')
-            year = etree.Element('Year')
-            year.text = datetime.strptime(period_from.date_start,
-                                          "%Y-%m-%d").strftime("%Y")
-            period = etree.Element('Period')
-            period.text = '1'
-            form_data = etree.Element('FormData')
-            tfid = etree.Element('TextField', id='01')
-            tfid.text = datetime.strptime(period_from.date_start,
-                                          "%Y-%m-%d").strftime("%d/%m/%Y")
-            form_data.append(tfid)
-            tfid = etree.Element('TextField', id='02')
-            tfid.text = datetime.strptime(period_to.date_stop,
-                                          "%Y-%m-%d").strftime("%d/%m/%Y")
-            form_data.append(tfid)
-            tfid = etree.Element('TextField', id='03')
-            tfid.text = currency.name
-            form_data.append(tfid)
+        period_from = period_ids[0]
+        period_to = period_ids[-1]
+        currency = self.chart_account_id.company_id.currency_id
+        declaration = etree.Element('Declaration',
+                                    type=report_type,
+                                    language=self.get_language(),
+                                    model='1')
+        year = etree.Element('Year')
+        year.text = datetime.strptime(period_from.date_start,
+                                      "%Y-%m-%d").strftime("%Y")
+        period = etree.Element('Period')
+        period.text = '1'
+        form_data = etree.Element('FormData')
+        tfid = etree.Element('TextField', id='01')
+        tfid.text = datetime.strptime(period_from.date_start,
+                                      "%Y-%m-%d").strftime("%d/%m/%Y")
+        form_data.append(tfid)
+        tfid = etree.Element('TextField', id='02')
+        tfid.text = datetime.strptime(period_to.date_stop,
+                                      "%Y-%m-%d").strftime("%d/%m/%Y")
+        form_data.append(tfid)
+        tfid = etree.Element('TextField', id='03')
+        tfid.text = currency.name
+        form_data.append(tfid)
 
-            record._append_fr_lines(data_current,
-                                    form_data,
-                                    data_previous)
+        self._append_fr_lines(data_current,
+                              form_data,
+                              data_previous)
 
-            declaration.append(year)
-            declaration.append(period)
-            declaration.append(form_data)
+        declaration.append(year)
+        declaration.append(period)
+        declaration.append(form_data)
 
-            return declaration
+        return declaration
 
     @api.multi
     def _get_chart_ac(self, data, report_type):
@@ -468,95 +468,95 @@ class EcdfReport(models.TransientModel):
         :param report_type: Technical name of the report type
         :returns: XML node called "declaration"
         '''
+        self.ensure_one()
         # Regex : group('debit') : ecdf_code for debit column
         #         group('credit') ecdf_code for credit column
         exp = r"""^ecdf\_(?P<debit>\d*)\_(?P<credit>\d*)"""
         rexp = re.compile(exp, re.X)
 
-        for record in self:
-            period_ids = (self.env['account.period'].search(
-                [('special', '=', False),
-                 ('fiscalyear_id', '=', record.current_fiscyear.id)]
-            )).sorted(key=lambda r: r.date_start)
+        period_ids = (self.env['account.period'].search(
+            [('special', '=', False),
+                ('fiscalyear_id', '=', self.current_fiscyear.id)]
+        )).sorted(key=lambda r: r.date_start)
 
-            if not period_ids:
-                return
+        if not period_ids:
+            return
 
-            period_from = period_ids[0]
-            period_to = period_ids[-1]
-            declaration = etree.Element('Declaration',
-                                        type=report_type,
-                                        language=record.get_language(),
-                                        model='1')
-            year = etree.Element('Year')
-            year.text = datetime.strptime(period_from.date_start,
-                                          "%Y-%m-%d").strftime("%Y")
-            period = etree.Element('Period')
-            period.text = '1'
-            form_data = etree.Element('FormData')
-            tfid = etree.Element('TextField', id='01')
-            tfid.text = datetime.strptime(period_from.date_start,
-                                          "%Y-%m-%d").strftime("%d/%m/%Y")
-            form_data.append(tfid)
-            tfid = etree.Element('TextField', id='02')
-            tfid.text = datetime.strptime(period_to.date_stop,
-                                          "%Y-%m-%d").strftime("%d/%m/%Y")
-            form_data.append(tfid)
-            tfid = etree.Element('TextField', id='03')
-            tfid.text = record.chart_account_id.company_id.currency_id.name
-            form_data.append(tfid)
+        period_from = period_ids[0]
+        period_to = period_ids[-1]
+        declaration = etree.Element('Declaration',
+                                    type=report_type,
+                                    language=self.get_language(),
+                                    model='1')
+        year = etree.Element('Year')
+        year.text = datetime.strptime(period_from.date_start,
+                                      "%Y-%m-%d").strftime("%Y")
+        period = etree.Element('Period')
+        period.text = '1'
+        form_data = etree.Element('FormData')
+        tfid = etree.Element('TextField', id='01')
+        tfid.text = datetime.strptime(period_from.date_start,
+                                      "%Y-%m-%d").strftime("%d/%m/%Y")
+        form_data.append(tfid)
+        tfid = etree.Element('TextField', id='02')
+        tfid.text = datetime.strptime(period_to.date_stop,
+                                      "%Y-%m-%d").strftime("%d/%m/%Y")
+        form_data.append(tfid)
+        tfid = etree.Element('TextField', id='03')
+        tfid.text = self.chart_account_id.company_id.currency_id.name
+        form_data.append(tfid)
 
-            if record.remarks:  # add remarks in chart of accounts
-                fid = etree.Element('TextField', id='2385')
-                fid.text = record.remarks
-                form_data.append(fid)
+        if self.remarks:  # add remarks in chart of accounts
+            fid = etree.Element('TextField', id='2385')
+            fid.text = self.remarks
+            form_data.append(fid)
 
-            for report in data['content']:
-                if not report['kpi_technical_name']:
-                    continue
-                line_match = rexp.match(report['kpi_technical_name'])
-                if line_match:
-                    if report['cols'][0]['val'] not in [AccountingNone, None]:
-                        balance = round(report['cols'][0]['val'], 2)
-                        if balance <= 0:  # 0.0 must be in the credit column
-                            ecdf_code = line_match.group('credit')
-                            balance = abs(balance)
-                            comment = 'credit'
+        for report in data['content']:
+            if not report['kpi_technical_name']:
+                continue
+            line_match = rexp.match(report['kpi_technical_name'])
+            if line_match:
+                if report['cols'][0]['val'] not in [AccountingNone, None]:
+                    balance = round(report['cols'][0]['val'], 2)
+                    if balance <= 0:  # 0.0 must be in the credit column
+                        ecdf_code = line_match.group('credit')
+                        balance = abs(balance)
+                        comment = 'credit'
+                    else:
+                        ecdf_code = line_match.group('debit')
+                        comment = 'debit'
+
+                    # code 106 appears 2 times in the chart of accounts
+                    # with different ecdf codes
+                    # so we hard-code it here:
+                    # this is the only exception to the general algorithm
+                    if report['kpi_name'][:5] == '106 -':
+                        if balance <= 0.0:
+                            ecdf_codes = ['0118', '2260']
                         else:
-                            ecdf_code = line_match.group('debit')
-                            comment = 'debit'
+                            ecdf_codes = ['0117', '2259']
 
-                        # code 106 appears 2 times in the chart of accounts
-                        # with different ecdf codes
-                        # so we hard-code it here:
-                        # this is the only exception to the general algorithm
-                        if report['kpi_name'][:5] == '106 -':
-                            if balance <= 0.0:
-                                ecdf_codes = ['0118', '2260']
-                            else:
-                                ecdf_codes = ['0117', '2259']
-
-                            record._append_num_field(
-                                form_data, ecdf_codes[0], balance,
-                                comment=" %s - %s " % (comment,
-                                                       report['kpi_name'])
-                            )
-                            record._append_num_field(
-                                form_data, ecdf_codes[1], balance,
-                                comment=" %s - %s " % (comment,
-                                                       report['kpi_name'])
-                            )
-
-                        record._append_num_field(
-                            form_data, ecdf_code, balance,
-                            comment=" %s - %s " % (comment, report['kpi_name'])
+                        self._append_num_field(
+                            form_data, ecdf_codes[0], balance,
+                            comment=" %s - %s " % (comment,
+                                                   report['kpi_name'])
+                        )
+                        self._append_num_field(
+                            form_data, ecdf_codes[1], balance,
+                            comment=" %s - %s " % (comment,
+                                                   report['kpi_name'])
                         )
 
-            declaration.append(year)
-            declaration.append(period)
-            declaration.append(form_data)
+                    self._append_num_field(
+                        form_data, ecdf_code, balance,
+                        comment=" %s - %s " % (comment, report['kpi_name'])
+                    )
 
-            return declaration
+        declaration.append(year)
+        declaration.append(period)
+        declaration.append(form_data)
+
+        return declaration
 
     @api.multi
     def compute(self, mis_template, fiscal_year):
@@ -567,44 +567,44 @@ class EcdfReport(models.TransientModel):
         :param fiscal_year: fiscal year to compute
         :returns: computed content dictionary
         '''
-        for record in self:
-            # prepare AccountingExpressionProcessor
-            aep = AEP(record.env)
-            for kpi in mis_template.kpi_ids:
-                aep.parse_expr(kpi.expression)
-            aep.done_parsing(record.chart_account_id)
-            # Search periods
-            period_from = None
-            period_to = None
-            period_ids = self.env['account.period'].search(
-                [('special', '=', False),
-                 ('fiscalyear_id', '=', fiscal_year.id)])
-            period_ids = period_ids.sorted(key=lambda r: r.date_start)
-            if period_ids:
-                period_from = period_ids[0]
-                period_to = period_ids[-1]
+        self.ensure_one()
+        # prepare AccountingExpressionProcessor
+        aep = AEP(self.env)
+        for kpi in mis_template.kpi_ids:
+            aep.parse_expr(kpi.expression)
+        aep.done_parsing(self.chart_account_id)
+        # Search periods
+        period_from = None
+        period_to = None
+        period_ids = self.env['account.period'].search(
+            [('special', '=', False),
+                ('fiscalyear_id', '=', fiscal_year.id)])
+        period_ids = period_ids.sorted(key=lambda r: r.date_start)
+        if period_ids:
+            period_from = period_ids[0]
+            period_to = period_ids[-1]
 
-            # Compute KPI values
-            kpi_values = mis_template._compute(self.env.lang, aep,
-                                               fiscal_year.date_start,
-                                               fiscal_year.date_stop,
-                                               period_from,
-                                               period_to,
-                                               record.target_move)
-            # prepare content
-            content = []
-            rows_by_kpi_name = {}
-            for kpi in mis_template.kpi_ids:
-                rows_by_kpi_name[kpi.name] = {
-                    'kpi_name': kpi.description,
-                    'kpi_technical_name': kpi.name,
-                    'cols': [],
-                }
-                content.append(rows_by_kpi_name[kpi.name])
+        # Compute KPI values
+        kpi_values = mis_template._compute(self.env.lang, aep,
+                                           fiscal_year.date_start,
+                                           fiscal_year.date_stop,
+                                           period_from,
+                                           period_to,
+                                           self.target_move)
+        # prepare content
+        content = []
+        rows_by_kpi_name = {}
+        for kpi in mis_template.kpi_ids:
+            rows_by_kpi_name[kpi.name] = {
+                'kpi_name': kpi.description,
+                'kpi_technical_name': kpi.name,
+                'cols': [],
+            }
+            content.append(rows_by_kpi_name[kpi.name])
 
-            # add kpi values
-            for kpi_name in kpi_values:
-                rows_by_kpi_name[kpi_name]['cols'].append(kpi_values[kpi_name])
+        # add kpi values
+        for kpi_name in kpi_values:
+            rows_by_kpi_name[kpi_name]['cols'].append(kpi_values[kpi_name])
 
         return {'content': content}
 
@@ -614,145 +614,145 @@ class EcdfReport(models.TransientModel):
         Generates the selected financial reports in XML format
         The string is written in the base64 field "xml_file"
         '''
-        for record in self:
-            ecdf_namespace = "http://www.ctie.etat.lu/2011/ecdf"
-            nsmap = {None: ecdf_namespace}  # the default namespace(no prefix)
+        self.ensure_one()
+        ecdf_namespace = "http://www.ctie.etat.lu/2011/ecdf"
+        nsmap = {None: ecdf_namespace}  # the default namespace(no prefix)
 
-            root = etree.Element("eCDFDeclarations", nsmap=nsmap)
+        root = etree.Element("eCDFDeclarations", nsmap=nsmap)
 
-            # File Reference
-            file_reference = etree.Element('FileReference')
-            file_reference.text = record.file_name
-            root.append(file_reference)
-            # File Version
-            file_version = etree.Element('eCDFFileVersion')
-            file_version.text = record.get_ecdf_file_version()
-            root.append(file_version)
-            # Interface
-            interface = etree.Element('Interface')
-            interface.text = record.get_interface()
-            root.append(interface)
-            # Agent
-            agent = etree.Element('Agent')
-            matr_agent = etree.Element('MatrNbr')
-            matr_agent.text = record.get_matr_agent()
-            rcs_agent = etree.Element('RCSNbr')
-            rcs_agent.text = record.get_rcs_agent()
-            vat_agent = etree.Element('VATNbr')
-            vat_agent.text = record.get_vat_agent()
-            agent.append(matr_agent)
-            agent.append(rcs_agent)
-            agent.append(vat_agent)
-            root.append(agent)
-            # Declarations
-            declarations = etree.Element('Declarations')
-            declarer = etree.Element('Declarer')
-            matr_declarer = etree.Element('MatrNbr')
-            matr_declarer.text = record.get_matr_declarer()
-            rcs_declarer = etree.Element('RCSNbr')
-            rcs_declarer.text = record.get_rcs_declarer()
-            vat_declarer = etree.Element('VATNbr')
-            vat_declarer.text = record.get_vat_declarer()
-            declarer.append(matr_declarer)
-            declarer.append(rcs_declarer)
-            declarer.append(vat_declarer)
+        # File Reference
+        file_reference = etree.Element('FileReference')
+        file_reference.text = self.file_name
+        root.append(file_reference)
+        # File Version
+        file_version = etree.Element('eCDFFileVersion')
+        file_version.text = self.get_ecdf_file_version()
+        root.append(file_version)
+        # Interface
+        interface = etree.Element('Interface')
+        interface.text = self.get_interface()
+        root.append(interface)
+        # Agent
+        agent = etree.Element('Agent')
+        matr_agent = etree.Element('MatrNbr')
+        matr_agent.text = self.get_matr_agent()
+        rcs_agent = etree.Element('RCSNbr')
+        rcs_agent.text = self.get_rcs_agent()
+        vat_agent = etree.Element('VATNbr')
+        vat_agent.text = self.get_vat_agent()
+        agent.append(matr_agent)
+        agent.append(rcs_agent)
+        agent.append(vat_agent)
+        root.append(agent)
+        # Declarations
+        declarations = etree.Element('Declarations')
+        declarer = etree.Element('Declarer')
+        matr_declarer = etree.Element('MatrNbr')
+        matr_declarer.text = self.get_matr_declarer()
+        rcs_declarer = etree.Element('RCSNbr')
+        rcs_declarer.text = self.get_rcs_declarer()
+        vat_declarer = etree.Element('VATNbr')
+        vat_declarer.text = self.get_vat_declarer()
+        declarer.append(matr_declarer)
+        declarer.append(rcs_declarer)
+        declarer.append(vat_declarer)
 
-            reports = []
-            templ = {
-                'CA_PLANCOMPTA': 'l10n_lu_mis_reports.mis_report_ca',
-                'CA_BILAN': 'l10n_lu_mis_reports.mis_report_bs',
-                'CA_BILANABR': 'l10n_lu_mis_reports.mis_report_abr_bs',
-                'CA_COMPP': 'l10n_lu_mis_reports.mis_report_pl',
-                'CA_COMPPABR': 'l10n_lu_mis_reports.mis_report_abr_pl',
+        reports = []
+        templ = {
+            'CA_PLANCOMPTA': 'l10n_lu_mis_reports.mis_report_ca',
+            'CA_BILAN': 'l10n_lu_mis_reports.mis_report_bs',
+            'CA_BILANABR': 'l10n_lu_mis_reports.mis_report_abr_bs',
+            'CA_COMPP': 'l10n_lu_mis_reports.mis_report_pl',
+            'CA_COMPPABR': 'l10n_lu_mis_reports.mis_report_abr_pl',
+        }
+
+        # Report
+        if self.with_ac:  # Chart of Accounts
+            reports.append({'type': 'CA_PLANCOMPTA',
+                            'templ': templ['CA_PLANCOMPTA']})
+        if self.with_bs:  # Balance Sheet
+            if self.reports_type == 'full':
+                reports.append({'type': 'CA_BILAN',
+                                'templ': templ['CA_BILAN']})
+            else:  # Balance Sheet abreviated
+                reports.append({'type': 'CA_BILANABR',
+                                'templ': templ['CA_BILANABR']})
+        if self.with_pl:  # Profit and Loss
+            if self.reports_type == 'full':
+                reports.append({'type': 'CA_COMPP',
+                                'templ': templ['CA_COMPP']})
+            else:  # Profit and Loss abreviated
+                reports.append({'type': 'CA_COMPPABR',
+                                'templ': templ['CA_COMPPABR']})
+
+        if not reports:
+            raise UserError(_('No report type selected'),
+                            _('Please, select a report type'))
+
+        error_not_found = ""
+        for report in reports:
+            # Search MIS template by XML ID
+            mis_env = self.env['mis.report']
+            id_mis_report = self.env.ref(report['templ']).id
+            mis_report = mis_env.search([('id', '=', id_mis_report)])
+
+            # If the MIS template has not been found
+            if not mis_report or not len(mis_report):
+                error_not_found += '\n\t - ' + report['templ']
+
+            data_current = self.compute(mis_report,
+                                        self.current_fiscyear)
+            data_previous = None
+
+            if report['type'] != 'CA_PLANCOMPTA':
+                if self.prev_fiscyear:  # Previous year
+                    data_previous = self.compute(mis_report,
+                                                 self.prev_fiscyear)
+                financial_report = self._get_finan_report(data_current,
+                                                          report['type'],
+                                                          data_previous)
+                if financial_report is not None:
+                    declarer.append(financial_report)
+            else:  # Chart of accounts
+                chart_of_account = self._get_chart_ac(data_current,
+                                                      report['type'])
+                if chart_of_account is not None:
+                    declarer.append(chart_of_account)
+
+        # Warning message if template(s) not found
+        if error_not_found:
+            raise UserError(
+                _('MIS Template(s) not found :'),
+                error_not_found)
+
+        # Declarer
+        declarations.append(declarer)
+        root.append(declarations)
+
+        # Write the xml
+        xml = etree.tostring(root, encoding='UTF-8', xml_declaration=True)
+        # Validate the generated XML schema
+        xsd = tools.file_open('l10n_lu_ecdf/xsd/ecdf-v1.1.xsd')
+        xmlschema_doc = etree.parse(xsd)
+        xmlschema = etree.XMLSchema(xmlschema_doc)
+        # Reparse only to have line numbers in error messages?
+        xml_to_validate = StringIO(xml)
+        parse_result = etree.parse(xml_to_validate)
+        # Validation
+        if xmlschema.validate(parse_result):
+            self.xml_file = base64.encodestring(xml)
+            return {
+                'name': 'eCDF Report',
+                'type': 'ir.actions.act_window',
+                'res_model': 'ecdf.report',
+                'view_mode': 'form',
+                'view_type': 'form',
+                'res_id': self.id,
+                'views': [(False, 'form')],
+                'target': 'new',
             }
-
-            # Report
-            if record.with_ac:  # Chart of Accounts
-                reports.append({'type': 'CA_PLANCOMPTA',
-                                'templ': templ['CA_PLANCOMPTA']})
-            if record.with_bs:  # Balance Sheet
-                if record.reports_type == 'full':
-                    reports.append({'type': 'CA_BILAN',
-                                    'templ': templ['CA_BILAN']})
-                else:  # Balance Sheet abreviated
-                    reports.append({'type': 'CA_BILANABR',
-                                    'templ': templ['CA_BILANABR']})
-            if record.with_pl:  # Profit and Loss
-                if record.reports_type == 'full':
-                    reports.append({'type': 'CA_COMPP',
-                                    'templ': templ['CA_COMPP']})
-                else:  # Profit and Loss abreviated
-                    reports.append({'type': 'CA_COMPPABR',
-                                    'templ': templ['CA_COMPPABR']})
-
-            if not reports:
-                raise UserError(_('No report type selected'),
-                                _('Please, select a report type'))
-
-            error_not_found = ""
-            for report in reports:
-                # Search MIS template by XML ID
-                mis_env = record.env['mis.report']
-                id_mis_report = record.env.ref(report['templ']).id
-                mis_report = mis_env.search([('id', '=', id_mis_report)])
-
-                # If the MIS template has not been found
-                if not mis_report or not len(mis_report):
-                    error_not_found += '\n\t - ' + report['templ']
-
-                data_current = record.compute(mis_report,
-                                              record.current_fiscyear)
-                data_previous = None
-
-                if report['type'] != 'CA_PLANCOMPTA':
-                    if record.prev_fiscyear:  # Previous year
-                        data_previous = record.compute(mis_report,
-                                                       record.prev_fiscyear)
-                    financial_report = record._get_finan_report(data_current,
-                                                                report['type'],
-                                                                data_previous)
-                    if financial_report is not None:
-                        declarer.append(financial_report)
-                else:  # Chart of accounts
-                    chart_of_account = record._get_chart_ac(data_current,
-                                                            report['type'])
-                    if chart_of_account is not None:
-                        declarer.append(chart_of_account)
-
-            # Warning message if template(s) not found
-            if error_not_found:
-                raise UserError(
-                    _('MIS Template(s) not found :'),
-                    error_not_found)
-
-            # Declarer
-            declarations.append(declarer)
-            root.append(declarations)
-
-            # Write the xml
-            xml = etree.tostring(root, encoding='UTF-8', xml_declaration=True)
-            # Validate the generated XML schema
-            xsd = tools.file_open('l10n_lu_ecdf/xsd/ecdf-v1.1.xsd')
-            xmlschema_doc = etree.parse(xsd)
-            xmlschema = etree.XMLSchema(xmlschema_doc)
-            # Reparse only to have line numbers in error messages?
-            xml_to_validate = StringIO(xml)
-            parse_result = etree.parse(xml_to_validate)
-            # Validation
-            if xmlschema.validate(parse_result):
-                record.xml_file = base64.encodestring(xml)
-                return {
-                    'name': 'eCDF Report',
-                    'type': 'ir.actions.act_window',
-                    'res_model': 'ecdf.report',
-                    'view_mode': 'form',
-                    'view_type': 'form',
-                    'res_id': record.id,
-                    'views': [(False, 'form')],
-                    'target': 'new',
-                }
-            else:
-                error = xmlschema.error_log[0]
-                raise UserError(
-                    _('The generated file doesn\'t fit the required schema !'),
-                    error.message)
+        else:
+            error = xmlschema.error_log[0]
+            raise UserError(
+                _('The generated file doesn\'t fit the required schema !'),
+                error.message)
