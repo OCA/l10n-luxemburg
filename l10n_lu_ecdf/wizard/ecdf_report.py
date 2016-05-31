@@ -357,7 +357,7 @@ class EcdfReport(models.TransientModel):
         exp = r"""^ecdf\_(?P<previous>\d*)\_(?P<current>\d*)"""
         rexp = re.compile(exp, re.X)
         for record in self:
-            for report in data_curr['content']:
+            for report in data_curr:
                 if not report['kpi_technical_name']:
                     continue
                 line_match = rexp.match(report['kpi_technical_name'])
@@ -366,11 +366,11 @@ class EcdfReport(models.TransientModel):
                     record._append_num_field(
                         form_data,
                         ecdf_code,
-                        report['cols'][0]['val'] or 0.0,
+                        report['val'] or 0.0,
                         comment=" current - %s " % report['kpi_name']
                     )
             if data_prev:  # Previous fiscal year
-                for report in data_prev['content']:
+                for report in data_prev:
                     if not report['kpi_technical_name']:
                         continue
                     line_match = rexp.match(report['kpi_technical_name'])
@@ -379,12 +379,12 @@ class EcdfReport(models.TransientModel):
                         record._append_num_field(
                             form_data,
                             ecdf_code,
-                            report['cols'][0]['val'] or 0.0,
+                            report['val'] or 0.0,
                             comment=" previous - %s " % report['kpi_name']
                         )
             else:  # No Previous fical year
                 form_data.append(etree.Comment(" no previous year"))
-                for report in data_curr['content']:
+                for report in data_curr:
                     if not report['kpi_technical_name']:
                         continue
                     line_match = rexp.match(report['kpi_technical_name'])
@@ -392,7 +392,7 @@ class EcdfReport(models.TransientModel):
                         ecdf_code = line_match.group('previous')
                         record._append_num_field(form_data,
                                                  ecdf_code,
-                                                 report['cols'][0]['val'],
+                                                 report['val'],
                                                  zero=True)
 
     @api.multi
@@ -499,13 +499,13 @@ class EcdfReport(models.TransientModel):
             fid.text = self.remarks
             form_data.append(fid)
 
-        for report in data['content']:
+        for report in data:
             if not report['kpi_technical_name']:
                 continue
             line_match = rexp.match(report['kpi_technical_name'])
             if line_match:
-                if report['cols'][0]['val'] not in [AccountingNone, None]:
-                    balance = round(report['cols'][0]['val'], 2)
+                if report['val'] not in [AccountingNone, None]:
+                    balance = round(report['val'], 2)
                     if balance <= 0:  # 0.0 must be in the credit column
                         ecdf_code = line_match.group('credit')
                         balance = abs(balance)
@@ -551,18 +551,20 @@ class EcdfReport(models.TransientModel):
     @api.multi
     def compute(self, mis_template, fiscal_year):
         '''
-        Builds the "content" dictionary, with name, technical name and values\
-        for each KPI expression
+        Compute the values for a fiscal year, using the MIS Buildter template.
+
         :param mis_template: template MIS Builder of the report
         :param fiscal_year: fiscal year to compute
-        :returns: computed content dictionary
+        :returns: list of dict(kpi_name, kpi_technical_name, val)
         '''
         self.ensure_one()
+
         # prepare AccountingExpressionProcessor
         aep = AEP(self.env)
         for kpi in mis_template.kpi_ids:
             aep.parse_expr(kpi.expression)
         aep.done_parsing(self.chart_account_id)
+
         # Search periods
         period_from = None
         period_to = None
@@ -581,22 +583,16 @@ class EcdfReport(models.TransientModel):
                                            period_from,
                                            period_to,
                                            self.target_move)
-        # prepare content
-        content = []
-        rows_by_kpi_name = {}
+        # prepare result
+        res = []
         for kpi in mis_template.kpi_ids:
-            rows_by_kpi_name[kpi.name] = {
+            res.append({
                 'kpi_name': kpi.description,
                 'kpi_technical_name': kpi.name,
-                'cols': [],
-            }
-            content.append(rows_by_kpi_name[kpi.name])
+                'val': kpi_values[kpi.name]['val'],
+            })
 
-        # add kpi values
-        for kpi_name in kpi_values:
-            rows_by_kpi_name[kpi_name]['cols'].append(kpi_values[kpi_name])
-
-        return {'content': content}
+        return res
 
     @api.multi
     def print_xml(self):
