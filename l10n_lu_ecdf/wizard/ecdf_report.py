@@ -358,8 +358,6 @@ class EcdfReport(models.TransientModel):
         rexp = re.compile(exp, re.X)
         for record in self:
             for report in data_curr:
-                if not report['kpi_technical_name']:
-                    continue
                 line_match = rexp.match(report['kpi_technical_name'])
                 if line_match:
                     ecdf_code = line_match.group('current')
@@ -371,8 +369,6 @@ class EcdfReport(models.TransientModel):
                     )
             if data_prev:  # Previous fiscal year
                 for report in data_prev:
-                    if not report['kpi_technical_name']:
-                        continue
                     line_match = rexp.match(report['kpi_technical_name'])
                     if line_match:
                         ecdf_code = line_match.group('previous')
@@ -385,8 +381,6 @@ class EcdfReport(models.TransientModel):
             else:  # No Previous fical year
                 form_data.append(etree.Comment(" no previous year"))
                 for report in data_curr:
-                    if not report['kpi_technical_name']:
-                        continue
                     line_match = rexp.match(report['kpi_technical_name'])
                     if line_match:
                         ecdf_code = line_match.group('previous')
@@ -500,8 +494,6 @@ class EcdfReport(models.TransientModel):
             form_data.append(fid)
 
         for report in data:
-            if not report['kpi_technical_name']:
-                continue
             line_match = rexp.match(report['kpi_technical_name'])
             if line_match:
                 if report['val'] not in [AccountingNone, None]:
