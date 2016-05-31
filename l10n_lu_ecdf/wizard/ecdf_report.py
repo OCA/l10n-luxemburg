@@ -85,7 +85,7 @@ class EcdfReport(models.TransientModel):
                             compute='_compute_file_name')
     full_file_name = fields.Char('Full file name',
                                  size=28,
-                                 compute='_compute_full_file_name')
+                                 compute='_compute_file_name')
     # File
     xml_file = fields.Binary('XML File', readonly=True)
 
@@ -155,16 +155,7 @@ class EcdfReport(models.TransientModel):
                 prefixe = '000000'
             res = prefixe + datetime.now().strftime(dtf) + str("%02d" % nbr)
             record.file_name = res
-
-    @api.depends('file_name')
-    @api.multi
-    def _compute_full_file_name(self):
-        '''
-        Compute : file name + its extension
-        '''
-        for record in self:
-            extension = ".xml"
-            record.full_file_name = record.file_name + extension
+            record.full_file_name = res + '.xml'
 
     @api.multi
     @api.onchange('chart_account_id')
