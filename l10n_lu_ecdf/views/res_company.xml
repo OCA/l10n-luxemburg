@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <record model="ir.ui.view" id="view_company_form">
+            <field name="name">res.company.form (l10n_lu_ecdf)</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="l10n_lu_ext.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='l10n_lu_matricule']" position="after">
+                    <field name="ecdf_prefixe" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

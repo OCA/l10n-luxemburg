@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+    <record id="ecdf_report_view" model="ir.ui.view">
+        <field name="name">eCDF Report</field>
+        <field name="model">ecdf.report</field>
+        <field name="arch" type="xml">
+            <form>
+            <field name="company_id" invisible="1" />
+                <group name="top_group">
+                    <group name="left_group">
+                        <field name="chart_account_id" on_change="onchange_chart_id(chart_account_id, context)" />
+                        <field name="current_fiscyear" domain="[('company_id','=', company_id)]"/>
+                        <field name="prev_fiscyear" domain="[('company_id','=', company_id)]"/>
+                    </group>
+                    <group name="right_group">
+                        <field name="language"/>
+                        <field name="target_move"/>
+                        <field name="reports_type" attrs="{'invisible': [('with_bs', '=', False), ('with_pl', '=', False)]}"/>
+                    </group>
+                </group>
+            
+            <group name="second_group">
+                <group name="group_agent">
+                    <separator string="Agent"/>
+                    <separator string=""/>
+                    <field name="matricule"/>
+                    <field name="vat"/>
+                    <field name="company_registry"/>
+                </group>
+                <group name="group_reports">
+                    <separator string="Reports"/>
+                    <separator string=""/>
+                    <field name="with_ac"/>
+                    <field name="with_bs"/>
+                    <field name="with_pl"/>
+                </group>
+            </group>
+            <group name="group_comments">
+                <field name="remarks" attrs="{'invisible': [('with_ac','=',False)]}"/>
+            </group>
+            <group>
+                <field name="xml_file"  filename="full_file_name"/>
+            </group>
+            <footer>
+                <button name="print_xml" string="Create XML" type="object" default_focus="1" class="oe_highlight"/>
+                 <button string="Cancel" class="oe_link" special="cancel"/>
+            </footer>
+            </form>
+        </field>
+    </record>
+    
+    <record id="action_ecdf_report" model="ir.actions.act_window">
+        <field name="name">eCDF Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ecdf.report</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="ecdf_report_view" />
+        <field name="target">new</field>
+        <field name="context">{'model':'ecdf.report'}</field>
+    </record>
+    
+    <menuitem id="menu_ecdf_reporting" name="eCDF annual reports"
+        parent="l10n_lu_ext.legal_lu" action="action_ecdf_report" />
+    
+    </data>
+</openerp>
