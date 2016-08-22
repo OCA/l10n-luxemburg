@@ -11,7 +11,6 @@
       <field name="name">ecdf_202_201</field>
       <field name="description">ACTIF</field>
       <field name="expression">ecdf_102_101  + ecdf_108_107  + ecdf_110_109  + ecdf_152_151  + ecdf_200_199</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">background-color: orange; font-weight: bold</field>
@@ -22,7 +21,6 @@
       <field name="name">ecdf_102_101</field>
       <field name="description">A. Capital souscrit non versé</field>
       <field name="expression">ecdf_104_103  + ecdf_106_105</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-weight: bold</field>
@@ -33,7 +31,6 @@
       <field name="name">ecdf_104_103</field>
       <field name="description">I. Capital souscrit non appelé</field>
       <field name="expression">bals[102%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
@@ -44,7 +41,6 @@
       <field name="name">ecdf_106_105</field>
       <field name="description">II. Capital souscrit appelé et non versé</field>
       <field name="expression">bals[103%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
@@ -55,7 +51,6 @@
       <field name="name">ecdf_108_107</field>
       <field name="description">B. Frais d’établissement</field>
       <field name="expression">bals[20%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-weight: bold</field>
@@ -66,7 +61,6 @@
       <field name="name">ecdf_110_109</field>
       <field name="description">C. Actif immobilisé</field>
       <field name="expression">ecdf_112_111  + ecdf_126_125  + ecdf_136_135</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-weight: bold</field>
@@ -77,7 +71,6 @@
       <field name="name">ecdf_112_111</field>
       <field name="description">I. Immobilisations incorporelles</field>
       <field name="expression">bals[211%,2121%,2122%,213%,214%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
@@ -88,7 +81,6 @@
       <field name="name">ecdf_126_125</field>
       <field name="description">II. Immobilisations corporelles</field>
       <field name="expression">bals[221%,222%,223%,224%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
@@ -99,7 +91,6 @@
       <field name="name">ecdf_136_135</field>
       <field name="description">III. Immobilisations financières</field>
       <field name="expression">bals[231%,232%,233%,234%,235%,236%,237%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
@@ -110,7 +101,6 @@
       <field name="name">ecdf_152_151</field>
       <field name="description">D. Actif circulant</field>
       <field name="expression">ecdf_154_153  + ecdf_164_163  + ecdf_190_189  + ecdf_198_197</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-weight: bold</field>
@@ -121,7 +111,6 @@
       <field name="name">ecdf_154_153</field>
       <field name="description">I. Stocks</field>
       <field name="expression">bals[30%,31%,32%,33%,34%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
@@ -132,7 +121,6 @@
       <field name="name">ecdf_164_163</field>
       <field name="description">II. Créances</field>
       <field name="expression">ecdf_204_203  + ecdf_206_205</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
@@ -143,7 +131,6 @@
       <field name="name">ecdf_204_203</field>
       <field name="description">a) dont la durée résiduelle est inférieure ou égale à un an</field>
       <field name="expression">bals[401%,4111%,4121%,421%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
@@ -154,7 +141,6 @@
       <field name="name">ecdf_206_205</field>
       <field name="description">b) dont la durée résiduelle est supérieure à un an</field>
       <field name="expression">bals[402%,4112%,4122%,422%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
@@ -165,7 +151,6 @@
       <field name="name">ecdf_190_189</field>
       <field name="description">III. Valeurs mobilières</field>
       <field name="expression">bals[501%,502%,503%,508%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
@@ -176,7 +161,6 @@
       <field name="name">ecdf_198_197</field>
       <field name="description">IV. Avoirs en banques, avoirs en compte de chèques postaux, chèques et en caisse</field>
       <field name="expression">bals[51%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
@@ -187,7 +171,6 @@
       <field name="name">ecdf_200_199</field>
       <field name="description">E. Comptes de régularisation</field>
       <field name="expression">bals[481%,484%,486%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-weight: bold</field>
@@ -198,7 +181,6 @@
       <field name="name">ecdf_406_405</field>
       <field name="description">PASSIF</field>
       <field name="expression">ecdf_302_301  + ecdf_330_329  + ecdf_332_331  + ecdf_340_339  + ecdf_404_403</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">background-color: orange; font-weight: bold</field>
@@ -209,7 +191,6 @@
       <field name="name">ecdf_302_301</field>
       <field name="description">A. Capitaux propres</field>
       <field name="expression">ecdf_304_303  + ecdf_306_305  + ecdf_308_307  + ecdf_310_309  + ecdf_320_319  + ecdf_322_321  + ecdf_324_323  + ecdf_326_325  + ecdf_328_327</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-weight: bold</field>
@@ -220,7 +201,6 @@
       <field name="name">ecdf_304_303</field>
       <field name="description">I. Capital souscrit</field>
       <field name="expression">-bals[101%,104%,105%,106%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
@@ -231,7 +211,6 @@
       <field name="name">ecdf_306_305</field>
       <field name="description">II. Primes d'émissions et primes assimilées</field>
       <field name="expression">-bals[11%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
@@ -242,7 +221,6 @@
       <field name="name">ecdf_308_307</field>
       <field name="description">III. Réserves de réévaluation</field>
       <field name="expression">-bals[12%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
@@ -253,7 +231,6 @@
       <field name="name">ecdf_310_309</field>
       <field name="description">IV. Réserves</field>
       <field name="expression">-bals[131%,132%,133%,138%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
@@ -264,7 +241,6 @@
       <field name="name">ecdf_320_319</field>
       <field name="description">V. Résultats reportés</field>
       <field name="expression">-bals[141%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
@@ -275,7 +251,6 @@
       <field name="name">ecdf_322_321</field>
       <field name="description">VI. Résultat de l'exercice</field>
       <field name="expression">-bals[142%,resultat%,resultat-transfert]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
@@ -286,7 +261,6 @@
       <field name="name">ecdf_324_323</field>
       <field name="description">VII. Acomptes sur dividendes</field>
       <field name="expression">-bals[15%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
@@ -297,7 +271,6 @@
       <field name="name">ecdf_326_325</field>
       <field name="description">VIII. Subventions d’investissement en capital</field>
       <field name="expression">-bals[16%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
@@ -308,7 +281,6 @@
       <field name="name">ecdf_328_327</field>
       <field name="description">IX. Plus-values immunisées</field>
       <field name="expression">-bals[17%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
@@ -319,7 +291,6 @@
       <field name="name">ecdf_330_329</field>
       <field name="description">B. Dettes subordonnées</field>
       <field name="expression">-bals[191%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-weight: bold</field>
@@ -330,7 +301,6 @@
       <field name="name">ecdf_332_331</field>
       <field name="description">C. Provisions</field>
       <field name="expression">-bals[181%,182%,183%,188%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-weight: bold</field>
@@ -341,7 +311,6 @@
       <field name="name">ecdf_340_339</field>
       <field name="description">D. Dettes non subordonnées</field>
       <field name="expression">ecdf_408_407  + ecdf_410_409</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-weight: bold</field>
@@ -352,7 +321,6 @@
       <field name="name">ecdf_408_407</field>
       <field name="description">a) dont la durée résiduelle est inférieure ou égale à un an</field>
       <field name="expression">-bals[1921%,1931%,1941%,1951%,1981%,431%,4411%,4421%,4511%,4521%,461%,471%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
@@ -363,7 +331,6 @@
       <field name="name">ecdf_410_409</field>
       <field name="description">b) dont la durée résiduelle est supérieure à un an</field>
       <field name="expression">-bals[1922%,1932%,1942%,1952%,1982%,432%,4412%,4422%,4512%,4522%,462%,472%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
@@ -374,7 +341,6 @@
       <field name="name">ecdf_404_403</field>
       <field name="description">E. Comptes de régularisation</field>
       <field name="expression">-bals[482%,483%,485%,487%]</field>
-      <field name="suffix">€</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-weight: bold</field>
