@@ -11,12 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2016-08-21 00:45+0000\n"
 "PO-Revision-Date: 2016-08-21 00:45+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
-"Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
+"Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: sl\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
 
 #. module: l10n_lu_ecdf
 #: selection:ecdf.report,reports_type:0
@@ -41,12 +41,12 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,with_bs:0
 msgid "Balance Sheet"
-msgstr "Bilan"
+msgstr ""
 
 #. module: l10n_lu_ecdf
 #: view:ecdf.report:l10n_lu_ecdf.ecdf_report_view
 msgid "Cancel"
-msgstr "Annuler"
+msgstr ""
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,chart_account_id:0
@@ -66,7 +66,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: model:ir.model,name:l10n_lu_ecdf.model_res_company
 msgid "Companies"
-msgstr "Sociétés"
+msgstr ""
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,company_id:0
@@ -86,12 +86,12 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,create_uid:0
 msgid "Created by"
-msgstr "Créé par"
+msgstr "Ustvaril"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,create_date:0
 msgid "Created on"
-msgstr "Date"
+msgstr "Ustvarjeno"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,current_fiscyear:0
@@ -106,12 +106,12 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: selection:ecdf.report,filter:0
 msgid "Date"
-msgstr "Date"
+msgstr "Datum"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,display_name:0
 msgid "Display Name"
-msgstr "Nom à afficher"
+msgstr "Prikazni naziv"
 
 #. module: l10n_lu_ecdf
 #: selection:ecdf.report,language:0
@@ -166,7 +166,7 @@ msgstr "ID"
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,journal_ids:0
 msgid "Journals"
-msgstr "Journaux"
+msgstr ""
 
 #. module: l10n_lu_ecdf
 #: help:ecdf.report,fiscalyear_id:0
@@ -181,17 +181,17 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,__last_update:0
 msgid "Last Modified on"
-msgstr "Dernière modification le"
+msgstr "Zadnjič spremenjeno"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,write_uid:0
 msgid "Last Updated by"
-msgstr "Dernière mise à jour par"
+msgstr "Zadnjič posodobil"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,write_date:0
 msgid "Last Updated on"
-msgstr "Dernière mise à jour le"
+msgstr "Zadnjič posodobljeno"
 
 #. module: l10n_lu_ecdf
 #: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:706
