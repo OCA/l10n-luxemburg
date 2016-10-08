@@ -4,13 +4,15 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
+# Ermin Trevisan <trevi@twanda.com>, 2016
+# Philipp Hug <philipp@hug.cx>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-21 00:45+0000\n"
-"PO-Revision-Date: 2016-08-21 00:45+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"POT-Creation-Date: 2016-09-17 17:42+0000\n"
+"PO-Revision-Date: 2016-09-17 17:42+0000\n"
+"Last-Translator: Philipp Hug <philipp@hug.cx>, 2016\n"
 "Language-Team: German (https://www.transifex.com/oca/teams/23907/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,7 +48,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: view:ecdf.report:l10n_lu_ecdf.ecdf_report_view
 msgid "Cancel"
-msgstr ""
+msgstr "Abbrechen"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,chart_account_id:0
@@ -66,12 +68,12 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: model:ir.model,name:l10n_lu_ecdf.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Unternehmen"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,company_id:0
 msgid "Company"
-msgstr ""
+msgstr "Unternehmen"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,company_registry:0
@@ -111,7 +113,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,display_name:0
 msgid "Display Name"
-msgstr ""
+msgstr "Anzeigename"
 
 #. module: l10n_lu_ecdf
 #: selection:ecdf.report,language:0
@@ -176,12 +178,12 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,language:0
 msgid "Language"
-msgstr ""
+msgstr "Sprache"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,__last_update:0
 msgid "Last Modified on"
-msgstr ""
+msgstr "Zuletzt geändert am"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,write_uid:0
