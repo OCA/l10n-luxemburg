@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2015-2016 ACSONE SA/NV
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-<openerp>
+<odoo>
   <data>
     <record id="mis_report_abr_pl" model="mis.report">
       <field name="name">Luxembourg Profit &amp; Loss (abbreviated)</field>
@@ -397,4 +397,4 @@
       <field name="sequence">390</field>
     </record>
   </data>
-</openerp>
+</odoo>

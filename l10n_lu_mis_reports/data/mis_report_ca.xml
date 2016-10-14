@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2015-2016 ACSONE SA/NV
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-<openerp>
+<odoo>
   <data>
     <record id="mis_report_ca" model="mis.report">
       <field name="name">Luxembourg Chart of Accounts</field>
@@ -11407,4 +11407,4 @@
       <field name="sequence">24150</field>
     </record>
   </data>
-</openerp>
+</odoo>
