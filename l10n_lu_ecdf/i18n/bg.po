@@ -111,7 +111,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,display_name:0
 msgid "Display Name"
-msgstr ""
+msgstr "Име за Показване"
 
 #. module: l10n_lu_ecdf
 #: selection:ecdf.report,language:0

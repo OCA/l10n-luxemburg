@@ -5,13 +5,14 @@
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
 # Christophe CHAUVET <christophe.chauvet@gmail.com>, 2016
+# Sébastien LANGE (SYLEAM) <sebastien.lange@syleam.fr>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-09-17 17:42+0000\n"
 "PO-Revision-Date: 2016-09-17 17:42+0000\n"
-"Last-Translator: Christophe CHAUVET <christophe.chauvet@gmail.com>, 2016\n"
+"Last-Translator: Sébastien LANGE (SYLEAM) <sebastien.lange@syleam.fr>, 2016\n"
 "Language-Team: French (https://www.transifex.com/oca/teams/23907/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,12 +33,12 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: selection:ecdf.report,target_move:0
 msgid "All Entries"
-msgstr ""
+msgstr "Toutes les écritures"
 
 #. module: l10n_lu_ecdf
 #: selection:ecdf.report,target_move:0
 msgid "All Posted Entries"
-msgstr ""
+msgstr "Toutes les écritures passées"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,with_bs:0
@@ -122,7 +123,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,date_to:0
 msgid "End Date"
-msgstr ""
+msgstr "Date de fin"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,period_to:0
@@ -291,7 +292,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,target_move:0
 msgid "Target Moves"
-msgstr ""
+msgstr "É"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,vat:0

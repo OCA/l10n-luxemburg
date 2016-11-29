@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-21 00:45+0000\n"
-"PO-Revision-Date: 2016-08-21 00:45+0000\n"
+"POT-Creation-Date: 2016-09-17 17:42+0000\n"
+"PO-Revision-Date: 2016-09-17 17:42+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: Estonian (https://www.transifex.com/oca/teams/23907/et/)\n"
 "MIME-Version: 1.0\n"
@@ -86,12 +86,12 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Loonud"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Loodud"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,current_fiscyear:0
@@ -111,7 +111,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,display_name:0
 msgid "Display Name"
-msgstr ""
+msgstr "Näidatav nimi"
 
 #. module: l10n_lu_ecdf
 #: selection:ecdf.report,language:0
@@ -161,7 +161,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,id:0
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,journal_ids:0
@@ -181,17 +181,17 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,__last_update:0
 msgid "Last Modified on"
-msgstr ""
+msgstr "Viimati muudetud"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Viimati uuendatud"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Viimati uuendatud"
 
 #. module: l10n_lu_ecdf
 #: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:706

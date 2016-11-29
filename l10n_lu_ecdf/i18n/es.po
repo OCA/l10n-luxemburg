@@ -4,13 +4,15 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
+# Pedro M. Baeza <pedro.baeza@gmail.com>, 2016
+# Iván Todorovich <ivan.todorovich@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-21 00:45+0000\n"
-"PO-Revision-Date: 2016-08-21 00:45+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"POT-Creation-Date: 2016-09-17 17:42+0000\n"
+"PO-Revision-Date: 2016-09-17 17:42+0000\n"
+"Last-Translator: Iván Todorovich <ivan.todorovich@gmail.com>, 2016\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -66,12 +68,12 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: model:ir.model,name:l10n_lu_ecdf.model_res_company
 msgid "Companies"
-msgstr ""
+msgstr "Compañías"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,company_id:0
 msgid "Company"
-msgstr ""
+msgstr "Compañía"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,company_registry:0
@@ -121,7 +123,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,date_to:0
 msgid "End Date"
-msgstr ""
+msgstr "Fecha Final"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,period_to:0
@@ -265,7 +267,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: view:ecdf.report:l10n_lu_ecdf.ecdf_report_view
 msgid "Reports"
-msgstr ""
+msgstr "Reportes"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,reports_type:0
@@ -280,7 +282,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,date_from:0
 msgid "Start Date"
-msgstr ""
+msgstr "Fecha de inicio"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,period_from:0

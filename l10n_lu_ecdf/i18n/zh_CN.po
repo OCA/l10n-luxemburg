@@ -46,7 +46,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: view:ecdf.report:l10n_lu_ecdf.ecdf_report_view
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,chart_account_id:0
@@ -111,7 +111,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,display_name:0
 msgid "Display Name"
-msgstr ""
+msgstr "显示名称"
 
 #. module: l10n_lu_ecdf
 #: selection:ecdf.report,language:0
@@ -181,7 +181,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,__last_update:0
 msgid "Last Modified on"
-msgstr ""
+msgstr "最后修改时间"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,write_uid:0

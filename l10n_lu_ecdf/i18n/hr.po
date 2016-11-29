@@ -71,7 +71,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,company_id:0
 msgid "Company"
-msgstr ""
+msgstr "Poduzeće"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,company_registry:0

@@ -108,7 +108,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: selection:ecdf.report,filter:0
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,display_name:0
@@ -123,7 +123,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,date_to:0
 msgid "End Date"
-msgstr ""
+msgstr "Enddatum"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,period_to:0

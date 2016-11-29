@@ -86,12 +86,12 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Aangemaakt door"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Aangemaakt op"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,current_fiscyear:0
@@ -161,7 +161,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,id:0
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,journal_ids:0
@@ -186,12 +186,12 @@ msgstr "Laatst bijgewerkt op"
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Laatst bijgewerkt door"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Laatst bijgewerkt op"
 
 #. module: l10n_lu_ecdf
 #: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:706
