@@ -4,20 +4,19 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
-# leemannd <leemannd@gmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-29 12:58+0000\n"
 "PO-Revision-Date: 2016-11-29 12:58+0000\n"
-"Last-Translator: leemannd <leemannd@gmail.com>, 2016\n"
-"Language-Team: French (Switzerland) (https://www.transifex.com/oca/teams/23907/fr_CH/)\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"Language-Team: Spanish (Chile) (https://www.transifex.com/oca/teams/23907/es_CL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: fr_CH\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: es_CL\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: l10n_lu_ecdf
 #: selection:ecdf.report,reports_type:0
@@ -47,7 +46,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: view:ecdf.report:l10n_lu_ecdf.ecdf_report_view
 msgid "Cancel"
-msgstr "Annuler"
+msgstr ""
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,chart_account_id:0
@@ -87,12 +86,12 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,create_uid:0
 msgid "Created by"
-msgstr "Créé par"
+msgstr "Creado por"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,create_date:0
 msgid "Created on"
-msgstr "Créé le"
+msgstr "Creado en"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,current_fiscyear:0
@@ -112,7 +111,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,display_name:0
 msgid "Display Name"
-msgstr "Nom affiché"
+msgstr "Nombre mostrado"
 
 #. module: l10n_lu_ecdf
 #: selection:ecdf.report,language:0
@@ -162,7 +161,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,id:0
 msgid "ID"
-msgstr "ID"
+msgstr "ID (identificación)"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,journal_ids:0
@@ -182,17 +181,17 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,__last_update:0
 msgid "Last Modified on"
-msgstr "Dernière modification le"
+msgstr "Última modificación en"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,write_uid:0
 msgid "Last Updated by"
-msgstr "Modifié par"
+msgstr "Última actualización de"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,write_date:0
 msgid "Last Updated on"
-msgstr "Modifié le"
+msgstr "Última actualización en"
 
 #. module: l10n_lu_ecdf
 #: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:706
