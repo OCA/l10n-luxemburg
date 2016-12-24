@@ -291,7 +291,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,target_move:0
 msgid "Target Moves"
-msgstr ""
+msgstr "Zielbuchungen"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,vat:0
