@@ -3,14 +3,14 @@
 # * l10n_lu_ecdf
 # 
 # Translators:
-# Kaloyan Naumov <kaloyan@lumnus.net>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-17 17:42+0000\n"
-"PO-Revision-Date: 2016-09-17 17:42+0000\n"
-"Last-Translator: Kaloyan Naumov <kaloyan@lumnus.net>, 2016\n"
+"POT-Creation-Date: 2017-01-07 03:19+0000\n"
+"PO-Revision-Date: 2017-01-07 03:19+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: Bulgarian (https://www.transifex.com/oca/teams/23907/bg/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -106,7 +106,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: selection:ecdf.report,filter:0
 msgid "Date"
-msgstr ""
+msgstr "Дата"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,display_name:0
