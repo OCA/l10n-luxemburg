@@ -11,6 +11,7 @@
       <field name="expression">ecdf_102_101 + ecdf_108_107 + ecdf_110_109 + ecdf_152_151 + ecdf_200_199</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">background-color: orange; font-weight: bold</field>
       <field name="sequence">10</field>
@@ -22,6 +23,7 @@
       <field name="expression">ecdf_104_103 + ecdf_106_105</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">20</field>
@@ -33,6 +35,7 @@
       <field name="expression">bals[102%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">30</field>
@@ -44,6 +47,7 @@
       <field name="expression">bals[103%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">40</field>
@@ -55,6 +59,7 @@
       <field name="expression">bals[20%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">50</field>
@@ -66,6 +71,7 @@
       <field name="expression">ecdf_112_111 + ecdf_126_125 + ecdf_136_135</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">60</field>
@@ -77,6 +83,7 @@
       <field name="expression">ecdf_114_113 + ecdf_116_115 + ecdf_122_121 + ecdf_124_123</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">70</field>
@@ -88,6 +95,7 @@
       <field name="expression">bals[211%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">80</field>
@@ -99,6 +107,7 @@
       <field name="expression">ecdf_118_117 + ecdf_120_119</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">90</field>
@@ -110,6 +119,7 @@
       <field name="expression">bals[2121%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">100</field>
@@ -121,6 +131,7 @@
       <field name="expression">bals[2122%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">110</field>
@@ -132,6 +143,7 @@
       <field name="expression">bals[213%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">120</field>
@@ -143,6 +155,7 @@
       <field name="expression">bals[214%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">130</field>
@@ -154,6 +167,7 @@
       <field name="expression">ecdf_128_127 + ecdf_130_129 + ecdf_132_131 + ecdf_134_133</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">140</field>
@@ -165,6 +179,7 @@
       <field name="expression">bals[221%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">150</field>
@@ -176,6 +191,7 @@
       <field name="expression">bals[222%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">160</field>
@@ -187,6 +203,7 @@
       <field name="expression">bals[223%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">170</field>
@@ -198,6 +215,7 @@
       <field name="expression">bals[224%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">180</field>
@@ -209,6 +227,7 @@
       <field name="expression">ecdf_138_137 + ecdf_140_139 + ecdf_142_141 + ecdf_144_143 + ecdf_146_145 + ecdf_148_147 + ecdf_150_149</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">190</field>
@@ -220,6 +239,7 @@
       <field name="expression">bals[231%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">200</field>
@@ -231,6 +251,7 @@
       <field name="expression">bals[232%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">200</field>
@@ -242,6 +263,7 @@
       <field name="expression">bals[233%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">220</field>
@@ -253,6 +275,7 @@
       <field name="expression">bals[234%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">230</field>
@@ -264,6 +287,7 @@
       <field name="expression">bals[235%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">240</field>
@@ -275,6 +299,7 @@
       <field name="expression">bals[236%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">250</field>
@@ -286,6 +311,7 @@
       <field name="expression">bals[237%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">260</field>
@@ -297,6 +323,7 @@
       <field name="expression">ecdf_154_153 + ecdf_164_163 + ecdf_190_189 + ecdf_198_197</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">270</field>
@@ -308,6 +335,7 @@
       <field name="expression">ecdf_156_155 + ecdf_158_157 + ecdf_160_159 + ecdf_162_161</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">280</field>
@@ -319,6 +347,7 @@
       <field name="expression">bals[30%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">290</field>
@@ -330,6 +359,7 @@
       <field name="expression">bals[31%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">300</field>
@@ -341,6 +371,7 @@
       <field name="expression">bals[32%,33%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">310</field>
@@ -352,6 +383,7 @@
       <field name="expression">bals[34%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">320</field>
@@ -363,6 +395,7 @@
       <field name="expression">ecdf_166_165 + ecdf_172_171 + ecdf_178_177 + ecdf_184_183</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">330</field>
@@ -374,6 +407,7 @@
       <field name="expression">ecdf_168_167 + ecdf_170_169</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">340</field>
@@ -385,6 +419,7 @@
       <field name="expression">bals[401%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">350</field>
@@ -396,6 +431,7 @@
       <field name="expression">bals[402%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">360</field>
@@ -407,6 +443,7 @@
       <field name="expression">ecdf_174_173 + ecdf_176_175</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">370</field>
@@ -418,6 +455,7 @@
       <field name="expression">bals[4111%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">380</field>
@@ -429,6 +467,7 @@
       <field name="expression">bals[4112%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">390</field>
@@ -440,6 +479,7 @@
       <field name="expression">ecdf_180_179 + ecdf_182_181</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">400</field>
@@ -451,6 +491,7 @@
       <field name="expression">bals[4121%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">410</field>
@@ -462,6 +503,7 @@
       <field name="expression">bals[4122%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">420</field>
@@ -473,6 +515,7 @@
       <field name="expression">ecdf_186_185 + ecdf_188_187</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">430</field>
@@ -484,6 +527,7 @@
       <field name="expression">bals[421%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">440</field>
@@ -495,6 +539,7 @@
       <field name="expression">bals[422%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">450</field>
@@ -506,6 +551,7 @@
       <field name="expression">ecdf_192_191 + ecdf_194_193 + ecdf_196_195</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">460</field>
@@ -517,6 +563,7 @@
       <field name="expression">bals[501%,502%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">470</field>
@@ -528,6 +575,7 @@
       <field name="expression">bals[503%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">480</field>
@@ -539,6 +587,7 @@
       <field name="expression">bals[508%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">490</field>
@@ -550,6 +599,7 @@
       <field name="expression">bals[51%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">500</field>
@@ -561,6 +611,7 @@
       <field name="expression">bals[481%,484%,486%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">510</field>
@@ -572,6 +623,7 @@
       <field name="expression">ecdf_302_301 + ecdf_330_329 + ecdf_332_331 + ecdf_340_339 + ecdf_404_403</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">background-color: orange; font-weight: bold</field>
       <field name="sequence">520</field>
@@ -583,6 +635,7 @@
       <field name="expression">ecdf_304_303 + ecdf_306_305 + ecdf_308_307 + ecdf_310_309 + ecdf_320_319 + ecdf_322_321 + ecdf_324_323 + ecdf_326_325 + ecdf_328_327</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">530</field>
@@ -594,6 +647,7 @@
       <field name="expression">-bals[101%,104%,105%,106%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">540</field>
@@ -605,6 +659,7 @@
       <field name="expression">-bals[11%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">550</field>
@@ -616,6 +671,7 @@
       <field name="expression">-bals[12%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">560</field>
@@ -627,6 +683,7 @@
       <field name="expression">ecdf_312_311 + ecdf_314_313 + ecdf_316_315 + ecdf_318_317</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">570</field>
@@ -638,6 +695,7 @@
       <field name="expression">-bals[131%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">580</field>
@@ -649,6 +707,7 @@
       <field name="expression">-bals[132%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">590</field>
@@ -660,6 +719,7 @@
       <field name="expression">-bals[133%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">600</field>
@@ -671,6 +731,7 @@
       <field name="expression">-bals[138%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">610</field>
@@ -682,6 +743,7 @@
       <field name="expression">-bals[141%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">620</field>
@@ -693,6 +755,7 @@
       <field name="expression">-bals[142%,resultat,resultat-transfert]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">630</field>
@@ -704,6 +767,7 @@
       <field name="expression">-bals[15%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">640</field>
@@ -715,6 +779,7 @@
       <field name="expression">-bals[16%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">650</field>
@@ -726,6 +791,7 @@
       <field name="expression">-bals[17%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">660</field>
@@ -737,6 +803,7 @@
       <field name="expression">-bals[191%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">670</field>
@@ -748,6 +815,7 @@
       <field name="expression">ecdf_334_333 + ecdf_336_335 + ecdf_338_337</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">680</field>
@@ -759,6 +827,7 @@
       <field name="expression">-bals[181%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">680</field>
@@ -770,6 +839,7 @@
       <field name="expression">-bals[182%,183%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">690</field>
@@ -781,6 +851,7 @@
       <field name="expression">-bals[188%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">700</field>
@@ -792,6 +863,7 @@
       <field name="expression">ecdf_342_341 + ecdf_356_355 + ecdf_362_361 + ecdf_368_367 + ecdf_374_373 + ecdf_380_379 + ecdf_386_385 + ecdf_392_391 + ecdf_398_397</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">710</field>
@@ -803,6 +875,7 @@
       <field name="expression">ecdf_344_343 + ecdf_350_349</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">720</field>
@@ -814,6 +887,7 @@
       <field name="expression">ecdf_346_345 + ecdf_348_347</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">730</field>
@@ -825,6 +899,7 @@
       <field name="expression">-bals[1921%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">740</field>
@@ -836,6 +911,7 @@
       <field name="expression">-bals[1922%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">750</field>
@@ -847,6 +923,7 @@
       <field name="expression">ecdf_352_351 + ecdf_354_353</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">760</field>
@@ -858,6 +935,7 @@
       <field name="expression">-bals[1931%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">770</field>
@@ -869,6 +947,7 @@
       <field name="expression">-bals[1932%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">780</field>
@@ -880,6 +959,7 @@
       <field name="expression">ecdf_358_357 + ecdf_360_359</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">790</field>
@@ -891,6 +971,7 @@
       <field name="expression">-bals[1941%,1951%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">800</field>
@@ -902,6 +983,7 @@
       <field name="expression">-bals[1942%,1952%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">810</field>
@@ -913,6 +995,7 @@
       <field name="expression">ecdf_364_363 + ecdf_366_365</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">820</field>
@@ -924,6 +1007,7 @@
       <field name="expression">-bals[431%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">830</field>
@@ -935,6 +1019,7 @@
       <field name="expression">-bals[432%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">840</field>
@@ -946,6 +1031,7 @@
       <field name="expression">ecdf_370_369 + ecdf_372_371</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">850</field>
@@ -957,6 +1043,7 @@
       <field name="expression">-bals[4411%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">860</field>
@@ -968,6 +1055,7 @@
       <field name="expression">-bals[4412%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">870</field>
@@ -979,6 +1067,7 @@
       <field name="expression">ecdf_376_375 + ecdf_378_377</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">880</field>
@@ -990,6 +1079,7 @@
       <field name="expression">-bals[4421%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">890</field>
@@ -1001,6 +1091,7 @@
       <field name="expression">-bals[4422%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">900</field>
@@ -1012,6 +1103,7 @@
       <field name="expression">ecdf_382_381 + ecdf_384_383</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">910</field>
@@ -1023,6 +1115,7 @@
       <field name="expression">-bals[4511%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">920</field>
@@ -1034,6 +1127,7 @@
       <field name="expression">-bals[4512%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">930</field>
@@ -1045,6 +1139,7 @@
       <field name="expression">ecdf_388_387 + ecdf_390_389</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">940</field>
@@ -1056,6 +1151,7 @@
       <field name="expression">-bals[4521%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">950</field>
@@ -1067,6 +1163,7 @@
       <field name="expression">-bals[4522%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">960</field>
@@ -1078,6 +1175,7 @@
       <field name="expression">ecdf_394_393 + ecdf_396_395</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">970</field>
@@ -1089,6 +1187,7 @@
       <field name="expression">-bals[461%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">980</field>
@@ -1100,6 +1199,7 @@
       <field name="expression">-bals[462%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">990</field>
@@ -1111,6 +1211,7 @@
       <field name="expression">ecdf_400_399 + ecdf_402_401</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style"/>
       <field name="sequence">1000</field>
@@ -1122,6 +1223,7 @@
       <field name="expression">-bals[1981%,471%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">1010</field>
@@ -1133,6 +1235,7 @@
       <field name="expression">-bals[1982%,472%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">1020</field>
@@ -1144,6 +1247,7 @@
       <field name="expression">-bals[482%,483%,485%,487%]</field>
       <field name="suffix">€</field>
       <field name="type">num</field>
+      <field name="dp">2</field>
       <field name="compare_method">pct</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">1030</field>
