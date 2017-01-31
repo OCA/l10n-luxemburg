@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2015-2016 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+  <data>
+  
+    <record id="mis_report_style_l10n_lu_1" model="mis.report.style">
+      <field name="name">l10n_lu 1</field>
+      <field name="background_color_inherit" eval="0"/>
+      <field name="background_color">#ffa500</field>
+      <field name="font_weight_inherit" eval="0"/>
+      <field name="font_weight">bold</field>
+    </record>
+    
+    <record id="mis_report_style_l10n_lu_2" model="mis.report.style">
+      <field name="name">l10n_lu 2</field>
+      <field name="background_color_inherit" eval="0"/>
+      <field name="background_color">#ffa500</field>
+      <field name="font_style_inherit" eval="0"/>
+      <field name="font_style">italic</field>
+    </record>
+    
+    <record id="mis_report_style_l10n_lu_3" model="mis.report.style">
+      <field name="name">l10n_lu 3</field>
+      <field name="font_weight_inherit" eval="0"/>
+      <field name="font_weight">bold</field>
+    </record>
+    
+    <record id="mis_report_style_l10n_lu_4" model="mis.report.style">
+      <field name="name">l10n_lu 4</field>
+      <field name="font_style_inherit" eval="0"/>
+      <field name="font_style">italic</field>
+    </record>
+  
+  </data>
+</odoo>

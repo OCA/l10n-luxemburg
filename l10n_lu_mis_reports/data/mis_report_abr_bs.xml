@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2015-2016 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+  <data>
+    <record id="mis_report_abr_bs" model="mis.report">
+      <field name="name">Luxembourg Balance Sheet (abbreviated)</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_202_201" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_202_201</field>
+      <field name="description">ACTIF</field>
+      <field name="expression">ecdf_102_101  + ecdf_108_107  + ecdf_110_109  + ecdf_152_151  + ecdf_200_199</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id" ref="mis_report_style_l10n_lu_1"/>
+      <field name="sequence">10</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_102_101" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_102_101</field>
+      <field name="description">A. Capital souscrit non versé</field>
+      <field name="expression">ecdf_104_103  + ecdf_106_105</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id" ref="mis_report_style_l10n_lu_3"/>
+      <field name="sequence">20</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_104_103" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_104_103</field>
+      <field name="description">I. Capital souscrit non appelé</field>
+      <field name="expression">bals[102%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id"/>
+      <field name="sequence">30</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_106_105" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_106_105</field>
+      <field name="description">II. Capital souscrit appelé et non versé</field>
+      <field name="expression">bals[103%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id"/>
+      <field name="sequence">40</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_108_107" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_108_107</field>
+      <field name="description">B. Frais d’établissement</field>
+      <field name="expression">bals[20%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id" ref="mis_report_style_l10n_lu_3"/>
+      <field name="sequence">50</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_110_109" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_110_109</field>
+      <field name="description">C. Actif immobilisé</field>
+      <field name="expression">ecdf_112_111  + ecdf_126_125  + ecdf_136_135</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id" ref="mis_report_style_l10n_lu_3"/>
+      <field name="sequence">60</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_112_111" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_112_111</field>
+      <field name="description">I. Immobilisations incorporelles</field>
+      <field name="expression">bals[211%,2121%,2122%,213%,214%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id"/>
+      <field name="sequence">70</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_126_125" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_126_125</field>
+      <field name="description">II. Immobilisations corporelles</field>
+      <field name="expression">bals[221%,222%,223%,224%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id"/>
+      <field name="sequence">80</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_136_135" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_136_135</field>
+      <field name="description">III. Immobilisations financières</field>
+      <field name="expression">bals[231%,232%,233%,234%,235%,236%,237%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id"/>
+      <field name="sequence">90</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_152_151" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_152_151</field>
+      <field name="description">D. Actif circulant</field>
+      <field name="expression">ecdf_154_153  + ecdf_164_163  + ecdf_190_189  + ecdf_198_197</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id" ref="mis_report_style_l10n_lu_3"/>
+      <field name="sequence">100</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_154_153" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_154_153</field>
+      <field name="description">I. Stocks</field>
+      <field name="expression">bals[30%,31%,32%,33%,34%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id"/>
+      <field name="sequence">110</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_164_163" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_164_163</field>
+      <field name="description">II. Créances</field>
+      <field name="expression">ecdf_204_203  + ecdf_206_205</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id"/>
+      <field name="sequence">120</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_204_203" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_204_203</field>
+      <field name="description">a) dont la durée résiduelle est inférieure ou égale à un an</field>
+      <field name="expression">bals[401%,4111%,4121%,421%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
+      <field name="sequence">130</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_206_205" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_206_205</field>
+      <field name="description">b) dont la durée résiduelle est supérieure à un an</field>
+      <field name="expression">bals[402%,4112%,4122%,422%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
+      <field name="sequence">140</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_190_189" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_190_189</field>
+      <field name="description">III. Valeurs mobilières</field>
+      <field name="expression">bals[501%,502%,503%,508%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id"/>
+      <field name="sequence">150</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_198_197" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_198_197</field>
+      <field name="description">IV. Avoirs en banques, avoirs en compte de chèques postaux, chèques et en caisse</field>
+      <field name="expression">bals[51%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id"/>
+      <field name="sequence">160</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_200_199" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_200_199</field>
+      <field name="description">E. Comptes de régularisation</field>
+      <field name="expression">bals[481%,484%,486%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id" ref="mis_report_style_l10n_lu_3"/>
+      <field name="sequence">170</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_406_405" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_406_405</field>
+      <field name="description">PASSIF</field>
+      <field name="expression">ecdf_302_301  + ecdf_330_329  + ecdf_332_331  + ecdf_340_339  + ecdf_404_403</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id" ref="mis_report_style_l10n_lu_1"/>
+      <field name="sequence">180</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_302_301" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_302_301</field>
+      <field name="description">A. Capitaux propres</field>
+      <field name="expression">ecdf_304_303  + ecdf_306_305  + ecdf_308_307  + ecdf_310_309  + ecdf_320_319  + ecdf_322_321  + ecdf_324_323  + ecdf_326_325  + ecdf_328_327</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id" ref="mis_report_style_l10n_lu_3"/>
+      <field name="sequence">190</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_304_303" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_304_303</field>
+      <field name="description">I. Capital souscrit</field>
+      <field name="expression">-bals[101%,104%,105%,106%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id"/>
+      <field name="sequence">200</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_306_305" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_306_305</field>
+      <field name="description">II. Primes d'émissions et primes assimilées</field>
+      <field name="expression">-bals[11%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id"/>
+      <field name="sequence">210</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_308_307" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_308_307</field>
+      <field name="description">III. Réserves de réévaluation</field>
+      <field name="expression">-bals[12%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id"/>
+      <field name="sequence">220</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_310_309" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_310_309</field>
+      <field name="description">IV. Réserves</field>
+      <field name="expression">-bals[131%,132%,133%,138%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id"/>
+      <field name="sequence">230</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_320_319" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_320_319</field>
+      <field name="description">V. Résultats reportés</field>
+      <field name="expression">-bals[141%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id"/>
+      <field name="sequence">240</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_322_321" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_322_321</field>
+      <field name="description">VI. Résultat de l'exercice</field>
+      <field name="expression">-bals[142%,resultat%,resultat-transfert]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id"/>
+      <field name="sequence">250</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_324_323" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_324_323</field>
+      <field name="description">VII. Acomptes sur dividendes</field>
+      <field name="expression">-bals[15%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id"/>
+      <field name="sequence">260</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_326_325" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_326_325</field>
+      <field name="description">VIII. Subventions d’investissement en capital</field>
+      <field name="expression">-bals[16%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id"/>
+      <field name="sequence">270</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_328_327" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_328_327</field>
+      <field name="description">IX. Plus-values immunisées</field>
+      <field name="expression">-bals[17%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id"/>
+      <field name="sequence">280</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_330_329" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_330_329</field>
+      <field name="description">B. Dettes subordonnées</field>
+      <field name="expression">-bals[191%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id" ref="mis_report_style_l10n_lu_3"/>
+      <field name="sequence">290</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_332_331" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_332_331</field>
+      <field name="description">C. Provisions</field>
+      <field name="expression">-bals[181%,182%,183%,188%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id" ref="mis_report_style_l10n_lu_3"/>
+      <field name="sequence">300</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_340_339" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_340_339</field>
+      <field name="description">D. Dettes non subordonnées</field>
+      <field name="expression">ecdf_408_407  + ecdf_410_409</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id" ref="mis_report_style_l10n_lu_3"/>
+      <field name="sequence">310</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_408_407" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_408_407</field>
+      <field name="description">a) dont la durée résiduelle est inférieure ou égale à un an</field>
+      <field name="expression">-bals[1921%,1931%,1941%,1951%,1981%,431%,4411%,4421%,4511%,4521%,461%,471%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id"/>
+      <field name="sequence">320</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_410_409" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_410_409</field>
+      <field name="description">b) dont la durée résiduelle est supérieure à un an</field>
+      <field name="expression">-bals[1922%,1932%,1942%,1952%,1982%,432%,4412%,4422%,4512%,4522%,462%,472%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id"/>
+      <field name="sequence">330</field>
+    </record>
+    <record id="mis_report_abr_bs_ecdf_404_403" model="mis.report.kpi">
+      <field ref="mis_report_abr_bs" name="report_id"/>
+      <field name="name">ecdf_404_403</field>
+      <field name="description">E. Comptes de régularisation</field>
+      <field name="expression">-bals[482%,483%,485%,487%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="style_id" ref="mis_report_style_l10n_lu_3"/>
+      <field name="sequence">340</field>
+    </record>
+  </data>
+</odoo>
