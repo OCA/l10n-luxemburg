@@ -31,7 +31,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_104_103</field>
       <field name="description">I. Capital souscrit non appelé</field>
-      <field name="expression">bals[102%]</field>
+      <field name="expression">bale[102%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -41,7 +41,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_106_105</field>
       <field name="description">II. Capital souscrit appelé et non versé</field>
-      <field name="expression">bals[103%]</field>
+      <field name="expression">bale[103%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -51,7 +51,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_108_107</field>
       <field name="description">B. Frais d’établissement</field>
-      <field name="expression">bals[20%]</field>
+      <field name="expression">bale[20%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_3"/>
@@ -81,7 +81,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_114_113</field>
       <field name="description">1. Frais de recherche et de développement</field>
-      <field name="expression">bals[211%]</field>
+      <field name="expression">bale[211%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -101,7 +101,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_118_117</field>
       <field name="description">a) acquis à titre onéreux, sans devoir figurer sous C.I.3</field>
-      <field name="expression">bals[2121%]</field>
+      <field name="expression">bale[2121%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -111,7 +111,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_120_119</field>
       <field name="description">b) créés par l’entreprise elle-même</field>
-      <field name="expression">bals[2122%]</field>
+      <field name="expression">bale[2122%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -121,7 +121,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_122_121</field>
       <field name="description">3. Fonds de commerce, dans la mesure où il a été acquis à titre onéreux</field>
-      <field name="expression">bals[213%]</field>
+      <field name="expression">bale[213%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -131,7 +131,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_124_123</field>
       <field name="description">4. Acomptes versés et immobilisations incorporelles en cours</field>
-      <field name="expression">bals[214%]</field>
+      <field name="expression">bale[214%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -151,7 +151,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_128_127</field>
       <field name="description">1. Terrains et constructions</field>
-      <field name="expression">bals[221%]</field>
+      <field name="expression">bale[221%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -161,7 +161,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_130_129</field>
       <field name="description">2. Installations techniques et machines</field>
-      <field name="expression">bals[222%]</field>
+      <field name="expression">bale[222%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -171,7 +171,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_132_131</field>
       <field name="description">3. Autres installations, outillage et mobilier</field>
-      <field name="expression">bals[223%]</field>
+      <field name="expression">bale[223%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -181,7 +181,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_134_133</field>
       <field name="description">4. Acomptes versés et immobilisations corporelles en cours</field>
-      <field name="expression">bals[224%]</field>
+      <field name="expression">bale[224%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -201,7 +201,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_138_137</field>
       <field name="description">1. Parts dans des entreprises liées</field>
-      <field name="expression">bals[231%]</field>
+      <field name="expression">bale[231%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -211,7 +211,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_140_139</field>
       <field name="description">2. Créances sur des entreprises liées</field>
-      <field name="expression">bals[232%]</field>
+      <field name="expression">bale[232%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -221,7 +221,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_142_141</field>
       <field name="description">3. Parts dans des entreprises avec lesquelles la société a un lien de participation</field>
-      <field name="expression">bals[233%]</field>
+      <field name="expression">bale[233%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -231,7 +231,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_144_143</field>
       <field name="description">4. Créances sur des entreprises avec lesquelles la société a un lien de participation</field>
-      <field name="expression">bals[234%]</field>
+      <field name="expression">bale[234%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -241,7 +241,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_146_145</field>
       <field name="description">5. Titres ayant le caractère d’immobilisations</field>
-      <field name="expression">bals[235%]</field>
+      <field name="expression">bale[235%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -251,7 +251,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_148_147</field>
       <field name="description">6. Prêts et créances immobilisées</field>
-      <field name="expression">bals[236%]</field>
+      <field name="expression">bale[236%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -261,7 +261,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_150_149</field>
       <field name="description">7. Actions propres ou parts propres</field>
-      <field name="expression">bals[237%]</field>
+      <field name="expression">bale[237%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -291,7 +291,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_156_155</field>
       <field name="description">1. Matières premières et consommables</field>
-      <field name="expression">bals[30%]</field>
+      <field name="expression">bale[30%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -301,7 +301,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_158_157</field>
       <field name="description">2. Produits et commandes en cours</field>
-      <field name="expression">bals[31%]</field>
+      <field name="expression">bale[31%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -311,7 +311,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_160_159</field>
       <field name="description">3. Produits finis et marchandises</field>
-      <field name="expression">bals[32%,33%]</field>
+      <field name="expression">bale[32%,33%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -321,7 +321,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_162_161</field>
       <field name="description">4. Acomptes versés</field>
-      <field name="expression">bals[34%]</field>
+      <field name="expression">bale[34%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -351,7 +351,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_168_167</field>
       <field name="description">a) dont la durée résiduelle est inférieure ou égale à un an</field>
-      <field name="expression">bals[401%]</field>
+      <field name="expression">bale[401%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -361,7 +361,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_170_169</field>
       <field name="description">b) dont la durée résiduelle est supérieure à un an</field>
-      <field name="expression">bals[402%]</field>
+      <field name="expression">bale[402%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -381,7 +381,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_174_173</field>
       <field name="description">a) dont la durée résiduelle est inférieure ou égale à un an</field>
-      <field name="expression">bals[4111%]</field>
+      <field name="expression">bale[4111%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -391,7 +391,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_176_175</field>
       <field name="description">b) dont la durée résiduelle est supérieure à un an</field>
-      <field name="expression">bals[4112%]</field>
+      <field name="expression">bale[4112%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -411,7 +411,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_180_179</field>
       <field name="description">a) dont la durée résiduelle est inférieure ou égale à un an</field>
-      <field name="expression">bals[4121%]</field>
+      <field name="expression">bale[4121%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -421,7 +421,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_182_181</field>
       <field name="description">b) dont la durée résiduelle est supérieure à un an</field>
-      <field name="expression">bals[4122%]</field>
+      <field name="expression">bale[4122%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -441,7 +441,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_186_185</field>
       <field name="description">a) dont la durée résiduelle est inférieure ou égale à un an</field>
-      <field name="expression">bals[421%]</field>
+      <field name="expression">bale[421%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -451,7 +451,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_188_187</field>
       <field name="description">b) dont la durée résiduelle est supérieure à un an</field>
-      <field name="expression">bals[422%]</field>
+      <field name="expression">bale[422%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -471,7 +471,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_192_191</field>
       <field name="description">1. Parts dans des entreprises liées et dans des entreprises avec lesquelles la société a un lien de participation</field>
-      <field name="expression">bals[501%,502%]</field>
+      <field name="expression">bale[501%,502%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -481,7 +481,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_194_193</field>
       <field name="description">2. Actions propres ou parts propres</field>
-      <field name="expression">bals[503%]</field>
+      <field name="expression">bale[503%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -491,7 +491,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_196_195</field>
       <field name="description">3. Autres valeurs mobilières</field>
-      <field name="expression">bals[508%]</field>
+      <field name="expression">bale[508%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -501,7 +501,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_198_197</field>
       <field name="description">IV. Avoirs en banques, avoirs en compte de chèques postaux, chèques et en caisse</field>
-      <field name="expression">bals[51%]</field>
+      <field name="expression">bale[51%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -511,7 +511,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_200_199</field>
       <field name="description">E. Comptes de régularisation</field>
-      <field name="expression">bals[481%,484%,486%]</field>
+      <field name="expression">bale[481%,484%,486%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_3"/>
@@ -541,7 +541,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_304_303</field>
       <field name="description">I. Capital souscrit</field>
-      <field name="expression">-bals[101%,104%,105%,106%]</field>
+      <field name="expression">-bale[101%,104%,105%,106%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -551,7 +551,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_306_305</field>
       <field name="description">II. Primes d'émissions et primes assimilées</field>
-      <field name="expression">-bals[11%]</field>
+      <field name="expression">-bale[11%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -561,7 +561,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_308_307</field>
       <field name="description">III. Réserves de réévaluation</field>
-      <field name="expression">-bals[12%]</field>
+      <field name="expression">-bale[12%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -581,7 +581,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_312_311</field>
       <field name="description">1. Réserve légale</field>
-      <field name="expression">-bals[131%]</field>
+      <field name="expression">-bale[131%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -591,7 +591,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_314_313</field>
       <field name="description">2. Réserve pour actions propres ou parts propres</field>
-      <field name="expression">-bals[132%]</field>
+      <field name="expression">-bale[132%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -601,7 +601,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_316_315</field>
       <field name="description">3. Réserves statutaires</field>
-      <field name="expression">-bals[133%]</field>
+      <field name="expression">-bale[133%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -611,7 +611,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_318_317</field>
       <field name="description">4. Autres réserves</field>
-      <field name="expression">-bals[138%]</field>
+      <field name="expression">-bale[138%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -621,7 +621,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_320_319</field>
       <field name="description">V. Résultats reportés</field>
-      <field name="expression">-bals[141%]</field>
+      <field name="expression">-bale[141%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -631,7 +631,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_322_321</field>
       <field name="description">VI. Résultat de l'exercice</field>
-      <field name="expression">-bals[142%,6%,7%,869%,879%]</field>
+      <field name="expression">-bale[142%,6%,7%,869%,879%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -641,7 +641,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_324_323</field>
       <field name="description">VII. Acomptes sur dividendes</field>
-      <field name="expression">-bals[15%]</field>
+      <field name="expression">-bale[15%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -651,7 +651,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_326_325</field>
       <field name="description">VIII. Subventions d’investissement en capital</field>
-      <field name="expression">-bals[16%]</field>
+      <field name="expression">-bale[16%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -661,7 +661,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_328_327</field>
       <field name="description">IX. Plus-values immunisées</field>
-      <field name="expression">-bals[17%]</field>
+      <field name="expression">-bale[17%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -671,7 +671,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_330_329</field>
       <field name="description">B. Dettes subordonnées</field>
-      <field name="expression">-bals[191%]</field>
+      <field name="expression">-bale[191%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_3"/>
@@ -691,7 +691,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_334_333</field>
       <field name="description">1. Provisions pour pensions et obligations similaires</field>
-      <field name="expression">-bals[181%]</field>
+      <field name="expression">-bale[181%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -701,7 +701,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_336_335</field>
       <field name="description">2. Provisions pour impôts</field>
-      <field name="expression">-bals[182%,183%]</field>
+      <field name="expression">-bale[182%,183%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -711,7 +711,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_338_337</field>
       <field name="description">3. Autres provisions</field>
-      <field name="expression">-bals[188%]</field>
+      <field name="expression">-bale[188%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -751,7 +751,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_346_345</field>
       <field name="description">i) dont la durée résiduelle est inférieure ou égale à un an</field>
-      <field name="expression">-bals[1921%]</field>
+      <field name="expression">-bale[1921%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -761,7 +761,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_348_347</field>
       <field name="description">ii) dont la durée résiduelle est supérieure à un an</field>
-      <field name="expression">-bals[1922%]</field>
+      <field name="expression">-bale[1922%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -781,7 +781,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_352_351</field>
       <field name="description">i) dont la durée résiduelle est inférieure ou égale à un an</field>
-      <field name="expression">-bals[1931%]</field>
+      <field name="expression">-bale[1931%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -791,7 +791,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_354_353</field>
       <field name="description">ii) dont la durée résiduelle est supérieure à un an</field>
-      <field name="expression">-bals[1932%]</field>
+      <field name="expression">-bale[1932%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id"/>
@@ -811,7 +811,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_358_357</field>
       <field name="description">a) dont la durée résiduelle est inférieure ou égale à un an</field>
-      <field name="expression">-bals[1941%,1951%]</field>
+      <field name="expression">-bale[1941%,1951%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -821,7 +821,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_360_359</field>
       <field name="description">b) dont la durée résiduelle est supérieure à un an</field>
-      <field name="expression">-bals[1942%,1952%]</field>
+      <field name="expression">-bale[1942%,1952%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -841,7 +841,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_364_363</field>
       <field name="description">a) dont la durée résiduelle est inférieure ou égale à un an</field>
-      <field name="expression">-bals[431%]</field>
+      <field name="expression">-bale[431%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -851,7 +851,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_366_365</field>
       <field name="description">b) dont la durée résiduelle est supérieure à un an</field>
-      <field name="expression">-bals[432%]</field>
+      <field name="expression">-bale[432%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -871,7 +871,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_370_369</field>
       <field name="description">a) dont la durée résiduelle est inférieure ou égale à un an</field>
-      <field name="expression">-bals[4411%]</field>
+      <field name="expression">-bale[4411%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -881,7 +881,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_372_371</field>
       <field name="description">b) dont la durée résiduelle est supérieure à un an</field>
-      <field name="expression">-bals[4412%]</field>
+      <field name="expression">-bale[4412%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -901,7 +901,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_376_375</field>
       <field name="description">a) dont la durée résiduelle est inférieure ou égale à un an</field>
-      <field name="expression">-bals[4421%]</field>
+      <field name="expression">-bale[4421%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -911,7 +911,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_378_377</field>
       <field name="description">b) dont la durée résiduelle est supérieure à un an</field>
-      <field name="expression">-bals[4422%]</field>
+      <field name="expression">-bale[4422%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -931,7 +931,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_382_381</field>
       <field name="description">a) dont la durée résiduelle est inférieure ou égale à un an</field>
-      <field name="expression">-bals[4511%]</field>
+      <field name="expression">-bale[4511%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -941,7 +941,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_384_383</field>
       <field name="description">b) dont la durée résiduelle est supérieure à un an</field>
-      <field name="expression">-bals[4512%]</field>
+      <field name="expression">-bale[4512%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -961,7 +961,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_388_387</field>
       <field name="description">a) dont la durée résiduelle est inférieure ou égale à un an</field>
-      <field name="expression">-bals[4521%]</field>
+      <field name="expression">-bale[4521%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -971,7 +971,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_390_389</field>
       <field name="description">b) dont la durée résiduelle est supérieure à un an</field>
-      <field name="expression">-bals[4522%]</field>
+      <field name="expression">-bale[4522%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -991,7 +991,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_394_393</field>
       <field name="description">a) Dettes fiscales</field>
-      <field name="expression">-bals[461%]</field>
+      <field name="expression">-bale[461%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -1001,7 +1001,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_396_395</field>
       <field name="description">b) Dettes au titre de la sécurité sociale</field>
-      <field name="expression">-bals[462%]</field>
+      <field name="expression">-bale[462%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -1021,7 +1021,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_400_399</field>
       <field name="description">a) dont la durée résiduelle est inférieure ou égale à un an</field>
-      <field name="expression">-bals[1981%,471%]</field>
+      <field name="expression">-bale[1981%,471%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -1031,7 +1031,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_402_401</field>
       <field name="description">b) dont la durée résiduelle est supérieure à un an</field>
-      <field name="expression">-bals[1982%,472%]</field>
+      <field name="expression">-bale[1982%,472%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_4"/>
@@ -1041,7 +1041,7 @@
       <field ref="mis_report_bs" name="report_id"/>
       <field name="name">ecdf_404_403</field>
       <field name="description">E. Comptes de régularisation</field>
-      <field name="expression">-bals[482%,483%,485%,487%]</field>
+      <field name="expression">-bale[482%,483%,485%,487%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_3"/>
