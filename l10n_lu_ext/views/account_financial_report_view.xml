@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2015-2017 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <data>
+
+        <record id="action_account_report_lu_bs" model="ir.actions.act_window">
+             <field name="name">Balance Sheet</field>
+             <field name="res_model">accounting.report</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">form</field>
+             <field name="view_id" ref="account.accounting_report_view"/>
+             <field name="target">new</field>
+             <field name="context" eval="{'default_account_report_id':ref('l10n_lu.account_financial_report_13')}"/>
+        </record>
+        <menuitem name="Balance Sheet" action="action_account_report_lu_bs" id="menu_account_report_lu_bs" parent="l10n_lu.account_reports_lu_statements_menu" sequence="1"/>
+
+        <record id="action_account_report_lu_pl" model="ir.actions.act_window">
+                 <field name="name">Profit And Loss</field>
+                 <field name="res_model">accounting.report</field>
+                 <field name="type">ir.actions.act_window</field>
+                 <field name="view_type">form</field>
+                 <field name="view_mode">form</field>
+                 <field name="view_id" ref="account.accounting_report_view"/>
+                 <field name="target">new</field>
+                 <field name="context" eval="{'default_account_report_id':ref('l10n_lu.account_financial_report_14')}"/>
+        </record>
+        <menuitem name="Profit And Loss" action="action_account_report_lu_pl" id="menu_account_report_lu_pl" parent="l10n_lu.account_reports_lu_statements_menu" sequence="2"/>
+
+        <record id="action_account_report_lu_bs_abr" model="ir.actions.act_window">
+             <field name="name">Balance Sheet (abbreviated)</field>
+             <field name="res_model">accounting.report</field>
+             <field name="type">ir.actions.act_window</field>
+             <field name="view_type">form</field>
+             <field name="view_mode">form</field>
+             <field name="view_id" ref="account.accounting_report_view"/>
+             <field name="target">new</field>
+             <field name="context" eval="{'default_account_report_id':ref('l10n_lu.account_financial_report_abr_13')}"/>
+        </record>
+        <menuitem name="Balance Sheet (abbreviated)" action="action_account_report_lu_bs_abr" id="menu_account_report_lu_bs_abr" parent="l10n_lu.account_reports_lu_statements_menu" sequence="1"/>
+
+        <record id="action_account_report_lu_pl_abr" model="ir.actions.act_window">
+                 <field name="name">Profit And Loss (abbreviated)</field>
+                 <field name="res_model">accounting.report</field>
+                 <field name="type">ir.actions.act_window</field>
+                 <field name="view_type">form</field>
+                 <field name="view_mode">form</field>
+                 <field name="view_id" ref="account.accounting_report_view"/>
+                 <field name="target">new</field>
+                 <field name="context" eval="{'default_account_report_id':ref('l10n_lu.account_financial_report_abr_14')}"/>
+        </record>
+        <menuitem name="Profit And Loss (abbreviated)" action="action_account_report_lu_pl_abr" id="menu_account_report_lu_pl_abr" parent="l10n_lu.account_reports_lu_statements_menu" sequence="2"/>
+
+    </data>
+</odoo>
