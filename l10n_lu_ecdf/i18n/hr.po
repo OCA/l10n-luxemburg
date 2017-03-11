@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-07 03:19+0000\n"
-"PO-Revision-Date: 2017-01-07 03:19+0000\n"
+"POT-Creation-Date: 2017-03-04 03:22+0000\n"
+"PO-Revision-Date: 2017-03-04 03:22+0000\n"
 "Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
 "Language-Team: Croatian (https://www.transifex.com/oca/teams/23907/hr/)\n"
 "MIME-Version: 1.0\n"
@@ -61,7 +61,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,remarks:0
 msgid "Comments"
-msgstr ""
+msgstr "Komentari"
 
 #. module: l10n_lu_ecdf
 #: model:ir.model,name:l10n_lu_ecdf.model_res_company
