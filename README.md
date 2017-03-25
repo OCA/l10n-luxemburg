@@ -10,6 +10,7 @@ These addons complement the Odoo official l10n_lu.
 
 
 [//]: # (addons)
+
 Available addons
 ----------------
 addon | version | summary
