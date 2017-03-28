@@ -17,6 +17,7 @@ addon | version | summary
 --- | --- | ---
 [l10n_lu_mis_reports](l10n_lu_mis_reports/) | 10.0.1.0.0 | MIS Report templates for the Luxembourg P&L and Balance Sheets
 
+
 Unported addons
 ---------------
 addon | version | summary
