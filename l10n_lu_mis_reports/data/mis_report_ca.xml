@@ -5,6 +5,7 @@
   <data>
     <record id="mis_report_ca" model="mis.report">
       <field name="name">Luxembourg Chart of Accounts</field>
+      <field name="style_id" ref="mis_report_style_l10n_lu_base"/>
     </record>
     <record id="mis_report_ca_ecdf_1111_1112" model="mis.report.kpi">
       <field ref="mis_report_ca" name="report_id"/>
