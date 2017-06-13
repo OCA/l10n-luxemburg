@@ -430,7 +430,7 @@
       <field ref="mis_report_pl" name="report_id"/>
       <field name="name">fr153</field>
       <field name="description">RESULTAT DE L'EXERCICE A TRANSFERER AU 142</field>
-      <field name="expression">-balp[resultat,resultat-transfert]</field>
+      <field name="expression">-balp[6%,7%,869000%,879000%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_1"/>
