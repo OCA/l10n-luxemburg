@@ -4,7 +4,7 @@
 
 <odoo>
     <record id="mis_report_vat" model="mis.report">
-      <field name="name">VAT 2015</field>
+      <field name="name">Déclaration TVA Mensuelle (modèle 2015)</field>
     </record>
     <record id="mis_report_vat_ecdf_b_AB_EC_12" model="mis.report.kpi">
       <field ref="mis_report_vat" name="report_id"/>
