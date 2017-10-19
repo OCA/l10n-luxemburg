@@ -1825,7 +1825,7 @@
       <field ref="mis_report_vat" name="report_id"/>
       <field name="name">ecdf_765</field>
       <field name="description">II.E.3. base</field>
-      <field name="expression">ecdf_761+ecdf_420</field>
+      <field name="expression">ext_761+ext_420</field>
 
       <field name="type">num</field>
       <field name="compare_method">pct</field>
@@ -1869,7 +1869,7 @@
       <field ref="mis_report_vat" name="report_id"/>
       <field name="name">ecdf_767</field>
       <field name="description">II.F. Livraisons de biens à déclarer par l'acquéreur redevable de la taxe – base</field>
-      <field name="expression">+ecdf_763+ecdf_222</field>
+      <field name="expression">+ext_763+ext_222</field>
 
       <field name="type">num</field>
       <field name="compare_method">pct</field>
@@ -2199,7 +2199,7 @@
       <field ref="mis_report_vat" name="report_id"/>
       <field name="name">ecdf_012</field>
       <field name="description">I.A. Chiffre d'affaires global</field>
-      <field name="expression">+ecdf_454+ecdf_455+ecdf_456</field>
+      <field name="expression">+ext_454+ext_455+ext_456</field>
 
       <field name="type">num</field>
       <field name="compare_method">pct</field>
@@ -2364,7 +2364,7 @@
       <field ref="mis_report_vat" name="report_id"/>
       <field name="name">ecdf_021</field>
       <field name="description">I.B. Exonérations et montants déductibles</field>
-      <field name="expression">+ecdf_014+ecdf_015+ecdf_016+ecdf_017+ecdf_018+ecdf_019+ecdf_226+ecdf_419+ecdf_423+ecdf_424+ecdf_457</field>
+      <field name="expression">+ecdf_014+ecdf_015+ecdf_016+ecdf_017+ecdf_018+ecdf_019+ext_226+ext_419+ecdf_423+ecdf_424+ecdf_457</field>
 
       <field name="type">num</field>
       <field name="compare_method">pct</field>
@@ -2382,9 +2382,9 @@
 
       <field name="sequence">2070</field>
     </record>
-    <record id="mis_report_vat_ecdf_403" model="mis.report.kpi">
+    <record id="mis_report_vat_ext_403" model="mis.report.kpi">
       <field ref="mis_report_vat" name="report_id"/>
-      <field name="name">ecdf_403</field>
+      <field name="name">ext_403</field>
       <field name="description">II.A 0%</field>
       <field name="expression">0</field>
 
@@ -2395,7 +2395,7 @@
     </record>
     <record id="mis_report_vat_ext_418" model="mis.report.kpi">
       <field ref="mis_report_vat" name="report_id"/>
-      <field name="name">ecdf_418</field>
+      <field name="name">ext_418</field>
       <field name="description">II.A _%</field>
       <field name="expression">0</field>
 
@@ -2406,7 +2406,7 @@
     </record>
     <record id="mis_report_vat_ext_453" model="mis.report.kpi">
       <field ref="mis_report_vat" name="report_id"/>
-      <field name="name">ecdf_453</field>
+      <field name="name">ext_453</field>
       <field name="description">II.A _%</field>
       <field name="expression">0</field>
 
@@ -2529,7 +2529,7 @@
       <field ref="mis_report_vat" name="report_id"/>
       <field name="name">ecdf_037</field>
       <field name="description">II.A. Ventilation du chiffre d'affaires imposable – base</field>
-      <field name="expression">+ecdf_029+ecdf_030+ecdf_031+ecdf_032+ecdf_033+ecdf_701+ecdf_703+ecdf_705+ecdf_416+ecdf_451</field>
+      <field name="expression">+ecdf_029+ecdf_030+ecdf_031+ecdf_032+ecdf_033+ecdf_701+ecdf_703+ecdf_705+ext_416+ext_451</field>
 
       <field name="type">num</field>
       <field name="compare_method">pct</field>
@@ -3189,7 +3189,7 @@
       <field ref="mis_report_vat" name="report_id"/>
       <field name="name">ecdf_046</field>
       <field name="description">II.A. Ventilation du chiffre d'affaires imposable – taxe</field>
-      <field name="expression">+ecdf_038+ecdf_039+ecdf_040+ecdf_041+ecdf_042+ecdf_702+ecdf_704+ecdf_706+ecdf_417+ecdf_452</field>
+      <field name="expression">+ecdf_038+ecdf_039+ecdf_040+ecdf_041+ext_042+ecdf_702+ecdf_704+ecdf_706+ext_417+ext_452</field>
 
       <field name="type">num</field>
       <field name="compare_method">pct</field>
@@ -3629,7 +3629,7 @@
       <field ref="mis_report_vat" name="report_id"/>
       <field name="name">ecdf_766</field>
       <field name="description">II.E.3. taxe</field>
-      <field name="expression">+ecdf_762+ecdf_421</field>
+      <field name="expression">+ext_762+ext_421</field>
 
       <field name="type">num</field>
       <field name="compare_method">pct</field>
@@ -3673,7 +3673,7 @@
       <field ref="mis_report_vat" name="report_id"/>
       <field name="name">ecdf_768</field>
       <field name="description">II.F. Livraisons de biens à déclarer par l'acquéreur redevable de la taxe – taxe</field>
-      <field name="expression">+ecdf_764+ecdf_223</field>
+      <field name="expression">+ext_764+ext_223</field>
 
       <field name="type">num</field>
       <field name="compare_method">pct</field>
@@ -3717,7 +3717,7 @@
       <field ref="mis_report_vat" name="report_id"/>
       <field name="name">ecdf_076</field>
       <field name="description">II.H. Total de la taxe en aval</field>
-      <field name="expression">+ecdf_046+ecdf_056+ecdf_407+ecdf_410+ecdf_768+ecdf_227</field>
+      <field name="expression">+ecdf_046+ecdf_056+ecdf_407+ecdf_410+ecdf_768+ext_227</field>
 
       <field name="type">num</field>
       <field name="compare_method">pct</field>
@@ -3805,7 +3805,7 @@
       <field ref="mis_report_vat" name="report_id"/>
       <field name="name">ecdf_093</field>
       <field name="description">III.A. Total de la taxe en amont</field>
-      <field name="expression">+ecdf_090+ecdf_092+ecdf_228+ecdf_458+ecdf_459+ecdf_460+ecdf_461</field>
+      <field name="expression">+ext_090+ext_092+ext_228+ecdf_458+ecdf_459+ecdf_460+ecdf_461</field>
 
       <field name="type">num</field>
       <field name="compare_method">pct</field>
@@ -3816,7 +3816,7 @@
       <field ref="mis_report_vat" name="report_id"/>
       <field name="name">ecdf_097</field>
       <field name="description">III.B. Total de la taxe en amont non déductible</field>
-      <field name="expression">ecdf_094+ecdf_095</field>
+      <field name="expression">ext_094+ext_095</field>
 
       <field name="type">num</field>
       <field name="compare_method">pct</field>
