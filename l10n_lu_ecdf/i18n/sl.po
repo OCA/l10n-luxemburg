@@ -4,13 +4,14 @@
 # 
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2016
+# Matjaž Mozetič <m.mozetic@matmoz.si>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-01 04:32+0000\n"
-"PO-Revision-Date: 2017-07-01 04:32+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"POT-Creation-Date: 2017-09-02 07:29+0000\n"
+"PO-Revision-Date: 2017-09-02 07:29+0000\n"
+"Last-Translator: Matjaž Mozetič <m.mozetic@matmoz.si>, 2017\n"
 "Language-Team: Slovenian (https://www.transifex.com/oca/teams/23907/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -166,7 +167,7 @@ msgstr "ID"
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,journal_ids:0
 msgid "Journals"
-msgstr ""
+msgstr "Dnevniki"
 
 #. module: l10n_lu_ecdf
 #: help:ecdf.report,fiscalyear_id:0
