@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2015-2016 ACSONE SA/NV
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+  
+    <record id="mis_report_style_l10n_lu_base_hide_empty" model="mis.report.style">
+      <field name="name">l10n_lu tax base</field>
+      <field name="dp_inherit" eval="0"/>
+      <field name="dp">2</field>
+      <field name="hide_empty_inherit" eval="0"/>
+      <field name="hide_empty" eval="1"/>
+    </record>
+    
+    <record id="mis_report_style_l10n_lu_1" model="mis.report.style">
+      <field name="name">l10n_lu tax 1</field>
+      <field name="background_color_inherit" eval="0"/>
+      <field name="background_color">#ffa500</field>
+      <field name="font_weight_inherit" eval="0"/>
+      <field name="font_weight">bold</field>
+    </record>
+    
+    <record id="mis_report_style_l10n_lu_2" model="mis.report.style">
+      <field name="name">l10n_lu tax 2</field>
+      <field name="font_weight_inherit" eval="0"/>
+      <field name="font_weight">bold</field>
+    </record>
+    
+    <record id="mis_report_style_l10n_lu_3" model="mis.report.style">
+      <field name="name">l10n_lu tax 3</field>
+      <field name="indent_level_inherit" eval="0"/>
+      <field name="indent_level">1</field>
+    </record>
+    
+    <record id="mis_report_style_l10n_lu_4" model="mis.report.style">
+      <field name="name">l10n_lu tax 4</field>
+      <field name="indent_level_inherit" eval="0"/>
+      <field name="indent_level">2</field>
+      <field name="font_style_inherit" eval="0"/>
+      <field name="font_style">italic</field>
+    </record>
+  
+</odoo>

@@ -15,8 +15,10 @@
         'mis_builder',
     ],
     'data': [
+        'data/mis_report_styles.xml',
         'data/account.account.tag-2015.csv',
         'data/account.tax.template-2015.xml',
+        'data/mis_tax_analysis.xml',
     ],
     'post_init_hook': 'update_tax_tags',
 }
