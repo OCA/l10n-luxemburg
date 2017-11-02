@@ -4,6 +4,14 @@
 <odoo>
   <data>
   
+    <record id="mis_report_style_l10n_lu_base" model="mis.report.style">
+      <field name="name">l10n_lu base</field>
+      <field name="dp_inherit" eval="0"/>
+      <field name="dp">2</field>
+      <field name="suffix_inherit" eval="0"/>
+      <field name="suffix">€</field>
+    </record>
+    
     <record id="mis_report_style_l10n_lu_1" model="mis.report.style">
       <field name="name">l10n_lu 1</field>
       <field name="background_color_inherit" eval="0"/>
