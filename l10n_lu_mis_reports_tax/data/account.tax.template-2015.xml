@@ -1217,10 +1217,7 @@
     <record id="l10n_lu.lu_2015_tax_VP-PA-8" model="account.tax.template">
         <field name="tag_ids" eval="[(4, ref('tag_VP_PA_8'))]"/>
     </record>
-    <record id="l10n_lu.lu_2015_tax_SANS-A" model="account.tax.template">
-        <field name="tag_ids" eval="[(4, ref('tag_SANS_A'))]"/>
-    </record>
-    <record id="l10n_lu.lu_2015_tax_SANS-V" model="account.tax.template">
-        <field name="tag_ids" eval="[(4, ref('tag_SANS_V'))]"/>
+    <record id="l10n_lu.lu_2015_tax_SANS" model="account.tax.template">
+        <field name="tag_ids" eval="[(4, ref('tag_VP_PA_SANS'))]"/>
     </record>
 </odoo>
