@@ -1,1 +1,1 @@
-from init_hooks import update_tax_tags
+from .init_hooks import update_tax_tags
