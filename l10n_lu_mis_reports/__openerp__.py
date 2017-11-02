@@ -12,7 +12,7 @@
     'version': '9.0.1.0.0',
     'license': 'AGPL-3',
     'depends': [
-        'mis_builder',  # OCA/account-financial-reporting
+        'mis_builder',  # OCA/mis-builder
     ],
     'data': [
         'data/mis_report_styles.xml',
