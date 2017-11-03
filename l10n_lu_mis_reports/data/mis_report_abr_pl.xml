@@ -2,7 +2,6 @@
 <!-- Copyright 2015-2016 ACSONE SA/NV
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
-  <data>
     <record id="mis_report_abr_pl" model="mis.report">
       <field name="name">Luxembourg Profit &amp; Loss (abbreviated)</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_base"/>
@@ -397,5 +396,4 @@
       <field name="style_id" ref="mis_report_style_l10n_lu_1"/>
       <field name="sequence">390</field>
     </record>
-  </data>
 </odoo>

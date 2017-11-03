@@ -2,7 +2,6 @@
 <!-- Copyright 2015-2016 ACSONE SA/NV
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
-  <data>
   
     <record id="mis_report_style_l10n_lu_base" model="mis.report.style">
       <field name="name">l10n_lu base</field>
@@ -40,5 +39,4 @@
       <field name="font_style">italic</field>
     </record>
   
-  </data>
 </odoo>
