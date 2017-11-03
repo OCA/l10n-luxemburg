@@ -47,12 +47,18 @@ SECTIONS = (
 )
 
 EXPRESSIONS = (
-    ('base_deb', 'Base Deb', "deb[][('tax_ids.tag_ids', '=', ref('{tag_id}').id)]"),
-    ('base_crd', 'Base Crd', "crd[][('tax_ids.tag_ids', '=', ref('{tag_id}').id)]"),
-    ('base_bal', 'Base Bal', "bal[][('tax_ids.tag_ids', '=', ref('{tag_id}').id)]"),
-    ('deb_bal', 'Tax Deb', "deb[][('tax_line_id.tag_ids', '=', ref('{tag_id}').id)]"),
-    ('crd_bal', 'Tax Crd', "crd[][('tax_line_id.tag_ids', '=', ref('{tag_id}').id)]"),
-    ('tax_bal', 'Tax Bal', "bal[][('tax_line_id.tag_ids', '=', ref('{tag_id}').id)]"),
+    ('base_deb', 'Base Deb',
+     "deb[][('tax_ids.tag_ids', '=', ref('{tag_id}').id)]"),
+    ('base_crd', 'Base Crd',
+     "crd[][('tax_ids.tag_ids', '=', ref('{tag_id}').id)]"),
+    ('base_bal', 'Base Bal',
+     "bal[][('tax_ids.tag_ids', '=', ref('{tag_id}').id)]"),
+    ('deb_bal', 'Tax Deb',
+     "deb[][('tax_line_id.tag_ids', '=', ref('{tag_id}').id)]"),
+    ('crd_bal', 'Tax Crd',
+     "crd[][('tax_line_id.tag_ids', '=', ref('{tag_id}').id)]"),
+    ('tax_bal', 'Tax Bal',
+     "bal[][('tax_line_id.tag_ids', '=', ref('{tag_id}').id)]"),
 )
 
 
@@ -117,7 +123,7 @@ for section_seq, (section_code, section_name) in enumerate(SECTIONS):
             <field name="auto_expand_accounts" eval="True"/>
             <field name="auto_expand_accounts_style_id" ref="mis_report_style_l10n_lu_4"/>
         </record>
-        """.format(**locals()))
+        """.format(**locals()))  # noqa: E501
         for sk, _, expr in EXPRESSIONS:
             expr = expr.format(**locals())
             print("""
@@ -126,7 +132,7 @@ for section_seq, (section_code, section_name) in enumerate(SECTIONS):
                 <field name="subkpi_id" ref="mis_tax_analysis_sk_{sk}"/>
                 <field name="name">{expr}</field>
             </record>
-            """.format(**locals()))
+            """.format(**locals()))  # noqa: E501
     sumexpr = ' + '.join(t[8:] for t in tag_ids_for_section)
     print("""
     <record id="mis_tax_analysis_kpi_{section_code}" model="mis.report.kpi">
