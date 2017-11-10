@@ -63,6 +63,7 @@ class EcdfReport(models.TransientModel):
                                      ('abbreviated', 'Abbreviated')),
                                     'Reports Type',
                                     default='full',
+                                    readonly=True,
                                     required=True)
     # Fiscal years
     current_fiscyear = fields.Many2one('account.fiscalyear',
@@ -641,9 +642,9 @@ class EcdfReport(models.TransientModel):
         reports = []
         templ = {
             'CA_PLANCOMPTA': 'l10n_lu_mis_reports.mis_report_ca',
-            'CA_BILAN': 'l10n_lu_mis_reports.mis_report_bs',
+            'CA_BILAN': 'l10n_lu_mis_reports.mis_report_bs_2016',
             'CA_BILANABR': 'l10n_lu_mis_reports.mis_report_abr_bs',
-            'CA_COMPP': 'l10n_lu_mis_reports.mis_report_pl',
+            'CA_COMPP': 'l10n_lu_mis_reports.mis_report_pl_2016',
             'CA_COMPPABR': 'l10n_lu_mis_reports.mis_report_abr_pl',
         }
 
