@@ -392,7 +392,8 @@ class EcdfReport(models.TransientModel):
                                                      0.0)
 
     @api.multi
-    def _get_finan_report(self, data_current, report_type, data_previous=None):
+    def _get_finan_report(self, data_current, report_type, report_model,
+                          data_previous=None):
         '''
         Generates a financial report (P&L or Balance Sheet) in XML format
         :param data_current: dictionary of data of the current year
@@ -415,7 +416,7 @@ class EcdfReport(models.TransientModel):
         declaration = etree.Element('Declaration',
                                     type=report_type,
                                     language=self.get_language(),
-                                    model='1')
+                                    model=report_model)
         year = etree.Element('Year')
         year.text = datetime.strptime(period_from.date_start,
                                       "%Y-%m-%d").strftime("%Y")
@@ -445,7 +446,7 @@ class EcdfReport(models.TransientModel):
         return declaration
 
     @api.multi
-    def _get_chart_ac(self, data, report_type):
+    def _get_chart_ac(self, data, report_type, report_model):
         '''
         Generates the chart of accounts in XML format
         :param data: Dictionary of values (name, technical name, value)
@@ -471,7 +472,7 @@ class EcdfReport(models.TransientModel):
         declaration = etree.Element('Declaration',
                                     type=report_type,
                                     language=self.get_language(),
-                                    model='1')
+                                    model=report_model)
         year = etree.Element('Year')
         year.text = datetime.strptime(period_from.date_start,
                                       "%Y-%m-%d").strftime("%Y")
@@ -651,20 +652,25 @@ class EcdfReport(models.TransientModel):
         # Report
         if self.with_ac:  # Chart of Accounts
             reports.append({'type': 'CA_PLANCOMPTA',
+                            'model': '1',
                             'templ': templ['CA_PLANCOMPTA']})
         if self.with_bs:  # Balance Sheet
             if self.reports_type == 'full':
                 reports.append({'type': 'CA_BILAN',
+                                'model': '1',
                                 'templ': templ['CA_BILAN']})
             else:  # Balance Sheet abreviated
                 reports.append({'type': 'CA_BILANABR',
+                                'model': '1',
                                 'templ': templ['CA_BILANABR']})
         if self.with_pl:  # Profit and Loss
             if self.reports_type == 'full':
                 reports.append({'type': 'CA_COMPP',
+                                'model': '2',
                                 'templ': templ['CA_COMPP']})
             else:  # Profit and Loss abreviated
                 reports.append({'type': 'CA_COMPPABR',
+                                'model': '1',
                                 'templ': templ['CA_COMPPABR']})
 
         if not reports:
@@ -692,12 +698,14 @@ class EcdfReport(models.TransientModel):
                                                  self.prev_fiscyear)
                 financial_report = self._get_finan_report(data_current,
                                                           report['type'],
+                                                          report['model'],
                                                           data_previous)
                 if financial_report is not None:
                     declarer.append(financial_report)
             else:  # Chart of accounts
                 chart_of_account = self._get_chart_ac(data_current,
-                                                      report['type'])
+                                                      report['type'],
+                                                      report['model'])
                 if chart_of_account is not None:
                     declarer.append(chart_of_account)
 
