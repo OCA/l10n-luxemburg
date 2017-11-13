@@ -4,7 +4,7 @@
 #     This file is part of l10n_lu_mis_reports,
 #     an Odoo module.
 #
-#     Copyright (c) 2015 ACSONE SA/NV (<http://acsone.eu>)
+#     Copyright (c) 2015-2017 ACSONE SA/NV (<http://acsone.eu>)
 #
 #     l10n_lu_mis_reports is free software:
 #     you can redistribute it and/or modify it under the terms of the GNU
@@ -30,14 +30,16 @@
               'Odoo Community Association (OCA)',
     'website': 'http://acsone.eu',
     'category': 'Reporting',
-    'version': '8.0.1.0.0',
+    'version': '8.0.1.1.0',
     'license': 'AGPL-3',
     'depends': [
         'mis_builder',  # OCA/mis-builder
     ],
     'data': [
         'data/mis_report_pl.xml',
+        'data/mis_report_pl_2016.xml',
         'data/mis_report_bs.xml',
+        'data/mis_report_bs_2016.xml',
         'data/mis_report_ca.xml',
         'data/mis_report_abr_pl.xml',
         'data/mis_report_abr_bs.xml',

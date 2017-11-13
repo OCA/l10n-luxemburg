@@ -1,0 +1,455 @@
+<!--
+    Copyright 2017 ACSONE SA/NV
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
+<openerp>
+  <data>
+    <record id="mis_report_pl_2016" model="mis.report">
+      <field name="name">Luxembourg Profit &amp; Loss (ecdf 2016-2017)</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_702_701" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_702_701</field>
+      <field name="description">1 Chiffre d'affaires net</field>
+      <field name="expression">-balp[70%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-weight: bold</field>
+      <field name="sequence">10</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_704_703" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_704_703</field>
+      <field name="description">2 Variation du stock de produits finis et en cours de fabrication</field>
+      <field name="expression">-balp[71%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-weight: bold</field>
+      <field name="sequence">20</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_706_705" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_706_705</field>
+      <field name="description">3 Travaux effectués par l'entreprise pour elle-même et portés à l'actif</field>
+      <field name="expression">-balp[72%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-weight: bold</field>
+      <field name="sequence">30</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_714_713" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_714_713</field>
+      <field name="description">4 Autres produits d'exploitation</field>
+      <field name="expression">-balp[74%,763%,7681%,7682%,7683%,7684%,7685%,7688%,769%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-weight: bold</field>
+      <field name="sequence">40</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_672_671" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_672_671</field>
+      <field name="description">5 Matières premières et consommables et autres charges externes</field>
+      <field name="expression">ecdf_602_601 + ecdf_604_603</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-weight: bold</field>
+      <field name="sequence">50</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_602_601" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_602_601</field>
+      <field name="description">a) Matières premières et consommables</field>
+      <field name="expression">-balp[60%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style"></field>
+      <field name="sequence">60</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_604_603" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_604_603</field>
+      <field name="description">b) Autres charges externes</field>
+      <field name="expression">-balp[61%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style"></field>
+      <field name="sequence">70</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_606_605" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_606_605</field>
+      <field name="description">6 Frais de personnel</field>
+      <field name="expression">ecdf_608_607 + ecdf_610_609 + ecdf_614_613</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-weight: bold</field>
+      <field name="sequence">80</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_608_607" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_608_607</field>
+      <field name="description">a) Salaires et traitements</field>
+      <field name="expression">-balp[621%,622%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style"></field>
+      <field name="sequence">90</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_610_609" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_610_609</field>
+      <field name="description">b) Charges sociales</field>
+      <field name="expression">ecdf_654_653 + ecdf_656_655</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style"></field>
+      <field name="sequence">100</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_654_653" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_654_653</field>
+      <field name="description">i) couvrant les pensions</field>
+      <field name="expression">-balp[624%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-style: italic</field>
+      <field name="sequence">110</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_656_655" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_656_655</field>
+      <field name="description">ii) autres charges sociales</field>
+      <field name="expression">-balp[623%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-style: italic</field>
+      <field name="sequence">120</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_614_613" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_614_613</field>
+      <field name="description">c) Autres frais de personnel</field>
+      <field name="expression">-balp[628%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style"></field>
+      <field name="sequence">130</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_658_657" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_658_657</field>
+      <field name="description">7 Corrections de valeur</field>
+      <field name="expression">ecdf_660_659 + ecdf_662_661</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-weight: bold</field>
+      <field name="sequence">140</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_660_659" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_660_659</field>
+      <field name="description">a) sur frais d'établissement et sur immobilisations corporelles et incorporelles</field>
+      <field name="expression">-balp[631%,632%,633%,661%,761%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style"></field>
+      <field name="sequence">150</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_662_661" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_662_661</field>
+      <field name="description">b) sur éléments de l'actif circulant</field>
+      <field name="expression">-balp[634%,635%,662%,762%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style"></field>
+      <field name="sequence">160</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_622_621" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_622_621</field>
+      <field name="description">8 Autres charges d’exploitation</field>
+      <field name="expression">-balp[64%,663%,668%,69%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-weight: bold</field>
+      <field name="sequence">170</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_716_715" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_716_715</field>
+      <field name="description">9 Produits provenant de participations</field>
+      <field name="expression">ecdf_718_717 + ecdf_720_719</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-weight: bold</field>
+      <field name="sequence">180</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_718_717" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_718_717</field>
+      <field name="description">a) provenant d’entreprises liées</field>
+      <field name="expression">-balp[75111%,75112%,7521%,7522%,7641%,7642%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style"></field>
+      <field name="sequence">190</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_720_719" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_720_719</field>
+      <field name="description">b) provenant d'autres participations</field>
+      <field name="expression">-balp[75113%,75114%,75115%,75116%,75117%,7512%,7523%,7524%,7525%,7526%,7527%,7643%,7644%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style"></field>
+      <field name="sequence">200</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_722_721" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_722_721</field>
+      <field name="description">10 Produits provenant d'autres valeurs mobilières, d'autres titres et de créances de l'actif immobilisé</field>
+      <field name="expression">ecdf_724_723 + ecdf_726_725</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-weight: bold</field>
+      <field name="sequence">210</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_724_723" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_724_723</field>
+      <field name="description">a) provenant d’entreprises liées</field>
+      <field name="expression">-balp[7531%,75331%,75411%,75481%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style"></field>
+      <field name="sequence">220</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_726_725" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_726_725</field>
+      <field name="description">b) autres produits ne figurant pas sous a)</field>
+      <field name="expression">-balp[7532%,75332%,75333%,75338%,7534%,75412%,75413%,75418%,75482%,75483%,75488%,7645%,7646%,7647%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style"></field>
+      <field name="sequence">230</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_728_727" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_728_727</field>
+      <field name="description">11 Autres intérêts et autres produits financiers</field>
+      <field name="expression">ecdf_730_729 + ecdf_732_731</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-weight: bold</field>
+      <field name="sequence">240</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_730_729" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_730_729</field>
+      <field name="description">a) provenant d’entreprises liées</field>
+      <field name="expression">-balp[7554%,7651%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style"></field>
+      <field name="sequence">250</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_732_731" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_732_731</field>
+      <field name="description">b) autres intérêts et produits financiers</field>
+      <field name="expression">-balp[7552%,7553%,7555%,7556%,7558%,756%,758%,7652%,7686%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style"></field>
+      <field name="sequence">260</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_664_663" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_664_663</field>
+      <field name="description">12 Quote-part dans le résultat des entreprises mises en équivalence</field>
+      <field name="expression">-balp[657%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-weight: bold</field>
+      <field name="sequence">270</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_666_665" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_666_665</field>
+      <field name="description">13 Corrections de valeur sur immobilisations financières et sur valeurs mobilières faisant partie de l'actif circulant</field>
+      <field name="expression">-balp[651%,653%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-weight: bold</field>
+      <field name="sequence">280</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_628_627" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_628_627</field>
+      <field name="description">14 Intérêts et autres charges financières</field>
+      <field name="expression">ecdf_630_629 + ecdf_632_631</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-weight: bold</field>
+      <field name="sequence">290</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_630_629" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_630_629</field>
+      <field name="description">a) concernant des entreprises liées</field>
+      <field name="expression">-balp[6541%,6554%,6641%,6642%,6651%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style"></field>
+      <field name="sequence">300</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_632_631" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_632_631</field>
+      <field name="description">b) autres intérêts et charges financières</field>
+      <field name="expression">-balp[6542%,6543%,6548%,6551%,6552%,6553%,6555%,6556%,6558%,656%,658%,659%,6643%,6644%,6645%,6646%,6647%,6652%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style"></field>
+      <field name="sequence">310</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_636_635" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_636_635</field>
+      <field name="description">15 Impôts sur le résultat</field>
+      <field name="expression">-balp[67%,77%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-weight: bold</field>
+      <field name="sequence">320</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_668_667" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_668_667</field>
+      <field name="description">16 Résultat après impôts sur le résultat</field>
+      <field name="expression">ecdf_702_701 + ecdf_704_703 + ecdf_706_705 + ecdf_714_713 + ecdf_672_671 + ecdf_606_605 + ecdf_658_657 + ecdf_622_621 + ecdf_716_715 + ecdf_722_721 + ecdf_728_727 + ecdf_664_663 + ecdf_666_665 +ecdf_628_627 + ecdf_636_635</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-weight: bold</field>
+      <field name="sequence">330</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_638_637" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_638_637</field>
+      <field name="description">17 Autres impôts ne figurant pas sous les postes 1. à 16.</field>
+      <field name="expression">-balp[68%,78%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-weight: bold</field>
+      <field name="sequence">340</field>
+    </record>
+    <record id="mis_report_pl_2016_ecdf_670_669" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">ecdf_670_669</field>
+      <field name="description">18 Résultat de l'exercice</field>
+      <field name="expression">ecdf_668_667 + ecdf_638_637</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-weight: bold</field>
+      <field name="sequence">350</field>
+    </record>
+    <record id="mis_report_pl_2016_res_check" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">res_check</field>
+      <field name="description">Résultat de l'exercice (check 6+7)</field>
+      <field name="expression">-balp[6%,7%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-style: italic</field>
+      <field name="sequence">360</field>
+    </record>
+    <record id="mis_report_pl_2016_res_to_142" model="mis.report.kpi">
+      <field name="report_id" ref="mis_report_pl_2016"></field>
+      <field name="name">res_to_142</field>
+      <field name="description">Résultat de l'exercice à transférer au 142</field>
+      <field name="expression">-balp[6%,7%,869%,879%]</field>
+      <field name="type">num</field>
+      <field name="compare_method">pct</field>
+      <field name="suffix">€</field>
+      <field name="dp">2</field>
+      <field name="default_css_style">font-style: italic</field>
+      <field name="sequence">370</field>
+    </record>
+  </data>
+</openerp>

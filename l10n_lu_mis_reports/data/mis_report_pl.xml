@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2015 ACSONE SA/NV
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
 <openerp>
   <data>
     <record id="mis_report_pl" model="mis.report">
-      <field name="name">Luxembourg Profit &amp; Loss</field>
+      <field name="name">Luxembourg Profit &amp; Loss (ecdf 2015)</field>
     </record>
     <record id="mis_report_pl_ecdf_642_641" model="mis.report.kpi">
       <field ref="mis_report_pl" name="report_id"/>

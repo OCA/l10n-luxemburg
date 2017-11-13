@@ -25,10 +25,12 @@ Accounting > Reporting > MIS Reports and create report instance
 according to the desired time periods and using one of the following
 templates provided by this module:
 
-* Luxembourg Profit & Loss
-* Luxembourg Balance Sheet
-* Luxembourg Profit & Loss (abbreviated)
-* Luxembourg Balance Sheet (abbreviated)
+* Luxembourg Profit & Loss (2016-2017 model)
+* Luxembourg Balance Sheet (2016-2017 model)
+* Luxembourg Profit & Loss (2015 model)
+* Luxembourg Balance Sheet (2015 model)
+* Luxembourg Profit & Loss (abbreviated, 2015 model)
+* Luxembourg Balance Sheet (abbreviated, 2015 model)
 
 To obtain correct results, the account codes prefixes must match the official
 Luxembourg chart of account.

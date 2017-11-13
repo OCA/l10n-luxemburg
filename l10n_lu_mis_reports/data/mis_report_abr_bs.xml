@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2015 ACSONE SA/NV
+    License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+-->
 <openerp>
   <data>
     <record id="mis_report_abr_bs" model="mis.report">
-      <field name="name">Luxembourg Balance Sheet (abbreviated)</field>
+      <field name="name">Luxembourg Balance Sheet (abbreviated, ecdf 2015)</field>
     </record>
     <record id="mis_report_abr_bs_ecdf_202_201" model="mis.report.kpi">
       <field ref="mis_report_abr_bs" name="report_id"/>
