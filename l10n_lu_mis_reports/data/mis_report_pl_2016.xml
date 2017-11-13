@@ -44,7 +44,7 @@
       <field name="report_id" ref="mis_report_pl_2016"></field>
       <field name="name">ecdf_714_713</field>
       <field name="description">4 Autres produits d'exploitation</field>
-      <field name="expression">-balp[74%,768%,769%]</field>
+      <field name="expression">-balp[74%,763%,7681%,7682%,7683%,7684%,7685%,7688%,769%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
@@ -165,7 +165,7 @@
       <field name="report_id" ref="mis_report_pl_2016"></field>
       <field name="name">ecdf_660_659</field>
       <field name="description">a) sur frais d'établissement et sur immobilisations corporelles et incorporelles</field>
-      <field name="expression">-balp[631%,632%,633%,661%,663%,761%,763%]</field>
+      <field name="expression">-balp[631%,632%,633%,661%,761%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
@@ -187,7 +187,7 @@
       <field name="report_id" ref="mis_report_pl_2016"></field>
       <field name="name">ecdf_622_621</field>
       <field name="description">8 Autres charges d’exploitation</field>
-      <field name="expression">-balp[64%,69%]</field>
+      <field name="expression">-balp[64%,663%,668%,69%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
@@ -209,7 +209,7 @@
       <field name="report_id" ref="mis_report_pl_2016"></field>
       <field name="name">ecdf_718_717</field>
       <field name="description">a) provenant d’entreprises liées</field>
-      <field name="expression">-balp[75111%,75112%,7521%,7522%]</field>
+      <field name="expression">-balp[75111%,75112%,7521%,7522%,7641%,7642%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
@@ -220,7 +220,7 @@
       <field name="report_id" ref="mis_report_pl_2016"></field>
       <field name="name">ecdf_720_719</field>
       <field name="description">b) provenant d'autres participations</field>
-      <field name="expression">-balp[75113%,75114%,75115%,75116%,75117%,7512%,7523%,7524%,7525%,7526%,7527%]</field>
+      <field name="expression">-balp[75113%,75114%,75115%,75116%,75117%,7512%,7523%,7524%,7525%,7526%,7527%,7643%,7644%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
@@ -242,7 +242,7 @@
       <field name="report_id" ref="mis_report_pl_2016"></field>
       <field name="name">ecdf_724_723</field>
       <field name="description">a) provenant d’entreprises liées</field>
-      <field name="expression">-balp[7531%,75331%,75411%,75481%,7641%,7642%]</field>
+      <field name="expression">-balp[7531%,75331%,75411%,75481%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
@@ -253,7 +253,7 @@
       <field name="report_id" ref="mis_report_pl_2016"></field>
       <field name="name">ecdf_726_725</field>
       <field name="description">b) autres produits ne figurant pas sous a)</field>
-      <field name="expression">-balp[7532%,75332%,75333%,75338%,7534%,75412%,75413%,75418%,75482%,75483%,75488%,7643%,7644%,7645%,7646%,7647%]</field>
+      <field name="expression">-balp[7532%,75332%,75333%,75338%,7534%,75412%,75413%,75418%,75482%,75483%,75488%,7645%,7646%,7647%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
@@ -286,7 +286,7 @@
       <field name="report_id" ref="mis_report_pl_2016"></field>
       <field name="name">ecdf_732_731</field>
       <field name="description">b) autres intérêts et produits financiers</field>
-      <field name="expression">-balp[7552%,7553%,7555%,7556%,7558%,756%,758%,7652%]</field>
+      <field name="expression">-balp[7552%,7553%,7555%,7556%,7558%,756%,758%,7652%,7686%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
@@ -308,7 +308,7 @@
       <field name="report_id" ref="mis_report_pl_2016"></field>
       <field name="name">ecdf_666_665</field>
       <field name="description">13 Corrections de valeur sur immobilisations financières et sur valeurs mobilières faisant partie de l'actif circulant</field>
-      <field name="expression">-balp[664%,665%]</field>
+      <field name="expression">-balp[651%,653%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
@@ -330,7 +330,7 @@
       <field name="report_id" ref="mis_report_pl_2016"></field>
       <field name="name">ecdf_630_629</field>
       <field name="description">a) concernant des entreprises liées</field>
-      <field name="expression">-balp[6554%]</field>
+      <field name="expression">-balp[6541%,6554%,6641%,6642%,6651%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
@@ -341,7 +341,7 @@
       <field name="report_id" ref="mis_report_pl_2016"></field>
       <field name="name">ecdf_632_631</field>
       <field name="description">b) autres intérêts et charges financières</field>
-      <field name="expression">-balp[654%,6551%,6552%,6553%,6555%,6556%,6558%,656%,658%,659%]</field>
+      <field name="expression">-balp[6542%,6543%,6548%,6551%,6552%,6553%,6555%,6556%,6558%,656%,658%,659%,6643%,6644%,6645%,6646%,6647%,6652%]</field>
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
