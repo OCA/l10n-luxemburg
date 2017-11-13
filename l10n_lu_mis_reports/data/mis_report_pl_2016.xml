@@ -15,6 +15,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">10</field>
     </record>
@@ -26,6 +27,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">20</field>
     </record>
@@ -37,6 +39,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">30</field>
     </record>
@@ -48,6 +51,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">40</field>
     </record>
@@ -59,6 +63,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">50</field>
     </record>
@@ -70,6 +75,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style"></field>
       <field name="sequence">60</field>
     </record>
@@ -81,6 +87,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style"></field>
       <field name="sequence">70</field>
     </record>
@@ -92,6 +99,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">80</field>
     </record>
@@ -103,6 +111,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style"></field>
       <field name="sequence">90</field>
     </record>
@@ -114,6 +123,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style"></field>
       <field name="sequence">100</field>
     </record>
@@ -125,6 +135,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">110</field>
     </record>
@@ -136,6 +147,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">120</field>
     </record>
@@ -147,6 +159,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style"></field>
       <field name="sequence">130</field>
     </record>
@@ -158,6 +171,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">140</field>
     </record>
@@ -169,6 +183,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style"></field>
       <field name="sequence">150</field>
     </record>
@@ -180,6 +195,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style"></field>
       <field name="sequence">160</field>
     </record>
@@ -191,6 +207,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">170</field>
     </record>
@@ -202,6 +219,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">180</field>
     </record>
@@ -213,6 +231,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style"></field>
       <field name="sequence">190</field>
     </record>
@@ -224,6 +243,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style"></field>
       <field name="sequence">200</field>
     </record>
@@ -235,6 +255,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">210</field>
     </record>
@@ -246,6 +267,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style"></field>
       <field name="sequence">220</field>
     </record>
@@ -257,6 +279,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style"></field>
       <field name="sequence">230</field>
     </record>
@@ -268,6 +291,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">240</field>
     </record>
@@ -279,6 +303,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style"></field>
       <field name="sequence">250</field>
     </record>
@@ -290,6 +315,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style"></field>
       <field name="sequence">260</field>
     </record>
@@ -301,6 +327,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">270</field>
     </record>
@@ -312,6 +339,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">280</field>
     </record>
@@ -323,6 +351,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">290</field>
     </record>
@@ -334,6 +363,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style"></field>
       <field name="sequence">300</field>
     </record>
@@ -345,6 +375,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style"></field>
       <field name="sequence">310</field>
     </record>
@@ -356,6 +387,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">320</field>
     </record>
@@ -367,6 +399,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">330</field>
     </record>
@@ -378,6 +411,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">340</field>
     </record>
@@ -389,6 +423,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-weight: bold</field>
       <field name="sequence">350</field>
     </record>
@@ -400,6 +435,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">360</field>
     </record>
@@ -411,6 +447,7 @@
       <field name="type">num</field>
       <field name="compare_method">pct</field>
       <field name="suffix">€</field>
+      <field name="dp">2</field>
       <field name="default_css_style">font-style: italic</field>
       <field name="sequence">370</field>
     </record>
