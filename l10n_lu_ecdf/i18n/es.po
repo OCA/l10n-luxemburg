@@ -3,14 +3,14 @@
 # * l10n_lu_ecdf
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-01 04:32+0000\n"
-"PO-Revision-Date: 2017-07-01 04:32+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"POT-Creation-Date: 2017-11-18 04:28+0000\n"
+"PO-Revision-Date: 2017-11-18 04:28+0000\n"
+"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2017\n"
 "Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,12 +31,12 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: selection:ecdf.report,target_move:0
 msgid "All Entries"
-msgstr "Todos los asientos"
+msgstr ""
 
 #. module: l10n_lu_ecdf
 #: selection:ecdf.report,target_move:0
 msgid "All Posted Entries"
-msgstr "Todos los asientos asentados"
+msgstr ""
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,with_bs:0
@@ -56,17 +56,17 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,with_ac:0
 msgid "Chart of Accounts"
-msgstr "Plan contable"
+msgstr ""
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,remarks:0
 msgid "Comments"
-msgstr "Comentarios"
+msgstr ""
 
 #. module: l10n_lu_ecdf
 #: model:ir.model,name:l10n_lu_ecdf.model_res_company
 msgid "Companies"
-msgstr "Compañías"
+msgstr ""
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,company_id:0
@@ -121,7 +121,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,date_to:0
 msgid "End Date"
-msgstr "Fecha Final"
+msgstr ""
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,period_to:0
@@ -146,7 +146,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,fiscalyear_id:0
 msgid "Fiscal Year"
-msgstr "Ejercicio fiscal"
+msgstr ""
 
 #. module: l10n_lu_ecdf
 #: selection:ecdf.report,reports_type:0
@@ -166,7 +166,7 @@ msgstr "ID"
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,journal_ids:0
 msgid "Journals"
-msgstr "Diarios"
+msgstr ""
 
 #. module: l10n_lu_ecdf
 #: help:ecdf.report,fiscalyear_id:0
@@ -176,7 +176,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,language:0
 msgid "Language"
-msgstr "Idioma"
+msgstr ""
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,__last_update:0
@@ -186,15 +186,15 @@ msgstr "Última modificación el"
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,write_uid:0
 msgid "Last Updated by"
-msgstr "Última actualización por"
+msgstr "Última actualización de"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,write_date:0
 msgid "Last Updated on"
-msgstr "Última actualización el"
+msgstr "Última actualización en"
 
 #. module: l10n_lu_ecdf
-#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:706
+#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:715
 #, python-format
 msgid "MIS Template(s) not found :"
 msgstr ""
@@ -205,13 +205,13 @@ msgid "Matricule"
 msgstr ""
 
 #. module: l10n_lu_ecdf
-#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:101
+#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:102
 #, python-format
 msgid "Matricule must be 11 or 13                 characters long."
 msgstr ""
 
 #. module: l10n_lu_ecdf
-#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:229
+#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:230
 #, python-format
 msgid "Matricule not present"
 msgstr ""
@@ -222,7 +222,7 @@ msgid "No Filters"
 msgstr ""
 
 #. module: l10n_lu_ecdf
-#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:670
+#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:677
 #, python-format
 msgid "No report type selected"
 msgstr ""
@@ -230,10 +230,10 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: selection:ecdf.report,filter:0
 msgid "Periods"
-msgstr "Periodos"
+msgstr ""
 
 #. module: l10n_lu_ecdf
-#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:671
+#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:678
 #, python-format
 msgid "Please, select a report type"
 msgstr ""
@@ -244,7 +244,7 @@ msgid "Previous Fiscal Year"
 msgstr ""
 
 #. module: l10n_lu_ecdf
-#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:204
+#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:205
 #, python-format
 msgid "Previous fiscal year must be before the current one"
 msgstr ""
@@ -255,7 +255,7 @@ msgid "Profit & Loss"
 msgstr ""
 
 #. module: l10n_lu_ecdf
-#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:116
+#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:117
 #, python-format
 msgid ""
 "RCS number must begin with an                 uppercase letter followed by 2"
@@ -265,7 +265,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: view:ecdf.report:l10n_lu_ecdf.ecdf_report_view
 msgid "Reports"
-msgstr "Reportes"
+msgstr ""
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,reports_type:0
@@ -280,7 +280,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,date_from:0
 msgid "Start Date"
-msgstr "Fecha de inicio"
+msgstr ""
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,period_from:0
@@ -290,7 +290,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,target_move:0
 msgid "Target Moves"
-msgstr "Asientos destino"
+msgstr ""
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,vat:0
@@ -298,13 +298,13 @@ msgid "Tax ID"
 msgstr ""
 
 #. module: l10n_lu_ecdf
-#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:738
+#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:747
 #, python-format
 msgid "The generated file doesn't fit the required schema !"
 msgstr ""
 
 #. module: l10n_lu_ecdf
-#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:132
+#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:133
 #, python-format
 msgid ""
 "VAT number must begin with two                 uppercase letters followed by"

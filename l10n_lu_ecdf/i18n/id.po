@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-14 01:42+0000\n"
-"PO-Revision-Date: 2017-11-14 01:42+0000\n"
+"POT-Creation-Date: 2017-11-18 04:28+0000\n"
+"PO-Revision-Date: 2017-11-18 04:28+0000\n"
 "Last-Translator: Wahyu Setiawan <wahyusetiaaa@gmail.com>, 2017\n"
 "Language-Team: Indonesian (https://www.transifex.com/oca/teams/23907/id/)\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: view:ecdf.report:l10n_lu_ecdf.ecdf_report_view
 msgid "Cancel"
-msgstr ""
+msgstr "Batalkan"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,chart_account_id:0
@@ -72,7 +72,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,company_id:0
 msgid "Company"
-msgstr ""
+msgstr "Perusahaan"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,company_registry:0
@@ -87,12 +87,12 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Dibuat oleh"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Dibuat pada"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,current_fiscyear:0
@@ -107,7 +107,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: selection:ecdf.report,filter:0
 msgid "Date"
-msgstr ""
+msgstr "Tanggal"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,display_name:0
