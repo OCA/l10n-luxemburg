@@ -2,7 +2,6 @@
 <!-- Copyright 2015-2016 ACSONE SA/NV
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
-  <data>
     <record id="mis_report_ca" model="mis.report">
       <field name="name">Luxembourg Chart of Accounts</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_base"/>
@@ -11407,5 +11406,4 @@
       <field name="style_id"/>
       <field name="sequence">24150</field>
     </record>
-  </data>
 </odoo>
