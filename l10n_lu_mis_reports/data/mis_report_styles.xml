@@ -11,32 +11,40 @@
       <field name="suffix">€</field>
     </record>
     
-    <record id="mis_report_style_l10n_lu_1" model="mis.report.style">
-      <field name="name">l10n_lu 1</field>
+    <record id="mis_report_style_l10n_lu_0" model="mis.report.style">
+      <field name="name">l10n_lu 0</field>
       <field name="background_color_inherit" eval="0"/>
       <field name="background_color">#ffa500</field>
+      <field name="font_weight_inherit" eval="0"/>
+      <field name="font_weight">bold</field>
+    </record>
+    
+    <record id="mis_report_style_l10n_lu_1" model="mis.report.style">
+      <field name="name">l10n_lu 1</field>
       <field name="font_weight_inherit" eval="0"/>
       <field name="font_weight">bold</field>
     </record>
     
     <record id="mis_report_style_l10n_lu_2" model="mis.report.style">
       <field name="name">l10n_lu 2</field>
-      <field name="background_color_inherit" eval="0"/>
-      <field name="background_color">#ffa500</field>
-      <field name="font_style_inherit" eval="0"/>
-      <field name="font_style">italic</field>
     </record>
     
     <record id="mis_report_style_l10n_lu_3" model="mis.report.style">
       <field name="name">l10n_lu 3</field>
-      <field name="font_weight_inherit" eval="0"/>
-      <field name="font_weight">bold</field>
+      <field name="font_style_inherit" eval="0"/>
+      <field name="font_style">italic</field>
     </record>
     
     <record id="mis_report_style_l10n_lu_4" model="mis.report.style">
       <field name="name">l10n_lu 4</field>
-      <field name="font_style_inherit" eval="0"/>
-      <field name="font_style">italic</field>
+    </record>
+  
+    <record id="mis_report_style_l10n_lu_acc_detail" model="mis.report.style">
+      <field name="name">l10n_lu acc detail</field>
+      <field name="font_size_inherit" eval="0"/>
+      <field name="font_size">small</field>
+      <field name="indent_level_inherit" eval="0"/>
+      <field name="indent_level">1</field>
     </record>
   
 </odoo>
