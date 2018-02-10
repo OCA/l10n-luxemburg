@@ -3,14 +3,15 @@
 # * l10n_lu_ecdf
 # 
 # Translators:
-# OCA Transbot <transbot@odoo-community.org>, 2016
+# OCA Transbot <transbot@odoo-community.org>, 2017
+# Carlos Hormigo, 2018
 msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-25 06:37+0000\n"
-"PO-Revision-Date: 2017-03-25 06:37+0000\n"
-"Last-Translator: OCA Transbot <transbot@odoo-community.org>, 2016\n"
+"POT-Creation-Date: 2017-12-02 05:52+0000\n"
+"PO-Revision-Date: 2017-12-02 05:52+0000\n"
+"Last-Translator: Carlos Hormigo, 2018\n"
 "Language-Team: Catalan (Spain) (https://www.transifex.com/oca/teams/23907/ca_ES/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -86,12 +87,12 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,create_uid:0
 msgid "Created by"
-msgstr ""
+msgstr "Creat per"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,create_date:0
 msgid "Created on"
-msgstr ""
+msgstr "Creat a"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,current_fiscyear:0
@@ -111,7 +112,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,display_name:0
 msgid "Display Name"
-msgstr ""
+msgstr "Nom visible"
 
 #. module: l10n_lu_ecdf
 #: selection:ecdf.report,language:0
@@ -121,7 +122,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,date_to:0
 msgid "End Date"
-msgstr ""
+msgstr "Data final"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,period_to:0
@@ -181,20 +182,20 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,__last_update:0
 msgid "Last Modified on"
-msgstr ""
+msgstr "Darrera modificació en"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,write_uid:0
 msgid "Last Updated by"
-msgstr ""
+msgstr "Darrera actualització per"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,write_date:0
 msgid "Last Updated on"
-msgstr ""
+msgstr "Darrera actualització el"
 
 #. module: l10n_lu_ecdf
-#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:706
+#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:715
 #, python-format
 msgid "MIS Template(s) not found :"
 msgstr ""
@@ -205,13 +206,13 @@ msgid "Matricule"
 msgstr ""
 
 #. module: l10n_lu_ecdf
-#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:101
+#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:102
 #, python-format
 msgid "Matricule must be 11 or 13                 characters long."
 msgstr ""
 
 #. module: l10n_lu_ecdf
-#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:229
+#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:230
 #, python-format
 msgid "Matricule not present"
 msgstr ""
@@ -222,7 +223,7 @@ msgid "No Filters"
 msgstr ""
 
 #. module: l10n_lu_ecdf
-#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:670
+#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:677
 #, python-format
 msgid "No report type selected"
 msgstr ""
@@ -233,7 +234,7 @@ msgid "Periods"
 msgstr ""
 
 #. module: l10n_lu_ecdf
-#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:671
+#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:678
 #, python-format
 msgid "Please, select a report type"
 msgstr ""
@@ -244,7 +245,7 @@ msgid "Previous Fiscal Year"
 msgstr ""
 
 #. module: l10n_lu_ecdf
-#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:204
+#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:205
 #, python-format
 msgid "Previous fiscal year must be before the current one"
 msgstr ""
@@ -255,7 +256,7 @@ msgid "Profit & Loss"
 msgstr ""
 
 #. module: l10n_lu_ecdf
-#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:116
+#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:117
 #, python-format
 msgid ""
 "RCS number must begin with an                 uppercase letter followed by 2"
@@ -280,7 +281,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,date_from:0
 msgid "Start Date"
-msgstr ""
+msgstr "Data d'inici"
 
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,period_from:0
@@ -298,13 +299,13 @@ msgid "Tax ID"
 msgstr ""
 
 #. module: l10n_lu_ecdf
-#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:738
+#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:747
 #, python-format
 msgid "The generated file doesn't fit the required schema !"
 msgstr ""
 
 #. module: l10n_lu_ecdf
-#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:132
+#: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:133
 #, python-format
 msgid ""
 "VAT number must begin with two                 uppercase letters followed by"
