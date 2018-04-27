@@ -3,7 +3,7 @@
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <odoo>
     <record id="mis_report_bs" model="mis.report">
-      <field name="name">Luxembourg Balance Sheet</field>
+      <field name="name">Luxembourg Balance Sheet (ecdf 2015)</field>
       <field name="style_id" ref="mis_report_style_l10n_lu_base"/>
     </record>
     <record id="mis_report_bs_ecdf_202_201" model="mis.report.kpi">
