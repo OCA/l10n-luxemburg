@@ -15,15 +15,8 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
-[l10n_lu_mis_reports](l10n_lu_mis_reports/) | 10.0.1.0.0 | MIS Report templates for the Luxembourg P&L and Balance Sheets
+[l10n_lu_mis_reports](l10n_lu_mis_reports/) | 10.0.1.1.0 | MIS Report templates for the Luxembourg P&L and Balance Sheets
 [l10n_lu_mis_reports_tax](l10n_lu_mis_reports_tax/) | 10.0.1.0.0 | Luxemburg tax reports based on MIS Builder
-
-
-Unported addons
----------------
-addon | version | summary
---- | --- | ---
-[l10n_lu_ext](l10n_lu_ext/) | 8.0.0.1.0 (unported) | Luxembourg - Accounting - Extension
 
 [//]: # (end addons)
 
