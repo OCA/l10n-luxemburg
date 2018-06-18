@@ -1,0 +1,2210 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* l10n_lu_mis_reports_tax
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_0
+msgid "AB-EC-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_12
+msgid "AB-EC-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_12_n
+msgid "AB-EC-12-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_12_p
+msgid "AB-EC-12-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_14
+msgid "AB-EC-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_14_n
+msgid "AB-EC-14-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_14_p
+msgid "AB-EC-14-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_15
+msgid "AB-EC-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_15_n
+msgid "AB-EC-15-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_15_p
+msgid "AB-EC-15-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_17
+msgid "AB-EC-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_17_n
+msgid "AB-EC-17-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_17_p
+msgid "AB-EC-17-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_3
+msgid "AB-EC-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_3_n
+msgid "AB-EC-3-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_3_p
+msgid "AB-EC-3-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_6
+msgid "AB-EC-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_6_n
+msgid "AB-EC-6-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_6_p
+msgid "AB-EC-6-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_8
+msgid "AB-EC-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_8_n
+msgid "AB-EC-8-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_EC_8_p
+msgid "AB-EC-8-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_0
+msgid "AB-ECP-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_12
+msgid "AB-ECP-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_12_n
+msgid "AB-ECP-12-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_12_p
+msgid "AB-ECP-12-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_14
+msgid "AB-ECP-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_14_n
+msgid "AB-ECP-14-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_14_p
+msgid "AB-ECP-14-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_15
+msgid "AB-ECP-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_15_n
+msgid "AB-ECP-15-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_15_p
+msgid "AB-ECP-15-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_17
+msgid "AB-ECP-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_17_n
+msgid "AB-ECP-17-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_17_p
+msgid "AB-ECP-17-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_3
+msgid "AB-ECP-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_3_n
+msgid "AB-ECP-3-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_3_p
+msgid "AB-ECP-3-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_6
+msgid "AB-ECP-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_6_n
+msgid "AB-ECP-6-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_6_p
+msgid "AB-ECP-6-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_8
+msgid "AB-ECP-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_8_n
+msgid "AB-ECP-8-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_ECP_8_p
+msgid "AB-ECP-8-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_0
+msgid "AB-IC-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_12
+msgid "AB-IC-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_12_n
+msgid "AB-IC-12-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_12_p
+msgid "AB-IC-12-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_14
+msgid "AB-IC-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_14_n
+msgid "AB-IC-14-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_14_p
+msgid "AB-IC-14-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_15
+msgid "AB-IC-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_15_n
+msgid "AB-IC-15-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_15_p
+msgid "AB-IC-15-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_17
+msgid "AB-IC-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_17_n
+msgid "AB-IC-17-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_17_p
+msgid "AB-IC-17-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_3
+msgid "AB-IC-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_3_n
+msgid "AB-IC-3-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_3_p
+msgid "AB-IC-3-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_6
+msgid "AB-IC-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_6_n
+msgid "AB-IC-6-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_6_p
+msgid "AB-IC-6-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_8
+msgid "AB-IC-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_8_n
+msgid "AB-IC-8-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_IC_8_p
+msgid "AB-IC-8-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_PA_0
+msgid "AB-PA-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_PA_12
+msgid "AB-PA-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_PA_14
+msgid "AB-PA-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_PA_15
+msgid "AB-PA-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_PA_17
+msgid "AB-PA-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_PA_3
+msgid "AB-PA-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_PA_6
+msgid "AB-PA-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AB_PA_8
+msgid "AB-PA-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_0
+msgid "AP-EC-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_12
+msgid "AP-EC-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_12_n
+msgid "AP-EC-12-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_12_p
+msgid "AP-EC-12-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_14
+msgid "AP-EC-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_14_n
+msgid "AP-EC-14-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_14_p
+msgid "AP-EC-14-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_15
+msgid "AP-EC-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_15_n
+msgid "AP-EC-15-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_15_p
+msgid "AP-EC-15-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_17
+msgid "AP-EC-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_17_n
+msgid "AP-EC-17-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_17_p
+msgid "AP-EC-17-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_3
+msgid "AP-EC-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_3_n
+msgid "AP-EC-3-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_3_p
+msgid "AP-EC-3-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_6
+msgid "AP-EC-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_6_n
+msgid "AP-EC-6-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_6_p
+msgid "AP-EC-6-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_8
+msgid "AP-EC-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_8_n
+msgid "AP-EC-8-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_EC_8_p
+msgid "AP-EC-8-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_0
+msgid "AP-IC-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_12
+msgid "AP-IC-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_12_n
+msgid "AP-IC-12-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_12_p
+msgid "AP-IC-12-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_14
+msgid "AP-IC-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_14_n
+msgid "AP-IC-14-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_14_p
+msgid "AP-IC-14-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_15
+msgid "AP-IC-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_15_n
+msgid "AP-IC-15-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_15_p
+msgid "AP-IC-15-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_17
+msgid "AP-IC-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_17_n
+msgid "AP-IC-17-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_17_p
+msgid "AP-IC-17-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_3
+msgid "AP-IC-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_3_n
+msgid "AP-IC-3-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_3_p
+msgid "AP-IC-3-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_6
+msgid "AP-IC-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_6_n
+msgid "AP-IC-6-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_6_p
+msgid "AP-IC-6-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_8
+msgid "AP-IC-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_8_n
+msgid "AP-IC-8-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_IC_8_p
+msgid "AP-IC-8-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_PA_0
+msgid "AP-PA-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_PA_12
+msgid "AP-PA-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_PA_14
+msgid "AP-PA-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_PA_15
+msgid "AP-PA-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_PA_17
+msgid "AP-PA-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_PA_3
+msgid "AP-PA-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_PA_6
+msgid "AP-PA-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_AP_PA_8
+msgid "AP-PA-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_AB_EC
+msgid "Achat - Biens - Extracom"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_AB_ECP
+msgid "Achat - Biens - Extracom - Fin privée"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_AB_IC
+msgid "Achat - Biens - Intracom"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_AB_PA
+msgid "Achat - Biens - Pays"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_AP_EC
+msgid "Achat - Prestations - Extracom"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_AP_IC
+msgid "Achat - Prestations - Intracom"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_AP_PA
+msgid "Achat - Prestations - Pays"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.subkpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_sk_base_bal
+msgid "Base Bal"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.subkpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_sk_base_crd
+msgid "Base Crd"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.subkpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_sk_base_deb
+msgid "Base Deb"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_0
+msgid "FB-EC-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_12
+msgid "FB-EC-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_12_n
+msgid "FB-EC-12-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_12_p
+msgid "FB-EC-12-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_14
+msgid "FB-EC-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_14_n
+msgid "FB-EC-14-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_14_p
+msgid "FB-EC-14-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_15
+msgid "FB-EC-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_15_n
+msgid "FB-EC-15-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_15_p
+msgid "FB-EC-15-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_17
+msgid "FB-EC-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_17_n
+msgid "FB-EC-17-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_17_p
+msgid "FB-EC-17-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_3
+msgid "FB-EC-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_3_n
+msgid "FB-EC-3-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_3_p
+msgid "FB-EC-3-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_6
+msgid "FB-EC-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_6_n
+msgid "FB-EC-6-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_6_p
+msgid "FB-EC-6-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_8
+msgid "FB-EC-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_8_n
+msgid "FB-EC-8-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_EC_8_p
+msgid "FB-EC-8-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_0
+msgid "FB-ECP-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_12
+msgid "FB-ECP-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_12_n
+msgid "FB-ECP-12-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_12_p
+msgid "FB-ECP-12-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_14
+msgid "FB-ECP-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_14_n
+msgid "FB-ECP-14-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_14_p
+msgid "FB-ECP-14-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_15
+msgid "FB-ECP-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_15_n
+msgid "FB-ECP-15-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_15_p
+msgid "FB-ECP-15-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_17
+msgid "FB-ECP-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_17_n
+msgid "FB-ECP-17-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_17_p
+msgid "FB-ECP-17-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_3
+msgid "FB-ECP-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_3_n
+msgid "FB-ECP-3-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_3_p
+msgid "FB-ECP-3-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_6
+msgid "FB-ECP-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_6_n
+msgid "FB-ECP-6-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_6_p
+msgid "FB-ECP-6-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_8
+msgid "FB-ECP-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_8_n
+msgid "FB-ECP-8-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_ECP_8_p
+msgid "FB-ECP-8-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_0
+msgid "FB-IC-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_12
+msgid "FB-IC-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_12_n
+msgid "FB-IC-12-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_12_p
+msgid "FB-IC-12-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_14
+msgid "FB-IC-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_14_n
+msgid "FB-IC-14-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_14_p
+msgid "FB-IC-14-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_15
+msgid "FB-IC-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_15_n
+msgid "FB-IC-15-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_15_p
+msgid "FB-IC-15-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_17
+msgid "FB-IC-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_17_n
+msgid "FB-IC-17-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_17_p
+msgid "FB-IC-17-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_3
+msgid "FB-IC-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_3_n
+msgid "FB-IC-3-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_3_p
+msgid "FB-IC-3-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_6
+msgid "FB-IC-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_6_n
+msgid "FB-IC-6-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_6_p
+msgid "FB-IC-6-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_8
+msgid "FB-IC-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_8_n
+msgid "FB-IC-8-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_IC_8_p
+msgid "FB-IC-8-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_PA_0
+msgid "FB-PA-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_PA_12
+msgid "FB-PA-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_PA_14
+msgid "FB-PA-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_PA_15
+msgid "FB-PA-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_PA_17
+msgid "FB-PA-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_PA_3
+msgid "FB-PA-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_PA_6
+msgid "FB-PA-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FB_PA_8
+msgid "FB-PA-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_0
+msgid "FP-EC-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_12
+msgid "FP-EC-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_12_n
+msgid "FP-EC-12-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_12_p
+msgid "FP-EC-12-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_14
+msgid "FP-EC-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_14_n
+msgid "FP-EC-14-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_14_p
+msgid "FP-EC-14-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_15
+msgid "FP-EC-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_15_n
+msgid "FP-EC-15-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_15_p
+msgid "FP-EC-15-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_17
+msgid "FP-EC-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_17_n
+msgid "FP-EC-17-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_17_p
+msgid "FP-EC-17-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_3
+msgid "FP-EC-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_3_n
+msgid "FP-EC-3-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_3_p
+msgid "FP-EC-3-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_6
+msgid "FP-EC-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_6_n
+msgid "FP-EC-6-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_6_p
+msgid "FP-EC-6-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_8
+msgid "FP-EC-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_8_n
+msgid "FP-EC-8-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_EC_8_p
+msgid "FP-EC-8-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_0
+msgid "FP-IC-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_12
+msgid "FP-IC-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_12_n
+msgid "FP-IC-12-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_12_p
+msgid "FP-IC-12-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_14
+msgid "FP-IC-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_14_n
+msgid "FP-IC-14-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_14_p
+msgid "FP-IC-14-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_15
+msgid "FP-IC-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_15_n
+msgid "FP-IC-15-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_15_p
+msgid "FP-IC-15-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_17
+msgid "FP-IC-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_17_n
+msgid "FP-IC-17-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_17_p
+msgid "FP-IC-17-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_3
+msgid "FP-IC-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_3_n
+msgid "FP-IC-3-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_3_p
+msgid "FP-IC-3-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_6
+msgid "FP-IC-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_6_n
+msgid "FP-IC-6-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_6_p
+msgid "FP-IC-6-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_8
+msgid "FP-IC-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_8_n
+msgid "FP-IC-8-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_IC_8_p
+msgid "FP-IC-8-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_PA_0
+msgid "FP-PA-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_PA_12
+msgid "FP-PA-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_PA_14
+msgid "FP-PA-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_PA_15
+msgid "FP-PA-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_PA_17
+msgid "FP-PA-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_PA_3
+msgid "FP-PA-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_PA_6
+msgid "FP-PA-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_FP_PA_8
+msgid "FP-PA-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_FB_EC
+msgid "Frais - Biens - Extracom"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_FB_ECP
+msgid "Frais - Biens - Extracom - Fin privée"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_FB_IC
+msgid "Frais - Biens - Intracom"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_FB_PA
+msgid "Frais - Biens - Pays"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_FP_EC
+msgid "Frais - Prestations - Extracom"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_FP_IC
+msgid "Frais - Prestations - Intracom"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_FP_PA
+msgid "Frais - Prestations - Pays"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_0
+msgid "IB-EC-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_12
+msgid "IB-EC-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_12_n
+msgid "IB-EC-12-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_12_p
+msgid "IB-EC-12-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_14
+msgid "IB-EC-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_14_n
+msgid "IB-EC-14-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_14_p
+msgid "IB-EC-14-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_15
+msgid "IB-EC-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_15_n
+msgid "IB-EC-15-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_15_p
+msgid "IB-EC-15-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_17
+msgid "IB-EC-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_17_n
+msgid "IB-EC-17-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_17_p
+msgid "IB-EC-17-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_3
+msgid "IB-EC-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_3_n
+msgid "IB-EC-3-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_3_p
+msgid "IB-EC-3-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_6
+msgid "IB-EC-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_6_n
+msgid "IB-EC-6-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_6_p
+msgid "IB-EC-6-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_8
+msgid "IB-EC-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_8_n
+msgid "IB-EC-8-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_EC_8_p
+msgid "IB-EC-8-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_0
+msgid "IB-ECP-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_12
+msgid "IB-ECP-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_12_n
+msgid "IB-ECP-12-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_12_p
+msgid "IB-ECP-12-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_14
+msgid "IB-ECP-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_14_n
+msgid "IB-ECP-14-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_14_p
+msgid "IB-ECP-14-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_15
+msgid "IB-ECP-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_15_n
+msgid "IB-ECP-15-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_15_p
+msgid "IB-ECP-15-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_17
+msgid "IB-ECP-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_17_n
+msgid "IB-ECP-17-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_17_p
+msgid "IB-ECP-17-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_3
+msgid "IB-ECP-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_3_n
+msgid "IB-ECP-3-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_3_p
+msgid "IB-ECP-3-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_6
+msgid "IB-ECP-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_6_n
+msgid "IB-ECP-6-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_6_p
+msgid "IB-ECP-6-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_8
+msgid "IB-ECP-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_8_n
+msgid "IB-ECP-8-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_ECP_8_p
+msgid "IB-ECP-8-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_0
+msgid "IB-IC-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_12
+msgid "IB-IC-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_12_n
+msgid "IB-IC-12-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_12_p
+msgid "IB-IC-12-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_14
+msgid "IB-IC-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_14_n
+msgid "IB-IC-14-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_14_p
+msgid "IB-IC-14-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_15
+msgid "IB-IC-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_15_n
+msgid "IB-IC-15-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_15_p
+msgid "IB-IC-15-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_17
+msgid "IB-IC-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_17_n
+msgid "IB-IC-17-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_17_p
+msgid "IB-IC-17-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_3
+msgid "IB-IC-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_3_n
+msgid "IB-IC-3-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_3_p
+msgid "IB-IC-3-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_6
+msgid "IB-IC-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_6_n
+msgid "IB-IC-6-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_6_p
+msgid "IB-IC-6-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_8
+msgid "IB-IC-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_8_n
+msgid "IB-IC-8-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_IC_8_p
+msgid "IB-IC-8-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_PA_0
+msgid "IB-PA-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_PA_12
+msgid "IB-PA-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_PA_14
+msgid "IB-PA-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_PA_15
+msgid "IB-PA-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_PA_17
+msgid "IB-PA-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_PA_3
+msgid "IB-PA-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_PA_6
+msgid "IB-PA-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IB_PA_8
+msgid "IB-PA-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_0
+msgid "IP-EC-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_12
+msgid "IP-EC-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_12_n
+msgid "IP-EC-12-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_12_p
+msgid "IP-EC-12-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_14
+msgid "IP-EC-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_14_n
+msgid "IP-EC-14-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_14_p
+msgid "IP-EC-14-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_15
+msgid "IP-EC-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_15_n
+msgid "IP-EC-15-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_15_p
+msgid "IP-EC-15-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_17
+msgid "IP-EC-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_17_n
+msgid "IP-EC-17-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_17_p
+msgid "IP-EC-17-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_3
+msgid "IP-EC-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_3_n
+msgid "IP-EC-3-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_3_p
+msgid "IP-EC-3-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_6
+msgid "IP-EC-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_6_n
+msgid "IP-EC-6-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_6_p
+msgid "IP-EC-6-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_8
+msgid "IP-EC-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_8_n
+msgid "IP-EC-8-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_EC_8_p
+msgid "IP-EC-8-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_0
+msgid "IP-IC-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_12
+msgid "IP-IC-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_12_n
+msgid "IP-IC-12-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_12_p
+msgid "IP-IC-12-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_14
+msgid "IP-IC-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_14_n
+msgid "IP-IC-14-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_14_p
+msgid "IP-IC-14-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_15
+msgid "IP-IC-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_15_n
+msgid "IP-IC-15-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_15_p
+msgid "IP-IC-15-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_17
+msgid "IP-IC-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_17_n
+msgid "IP-IC-17-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_17_p
+msgid "IP-IC-17-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_3
+msgid "IP-IC-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_3_n
+msgid "IP-IC-3-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_3_p
+msgid "IP-IC-3-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_6
+msgid "IP-IC-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_6_n
+msgid "IP-IC-6-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_6_p
+msgid "IP-IC-6-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_8
+msgid "IP-IC-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_8_n
+msgid "IP-IC-8-n"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_IC_8_p
+msgid "IP-IC-8-p"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_PA_0
+msgid "IP-PA-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_PA_12
+msgid "IP-PA-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_PA_14
+msgid "IP-PA-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_PA_15
+msgid "IP-PA-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_PA_17
+msgid "IP-PA-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_PA_3
+msgid "IP-PA-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_PA_6
+msgid "IP-PA-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_IP_PA_8
+msgid "IP-PA-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_IB_EC
+msgid "Invest - Biens - Extracom"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_IB_ECP
+msgid "Invest - Biens - Extracom - Fin privée"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_IB_IC
+msgid "Invest - Biens - Intracom"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_IB_PA
+msgid "Invest - Biens - Pays"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_IP_EC
+msgid "Invest - Prestations - Extracom"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_IP_IC
+msgid "Invest - Prestations - Intracom"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_IP_PA
+msgid "Invest - Prestations - Pays"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report,name:l10n_lu_mis_reports_tax.mis_tax_analysis
+msgid "Luxembourg Tax Analysis"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.subkpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_sk_tax_bal
+msgid "Tax Bal"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.subkpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_sk_crd_bal
+msgid "Tax Crd"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.subkpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_sk_deb_bal
+msgid "Tax Deb"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VB_EC_0
+msgid "VB-EC-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VB_EC_Tab
+msgid "VB-EC-Tab"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VB_IC_0
+msgid "VB-IC-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VB_IC_Tab
+msgid "VB-IC-Tab"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VB_PA_0
+msgid "VB-PA-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VB_PA_12
+msgid "VB-PA-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VB_PA_14
+msgid "VB-PA-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VB_PA_15
+msgid "VB-PA-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VB_PA_17
+msgid "VB-PA-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VB_PA_3
+msgid "VB-PA-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VB_PA_6
+msgid "VB-PA-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VB_PA_8
+msgid "VB-PA-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VB_PA_Tab
+msgid "VB-PA-Tab"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VB_TR_0
+msgid "VB-TR-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VP_EC_0
+msgid "VP-EC-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VP_IC_0
+msgid "VP-IC-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VP_IC_EX
+msgid "VP-IC-EX"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VP_PA_0
+msgid "VP-PA-0"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VP_PA_12
+msgid "VP-PA-12"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VP_PA_14
+msgid "VP-PA-14"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VP_PA_15
+msgid "VP-PA-15"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VP_PA_17
+msgid "VP-PA-17"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VP_PA_3
+msgid "VP-PA-3"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VP_PA_6
+msgid "VP-PA-6"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VP_PA_8
+msgid "VP-PA-8"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_tag_VP_PA_SANS
+msgid "VP-PA-SANS"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_VB_EC
+msgid "Vente - Biens - Extracom"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_VB_IC
+msgid "Vente - Biens - Intracom"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_VB_PA
+msgid "Vente - Biens - Pays"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_VB_TR
+msgid "Vente - Biens - Triangulaire"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_VP_EC
+msgid "Vente - Prestations - Extracom"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_VP_IC
+msgid "Vente - Prestations - Intracom"
+msgstr ""
+
+#. module: l10n_lu_mis_reports_tax
+#: model:mis.report.kpi,description:l10n_lu_mis_reports_tax.mis_tax_analysis_kpi_VP_PA
+msgid "Vente - Prestations - Pays"
+msgstr ""
+
