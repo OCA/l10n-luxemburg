@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* l10n_lu_mis_reports
+# 	* l10n_lu_mis_reports
 #
 msgid ""
 msgstr ""
@@ -10,6 +10,7 @@ msgstr ""
 "PO-Revision-Date: 2017-12-15 13:47+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -73,8 +74,10 @@ msgstr "1 Créances résultant de ventes et prestations de services"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_pl_ecdf_602_601
-msgid "1. Consommation de marchandises et de matières premières et consommables"
-msgstr "1. Consommation de marchandises et de matières premières et consommables"
+msgid ""
+"1. Consommation de marchandises et de matières premières et consommables"
+msgstr ""
+"1. Consommation de marchandises et de matières premières et consommables"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_ecdf_166_165
@@ -108,8 +111,12 @@ msgstr "1. Parts dans des entreprises liées"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_ecdf_192_191
-msgid "1. Parts dans des entreprises liées et dans des entreprises avec lesquelles la société a un lien de participation"
-msgstr "1. Parts dans des entreprises liées et dans des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"1. Parts dans des entreprises liées et dans des entreprises avec lesquelles "
+"la société a un lien de participation"
+msgstr ""
+"1. Parts dans des entreprises liées et dans des entreprises avec lesquelles "
+"la société a un lien de participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_ecdf_334_333
@@ -144,8 +151,11 @@ msgstr "10 - Capital ou dotation des succursales et comptes de l'exploitant"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_pl_2016_det_ecdf_722_721
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_pl_2016_ecdf_722_721
-msgid "10 Income from other investments and loans forming part of the fixed assets"
-msgstr "10 Produits provenant d'autres valeurs mobilières, d'autres titres et de créances de l'actif immobilisé"
+msgid ""
+"10 Income from other investments and loans forming part of the fixed assets"
+msgstr ""
+"10 Produits provenant d'autres valeurs mobilières, d'autres titres et de "
+"créances de l'actif immobilisé"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_abr_pl_ecdf_634_633
@@ -176,8 +186,12 @@ msgstr "103 - Capital souscrit appelé et non versé (Sociétés de capitaux)"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0109_0110
-msgid "104 - Capital of companies represented by individual business persons and of corporate partnerships"
-msgstr "104 - Capital des entreprises commerçants personnes physiques et des sociétés de personnes"
+msgid ""
+"104 - Capital of companies represented by individual business persons and of "
+"corporate partnerships"
+msgstr ""
+"104 - Capital des entreprises commerçants personnes physiques et des "
+"sociétés de personnes"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0111_0112
@@ -196,7 +210,8 @@ msgstr "105 - Dotation des succursales"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2259_2260
-msgid "106 - Accounts of the owner or the co-owners (individual business persons)"
+msgid ""
+"106 - Accounts of the owner or the co-owners (individual business persons)"
 msgstr "106 - Comptes de l'exploitant ou des coexploitants"
 
 #. module: l10n_lu_mis_reports
@@ -211,8 +226,11 @@ msgstr "10611 - Prélèvements en numéraire (train de vie)"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2265_2266
-msgid "10612 - Withdrawals of merchandise, finished products and services (at cost)"
-msgstr "10612 - Prélèvements en nature de marchandises, de produits finis et services (au prix de revient)"
+msgid ""
+"10612 - Withdrawals of merchandise, finished products and services (at cost)"
+msgstr ""
+"10612 - Prélèvements en nature de marchandises, de produits finis et "
+"services (au prix de revient)"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2267_2268
@@ -287,7 +305,8 @@ msgstr "106158 - Autres cotisations"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2295_2296
 msgid "10616 - In kind withdrawals (personal share of operating costs)"
-msgstr "10616 - Prélèvements en nature (quote-part privée dans les frais généraux)"
+msgstr ""
+"10616 - Prélèvements en nature (quote-part privée dans les frais généraux)"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2297_2298
@@ -417,7 +436,8 @@ msgstr "106198 - Autres prélèvements privés particuliers"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2347_2348
 msgid "1062 - Additional private contributions from the owner or the co-owners"
-msgstr "1062 - Suppléments d'apports privés de l'exploitant ou des coexploitants"
+msgstr ""
+"1062 - Suppléments d'apports privés de l'exploitant ou des coexploitants"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2349_2350
@@ -549,7 +569,9 @@ msgstr "114 - Primes de conversion d'obligations en actions"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0129_0130
 msgid "115 - Capital contribution without issue of shares"
-msgstr "115 - Apport en capitaux propres non rémunéré par des titres ('Capital contribution')"
+msgstr ""
+"115 - Apport en capitaux propres non rémunéré par des titres ('Capital "
+"contribution')"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0131_0132
@@ -559,7 +581,9 @@ msgstr "12 - Réserves de réévaluation"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_pl_2016_det_ecdf_664_663
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_pl_2016_ecdf_664_663
-msgid "12 Share of profit or loss of undertakings accounted for under the equity method"
+msgid ""
+"12 Share of profit or loss of undertakings accounted for under the equity "
+"method"
 msgstr "12 Quote-part dans le résultat des entreprises mises en équivalence"
 
 #. module: l10n_lu_mis_reports
@@ -575,8 +599,12 @@ msgstr "121 - Réserves de réévaluation en application de la juste valeur"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0135_0136
-msgid "122 - Reserves in application of the equity method (shareholdings valued in accordance with art. 58)"
-msgstr "122 - Réserves de mise en équivalence (Participations valorisées suivant l'art. 58)"
+msgid ""
+"122 - Reserves in application of the equity method (shareholdings valued in "
+"accordance with art. 58)"
+msgstr ""
+"122 - Réserves de mise en équivalence (Participations valorisées suivant "
+"l'art. 58)"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0137_0138
@@ -596,8 +624,12 @@ msgstr "13 - Réserves"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_pl_2016_det_ecdf_666_665
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_pl_2016_ecdf_666_665
-msgid "13 Value adjustments in respect of financial assets and of investments held as current assets"
-msgstr "13 Corrections de valeur sur immobilisations financières et sur valeurs mobilières faisant partie de l'actif circulant"
+msgid ""
+"13 Value adjustments in respect of financial assets and of investments held "
+"as current assets"
+msgstr ""
+"13 Corrections de valeur sur immobilisations financières et sur valeurs "
+"mobilières faisant partie de l'actif circulant"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_abr_pl_ecdf_736_735
@@ -1026,8 +1058,12 @@ msgstr "2 Dettes envers des établissements de crédit"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_det_ecdf_116_115
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_ecdf_116_115
-msgid "2 Concessions, patents, licences, trade marks and similar rights and assets, if they were"
-msgstr "2 Concessions, brevets, licences, marques, ainsi que droits et valeurs similaires s’ils ont été"
+msgid ""
+"2 Concessions, patents, licences, trade marks and similar rights and assets, "
+"if they were"
+msgstr ""
+"2 Concessions, brevets, licences, marques, ainsi que droits et valeurs "
+"similaires s’ils ont été"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_det_ecdf_140_139
@@ -1083,8 +1119,12 @@ msgstr "2. Autres charges externes"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_ecdf_116_115
-msgid "2. Concessions, brevets, licences, marques, ainsi que droits et valeurs similaires s’ils ont été"
-msgstr "2. Concessions, brevets, licences, marques, ainsi que droits et valeurs similaires s’ils ont été"
+msgid ""
+"2. Concessions, brevets, licences, marques, ainsi que droits et valeurs "
+"similaires s’ils ont été"
+msgstr ""
+"2. Concessions, brevets, licences, marques, ainsi que droits et valeurs "
+"similaires s’ils ont été"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_ecdf_140_139
@@ -1119,8 +1159,12 @@ msgstr "2. Réserve pour actions propres ou parts propres"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_pl_ecdf_704_703
-msgid "2. Variation des stocks de produits finis, et de produits et de commandes en cours"
-msgstr "2. Variation des stocks de produits finis, et de produits et de commandes en cours"
+msgid ""
+"2. Variation des stocks de produits finis, et de produits et de commandes en "
+"cours"
+msgstr ""
+"2. Variation des stocks de produits finis, et de produits et de commandes en "
+"cours"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0291_0292
@@ -1149,8 +1193,12 @@ msgstr "2022 - Frais de publicité"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0301_0302
-msgid "203 - Expenses for increases in capital and for various operations (merger, demergers, change of legal form)"
-msgstr "203 - Frais d'augmentation de capital et d'opérations diverses (fusions, scissions, transformations)"
+msgid ""
+"203 - Expenses for increases in capital and for various operations (merger, "
+"demergers, change of legal form)"
+msgstr ""
+"203 - Frais d'augmentation de capital et d'opérations diverses (fusions, "
+"scissions, transformations)"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0303_0304
@@ -1174,8 +1222,12 @@ msgstr "211 - Frais de recherche et de développement"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0311_0312
-msgid "212 - Concession contracts, patents, licences, trademarks and similar rights and values"
-msgstr "212 - Concessions, brevets, licences, marques ainsi que droits et valeurs similaires"
+msgid ""
+"212 - Concession contracts, patents, licences, trademarks and similar rights "
+"and values"
+msgstr ""
+"212 - Concessions, brevets, licences, marques ainsi que droits et valeurs "
+"similaires"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0313_0314
@@ -1264,13 +1316,16 @@ msgstr "212252 - Droits d'émission"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0347_0348
-msgid "212258 - Other similar rights and values created by the undertaking itself"
-msgstr "212258 - Autres droits et valeurs similaires créés par l'entreprise elle-même"
+msgid ""
+"212258 - Other similar rights and values created by the undertaking itself"
+msgstr ""
+"212258 - Autres droits et valeurs similaires créés par l'entreprise elle-même"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0349_0350
 msgid "213 - Goodwill acquired for consideration"
-msgstr "213 - Fonds de commerce, dans la mesure où il a été acquis à titre onéreux"
+msgstr ""
+"213 - Fonds de commerce, dans la mesure où il a été acquis à titre onéreux"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0351_0352
@@ -1284,8 +1339,12 @@ msgstr "2141 - Frais de recherche et de développement"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0355_0356
-msgid "2142 - Concession contracts, patents, licences, trademarks and similar rights and values"
-msgstr "2142 - Concessions, brevets, licences, marques ainsi que droits et valeurs similaires"
+msgid ""
+"2142 - Concession contracts, patents, licences, trademarks and similar "
+"rights and values"
+msgstr ""
+"2142 - Concessions, brevets, licences, marques ainsi que droits et valeurs "
+"similaires"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0357_0358
@@ -1499,13 +1558,21 @@ msgstr "232 - Créances sur des entreprises liées"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0441_0442
-msgid "233 - Shares in undertakings with which the company is linked by virtue of participating interests"
-msgstr "233 - Parts dans des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"233 - Shares in undertakings with which the company is linked by virtue of "
+"participating interests"
+msgstr ""
+"233 - Parts dans des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0443_0444
-msgid "234 - Amounts owed by undertakings with which the company is linked by virtue of participating interests"
-msgstr "234 - Créances sur des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"234 - Amounts owed by undertakings with which the company is linked by "
+"virtue of participating interests"
+msgstr ""
+"234 - Créances sur des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0445_0446
@@ -1605,8 +1672,12 @@ msgstr "237 - Actions propres ou parts propres"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_det_ecdf_178_177
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_ecdf_178_177
-msgid "3 Amounts owed by undertakings with which the undertaking is linked by virtue of participating interests"
-msgstr "3 Créances sur des entreprises avec lesquelles l'entreprise a un lien de participation"
+msgid ""
+"3 Amounts owed by undertakings with which the undertaking is linked by "
+"virtue of participating interests"
+msgstr ""
+"3 Créances sur des entreprises avec lesquelles l'entreprise a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_det_ecdf_160_159
@@ -1617,7 +1688,8 @@ msgstr "3 Produits finis et marchandises"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_det_ecdf_122_121
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_ecdf_122_121
-msgid "3 Goodwill, to the extent that it was acquired for valuable consideration"
+msgid ""
+"3 Goodwill, to the extent that it was acquired for valuable consideration"
 msgstr "3 Fonds de commerce, dans la mesure où il a été acquis à titre onéreux"
 
 #. module: l10n_lu_mis_reports
@@ -1647,8 +1719,12 @@ msgstr "3 Participations"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_det_ecdf_362_361
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_ecdf_362_361
-msgid "3 Payments received on account of orders in so far as they are not shown separately as deductions from stocks"
-msgstr "3 Acomptes reçus sur commandes pour autant qu’ils ne sont pas déduits des stocks de façon distincte"
+msgid ""
+"3 Payments received on account of orders in so far as they are not shown "
+"separately as deductions from stocks"
+msgstr ""
+"3 Acomptes reçus sur commandes pour autant qu’ils ne sont pas déduits des "
+"stocks de façon distincte"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_det_ecdf_316_315
@@ -1659,13 +1735,19 @@ msgstr "3 Réserves statutaires"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_pl_2016_det_ecdf_706_705
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_pl_2016_ecdf_706_705
-msgid "3 Work performed by the undertaking for its own purposes and capitalised"
-msgstr "3 Travaux effectués par l'entreprise pour elle-même et portés à l'actif"
+msgid ""
+"3 Work performed by the undertaking for its own purposes and capitalised"
+msgstr ""
+"3 Travaux effectués par l'entreprise pour elle-même et portés à l'actif"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_ecdf_362_361
-msgid "3. Acomptes reçus sur commandes pour autant qu’ils ne sont pas déduits des stocks de façon distincte"
-msgstr "3. Acomptes reçus sur commandes pour autant qu’ils ne sont pas déduits des stocks de façon distincte"
+msgid ""
+"3. Acomptes reçus sur commandes pour autant qu’ils ne sont pas déduits des "
+"stocks de façon distincte"
+msgstr ""
+"3. Acomptes reçus sur commandes pour autant qu’ils ne sont pas déduits des "
+"stocks de façon distincte"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_ecdf_132_131
@@ -1684,13 +1766,18 @@ msgstr "3. Autres valeurs mobilières"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_ecdf_178_177
-msgid "3. Créances sur des entreprises avec lesquelles la société a un lien de participation"
-msgstr "3. Créances sur des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"3. Créances sur des entreprises avec lesquelles la société a un lien de "
+"participation"
+msgstr ""
+"3. Créances sur des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_ecdf_122_121
 msgid "3. Fonds de commerce, dans la mesure où il a été acquis à titre onéreux"
-msgstr "3. Fonds de commerce, dans la mesure où il a été acquis à titre onéreux"
+msgstr ""
+"3. Fonds de commerce, dans la mesure où il a été acquis à titre onéreux"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_abr_pl_ecdf_606_605
@@ -1700,8 +1787,12 @@ msgstr "3. Frais de personnel"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_ecdf_142_141
-msgid "3. Parts dans des entreprises avec lesquelles la société a un lien de participation"
-msgstr "3. Parts dans des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"3. Parts dans des entreprises avec lesquelles la société a un lien de "
+"participation"
+msgstr ""
+"3. Parts dans des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_pl_ecdf_706_705
@@ -1831,7 +1922,9 @@ msgstr "326 - Marchandises"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0543_0544
 msgid "327 - Merchandise in transit, held for safekeeping or consignment"
-msgstr "327 - Marchandises en voie d'acheminement, mises en dépôt ou données en consignation"
+msgstr ""
+"327 - Marchandises en voie d'acheminement, mises en dépôt ou données en "
+"consignation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0545_0546
@@ -1871,7 +1964,9 @@ msgstr "341 - Acomptes versés sur matières premières et consommables"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0559_0560
 msgid "342 - Payments on account on work and contracts in progress"
-msgstr "342 - Acomptes versés sur produits en cours de fabrication et commandes en cours"
+msgstr ""
+"342 - Acomptes versés sur produits en cours de fabrication et commandes en "
+"cours"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0561_0562
@@ -1886,8 +1981,12 @@ msgstr "344 - Acomptes versés sur terrains et immeubles destinés à la revente
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_det_ecdf_144_143
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_ecdf_144_143
-msgid "4 Loans to undertakings with which the undertaking is linked by virtue of participating interests"
-msgstr "4 Créances sur des entreprises avec lesquelles l'entreprise a un lien de participation"
+msgid ""
+"4 Loans to undertakings with which the undertaking is linked by virtue of "
+"participating interests"
+msgstr ""
+"4 Créances sur des entreprises avec lesquelles l'entreprise a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_det_ecdf_184_183
@@ -1964,8 +2063,12 @@ msgstr "4. Corrections de valeur"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_ecdf_144_143
-msgid "4. Créances sur des entreprises avec lesquelles la société a un lien de participation"
-msgstr "4. Créances sur des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"4. Créances sur des entreprises avec lesquelles la société a un lien de "
+"participation"
+msgstr ""
+"4. Créances sur des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_ecdf_368_367
@@ -1980,13 +2083,15 @@ msgstr "4. Reprises de corrections de valeur"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0565_0566
-msgid "40 - Trade receivables (Receivables from sales and rendering of services)"
+msgid ""
+"40 - Trade receivables (Receivables from sales and rendering of services)"
 msgstr "40 - Créances résultant de ventes et prestations de services"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0567_0568
 msgid "401 - Trade receivables due and payable within one year"
-msgstr "401 - Créances dont la durée résiduelle est inférieure ou égale à un an"
+msgstr ""
+"401 - Créances dont la durée résiduelle est inférieure ou égale à un an"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0569_0570
@@ -2055,8 +2160,12 @@ msgstr "4029 - Corrections de valeur"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0595_0596
-msgid "41 - Amounts owed by affiliated undertakings and by undertakings with which the company is linked by virtue of participating interests"
-msgstr "41 - Créances sur des entreprises liées et sur des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"41 - Amounts owed by affiliated undertakings and by undertakings with which "
+"the company is linked by virtue of participating interests"
+msgstr ""
+"41 - Créances sur des entreprises liées et sur des entreprises avec "
+"lesquelles la société a un lien de participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0597_0598
@@ -2066,7 +2175,8 @@ msgstr "411 - Créances sur des entreprises liées"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0599_0600
 msgid "4111 - Amounts receivable within one year"
-msgstr "4111 - Créances dont la durée résiduelle est inférieure ou égale à un an"
+msgstr ""
+"4111 - Créances dont la durée résiduelle est inférieure ou égale à un an"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0601_0602
@@ -2135,13 +2245,18 @@ msgstr "41129 - Corrections de valeur"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0627_0628
-msgid "412 - Amounts owed by undertakings with which the company is linked by virtue of participating interests"
-msgstr "412 - Créances sur des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"412 - Amounts owed by undertakings with which the company is linked by "
+"virtue of participating interests"
+msgstr ""
+"412 - Créances sur des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0629_0630
 msgid "4121 - Amounts receivable within one year"
-msgstr "4121 - Créances dont la durée résiduelle est inférieure ou égale à un an"
+msgstr ""
+"4121 - Créances dont la durée résiduelle est inférieure ou égale à un an"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0631_0632
@@ -2216,7 +2331,9 @@ msgstr "42 - Autres créances"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0659_0660
 msgid "421 - Other receivables within one year"
-msgstr "421 - Autres créances dont la durée résiduelle est inférieure ou égale à un an"
+msgstr ""
+"421 - Autres créances dont la durée résiduelle est inférieure ou égale à un "
+"an"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0661_0662
@@ -2580,13 +2697,18 @@ msgstr "42289 - Corrections de valeur sur autres créances diverses"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0805_0806
-msgid "43 - Payments received on account of orders as far as they are not deducted distinctly from inventories"
-msgstr "43 - Acomptes reçus sur commandes pour autant qu'ils ne sont pas déduits des stocks de façon distincte"
+msgid ""
+"43 - Payments received on account of orders as far as they are not deducted "
+"distinctly from inventories"
+msgstr ""
+"43 - Acomptes reçus sur commandes pour autant qu'ils ne sont pas déduits des "
+"stocks de façon distincte"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0807_0808
 msgid "431 - Payments received on account within one year"
-msgstr "431 - Acomptes reçus dont la durée résiduelle est inférieure ou égale à un an"
+msgstr ""
+"431 - Acomptes reçus dont la durée résiduelle est inférieure ou égale à un an"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0809_0810
@@ -2596,7 +2718,9 @@ msgstr "432 - Acomptes reçus dont la durée résiduelle est supérieure à un a
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0811_0812
 msgid "44 - Trade payables and bills of exchange"
-msgstr "44 - Dettes sur achats et prestations de services et dettes représentées par des effets de commerce"
+msgstr ""
+"44 - Dettes sur achats et prestations de services et dettes représentées par "
+"des effets de commerce"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0813_0814
@@ -2606,7 +2730,9 @@ msgstr "441 - Dettes sur achats et prestations de services"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0815_0816
 msgid "4411 - Trade payables within one year"
-msgstr "4411 - Dettes sur achats et prestations de services dont la durée résiduelle est inférieure ou égale à un an"
+msgstr ""
+"4411 - Dettes sur achats et prestations de services dont la durée résiduelle "
+"est inférieure ou égale à un an"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0817_0818
@@ -2640,13 +2766,18 @@ msgstr "441133 - Fournisseurs – Autres avoirs"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0829_0830
-msgid "441134 - Rebates, discounts, refunds and other outstanding amounts receivable"
-msgstr "441134 - Rabais, remises, ristournes à obtenir et autres avoirs non encore reçus"
+msgid ""
+"441134 - Rebates, discounts, refunds and other outstanding amounts receivable"
+msgstr ""
+"441134 - Rabais, remises, ristournes à obtenir et autres avoirs non encore "
+"reçus"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0831_0832
 msgid "4412 - Trade payables after more than one year"
-msgstr "4412 - Dettes sur achats et prestations de services dont la durée résiduelle est supérieure à un an"
+msgstr ""
+"4412 - Dettes sur achats et prestations de services dont la durée résiduelle "
+"est supérieure à un an"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0833_0834
@@ -2680,8 +2811,11 @@ msgstr "441233 - Fournisseurs – Autres avoirs"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0845_0846
-msgid "441234 - Rebates, discounts, refunds and other outstanding amounts receivable"
-msgstr "441234 - Rabais, remises, ristournes à obtenir et autres avoirs non encore reçus"
+msgid ""
+"441234 - Rebates, discounts, refunds and other outstanding amounts receivable"
+msgstr ""
+"441234 - Rabais, remises, ristournes à obtenir et autres avoirs non encore "
+"reçus"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0847_0848
@@ -2691,17 +2825,25 @@ msgstr "442 - Dettes représentées par des effets de commerce"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0849_0850
 msgid "4421 - Bills of exchange payable within one year"
-msgstr "4421 - Dettes représentées par des effets de commerce dont la durée résiduelle est inférieure ou égale à un an"
+msgstr ""
+"4421 - Dettes représentées par des effets de commerce dont la durée "
+"résiduelle est inférieure ou égale à un an"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0851_0852
 msgid "4422 - Bills of exchange payable after more than one year"
-msgstr "4422 - Dettes représentées par des effets de commerce dont la durée résiduelle est supérieure à un an"
+msgstr ""
+"4422 - Dettes représentées par des effets de commerce dont la durée "
+"résiduelle est supérieure à un an"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0853_0854
-msgid "45 - Amounts payable to affiliated undertakings and to undertakings linked by virtue of participating interests"
-msgstr "45 - Dettes envers des entreprises liées et des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"45 - Amounts payable to affiliated undertakings and to undertakings linked "
+"by virtue of participating interests"
+msgstr ""
+"45 - Dettes envers des entreprises liées et des entreprises avec lesquelles "
+"la société a un lien de participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0855_0856
@@ -2711,7 +2853,9 @@ msgstr "451 - Dettes envers des entreprises liées"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0857_0858
 msgid "4511 - Amounts payable to affiliated undertakings within one year"
-msgstr "4511 - Dettes envers des entreprises liées dont la durée résiduelle est inférieure ou égale à un an"
+msgstr ""
+"4511 - Dettes envers des entreprises liées dont la durée résiduelle est "
+"inférieure ou égale à un an"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0859_0860
@@ -2740,8 +2884,11 @@ msgstr "45118 - Autres dettes"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0869_0870
-msgid "4512 - Amounts payable to affiliated undertakings after more than one year"
-msgstr "4512 - Dettes envers des entreprises liées dont la durée résiduelle est supérieure à un an"
+msgid ""
+"4512 - Amounts payable to affiliated undertakings after more than one year"
+msgstr ""
+"4512 - Dettes envers des entreprises liées dont la durée résiduelle est "
+"supérieure à un an"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0871_0872
@@ -2770,13 +2917,21 @@ msgstr "45128 - Autres dettes"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0881_0882
-msgid "452 - Amounts payable to undertakings linked by virtue of participating interests"
-msgstr "452 - Dettes envers des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"452 - Amounts payable to undertakings linked by virtue of participating "
+"interests"
+msgstr ""
+"452 - Dettes envers des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0883_0884
-msgid "4521 - Amounts payable to undertakings linked by virtue of participating interests within one year"
-msgstr "4521 - Dettes envers des entreprises avec lesquelles la société a un lien de participation dont la durée résiduelle est inférieure ou égale à un an"
+msgid ""
+"4521 - Amounts payable to undertakings linked by virtue of participating "
+"interests within one year"
+msgstr ""
+"4521 - Dettes envers des entreprises avec lesquelles la société a un lien de "
+"participation dont la durée résiduelle est inférieure ou égale à un an"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0885_0886
@@ -2805,8 +2960,12 @@ msgstr "45218 - Autres dettes"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0895_0896
-msgid "4522 - Amounts payable to undertakings linked by virtue of participating interests payable after more than one year"
-msgstr "4522 - Dettes envers des entreprises avec lesquelles la société a un lien de participation dont la durée résiduelle est supérieure à un an"
+msgid ""
+"4522 - Amounts payable to undertakings linked by virtue of participating "
+"interests payable after more than one year"
+msgstr ""
+"4522 - Dettes envers des entreprises avec lesquelles la société a un lien de "
+"participation dont la durée résiduelle est supérieure à un an"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0897_0898
@@ -2871,7 +3030,8 @@ msgstr "46121 - Impôt sur le revenu des collectivités"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0921_0922
 msgid "461211 - Corporate income tax - Tax accrual"
-msgstr "461211 - Impôt sur le revenu des collectivités – charge fiscale estimée"
+msgstr ""
+"461211 - Impôt sur le revenu des collectivités – charge fiscale estimée"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0923_0924
@@ -3041,7 +3201,8 @@ msgstr "47 - Autres dettes"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0989_0990
 msgid "471 - Other debts payable within one year"
-msgstr "471 - Autres dettes dont la durée résiduelle est inférieure ou égale à un an"
+msgstr ""
+"471 - Autres dettes dont la durée résiduelle est inférieure ou égale à un an"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_0991_0992
@@ -3289,8 +3450,11 @@ msgstr "501 - Parts dans des entreprises liées"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1073_1074
-msgid "502 - Shares in undertakings linked by virtue of participating interests"
-msgstr "502 - Parts dans des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"502 - Shares in undertakings linked by virtue of participating interests"
+msgstr ""
+"502 - Parts dans des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1075_1076
@@ -3315,7 +3479,9 @@ msgstr "5082 - Actions – Titres non cotés"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1083_1084
 msgid "5083 - Debenture loans and notes issued and repurchased by the company"
-msgstr "5083 - Obligations et autres titres de créance émis par la société et rachetés par elle"
+msgstr ""
+"5083 - Obligations et autres titres de créance émis par la société et "
+"rachetés par elle"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1085_1086
@@ -3335,7 +3501,9 @@ msgstr "5088 - Autres valeurs mobilières diverses"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1091_1092
 msgid "51 - Cash at bank, in postal cheques accounts, cheques and in hand"
-msgstr "51 - Avoirs en banques, avoirs en comptes de chèques postaux, chèques et encaisse"
+msgstr ""
+"51 - Avoirs en banques, avoirs en comptes de chèques postaux, chèques et "
+"encaisse"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1093_1094
@@ -3403,8 +3571,12 @@ msgstr "6 Frais de personnel"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_abr_pl_ecdf_624_623
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_pl_ecdf_624_623
-msgid "6. Corrections de valeur sur immobilisations financières et ajustement de juste valeur sur immobilisations financières"
-msgstr "6. Corrections de valeur sur immobilisations financières et ajustement de juste valeur sur immobilisations financières"
+msgid ""
+"6. Corrections de valeur sur immobilisations financières et ajustement de "
+"juste valeur sur immobilisations financières"
+msgstr ""
+"6. Corrections de valeur sur immobilisations financières et ajustement de "
+"juste valeur sur immobilisations financières"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_ecdf_380_379
@@ -3425,7 +3597,8 @@ msgstr "6. Prêts et créances immobilisées"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1113_1114
 msgid "60 - Use of merchandise, raw and consumable materials"
-msgstr "60 - Consommation de marchandises et de matières premières et consommables"
+msgstr ""
+"60 - Consommation de marchandises et de matières premières et consommables"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1115_1116
@@ -3579,7 +3752,9 @@ msgstr "6076 - Variation des stocks de biens destinés à la revente"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1175_1176
-msgid "608 - Not stocked purchased items and items included in the production of goods and services"
+msgid ""
+"608 - Not stocked purchased items and items included in the production of "
+"goods and services"
 msgstr "608 - Achats non stockés et achats incorporés aux ouvrages et produits"
 
 #. module: l10n_lu_mis_reports
@@ -3644,8 +3819,12 @@ msgstr "6082 - Achats incorporés aux ouvrages et produits"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1201_1202
-msgid "60821 - Purchased surveys and services (included in the production of goods and services)"
-msgstr "60821 - Achats d'études et prestations de service (incorporés aux ouvrages et produits)"
+msgid ""
+"60821 - Purchased surveys and services (included in the production of goods "
+"and services)"
+msgstr ""
+"60821 - Achats d'études et prestations de service (incorporés aux ouvrages "
+"et produits)"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1203_1204
@@ -3664,8 +3843,12 @@ msgstr "608213 - Frais d'architectes et d'ingénieurs"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1209_1210
-msgid "60822 - Purchased material, equipment, spare parts and work (included in the production of goods and services)"
-msgstr "60822 - Achats de matériel, équipements, pièces détachées et travaux (incorporés aux ouvrages et produits)"
+msgid ""
+"60822 - Purchased material, equipment, spare parts and work (included in the "
+"production of goods and services)"
+msgstr ""
+"60822 - Achats de matériel, équipements, pièces détachées et travaux "
+"(incorporés aux ouvrages et produits)"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1211_1212
@@ -3709,8 +3892,11 @@ msgstr "6096 - Achats de biens destinés à la revente"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1227_1228
-msgid "6098 - Not stocked purchased items and items included in the production of goods and services"
-msgstr "6098 - Achats non stockés et achats incorporés aux ouvrages et produits"
+msgid ""
+"6098 - Not stocked purchased items and items included in the production of "
+"goods and services"
+msgstr ""
+"6098 - Achats non stockés et achats incorporés aux ouvrages et produits"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1229_1230
@@ -3814,8 +4000,12 @@ msgstr "612 - Sous-traitance, entretiens et réparations"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1269_1270
-msgid "6121 - General subcontracting (not included in the production of goods and services)"
-msgstr "6121 - Sous-traitance générale (non incorporée directement aux ouvrages, travaux et produits)"
+msgid ""
+"6121 - General subcontracting (not included in the production of goods and "
+"services)"
+msgstr ""
+"6121 - Sous-traitance générale (non incorporée directement aux ouvrages, "
+"travaux et produits)"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1271_1272
@@ -3844,7 +4034,9 @@ msgstr "6123 - Contrats de maintenance"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1281_1282
-msgid "6124 - Surveys and research costs (not included in the production of goods and services)"
+msgid ""
+"6124 - Surveys and research costs (not included in the production of goods "
+"and services)"
 msgstr "6124 - Etudes et recherches (non incorporées dans les produits)"
 
 #. module: l10n_lu_mis_reports
@@ -3919,8 +4111,12 @@ msgstr "61337 - Location de coffres"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1311_1312
-msgid "61338 - Other bank expenses and commissions (except interests and similar expenses)"
-msgstr "61338 - Autres frais et commissions bancaires (hors intérêts et frais assimilés)"
+msgid ""
+"61338 - Other bank expenses and commissions (except interests and similar "
+"expenses)"
+msgstr ""
+"61338 - Autres frais et commissions bancaires (hors intérêts et frais "
+"assimilés)"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1313_1314
@@ -4250,7 +4446,8 @@ msgstr "6188 - Autres charges externes diverses"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1443_1444
 msgid "619 - Rebates, discounts and refunds received on other external charges"
-msgstr "619 - Rabais, remises et ristournes obtenus sur autres charges externes"
+msgstr ""
+"619 - Rabais, remises et ristournes obtenus sur autres charges externes"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1445_1446
@@ -4339,8 +4536,12 @@ msgstr "62191 - Remboursements mutualité"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1479_1480
-msgid "62192 - Refunds for political, sporting, cultural, educational leave and social mandates"
-msgstr "62192 - Remboursements pour congé politique, sportif, culturel, éducatif et mandats sociaux"
+msgid ""
+"62192 - Refunds for political, sporting, cultural, educational leave and "
+"social mandates"
+msgstr ""
+"62192 - Remboursements pour congé politique, sportif, culturel, éducatif et "
+"mandats sociaux"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1481_1482
@@ -4460,12 +4661,17 @@ msgstr "6288 - Autres charges sociales diverses"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1527_1528
 msgid "63 - Allocations to value adjustments on non-financial assets"
-msgstr "63 - Dotations aux corrections de valeur des éléments d'actif non financiers"
+msgstr ""
+"63 - Dotations aux corrections de valeur des éléments d'actif non financiers"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1529_1530
-msgid "631 - Allocations to value adjustments on formation expenses and similar expenses"
-msgstr "631 - Dotations aux corrections de valeur sur frais d'établissement et frais assimilés"
+msgid ""
+"631 - Allocations to value adjustments on formation expenses and similar "
+"expenses"
+msgstr ""
+"631 - Dotations aux corrections de valeur sur frais d'établissement et frais "
+"assimilés"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1531_1532
@@ -4495,7 +4701,8 @@ msgstr "6318 - Autres frais assimilés"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1541_1542
 msgid "632 - Allocations to value adjustments on intangible fixed assets"
-msgstr "632 - Dotations aux corrections de valeur sur immobilisations incorporelles"
+msgstr ""
+"632 - Dotations aux corrections de valeur sur immobilisations incorporelles"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1543_1544
@@ -4504,13 +4711,18 @@ msgstr "6321 - Frais de recherche et de développement"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1545_1546
-msgid "6322 - Concession contracts, patents, licences, trademarks and similar rights and values"
-msgstr "6322 - Concessions, brevets, licences, marques ainsi que droits et valeurs similaires"
+msgid ""
+"6322 - Concession contracts, patents, licences, trademarks and similar "
+"rights and values"
+msgstr ""
+"6322 - Concessions, brevets, licences, marques ainsi que droits et valeurs "
+"similaires"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1547_1548
 msgid "6323 - Goodwill acquired for consideration"
-msgstr "6323 - Fonds de commerce dans la mesure où il a été acquis à titre onéreux"
+msgstr ""
+"6323 - Fonds de commerce dans la mesure où il a été acquis à titre onéreux"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1549_1550
@@ -4520,7 +4732,8 @@ msgstr "6324 - Acomptes versés et immobilisations incorporelles en cours"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1551_1552
 msgid "633 - Allocations to value adjustments on tangible fixed assets"
-msgstr "633 - Dotations aux corrections de valeur sur immobilisations corporelles"
+msgstr ""
+"633 - Dotations aux corrections de valeur sur immobilisations corporelles"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1553_1554
@@ -4589,8 +4802,10 @@ msgstr "6345 - Acomptes versés"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1579_1580
-msgid "635 - Allocations to value adjustments on receivables from current assets"
-msgstr "635 - Dotations aux corrections de valeur sur créances de l'actif circulant"
+msgid ""
+"635 - Allocations to value adjustments on receivables from current assets"
+msgstr ""
+"635 - Dotations aux corrections de valeur sur créances de l'actif circulant"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1581_1582
@@ -4599,8 +4814,12 @@ msgstr "6351 - Créances résultant de ventes et prestations de services"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1583_1584
-msgid "6352 - Amounts owed by affiliated undertakings and undertakings linked by virtue of participating interests"
-msgstr "6352 - Créances sur des entreprises liées et des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"6352 - Amounts owed by affiliated undertakings and undertakings linked by "
+"virtue of participating interests"
+msgstr ""
+"6352 - Créances sur des entreprises liées et des entreprises avec lesquelles "
+"la société a un lien de participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1585_1586
@@ -4614,8 +4833,12 @@ msgstr "64 - Autres charges d'exploitation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1589_1590
-msgid "641 - Fees and royalties for concession contracts, patents, licences, trademarks and similar rights and values"
-msgstr "641 - Redevances pour concessions, brevets, licences, marques, droits et valeurs similaires"
+msgid ""
+"641 - Fees and royalties for concession contracts, patents, licences, "
+"trademarks and similar rights and values"
+msgstr ""
+"641 - Redevances pour concessions, brevets, licences, marques, droits et "
+"valeurs similaires"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1591_1592
@@ -4679,8 +4902,12 @@ msgstr "6451 - Créances résultant de ventes et de prestations de services"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1615_1616
-msgid "6452 - Amounts owed by affiliated undertakings and undertakings with which the company is linked by virtue of participating interests"
-msgstr "6452 - Créances sur des entreprises liées et sur des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"6452 - Amounts owed by affiliated undertakings and undertakings with which "
+"the company is linked by virtue of participating interests"
+msgstr ""
+"6452 - Créances sur des entreprises liées et sur des entreprises avec "
+"lesquelles la société a un lien de participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1617_1618
@@ -4710,7 +4937,9 @@ msgstr "6463 - Droits sur les marchandises en provenance de l'étranger"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1627_1628
 msgid "64631 - Excise duties and sales taxes on imported merchandise"
-msgstr "64631 - Droits d'accises et taxe de consommation sur marchandises en provenance de l'étranger"
+msgstr ""
+"64631 - Droits d'accises et taxe de consommation sur marchandises en "
+"provenance de l'étranger"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1629_1630
@@ -4755,7 +4984,8 @@ msgstr "64654 - Droits de timbre"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1645_1646
 msgid "64658 - Other registration fees, stamps and mortgage duties"
-msgstr "64658 - Autres droits d'enregistrement et de timbre, droits d'hypothèques"
+msgstr ""
+"64658 - Autres droits d'enregistrement et de timbre, droits d'hypothèques"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1647_1648
@@ -4799,13 +5029,18 @@ msgstr "65 - Charges financières"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1663_1664
-msgid "651 - Allocations to value and fair value adjustments of financial fixed assets"
-msgstr "651 - Dotations aux corrections de valeur et ajustements pour juste valeur sur immobilisations financières"
+msgid ""
+"651 - Allocations to value and fair value adjustments of financial fixed "
+"assets"
+msgstr ""
+"651 - Dotations aux corrections de valeur et ajustements pour juste valeur "
+"sur immobilisations financières"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1665_1666
 msgid "6511 - Allocations to value adjustments on financial fixed assets"
-msgstr "6511 - Dotations aux corrections de valeur sur immobilisations financières"
+msgstr ""
+"6511 - Dotations aux corrections de valeur sur immobilisations financières"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1667_1668
@@ -4819,13 +5054,21 @@ msgstr "65112 - Créances sur des entreprises liées"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1671_1672
-msgid "65113 - Shares in undertakings with which the company is linked by virtue of participating interests"
-msgstr "65113 - Parts dans des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"65113 - Shares in undertakings with which the company is linked by virtue of "
+"participating interests"
+msgstr ""
+"65113 - Parts dans des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1673_1674
-msgid "65114 - Amounts owed by undertaking with which the company is linked by virtue of participating interests"
-msgstr "65114 - Créances sur des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"65114 - Amounts owed by undertaking with which the company is linked by "
+"virtue of participating interests"
+msgstr ""
+"65114 - Créances sur des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1675_1676
@@ -4849,8 +5092,12 @@ msgstr "6512 - Ajustements pour juste valeur sur immobilisations financières"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1683_1684
-msgid "653 - Allocations to value and fair value adjustments on financial current assets"
-msgstr "653 - Dotations aux corrections de valeur et ajustements pour juste valeur sur éléments financiers de l'actif circulant"
+msgid ""
+"653 - Allocations to value and fair value adjustments on financial current "
+"assets"
+msgstr ""
+"653 - Dotations aux corrections de valeur et ajustements pour juste valeur "
+"sur éléments financiers de l'actif circulant"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1685_1686
@@ -4864,8 +5111,12 @@ msgstr "65311 - Parts dans des entreprises liées"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1689_1690
-msgid "65312 - Shares in undertakings with which the company is linked by virtue of participating interests"
-msgstr "65312 - Parts dans des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"65312 - Shares in undertakings with which the company is linked by virtue of "
+"participating interests"
+msgstr ""
+"65312 - Parts dans des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1691_1692
@@ -4879,18 +5130,28 @@ msgstr "65318 - Autres valeurs mobilières"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1695_1696
-msgid "6532 - Allocations to value adjustments on receivables from affiliated undertakings and undertakings with which the company is linked by virtue of participating interests"
-msgstr "6532 - Dotations aux corrections de valeur sur créances sur des entreprises liées et sur des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"6532 - Allocations to value adjustments on receivables from affiliated "
+"undertakings and undertakings with which the company is linked by virtue of "
+"participating interests"
+msgstr ""
+"6532 - Dotations aux corrections de valeur sur créances sur des entreprises "
+"liées et sur des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1697_1698
-msgid "6533 - Allocations to value adjustments on other financial receivables from current assets"
+msgid ""
+"6533 - Allocations to value adjustments on other financial receivables from "
+"current assets"
 msgstr "6533 - Dotations aux corrections de valeur sur autres créances"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1699_1700
 msgid "6534 - Fair value adjustments on financial current assets"
-msgstr "6534 - Ajustements pour juste valeur sur éléments financiers de l'actif circulant"
+msgstr ""
+"6534 - Ajustements pour juste valeur sur éléments financiers de l'actif "
+"circulant"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1701_1702
@@ -4904,8 +5165,12 @@ msgstr "6541 - Parts dans des entreprises liées"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1705_1706
-msgid "6542 - Shares in in undertakings with which the company is linked by virtue of participating interests"
-msgstr "6542 - Parts dans des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"6542 - Shares in in undertakings with which the company is linked by virtue "
+"of participating interests"
+msgstr ""
+"6542 - Parts dans des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1707_1708
@@ -4964,8 +5229,12 @@ msgstr "6553 - Intérêts sur dettes commerciales"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1729_1730
-msgid "6554 - Interests payable to affiliated undertakings and undertakings with which the company is linked by virtue of participating interests"
-msgstr "6554 - Intérêts sur des entreprises liées et sur des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"6554 - Interests payable to affiliated undertakings and undertakings with "
+"which the company is linked by virtue of participating interests"
+msgstr ""
+"6554 - Intérêts sur des entreprises liées et sur des entreprises avec "
+"lesquelles la société a un lien de participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1731_1732
@@ -4989,8 +5258,12 @@ msgstr "656 - Pertes de change"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1739_1740
-msgid "657 - Share in the losses of other undertakings (other than joint stock companies)"
-msgstr "657 - Quote-part de perte dans les entreprises collectives (autres que les sociétés de capitaux)"
+msgid ""
+"657 - Share in the losses of other undertakings (other than joint stock "
+"companies)"
+msgstr ""
+"657 - Quote-part de perte dans les entreprises collectives (autres que les "
+"sociétés de capitaux)"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1741_1742
@@ -5009,8 +5282,12 @@ msgstr "66 - Charges exceptionnelles"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1747_1748
-msgid "661 - Allocations to extraordinary value adjustments on intangible and tangible fixed assets"
-msgstr "661 - Dotations aux corrections de valeur exceptionnelles sur immobilisations incorporelles et corporelles"
+msgid ""
+"661 - Allocations to extraordinary value adjustments on intangible and "
+"tangible fixed assets"
+msgstr ""
+"661 - Dotations aux corrections de valeur exceptionnelles sur "
+"immobilisations incorporelles et corporelles"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1749_1750
@@ -5025,7 +5302,9 @@ msgstr "6612 - Sur immobilisations corporelles"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1753_1754
 msgid "662 - Allocations to extraordinary value adjustments on current assets"
-msgstr "662 - Dotations aux corrections de valeur exceptionnelles sur éléments de l'actif circulant"
+msgstr ""
+"662 - Dotations aux corrections de valeur exceptionnelles sur éléments de "
+"l'actif circulant"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1755_1756
@@ -5040,7 +5319,9 @@ msgstr "6622 - Sur créances"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1759_1760
 msgid "663 - Book value of yielded intangible and tangible fixed assets"
-msgstr "663 - Valeur comptable des immobilisations incorporelles et corporelles cédées"
+msgstr ""
+"663 - Valeur comptable des immobilisations incorporelles et corporelles "
+"cédées"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1761_1762
@@ -5069,13 +5350,21 @@ msgstr "6642 - Créances sur des entreprises liées"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1771_1772
-msgid "6643 - Shares in undertakings with which the company is linked by virtue of participating interests"
-msgstr "6643 - Parts dans des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"6643 - Shares in undertakings with which the company is linked by virtue of "
+"participating interests"
+msgstr ""
+"6643 - Parts dans des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1773_1774
-msgid "6644 - Amounts owed by undertakings with which the company is linked by virtue of participating interests"
-msgstr "6644 - Créances sur des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"6644 - Amounts owed by undertakings with which the company is linked by "
+"virtue of participating interests"
+msgstr ""
+"6644 - Créances sur des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1775_1776
@@ -5095,12 +5384,17 @@ msgstr "6647 - Actions propres ou parts propres"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1781_1782
 msgid "665 - Book value of yielded financial receivables from current assets"
-msgstr "665 - Valeur comptable des créances de l'actif circulant financier cédées"
+msgstr ""
+"665 - Valeur comptable des créances de l'actif circulant financier cédées"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1783_1784
-msgid "6651 - From affiliated undertakings and from undertakings with which the company is linked by virtue of participating interests"
-msgstr "6651 - Sur des entreprises liées et sur des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"6651 - From affiliated undertakings and from undertakings with which the "
+"company is linked by virtue of participating interests"
+msgstr ""
+"6651 - Sur des entreprises liées et sur des entreprises avec lesquelles la "
+"société a un lien de participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1785_1786
@@ -5119,7 +5413,9 @@ msgstr "6681 - Pénalités sur marchés et dédits payés sur achats et ventes"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1791_1792
-msgid "6682 - Tax fines and penalties in relation with tax, social and criminal matters"
+msgid ""
+"6682 - Tax fines and penalties in relation with tax, social and criminal "
+"matters"
 msgstr "6682 - Amendes et pénalités fiscales, sociales et pénales"
 
 #. module: l10n_lu_mis_reports
@@ -5270,8 +5566,12 @@ msgstr "689 - Dotations aux provisions pour autres impôts"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_det_ecdf_386_385
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_ecdf_386_385
-msgid "7 Amounts owed to undertakings with which the undertaking is linked by virtue of participating interests"
-msgstr "7 Dettes envers des entreprises avec lesquelles l'entreprise a un lien de participation"
+msgid ""
+"7 Amounts owed to undertakings with which the undertaking is linked by "
+"virtue of participating interests"
+msgstr ""
+"7 Dettes envers des entreprises avec lesquelles l'entreprise a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_pl_2016_det_ecdf_658_657
@@ -5287,13 +5587,23 @@ msgstr "7. Actions propres ou parts propres"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_abr_pl_ecdf_626_625
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_pl_ecdf_626_625
-msgid "7. Corrections de valeur et ajustement de juste valeur sur éléments financiers de l'actif circulant. Moins-values de cessions des valeurs mobilières"
-msgstr "7. Corrections de valeur et ajustement de juste valeur sur éléments financiers de l'actif circulant. Moins-values de cessions des valeurs mobilières"
+msgid ""
+"7. Corrections de valeur et ajustement de juste valeur sur éléments "
+"financiers de l'actif circulant. Moins-values de cessions des valeurs "
+"mobilières"
+msgstr ""
+"7. Corrections de valeur et ajustement de juste valeur sur éléments "
+"financiers de l'actif circulant. Moins-values de cessions des valeurs "
+"mobilières"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_ecdf_386_385
-msgid "7. Dettes envers des entreprises avec lesquelles la société a un lien de participation"
-msgstr "7. Dettes envers des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"7. Dettes envers des entreprises avec lesquelles la société a un lien de "
+"participation"
+msgstr ""
+"7. Dettes envers des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_abr_pl_ecdf_722_721
@@ -5354,7 +5664,8 @@ msgstr "7051 - Ventes de marchandises"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1871_1872
 msgid "7052 - Sales of land and existing buildings (real estate development)"
-msgstr "7052 - Ventes de terrains et d'immeubles existants (promotion immobilière)"
+msgstr ""
+"7052 - Ventes de terrains et d'immeubles existants (promotion immobilière)"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1873_1874
@@ -5443,13 +5754,19 @@ msgstr "7098 - Sur autres éléments du chiffre d'affaires"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1907_1908
-msgid "71 - Change in inventories of finished goods, of work and contracts in progress"
-msgstr "71 - Variation des stocks de produits finis, d'en cours de fabrication et des commandes en cours"
+msgid ""
+"71 - Change in inventories of finished goods, of work and contracts in "
+"progress"
+msgstr ""
+"71 - Variation des stocks de produits finis, d'en cours de fabrication et "
+"des commandes en cours"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1909_1910
 msgid "711 - Change in inventories of work and contracts in progress"
-msgstr "711 - Variation des stocks de produits en cours de fabrication et de commandes en cours"
+msgstr ""
+"711 - Variation des stocks de produits en cours de fabrication et de "
+"commandes en cours"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1911_1912
@@ -5464,7 +5781,8 @@ msgstr "7112 - Variation des stocks de commandes en cours – produits"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1915_1916
 msgid "7113 - Change in inventories of contracts in progress - services"
-msgstr "7113 - Variation des stocks de commandes en cours – prestations de services"
+msgstr ""
+"7113 - Variation des stocks de commandes en cours – prestations de services"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1917_1918
@@ -5498,8 +5816,12 @@ msgstr "7126 - Variation des stocks de marchandises"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1929_1930
-msgid "7127 - Change in inventories of merchandise in transit, held for safekeeping or in consignment"
-msgstr "7127 - Variation des stocks de marchandises en voie d'acheminement, mises en dépôt ou données en consignation"
+msgid ""
+"7127 - Change in inventories of merchandise in transit, held for safekeeping "
+"or in consignment"
+msgstr ""
+"7127 - Variation des stocks de marchandises en voie d'acheminement, mises en "
+"dépôt ou données en consignation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1931_1932
@@ -5518,8 +5840,11 @@ msgstr "7211 - Frais de recherche et développement"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1937_1938
-msgid "7212 - Concession contracts, patents, licences, trademarks and similar rights and values"
-msgstr "7212 - Concessions, brevets, licences, marques, droits et valeurs similaires"
+msgid ""
+"7212 - Concession contracts, patents, licences, trademarks and similar "
+"rights and values"
+msgstr ""
+"7212 - Concessions, brevets, licences, marques, droits et valeurs similaires"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1939_1940
@@ -5579,12 +5904,14 @@ msgstr "7223 - Autres installations, outillage, mobilier et matériel roulant"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1961_1962
 msgid "73 - Reversals of value adjustments of non-financial assets"
-msgstr "73 - Reprises de corrections de valeur des éléments d'actif non financiers"
+msgstr ""
+"73 - Reprises de corrections de valeur des éléments d'actif non financiers"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1963_1964
 msgid "732 - Reversals of value adjustments of intangible fixed assets"
-msgstr "732 - Reprises de corrections de valeur sur immobilisations incorporelles"
+msgstr ""
+"732 - Reprises de corrections de valeur sur immobilisations incorporelles"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1965_1966
@@ -5593,13 +5920,18 @@ msgstr "7321 - Frais de recherche et de développement"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1967_1968
-msgid "7322 - Concession contracts, patents, licences, trademarks and similar rights and values"
-msgstr "7322 - Concessions, brevets, licences, marques ainsi que droits et valeurs similaires"
+msgid ""
+"7322 - Concession contracts, patents, licences, trademarks and similar "
+"rights and values"
+msgstr ""
+"7322 - Concessions, brevets, licences, marques ainsi que droits et valeurs "
+"similaires"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1969_1970
 msgid "7323 - Goodwill, acquired for valuable consideration"
-msgstr "7323 - Fonds de commerce, dans la mesure où il a été acquis à titre onéreux"
+msgstr ""
+"7323 - Fonds de commerce, dans la mesure où il a été acquis à titre onéreux"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1971_1972
@@ -5609,7 +5941,8 @@ msgstr "7324 - Acomptes versés et immobilisations incorporelles en cours"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1973_1974
 msgid "733 - Reversals of value adjustments of tangible fixed assets"
-msgstr "733 - Reprises de corrections de valeur sur immobilisations corporelles"
+msgstr ""
+"733 - Reprises de corrections de valeur sur immobilisations corporelles"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_1975_1976
@@ -5684,7 +6017,8 @@ msgstr "7345 - Acomptes versés"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2003_2004
 msgid "735 - Reversals of value adjustments of receivables from current assets"
-msgstr "735 - Reprises de corrections de valeur sur créances de l'actif circulant"
+msgstr ""
+"735 - Reprises de corrections de valeur sur créances de l'actif circulant"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2005_2006
@@ -5693,8 +6027,12 @@ msgstr "7351 - Créances résultant de ventes et prestations de services"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2007_2008
-msgid "7352 - Amounts owed by affiliated undertakings and undertakings with which the company is linked by virtue of participating interests"
-msgstr "7352 - Créances sur des entreprises liées et sur des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"7352 - Amounts owed by affiliated undertakings and undertakings with which "
+"the company is linked by virtue of participating interests"
+msgstr ""
+"7352 - Créances sur des entreprises liées et sur des entreprises avec "
+"lesquelles la société a un lien de participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2009_2010
@@ -5708,8 +6046,12 @@ msgstr "74 - Autres produits d'exploitation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2013_2014
-msgid "741 - Fees and royalties for concession contracts, patents, licences, trademarks and similar rights and values"
-msgstr "741 - Redevances pour concessions, brevets, licences, marques, droits et valeurs similaires"
+msgid ""
+"741 - Fees and royalties for concession contracts, patents, licences, "
+"trademarks and similar rights and values"
+msgstr ""
+"741 - Redevances pour concessions, brevets, licences, marques, droits et "
+"valeurs similaires"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2015_2016
@@ -5749,7 +6091,8 @@ msgstr "74158 - Autres droits et valeurs similaires"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2029_2030
 msgid "742 - Income of buildings non affected to business activities"
-msgstr "742 - Revenus des immeubles non affectés aux activités professionnelles"
+msgstr ""
+"742 - Revenus des immeubles non affectés aux activités professionnelles"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2031_2032
@@ -5798,7 +6141,8 @@ msgstr "7448 - Autres subventions d'exploitation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2049_2050
-msgid "745 - Received refunds of co-operatives (originated from their surpluses)"
+msgid ""
+"745 - Received refunds of co-operatives (originated from their surpluses)"
 msgstr "745 - Ristournes perçues des coopératives (provenant des excédents)"
 
 #. module: l10n_lu_mis_reports
@@ -5808,8 +6152,12 @@ msgstr "746 - Indemnités d'assurance touchées"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2053_2054
-msgid "747 - Reversals of temporarily not taxable capital gains and of investment subsidies"
-msgstr "747 - Reprises de plus-values immunisées et de subventions d'investissement en capital"
+msgid ""
+"747 - Reversals of temporarily not taxable capital gains and of investment "
+"subsidies"
+msgstr ""
+"747 - Reprises de plus-values immunisées et de subventions d'investissement "
+"en capital"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2055_2056
@@ -5843,13 +6191,18 @@ msgstr "75 - Produits financiers"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2067_2068
-msgid "751 - Reversals of value adjustments and fair value adjustments on financial fixed assets"
-msgstr "751 - Reprises sur corrections de valeur et ajustements pour juste valeur sur immobilisations financières"
+msgid ""
+"751 - Reversals of value adjustments and fair value adjustments on financial "
+"fixed assets"
+msgstr ""
+"751 - Reprises sur corrections de valeur et ajustements pour juste valeur "
+"sur immobilisations financières"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2069_2070
 msgid "7511 - Reversals of value adjustments of financial fixed assets"
-msgstr "7511 - Reprises sur corrections de valeur sur immobilisations financières"
+msgstr ""
+"7511 - Reprises sur corrections de valeur sur immobilisations financières"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2071_2072
@@ -5863,13 +6216,21 @@ msgstr "75112 - Créances sur des entreprises liées"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2075_2076
-msgid "75113 - Shares in undertakings with which the company is linked by virtue of participating interests"
-msgstr "75113 - Parts dans des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"75113 - Shares in undertakings with which the company is linked by virtue of "
+"participating interests"
+msgstr ""
+"75113 - Parts dans des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2077_2078
-msgid "75114 - Amounts owed by undertakings with which the company is linked by virtue of participating interests"
-msgstr "75114 - Créances sur des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"75114 - Amounts owed by undertakings with which the company is linked by "
+"virtue of participating interests"
+msgstr ""
+"75114 - Créances sur des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2079_2080
@@ -5908,13 +6269,21 @@ msgstr "7522 - Créances sur des entreprises liées"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2093_2094
-msgid "7523 - Shares in undertakings with which the company is linked by virtue of participating interests"
-msgstr "7523 - Parts dans des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"7523 - Shares in undertakings with which the company is linked by virtue of "
+"participating interests"
+msgstr ""
+"7523 - Parts dans des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2095_2096
-msgid "7524 - Amounts owed by undertakings with which the company is linked by virtue of participating interests"
-msgstr "7524 - Créances sur des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"7524 - Amounts owed by undertakings with which the company is linked by "
+"virtue of participating interests"
+msgstr ""
+"7524 - Créances sur des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2097_2098
@@ -5933,13 +6302,23 @@ msgstr "7527 - Actions propres ou parts propres"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2103_2104
-msgid "753 - Reversals of value adjustments and fair value adjustments on financial current assets"
-msgstr "753 - Reprises sur corrections de valeur et ajustements pour juste valeur sur éléments financiers de l'actif circulant"
+msgid ""
+"753 - Reversals of value adjustments and fair value adjustments on financial "
+"current assets"
+msgstr ""
+"753 - Reprises sur corrections de valeur et ajustements pour juste valeur "
+"sur éléments financiers de l'actif circulant"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2105_2106
-msgid "7531 - Reversals of value adjustments on amounts owed by affiliated undertakings and undertakings with which the company is linked by virtue of participating interests"
-msgstr "7531 - Reprises sur corrections de valeur sur créances sur des entreprises liées et sur des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"7531 - Reversals of value adjustments on amounts owed by affiliated "
+"undertakings and undertakings with which the company is linked by virtue of "
+"participating interests"
+msgstr ""
+"7531 - Reprises sur corrections de valeur sur créances sur des entreprises "
+"liées et sur des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2107_2108
@@ -5958,8 +6337,12 @@ msgstr "75331 - Parts dans des entreprises liées"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2113_2114
-msgid "75332 - Shares in undertakings with which the company is linked by virtue of participating interests"
-msgstr "75332 - Parts dans des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"75332 - Shares in undertakings with which the company is linked by virtue of "
+"participating interests"
+msgstr ""
+"75332 - Parts dans des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2115_2116
@@ -5974,11 +6357,14 @@ msgstr "75338 - Autres valeurs mobilières"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2119_2120
 msgid "7534 - Fair value adjustments on financial current assets"
-msgstr "7534 - Ajustements pour juste valeur sur éléments financiers de l'actif circulant"
+msgstr ""
+"7534 - Ajustements pour juste valeur sur éléments financiers de l'actif "
+"circulant"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2121_2122
-msgid "754 - Gains on disposal of and other income from transferable securities"
+msgid ""
+"754 - Gains on disposal of and other income from transferable securities"
 msgstr "754 - Plus-value de cession et autres produits de valeurs mobilières"
 
 #. module: l10n_lu_mis_reports
@@ -5993,8 +6379,12 @@ msgstr "75411 - Parts dans des entreprises liées"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2127_2128
-msgid "75412 - Shares in undertakings with which the company is linked by virtue of participating interests"
-msgstr "75412 - Parts dans des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"75412 - Shares in undertakings with which the company is linked by virtue of "
+"participating interests"
+msgstr ""
+"75412 - Parts dans des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2129_2130
@@ -6018,8 +6408,12 @@ msgstr "75481 - Parts dans des entreprises liées"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2137_2138
-msgid "75482 - Shares in undertakings linked with which the company is linked by virtue of participating interests"
-msgstr "75482 - Parts dans des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"75482 - Shares in undertakings linked with which the company is linked by "
+"virtue of participating interests"
+msgstr ""
+"75482 - Parts dans des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2139_2140
@@ -6063,8 +6457,12 @@ msgstr "7553 - Intérêts sur créances commerciales"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2155_2156
-msgid "7554 - Interests on amounts owed by affiliated undertakings and undertakings with which the company is linked by virtue of participating interests"
-msgstr "7554 - Intérêts sur des entreprises liées et des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"7554 - Interests on amounts owed by affiliated undertakings and undertakings "
+"with which the company is linked by virtue of participating interests"
+msgstr ""
+"7554 - Intérêts sur des entreprises liées et des entreprises avec lesquelles "
+"la société a un lien de participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2157_2158
@@ -6088,8 +6486,12 @@ msgstr "756 - Gains de change"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2165_2166
-msgid "757 - Share of profit from other undertakings (other than joint stock companies)"
-msgstr "757 - Quote-part de bénéfice dans les entreprises collectives (autres que les sociétés de capitaux)"
+msgid ""
+"757 - Share of profit from other undertakings (other than joint stock "
+"companies)"
+msgstr ""
+"757 - Quote-part de bénéfice dans les entreprises collectives (autres que "
+"les sociétés de capitaux)"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2167_2168
@@ -6108,8 +6510,12 @@ msgstr "76 - Produits exceptionnels"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2173_2174
-msgid "761 - Reversals of extraordinary value adjustments of intangible and tangible fixed assets"
-msgstr "761 - Reprises sur corrections de valeur exceptionnelles sur immobilisations incorporelles et corporelles"
+msgid ""
+"761 - Reversals of extraordinary value adjustments of intangible and "
+"tangible fixed assets"
+msgstr ""
+"761 - Reprises sur corrections de valeur exceptionnelles sur immobilisations "
+"incorporelles et corporelles"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2175_2176
@@ -6123,8 +6529,12 @@ msgstr "7612 - Immobilisations corporelles"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2179_2180
-msgid "762 - Reversals of extraordinary value adjustments of components from current assets"
-msgstr "762 - Reprises sur corrections de valeur exceptionnelles sur éléments de l'actif circulant"
+msgid ""
+"762 - Reversals of extraordinary value adjustments of components from "
+"current assets"
+msgstr ""
+"762 - Reprises sur corrections de valeur exceptionnelles sur éléments de "
+"l'actif circulant"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2181_2182
@@ -6139,7 +6549,8 @@ msgstr "7622 - Sur créances de l'actif circulant"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2185_2186
 msgid "763 - Income of yielded intangible and tangible fixed assets"
-msgstr "763 - Produits de cession d'immobilisations incorporelles et corporelles"
+msgstr ""
+"763 - Produits de cession d'immobilisations incorporelles et corporelles"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2187_2188
@@ -6168,13 +6579,21 @@ msgstr "7642 - Créances sur des entreprises liées"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2197_2198
-msgid "7643 - Shares in undertakings with which the company is linked by virtue of participating interests"
-msgstr "7643 - Parts dans des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"7643 - Shares in undertakings with which the company is linked by virtue of "
+"participating interests"
+msgstr ""
+"7643 - Parts dans des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2199_2200
-msgid "7644 - Amounts owed by undertakings with which the company is linked by virtue of participating interests"
-msgstr "7644 - Créances sur des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"7644 - Amounts owed by undertakings with which the company is linked by "
+"virtue of participating interests"
+msgstr ""
+"7644 - Créances sur des entreprises avec lesquelles la société a un lien de "
+"participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2201_2202
@@ -6198,8 +6617,12 @@ msgstr "765 - Produits de cession sur créances de l'actif circulant financier"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2209_2210
-msgid "7651 - Amounts owed by affiliated undertakings and undertakings with which the company is linked by virtue of participating interests"
-msgstr "7651 - Créances sur des entreprises liées et sur des entreprises avec lesquelles la société a un lien de participation"
+msgid ""
+"7651 - Amounts owed by affiliated undertakings and undertakings with which "
+"the company is linked by virtue of participating interests"
+msgstr ""
+"7651 - Créances sur des entreprises liées et sur des entreprises avec "
+"lesquelles la société a un lien de participation"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2211_2212
@@ -6213,7 +6636,9 @@ msgstr "768 - Autres produits exceptionnels"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2215_2216
-msgid "7681 - Fines on contracts and default penalties received on purchases and sales"
+msgid ""
+"7681 - Fines on contracts and default penalties received on purchases and "
+"sales"
 msgstr "7681 - Pénalités sur marchés et dédits perçus sur achats et sur ventes"
 
 #. module: l10n_lu_mis_reports
@@ -6239,7 +6664,9 @@ msgstr "7685 - Bonis provenant de clauses d'indexation"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2225_2226
 msgid "7686 - Gains on repurchases of own shares and debenture loans"
-msgstr "7686 - Bonis provenant du rachat par l'entreprise d'actions et d'obligations émises par elle-même"
+msgstr ""
+"7686 - Bonis provenant du rachat par l'entreprise d'actions et d'obligations "
+"émises par elle-même"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2227_2228
@@ -6289,7 +6716,8 @@ msgstr "7792 - Reprises sur provisions pour impôts différés"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2245_2246
 msgid "78 - Adjustments of other taxes not included in the previous caption"
-msgstr "78 - Régularisations d'autres impôts ne figurant pas sous le poste ci-dessus"
+msgstr ""
+"78 - Régularisations d'autres impôts ne figurant pas sous le poste ci-dessus"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_ca_ecdf_2247_2248
@@ -6662,14 +7090,20 @@ msgstr "III. Valeurs mobilières"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_abr_bs_ecdf_198_197
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_ecdf_198_197
-msgid "IV. Avoirs en banques, avoirs en compte de chèques postaux, chèques et en caisse"
-msgstr "IV. Avoirs en banques, avoirs en compte de chèques postaux, chèques et en caisse"
+msgid ""
+"IV. Avoirs en banques, avoirs en compte de chèques postaux, chèques et en "
+"caisse"
+msgstr ""
+"IV. Avoirs en banques, avoirs en compte de chèques postaux, chèques et en "
+"caisse"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_det_ecdf_198_197
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_ecdf_198_197
 msgid "IV. Cash at bank and in hand"
-msgstr "IV. Avoirs en banques, avoirs en compte de chèques postaux, chèques et encaisse"
+msgstr ""
+"IV. Avoirs en banques, avoirs en compte de chèques postaux, chèques et "
+"encaisse"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_det_ecdf_310_309
@@ -6871,7 +7305,8 @@ msgstr "a) Salaires et traitements"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_det_ecdf_118_117
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_ecdf_118_117
-msgid "a) acquired for valuable consideration and need not be shown under C.I.3"
+msgid ""
+"a) acquired for valuable consideration and need not be shown under C.I.3"
 msgstr "a) acquis à titre onéreux, sans devoir figurer sous C.I.3"
 
 #. module: l10n_lu_mis_reports
@@ -6945,8 +7380,12 @@ msgstr "a) dont la durée résiduelle est inférieure ou égale à un an"
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_pl_2016_det_ecdf_660_659
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_pl_2016_ecdf_660_659
-msgid "a) in respect of formation expenses and of tangible and intangible fixed assets"
-msgstr "a) sur frais d'établissement et sur immobilisations corporelles et incorporelles"
+msgid ""
+"a) in respect of formation expenses and of tangible and intangible fixed "
+"assets"
+msgstr ""
+"a) sur frais d'établissement et sur immobilisations corporelles et "
+"incorporelles"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_bs_2016_det_ecdf_432_431
@@ -6969,8 +7408,12 @@ msgstr "a) provenant d’entreprises liées"
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_abr_pl_ecdf_710_709
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_pl_ecdf_618_617
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_pl_ecdf_710_709
-msgid "a) sur frais d'établissement et sur immobilisations corporelles et incorporelles"
-msgstr "a) sur frais d'établissement et sur immobilisations corporelles et incorporelles"
+msgid ""
+"a) sur frais d'établissement et sur immobilisations corporelles et "
+"incorporelles"
+msgstr ""
+"a) sur frais d'établissement et sur immobilisations corporelles et "
+"incorporelles"
 
 #. module: l10n_lu_mis_reports
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_abr_pl_ecdf_610_609
@@ -7199,4 +7642,3 @@ msgstr "ii) dont la durée résiduelle est supérieure à un an"
 #: model:mis.report.kpi,description:l10n_lu_mis_reports.mis_report_pl_2016_ecdf_656_655
 msgid "ii) other social security costs"
 msgstr "ii) autres charges sociales"
-
