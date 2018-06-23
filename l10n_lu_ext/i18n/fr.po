@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * l10n_lu_ext
-# 
+#
 # Translators:
 # LS Development <ls.development.nc@gmail.com>, 2015
 msgid ""
@@ -11,11 +11,12 @@ msgstr ""
 "POT-Creation-Date: 2015-10-14 03:42+0000\n"
 "PO-Revision-Date: 2015-12-28 07:11+0000\n"
 "Last-Translator: LS Development <ls.development.nc@gmail.com>\n"
-"Language-Team: French (http://www.transifex.com/oca/OCA-l10n-luxemburg-8-0/language/fr/)\n"
+"Language-Team: French (http://www.transifex.com/oca/OCA-l10n-luxemburg-8-0/"
+"language/fr/)\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: l10n_lu_ext
@@ -38,9 +39,11 @@ msgstr "Sociétés"
 #. module: l10n_lu_ext
 #: help:res.company,l10n_lu_matricule:0
 msgid ""
-"Identification Number delivered by the Luxembourg authorities as soon as the"
-" company is registered"
-msgstr "Numéro d'identification délivré  par les authorités luxembourgoises dès la société est enregistrée."
+"Identification Number delivered by the Luxembourg authorities as soon as the "
+"company is registered"
+msgstr ""
+"Numéro d'identification délivré  par les authorités luxembourgoises dès la "
+"société est enregistrée."
 
 #. module: l10n_lu_ext
 #: model:ir.ui.menu,name:l10n_lu_ext.legal_lu

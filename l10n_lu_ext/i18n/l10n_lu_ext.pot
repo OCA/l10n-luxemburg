@@ -1,22 +1,17 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * l10n_lu_ext
+#	* l10n_lu_ext
 #
-# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: l10n-luxemburg (8.0)\n"
+"Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-29 12:58+0000\n"
-"PO-Revision-Date: 2015-09-11 09:50+0000\n"
 "Last-Translator: <>\n"
-"Language-Team: Spanish (Mexico) (http://www.transifex.com/oca/OCA-l10n-"
-"luxemburg-8-0/language/es_MX/)\n"
-"Language: es_MX\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: \n"
 
 #. module: l10n_lu_ext
 #: model:ir.actions.act_window,name:l10n_lu_ext.action_account_report_lu_bs
@@ -33,13 +28,11 @@ msgstr ""
 #. module: l10n_lu_ext
 #: model:ir.model,name:l10n_lu_ext.model_res_company
 msgid "Companies"
-msgstr "Compañías"
+msgstr ""
 
 #. module: l10n_lu_ext
 #: help:res.company,l10n_lu_matricule:0
-msgid ""
-"Identification Number delivered by the Luxembourg authorities as soon as the "
-"company is registered"
+msgid "Identification Number delivered by the Luxembourg authorities as soon as the company is registered"
 msgstr ""
 
 #. module: l10n_lu_ext
@@ -63,3 +56,4 @@ msgstr ""
 #: model:ir.ui.menu,name:l10n_lu_ext.menu_account_report_lu_pl_abr
 msgid "Profit And Loss (abbreviated)"
 msgstr ""
+
