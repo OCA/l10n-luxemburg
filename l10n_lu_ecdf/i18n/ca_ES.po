@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * l10n_lu_ecdf
-# 
+#
 # Translators:
 # OCA Transbot <transbot@odoo-community.org>, 2017
 # Carlos Hormigo, 2018
@@ -12,11 +12,12 @@ msgstr ""
 "POT-Creation-Date: 2017-12-02 05:52+0000\n"
 "PO-Revision-Date: 2017-12-02 05:52+0000\n"
 "Last-Translator: Carlos Hormigo, 2018\n"
-"Language-Team: Catalan (Spain) (https://www.transifex.com/oca/teams/23907/ca_ES/)\n"
+"Language-Team: Catalan (Spain) (https://www.transifex.com/oca/teams/23907/"
+"ca_ES/)\n"
+"Language: ca_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: ca_ES\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: l10n_lu_ecdf
@@ -259,8 +260,8 @@ msgstr ""
 #: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:117
 #, python-format
 msgid ""
-"RCS number must begin with an                 uppercase letter followed by 2"
-" to 6 digits.                 The first digit must not be 0."
+"RCS number must begin with an                 uppercase letter followed by 2 "
+"to 6 digits.                 The first digit must not be 0."
 msgstr ""
 
 #. module: l10n_lu_ecdf
@@ -308,8 +309,8 @@ msgstr ""
 #: code:addons/l10n_lu_ecdf/wizard/ecdf_report.py:133
 #, python-format
 msgid ""
-"VAT number must begin with two                 uppercase letters followed by"
-" 8 digits."
+"VAT number must begin with two                 uppercase letters followed by "
+"8 digits."
 msgstr ""
 
 #. module: l10n_lu_ecdf
