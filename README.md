@@ -13,16 +13,16 @@ These addons complement the Odoo official l10n_lu.
 
 Available addons
 ----------------
-addon | version | summary
---- | --- | ---
-[l10n_lu_mis_reports](l10n_lu_mis_reports/) | 9.0.1.0.0 | MIS Report templates for the Luxembourg P&L and Balance Sheets
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[l10n_lu_mis_reports](l10n_lu_mis_reports/) | 9.0.1.0.0 |  | MIS Report templates for the Luxembourg P&L and Balance Sheets
 
 
 Unported addons
 ---------------
-addon | version | summary
---- | --- | ---
-[l10n_lu_ext](l10n_lu_ext/) | 8.0.0.1.0 (unported) | Luxembourg - Accounting - Extension
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[l10n_lu_ext](l10n_lu_ext/) | 8.0.0.1.0 (unported) |  | Luxembourg - Accounting - Extension
 
 [//]: # (end addons)
 
