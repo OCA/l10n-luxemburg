@@ -13,12 +13,12 @@ These addons complement the Odoo official l10n_lu.
 
 Available addons
 ----------------
-addon | version | summary
---- | --- | ---
-[l10n_lu_ecdf](l10n_lu_ecdf/) | 8.0.1.1.0 | Generates XML eCDF annual financial reports
-[l10n_lu_ext](l10n_lu_ext/) | 8.0.0.1.0 | Luxembourg - Accounting - Extension
-[l10n_lu_fin_rep_details](l10n_lu_fin_rep_details/) | 8.0.0.1.0 | Luxembourg - Accounting - Financial Report Details
-[l10n_lu_mis_reports](l10n_lu_mis_reports/) | 8.0.1.1.0 | MIS Report templates for the Luxembourg P&L and Balance Sheets
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[l10n_lu_ecdf](l10n_lu_ecdf/) | 8.0.1.1.0 |  | Generates XML eCDF annual financial reports
+[l10n_lu_ext](l10n_lu_ext/) | 8.0.0.1.0 |  | Luxembourg - Accounting - Extension
+[l10n_lu_fin_rep_details](l10n_lu_fin_rep_details/) | 8.0.0.1.0 |  | Luxembourg - Accounting - Financial Report Details
+[l10n_lu_mis_reports](l10n_lu_mis_reports/) | 8.0.1.1.0 |  | MIS Report templates for the Luxembourg P&L and Balance Sheets
 
 [//]: # (end addons)
 
