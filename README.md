@@ -21,7 +21,7 @@ Available addons
 ----------------
 addon | version | maintainers | summary
 --- | --- | --- | ---
-[l10n_lu_intrastat_product](l10n_lu_intrastat_product/) | 14.0.1.0.0 |  | Adds luxemburg specificities to reports
+[l10n_lu_intrastat_product](l10n_lu_intrastat_product/) | 14.0.1.0.1 |  | Adds luxemburg specificities to reports
 
 [//]: # (end addons)
 
