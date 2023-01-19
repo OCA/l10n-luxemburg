@@ -17,7 +17,11 @@ Addons for the Luxemburg localization
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[l10n_lu_intrastat_product](l10n_lu_intrastat_product/) | 14.0.1.0.0 |  | Adds luxemburg specificities to reports
 
 [//]: # (end addons)
 
