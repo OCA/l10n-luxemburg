@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-25 04:54+0000\n"
-"PO-Revision-Date: 2023-06-07 11:13+0000\n"
+"PO-Revision-Date: 2023-06-22 10:09+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: Italian (https://www.transifex.com/oca/teams/23907/it/)\n"
 "Language: it\n"
@@ -148,7 +148,7 @@ msgstr ""
 #. module: l10n_lu_ecdf
 #: field:ecdf.report,fiscalyear_id:0
 msgid "Fiscal Year"
-msgstr "Anno Fiscale"
+msgstr "Anno fiscale"
 
 #. module: l10n_lu_ecdf
 #: selection:ecdf.report,reports_type:0
